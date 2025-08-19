@@ -470,6 +470,9 @@ export default function RootLayout({
                 <a href="/blog" className="text-gray-600 hover:text-gray-900">
                   Market Insights
                 </a>
+                <a href="/featured-agents" className="text-gray-600 hover:text-gray-900">
+                  Featured Agents
+                </a>
                 <a
                   href="http://drjanduffy.realscout.com/onboarding"
                   className="text-gray-600 hover:text-gray-900"
@@ -530,6 +533,14 @@ export default function RootLayout({
                       className="hover:text-blue-600 transition-colors"
                     >
                       Get in Touch
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="/featured-agents"
+                      className="hover:text-blue-600 transition-colors"
+                    >
+                      Meet Dr. Jan Duffy
                     </a>
                   </p>
                 </div>

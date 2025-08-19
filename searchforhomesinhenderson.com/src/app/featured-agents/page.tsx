@@ -832,9 +832,49 @@ export default function FeaturedAgentsPage() {
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
                     <strong>Service Areas:</strong> All Henderson communities
-                    including Green Valley, Anthem, Seven Hills, Whitney Ranch,
-                    Stephanie Ranch, MacDonald Highlands, Lake Las Vegas, and
-                    downtown Henderson
+                    including{' '}
+                    <a
+                      href="/neighborhoods/green-valley"
+                      className="text-blue-200 hover:underline"
+                    >
+                      Green Valley
+                    </a>
+                    ,{' '}
+                    <a
+                      href="/neighborhoods"
+                      className="text-blue-200 hover:underline"
+                    >
+                      Anthem
+                    </a>
+                    ,{' '}
+                    <a
+                      href="/neighborhoods"
+                      className="text-blue-200 hover:underline"
+                    >
+                      Seven Hills
+                    </a>
+                    ,{' '}
+                    <a
+                      href="/neighborhoods"
+                      className="text-blue-200 hover:underline"
+                    >
+                      Whitney Ranch
+                    </a>
+                    ,
+                    <a
+                      href="/neighborhoods"
+                      className="text-blue-200 hover:underline"
+                    >
+                      Stephanie Ranch
+                    </a>
+                    , MacDonald Highlands, Lake Las Vegas, and downtown
+                    Henderson.{' '}
+                    <a
+                      href="/neighborhoods"
+                      className="text-blue-200 hover:underline font-medium"
+                    >
+                      Explore all neighborhoods →
+                    </a>
                   </p>
                 </div>
               </div>

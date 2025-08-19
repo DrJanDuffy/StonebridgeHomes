@@ -93,8 +93,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
       {/* Why Henderson Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -407,24 +405,78 @@ export default function HomePage() {
               <h3 itemProp="name" className="text-xl font-semibold mb-3">
                 What's the average home price in Henderson Nevada?
               </h3>
-              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+              <div
+                itemScope
+                itemType="https://schema.org/Answer"
+                itemProp="acceptedAnswer"
+              >
                 <p itemProp="text" className="text-gray-600">
-                  Henderson home prices range from $400K in Whitney Ranch to $1.2M+ in Green Valley, 
-                  with most properties between $500K-$800K. Our licensed Henderson REALTOR provides 
-                  current market analysis for all Henderson neighborhoods.
+                  Henderson home prices range from $400K in{' '}
+                  <a
+                    href="/neighborhoods"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Whitney Ranch
+                  </a>{' '}
+                  to $1.2M+ in{' '}
+                  <a
+                    href="/neighborhoods/green-valley"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Green Valley
+                  </a>
+                  , with most properties between $500K-$800K. Our licensed
+                  Henderson REALTOR provides current market analysis for all
+                  Henderson neighborhoods.{' '}
+                  <a
+                    href="/home-value"
+                    className="text-blue-600 hover:underline font-medium"
+                  >
+                    Get your free home value estimate →
+                  </a>
                 </p>
               </div>
             </div>
-            
+
             <div itemScope itemType="https://schema.org/Question">
               <h3 itemProp="name" className="text-xl font-semibold mb-3">
                 Which Henderson neighborhood is best for families?
               </h3>
-              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+              <div
+                itemScope
+                itemType="https://schema.org/Answer"
+                itemProp="acceptedAnswer"
+              >
                 <p itemProp="text" className="text-gray-600">
-                  Stephanie Ranch and Whitney Ranch offer excellent schools, family amenities, and 
-                  more affordable pricing. Green Valley provides luxury family living with top-rated 
-                  schools and resort-style communities.
+                  <a
+                    href="/neighborhoods"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Stephanie Ranch
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href="/neighborhoods"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Whitney Ranch
+                  </a>{' '}
+                  offer excellent schools, family amenities, and more affordable
+                  pricing.{' '}
+                  <a
+                    href="/neighborhoods/green-valley"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Green Valley
+                  </a>{' '}
+                  provides luxury family living with top-rated schools and
+                  resort-style communities.{' '}
+                  <a
+                    href="/neighborhoods"
+                    className="text-blue-600 hover:underline font-medium"
+                  >
+                    Explore all Henderson neighborhoods →
+                  </a>
                 </p>
               </div>
             </div>

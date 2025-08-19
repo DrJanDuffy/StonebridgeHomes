@@ -115,7 +115,12 @@ export default function NeighborhoodsPage() {
               <div className="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Green Valley
+                  <a
+                    href="/neighborhoods/green-valley"
+                    className="hover:underline"
+                  >
+                    Green Valley
+                  </a>
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Henderson's premier master-planned community featuring
@@ -138,12 +143,20 @@ export default function NeighborhoodsPage() {
                     <span className="font-semibold">Golf, Shopping, Parks</span>
                   </div>
                 </div>
-                <a
-                  href="/search"
-                  className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-                >
-                  View Green Valley Homes
-                </a>
+                <div className="space-y-2">
+                  <a
+                    href="/neighborhoods/green-valley"
+                    className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                  >
+                    View Green Valley Homes & Market Analysis →
+                  </a>
+                  <a
+                    href="/home-value"
+                    className="block text-sm text-green-600 hover:underline font-medium"
+                  >
+                    Get Green Valley Home Value Estimate
+                  </a>
+                </div>
               </div>
             </div>
 

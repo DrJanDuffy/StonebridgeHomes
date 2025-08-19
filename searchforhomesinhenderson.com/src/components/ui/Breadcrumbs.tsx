@@ -12,7 +12,10 @@ export default function Breadcrumbs() {
           </li>
           <li className="flex items-center">
             <span className="mx-2 text-gray-400">/</span>
-            <Link href="/neighborhoods" className="hover:text-blue-600 transition-colors">
+            <Link
+              href="/neighborhoods"
+              className="hover:text-blue-600 transition-colors"
+            >
               Neighborhoods
             </Link>
           </li>

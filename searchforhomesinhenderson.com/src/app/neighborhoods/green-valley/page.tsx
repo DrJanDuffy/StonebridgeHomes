@@ -70,25 +70,6 @@ export default function GreenValleyPage() {
               
               {/* RealScout Widget with Green Valley specific filtering */}
               <div className="bg-gray-50 p-6 rounded-xl shadow-lg">
-                <style dangerouslySetInnerHTML={{
-                  __html: `
-                    realscout-office-listings {
-                      --rs-listing-divider-color: rgb(101, 141, 172);
-                      width: 100%;
-                      border-radius: 8px;
-                      overflow: hidden;
-                    }
-                    
-                    realscout-office-listings .listing-card {
-                      transition: transform 0.2s ease;
-                    }
-                    
-                    realscout-office-listings .listing-card:hover {
-                      transform: translateY(-2px);
-                    }
-                  `
-                }} />
-                
                 <realscout-office-listings 
                   agent-encoded-id="QWdlbnQtMjI1MDUw" 
                   sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
@@ -96,8 +77,6 @@ export default function GreenValleyPage() {
                   property-types="SFR,MF" 
                   price-min="500000" 
                   price-max="1200000"
-                  city="Henderson"
-                  neighborhood="Green Valley"
                 />
                 
                 <div className="mt-6 text-center">

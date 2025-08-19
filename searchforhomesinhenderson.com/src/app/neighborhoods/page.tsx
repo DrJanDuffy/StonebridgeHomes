@@ -1,21 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Henderson Nevada Neighborhoods Guide - Best Communities & Areas',
-  description:
-    'Explore Henderson NV neighborhoods including Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch. Find the perfect community with schools, amenities, and home prices.',
-  keywords: [
-    'Henderson neighborhoods',
-    'Green Valley Henderson',
-    'Anthem community',
-    'Henderson communities',
-    'best neighborhoods Henderson Nevada',
-  ],
+  title: 'Henderson Nevada Neighborhoods Guide | Best Places to Live',
+  description: 'Explore Henderson\'s premier neighborhoods: Green Valley, Anthem, Stephanie Ranch, Whitney Ranch and more. Find the perfect community with our comprehensive neighborhood guide including schools, amenities, and home prices.',
+  keywords: 'Henderson neighborhoods, Green Valley Henderson, Anthem Henderson, Stephanie Ranch Henderson, Whitney Ranch Henderson, best places to live Henderson NV',
   openGraph: {
-    title: 'Henderson Nevada Neighborhoods Guide',
-    description:
-      'Discover the best neighborhoods and communities in Henderson, Nevada',
+    title: 'Henderson Neighborhoods Guide - Find Your Perfect Community',
+    description: 'Discover Henderson\'s best neighborhoods with detailed information on schools, amenities, and home prices',
     url: 'https://searchforhomesinhenderson.com/neighborhoods',
+    siteName: 'Search for Homes in Henderson',
+    type: 'website',
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com/neighborhoods',
@@ -24,283 +18,291 @@ export const metadata: Metadata = {
 
 export default function NeighborhoodsPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Henderson Nevada Neighborhoods
-        </h1>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-          Discover Henderson's premier communities, each offering unique
-          amenities, top-rated schools, and distinctive lifestyle opportunities.
-        </p>
-      </header>
+    <main className="min-h-screen">
+      {/* Hero Section with H1 */}
+      <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Henderson Neighborhoods Guide
+          </h1>
+          <p className="text-xl text-purple-100 max-w-4xl mx-auto mb-8">
+            Discover Henderson's premier residential communities and find the
+            perfect neighborhood for your lifestyle. From luxury master-planned
+            communities to family-friendly areas with excellent schools.
+          </p>
+          <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+            🏘️ 15+ Communities • Top Schools • Family-Friendly • Luxury Living
+          </div>
+        </div>
+      </section>
 
       {/* Featured Neighborhoods */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-          Premier Henderson Communities
-        </h2>
-
-        <div className="space-y-12">
-          {/* Green Valley */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Green Valley
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <p className="text-gray-600 mb-4">
-                    Henderson's premier master-planned community featuring
-                    luxury homes, championship golf courses, and upscale
-                    shopping at The District.
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Price Range:</span>
-                      <span className="font-semibold">$750K - $1.2M</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Home Types:</span>
-                      <span className="font-semibold">
-                        Single Family, Golf Course
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">School Rating:</span>
-                      <span className="font-semibold text-green-600">8/10</span>
-                    </div>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Premier Henderson Neighborhoods
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Green Valley */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Green Valley
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Henderson's premier master-planned community featuring
+                  championship golf courses, upscale shopping at The District,
+                  and luxury homes with resort-style amenities.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Home Prices:</span>
+                    <span className="font-semibold text-green-600">$750K - $1.2M</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Schools:</span>
+                    <span className="font-semibold">A+ Rated</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Amenities:</span>
+                    <span className="font-semibold">Golf, Shopping, Parks</span>
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Community Features:
-                  </h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• Anthem Country Club & Golf Course</li>
-                    <li>• Community Center with fitness facilities</li>
-                    <li>• Multiple parks and playgrounds</li>
-                    <li>• Tennis courts and sports fields</li>
-                    <li>• Mountain hiking trails</li>
-                    <li>• Family-friendly events year-round</li>
-                  </ul>
-                </div>
+                <a
+                  href="/search"
+                  className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                >
+                  View Green Valley Homes
+                </a>
               </div>
             </div>
-          </div>
 
-          {/* Stephanie Ranch */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Stephanie Ranch
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <p className="text-gray-600 mb-4">
-                    Family-oriented community featuring affordable homes,
-                    excellent schools, and abundant recreational facilities
-                    perfect for growing families.
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Price Range:</span>
-                      <span className="font-semibold">$450K - $650K</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Home Types:</span>
-                      <span className="font-semibold">
-                        Single Family, Townhomes
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">School Rating:</span>
-                      <span className="font-semibold text-green-600">8/10</span>
-                    </div>
+            {/* Anthem */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Anthem</h3>
+                <p className="text-gray-600 mb-4">
+                  Hillside community offering stunning mountain views, resort-style
+                  amenities, and a tight-knit neighborhood feel with excellent
+                  schools and recreational facilities.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Home Prices:</span>
+                    <span className="font-semibold text-blue-600">$650K - $950K</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Schools:</span>
+                    <span className="font-semibold">A+ Rated</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Amenities:</span>
+                    <span className="font-semibold">Views, Parks, Trails</span>
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Community Features:
-                  </h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• Whitney Mesa Recreation Area</li>
-                    <li>• Multiple community parks</li>
-                    <li>• Youth sports leagues</li>
-                    <li>• Shopping at The Galleries</li>
-                    <li>• Easy freeway access</li>
-                    <li>• Strong HOA community</li>
-                  </ul>
-                </div>
+                <a
+                  href="/search"
+                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  View Anthem Homes
+                </a>
               </div>
             </div>
-          </div>
 
-          {/* Whitney Ranch */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Whitney Ranch
-              </h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <p className="text-gray-600 mb-4">
-                    Established community offering affordable homes with mature
-                    landscaping, well-maintained amenities, and strong
-                    neighborhood pride.
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Price Range:</span>
-                      <span className="font-semibold">$400K - $600K</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Home Types:</span>
-                      <span className="font-semibold">
-                        Single Family, Condos
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">School Rating:</span>
-                      <span className="font-semibold text-blue-600">7/10</span>
-                    </div>
+            {/* Stephanie Ranch */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600"></div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Stephanie Ranch
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Family-friendly community known for excellent schools, safe
+                  neighborhoods, and recreational facilities. Perfect for growing
+                  families seeking quality education and community.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Home Prices:</span>
+                    <span className="font-semibold text-purple-600">$450K - $650K</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Schools:</span>
+                    <span className="font-semibold">A+ Rated</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Amenities:</span>
+                    <span className="font-semibold">Schools, Parks, Rec Center</span>
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Community Features:
-                  </h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• Whitney Mesa Recreation Center</li>
-                    <li>• Community pools and spas</li>
-                    <li>• Tennis and basketball courts</li>
-                    <li>• Mature trees and landscaping</li>
-                    <li>• Close to shopping centers</li>
-                    <li>• Affordable HOA fees</li>
-                  </ul>
+                <a
+                  href="/search"
+                  className="inline-block bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                >
+                  View Stephanie Ranch Homes
+                </a>
+              </div>
+            </div>
+
+            {/* Whitney Ranch */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600"></div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Whitney Ranch
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Established community with mature landscaping, affordability,
+                  and convenient access to shopping and dining. Great value for
+                  first-time homebuyers and families.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Home Prices:</span>
+                    <span className="font-semibold text-orange-600">$400K - $600K</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Schools:</span>
+                    <span className="font-semibold">A Rated</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Amenities:</span>
+                    <span className="font-semibold">Shopping, Dining, Parks</span>
+                  </div>
                 </div>
+                <a
+                  href="/search"
+                  className="inline-block bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+                >
+                  View Whitney Ranch Homes
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Lifestyle & Amenities */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-          Henderson Lifestyle & Amenities
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-blue-50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              📚 Education Excellence
-            </h3>
-            <p className="text-gray-600 text-sm mb-3">
-              Henderson is served by Clark County School District with
-              top-performing schools.
-            </p>
-            <ul className="text-gray-600 text-sm space-y-1">
-              <li>• Green Valley High School</li>
-              <li>• Coronado High School</li>
-              <li>• Liberty High School</li>
-              <li>• Multiple A-rated elementaries</li>
-            </ul>
-          </div>
-
-          <div className="bg-green-50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              🏌️ Recreation & Golf
-            </h3>
-            <p className="text-gray-600 text-sm mb-3">
-              World-class golf courses and recreation facilities throughout
-              Henderson.
-            </p>
-            <ul className="text-gray-600 text-sm space-y-1">
-              <li>• Legacy Golf Club</li>
-              <li>• DragonRidge Country Club</li>
-              <li>• Anthem Country Club</li>
-              <li>• Lake Las Vegas Resort</li>
-            </ul>
-          </div>
-
-          <div className="bg-purple-50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              🛍️ Shopping & Dining
-            </h3>
-            <p className="text-gray-600 text-sm mb-3">
-              Premier shopping destinations and diverse dining options.
-            </p>
-            <ul className="text-gray-600 text-sm space-y-1">
-              <li>• The District at Green Valley</li>
-              <li>• Galleria at Sunset</li>
-              <li>• The Village at Lake Las Vegas</li>
-              <li>• Sunset Station Casino</li>
-            </ul>
+      {/* Neighborhood Comparison */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Neighborhood Comparison Guide
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full bg-white rounded-lg shadow-lg">
+              <thead>
+                <tr className="bg-blue-600 text-white">
+                  <th className="p-4 text-left">Neighborhood</th>
+                  <th className="p-4 text-center">Price Range</th>
+                  <th className="p-4 text-center">School Rating</th>
+                  <th className="p-4 text-center">Family Score</th>
+                  <th className="p-4 text-center">Luxury Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="p-4 font-semibold">Green Valley</td>
+                  <td className="p-4 text-center">$750K - $1.2M</td>
+                  <td className="p-4 text-center">A+</td>
+                  <td className="p-4 text-center">⭐⭐⭐⭐⭐</td>
+                  <td className="p-4 text-center">⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="p-4 font-semibold">Anthem</td>
+                  <td className="p-4 text-center">$650K - $950K</td>
+                  <td className="p-4 text-center">A+</td>
+                  <td className="p-4 text-center">⭐⭐⭐⭐⭐</td>
+                  <td className="p-4 text-center">⭐⭐⭐⭐</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="p-4 font-semibold">Stephanie Ranch</td>
+                  <td className="p-4 text-center">$450K - $650K</td>
+                  <td className="p-4 text-center">A+</td>
+                  <td className="p-4 text-center">⭐⭐⭐⭐⭐</td>
+                  <td className="p-4 text-center">⭐⭐⭐</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="p-4 font-semibold">Whitney Ranch</td>
+                  <td className="p-4 text-center">$400K - $600K</td>
+                  <td className="p-4 text-center">A</td>
+                  <td className="p-4 text-center">⭐⭐⭐⭐</td>
+                  <td className="p-4 text-center">⭐⭐</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* Moving to Henderson Guide */}
-      <section className="bg-gray-50 rounded-lg p-8">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-6 text-center">
-          Moving to Henderson? Here's What You Need to Know
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Why Families Choose Henderson
-            </h3>
-            <ul className="text-gray-600 space-y-2 text-sm">
-              <li>• Consistently ranked as one of America's safest cities</li>
-              <li>• Master-planned communities with HOA maintenance</li>
-              <li>• 15 minutes from Las Vegas Strip entertainment</li>
-              <li>• 300+ days of sunshine annually</li>
-              <li>• Growing job market in healthcare and technology</li>
-              <li>• Excellent municipal services and infrastructure</li>
-              <li>• Family-friendly events and festivals year-round</li>
-              <li>• Access to Red Rock Canyon and Lake Mead</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              Henderson vs. Las Vegas Living
-            </h3>
-            <div className="space-y-3 text-sm">
-              <div className="bg-white p-3 rounded border-l-4 border-green-500">
-                <strong className="text-gray-900">Safety:</strong>
-                <span className="text-gray-600">
-                  {' '}
-                  Henderson consistently ranks safer than Las Vegas with lower
-                  crime rates
-                </span>
-              </div>
-              <div className="bg-white p-3 rounded border-l-4 border-blue-500">
-                <strong className="text-gray-900">Schools:</strong>
-                <span className="text-gray-600">
-                  {' '}
-                  Higher-rated schools with better student-teacher ratios
-                </span>
-              </div>
-              <div className="bg-white p-3 rounded border-l-4 border-purple-500">
-                <strong className="text-gray-900">Community:</strong>
-                <span className="text-gray-600">
-                  {' '}
-                  More suburban feel with planned communities and family
-                  amenities
-                </span>
-              </div>
-              <div className="bg-white p-3 rounded border-l-4 border-yellow-500">
-                <strong className="text-gray-900">Convenience:</strong>
-                <span className="text-gray-600">
-                  {' '}
-                  Close enough to enjoy Vegas entertainment without the urban
-                  congestion
-                </span>
-              </div>
+      {/* Why Choose Henderson */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Why Choose Henderson, Nevada?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="text-4xl mb-4">🏆</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Award-Winning City
+              </h3>
+              <p className="text-gray-600">
+                Consistently ranked among America's safest and most livable
+                cities with excellent municipal services and infrastructure.
+              </p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-4xl mb-4">🎓</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Top-Rated Schools
+              </h3>
+              <p className="text-gray-600">
+                Access to Clark County's highest-performing schools with
+                excellent student-teacher ratios and academic programs.
+              </p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-4xl mb-4">🌟</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Quality of Life
+              </h3>
+              <p className="text-gray-600">
+                Beautiful communities with golf courses, parks, and resort-style
+                amenities throughout the city.
+              </p>
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-purple-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Find Your Perfect Henderson Neighborhood?
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Our local experts can help you explore these communities and find
+            the perfect home that matches your lifestyle and budget.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/search"
+              className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Search All Neighborhoods
+            </a>
+            <a
+              href="/contact"
+              className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-colors"
+            >
+              Get Expert Guidance
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }

@@ -604,25 +604,13 @@ export default function RootLayout({
                   Home
                 </a>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/search"
                   className="text-gray-600 hover:text-gray-900"
                 >
-                  Advanced Search
-                </a>
-                <a href="/blog" className="text-gray-600 hover:text-gray-900">
-                  Market Insights
-                </a>
-                <a href="/faq" className="text-gray-600 hover:text-gray-900">
-                  FAQ
+                  Search Homes
                 </a>
                 <a
-                  href="/featured-agents"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  Featured Agents
-                </a>
-                <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/home-value"
                   className="text-gray-600 hover:text-gray-900"
                 >
                   Home Value
@@ -633,8 +621,19 @@ export default function RootLayout({
                     className="text-gray-600 hover:text-gray-900 flex items-center"
                   >
                     Neighborhoods
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <svg
+                      className="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   </a>
                   <div className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -678,6 +677,18 @@ export default function RootLayout({
                     </div>
                   </div>
                 </div>
+                <a href="/blog" className="text-gray-600 hover:text-gray-900">
+                  Market Insights
+                </a>
+                <a href="/faq" className="text-gray-600 hover:text-gray-900">
+                  FAQ
+                </a>
+                <a
+                  href="/featured-agents"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Featured Agents
+                </a>
                 <a
                   href="/contact"
                   className="text-gray-600 hover:text-gray-900"
@@ -692,8 +703,19 @@ export default function RootLayout({
                   className="text-gray-600 hover:text-gray-900"
                   aria-label="Toggle mobile menu"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   </svg>
                 </button>
               </div>
@@ -701,35 +723,28 @@ export default function RootLayout({
             {/* Mobile navigation menu */}
             <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
               <div className="space-y-2">
-                <a href="/" className="block py-2 text-gray-600 hover:text-gray-900">
+                <a
+                  href="/"
+                  className="block py-2 text-gray-600 hover:text-gray-900"
+                >
                   Home
                 </a>
                 <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/search"
                   className="block py-2 text-gray-600 hover:text-gray-900"
                 >
-                  Advanced Search
-                </a>
-                <a href="/blog" className="block py-2 text-gray-600 hover:text-gray-900">
-                  Market Insights
-                </a>
-                <a href="/faq" className="block py-2 text-gray-600 hover:text-gray-900">
-                  FAQ
+                  Search Homes
                 </a>
                 <a
-                  href="/featured-agents"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
-                >
-                  Featured Agents
-                </a>
-                <a
-                  href="http://drjanduffy.realscout.com/onboarding"
+                  href="/home-value"
                   className="block py-2 text-gray-600 hover:text-gray-900"
                 >
                   Home Value
                 </a>
                 <div className="py-2">
-                  <div className="text-gray-600 font-medium mb-2">Neighborhoods</div>
+                  <div className="text-gray-600 font-medium mb-2">
+                    Neighborhoods
+                  </div>
                   <div className="pl-4 space-y-1">
                     <a
                       href="/neighborhoods"
@@ -770,8 +785,26 @@ export default function RootLayout({
                   </div>
                 </div>
                 <a
-                  href="/contact"
+                  href="/blog"
                   className="block py-2 text-gray-600 hover:text-gray-900"
+                >
+                  Market Insights
+                </a>
+                <a
+                  href="/faq"
+                  className="block py-2 text-gray-600 hover:text-gray-900"
+                >
+                  FAQ
+                </a>
+                <a
+                  href="/featured-agents"
+                  className="block py-2 text-gray-600 hover:text-gray-900"
+                >
+                  Featured Agents
+                </a>
+                <a
+                  href="/contact"
+                  className="block py-1 text-gray-600 hover:text-gray-900"
                 >
                   Contact
                 </a>

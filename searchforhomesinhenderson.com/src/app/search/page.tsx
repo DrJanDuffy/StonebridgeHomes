@@ -3,11 +3,19 @@ import { RealScoutWidget } from '@/components/RealScoutWidget'
 
 export const metadata: Metadata = {
   title: 'Advanced Property Search - Find Homes in Henderson, Nevada',
-  description: 'Use our advanced search tools to find the perfect home in Henderson, NV. Filter by price, bedrooms, bathrooms, property type, and neighborhood to discover your ideal property.',
-  keywords: ['Henderson property search', 'Nevada home search', 'advanced real estate search', 'Henderson homes for sale', 'property finder Henderson'],
+  description:
+    'Use our advanced search tools to find the perfect home in Henderson, NV. Filter by price, bedrooms, bathrooms, property type, and neighborhood to discover your ideal property.',
+  keywords: [
+    'Henderson property search',
+    'Nevada home search',
+    'advanced real estate search',
+    'Henderson homes for sale',
+    'property finder Henderson',
+  ],
   openGraph: {
     title: 'Advanced Property Search - Henderson Homes',
-    description: 'Find your perfect home in Henderson with our advanced search tools',
+    description:
+      'Find your perfect home in Henderson with our advanced search tools',
     url: 'https://searchforhomesinhenderson.com/search',
   },
   alternates: {
@@ -28,7 +36,7 @@ export default function AdvancedSearchPage() {
           --rs-background-color: #ffffff;
         }
       `}</style>
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* SEO-Optimized Header Structure */}
         <header className="text-center mb-12">
@@ -36,8 +44,9 @@ export default function AdvancedSearchPage() {
             Advanced Property Search in Henderson, Nevada
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
-            Discover your dream home with our comprehensive search tools. Filter through hundreds of 
-            properties in Henderson's most desirable neighborhoods with precision and ease.
+            Discover your dream home with our comprehensive search tools. Filter
+            through hundreds of properties in Henderson's most desirable
+            neighborhoods with precision and ease.
           </p>
           <div className="text-sm text-gray-500">
             Search • Filter • Compare • Find Your Perfect Home
@@ -55,7 +64,8 @@ export default function AdvancedSearchPage() {
                 Precise Filtering
               </h3>
               <p className="text-gray-600">
-                Search by price range, bedrooms, bathrooms, square footage, lot size, and property type
+                Search by price range, bedrooms, bathrooms, square footage, lot
+                size, and property type
               </p>
             </div>
             <div className="text-center p-6 bg-green-50 rounded-lg">
@@ -63,7 +73,8 @@ export default function AdvancedSearchPage() {
                 Real-Time Updates
               </h3>
               <p className="text-gray-600">
-                Access the latest MLS listings with real-time price changes and availability
+                Access the latest MLS listings with real-time price changes and
+                availability
               </p>
             </div>
             <div className="text-center p-6 bg-purple-50 rounded-lg">
@@ -71,7 +82,8 @@ export default function AdvancedSearchPage() {
                 Neighborhood Insights
               </h3>
               <p className="text-gray-600">
-                Explore Henderson communities with school ratings, amenities, and local market data
+                Explore Henderson communities with school ratings, amenities,
+                and local market data
               </p>
             </div>
           </div>
@@ -101,20 +113,36 @@ export default function AdvancedSearchPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Green Valley</h3>
-              <p className="text-gray-600 text-sm">Luxury homes, top-rated schools, upscale shopping</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Green Valley
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Luxury homes, top-rated schools, upscale shopping
+              </p>
             </div>
             <div className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Anthem</h3>
-              <p className="text-gray-600 text-sm">Master-planned community with golf courses</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Anthem
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Master-planned community with golf courses
+              </p>
             </div>
             <div className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Stephanie Ranch</h3>
-              <p className="text-gray-600 text-sm">Family-friendly with parks and recreation</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Stephanie Ranch
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Family-friendly with parks and recreation
+              </p>
             </div>
             <div className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Whitney Ranch</h3>
-              <p className="text-gray-600 text-sm">Affordable homes with community amenities</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Whitney Ranch
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Affordable homes with community amenities
+              </p>
             </div>
           </div>
         </section>
@@ -131,13 +159,15 @@ export default function AdvancedSearchPage() {
                   Best Time to Search
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Spring and fall offer the most inventory, while winter may provide better pricing opportunities.
+                  Spring and fall offer the most inventory, while winter may
+                  provide better pricing opportunities.
                 </p>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   School Districts
                 </h3>
                 <p className="text-gray-600">
-                  Henderson is served by Clark County School District with highly-rated elementary, middle, and high schools.
+                  Henderson is served by Clark County School District with
+                  highly-rated elementary, middle, and high schools.
                 </p>
               </div>
               <div>
@@ -145,13 +175,15 @@ export default function AdvancedSearchPage() {
                   Market Insights
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Henderson's median home price ranges from $400K-$800K depending on neighborhood and property type.
+                  Henderson's median home price ranges from $400K-$800K
+                  depending on neighborhood and property type.
                 </p>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   Getting Pre-Approved
                 </h3>
                 <p className="text-gray-600">
-                  Secure financing pre-approval to strengthen your offers in Henderson's competitive market.
+                  Secure financing pre-approval to strengthen your offers in
+                  Henderson's competitive market.
                 </p>
               </div>
             </div>

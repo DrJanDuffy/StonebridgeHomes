@@ -1,12 +1,19 @@
 import type { Metadata } from 'next'
+import { useId } from 'react'
 
 export const metadata: Metadata = {
   title: 'Contact Henderson Homes - Real Estate Experts in Nevada',
-  description: 'Contact our Henderson real estate team for buying, selling, or property valuation services. Local experts helping you navigate the Nevada housing market.',
-  keywords: ['contact Henderson realtor', 'Nevada real estate agent', 'Henderson home buying', 'real estate consultation'],
+  description:
+    'Contact our Henderson real estate team for buying, selling, or property valuation services. Local experts helping you navigate the Nevada housing market.',
+  keywords: [
+    'contact Henderson realtor',
+    'Nevada real estate agent',
+    'Henderson home buying',
+    'real estate consultation',
+  ],
   openGraph: {
     title: 'Contact Henderson Homes - Real Estate Experts',
-    description: 'Get in touch with Henderson\'s premier real estate team',
+    description: "Get in touch with Henderson's premier real estate team",
     url: 'https://searchforhomesinhenderson.com/contact',
   },
   alternates: {
@@ -15,6 +22,13 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
+  const firstId = useId()
+  const lastId = useId()
+  const emailId = useId()
+  const phoneId = useId()
+  const interestId = useId()
+  const messageId = useId()
+
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="text-center mb-12">
@@ -22,8 +36,8 @@ export default function ContactPage() {
           Contact Henderson Homes
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Ready to find your dream home in Henderson? Our local experts are here to guide you 
-          through every step of your real estate journey.
+          Ready to find your dream home in Henderson? Our local experts are here
+          to guide you through every step of your real estate journey.
         </p>
       </header>
 
@@ -36,53 +50,81 @@ export default function ContactPage() {
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor={firstId}
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   First Name *
                 </label>
-                <input 
-                  type="text" 
+                <input
+                  id={firstId}
+                  name="firstName"
+                  type="text"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor={lastId}
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Last Name *
                 </label>
-                <input 
-                  type="text" 
+                <input
+                  id={lastId}
+                  name="lastName"
+                  type="text"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   required
                 />
               </div>
             </div>
-            
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor={emailId}
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Email Address *
               </label>
-              <input 
-                type="email" 
+              <input
+                id={emailId}
+                name="email"
+                type="email"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
             </div>
-            
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor={phoneId}
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Phone Number
               </label>
-              <input 
-                type="tel" 
+              <input
+                id={phoneId}
+                name="phone"
+                type="tel"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
-            
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor={interestId}
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 I'm Interested In *
               </label>
-              <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <select
+                id={interestId}
+                name="interest"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                required
+              >
                 <option value="">Select an option</option>
                 <option value="buying">Buying a Home</option>
                 <option value="selling">Selling a Home</option>
@@ -91,19 +133,24 @@ export default function ContactPage() {
                 <option value="consultation">Market Consultation</option>
               </select>
             </div>
-            
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor={messageId}
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Message
               </label>
-              <textarea 
+              <textarea
+                id={messageId}
+                name="message"
                 rows={4}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Tell us about your real estate goals..."
-              ></textarea>
+              />
             </div>
-            
-            <button 
+
+            <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
@@ -137,7 +184,11 @@ export default function ContactPage() {
                 <div className="text-blue-600 mr-4">📍</div>
                 <div>
                   <div className="font-semibold text-gray-900">Office</div>
-                  <div className="text-gray-600">123 Green Valley Pkwy<br />Henderson, NV 89052</div>
+                  <div className="text-gray-600">
+                    123 Green Valley Pkwy
+                    <br />
+                    Henderson, NV 89052
+                  </div>
                 </div>
               </div>
               <div className="flex items-center">
@@ -145,7 +196,8 @@ export default function ContactPage() {
                 <div>
                   <div className="font-semibold text-gray-900">Hours</div>
                   <div className="text-gray-600">
-                    Mon-Fri: 8AM-7PM<br />
+                    Mon-Fri: 8AM-7PM
+                    <br />
                     Sat-Sun: 9AM-5PM
                   </div>
                 </div>

@@ -8,10 +8,19 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     default: 'Henderson Homes - Premier Real Estate in Henderson, Nevada',
-    template: '%s | Henderson Homes'
+    template: '%s | Henderson Homes',
   },
-  description: 'Find your dream home in Henderson, Nevada with our expert real estate services. Browse luxury homes, condos, and investment properties with local market expertise.',
-  keywords: ['Henderson homes', 'Nevada real estate', 'Henderson properties', 'luxury homes', 'real estate agent', 'home values', 'property search'],
+  description:
+    'Find your dream home in Henderson, Nevada with our expert real estate services. Browse luxury homes, condos, and investment properties with local market expertise.',
+  keywords: [
+    'Henderson homes',
+    'Nevada real estate',
+    'Henderson properties',
+    'luxury homes',
+    'real estate agent',
+    'home values',
+    'property search',
+  ],
   authors: [{ name: 'Henderson Homes Team' }],
   creator: 'Henderson Homes',
   metadataBase: new URL('https://searchforhomesinhenderson.com'),
@@ -58,20 +67,39 @@ export default function RootLayout({
         <header className="bg-white border-b border-gray-200 py-4">
           <div className="container mx-auto px-4">
             <nav className="flex justify-between items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Henderson Homes</h1>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Henderson Homes
+              </h1>
               <div className="hidden md:flex space-x-6">
-                <a href="/" className="text-gray-600 hover:text-gray-900">Home</a>
-                <a href="/search" className="text-gray-600 hover:text-gray-900">Advanced Search</a>
-                <a href="/home-value" className="text-gray-600 hover:text-gray-900">Home Value</a>
-                <a href="/neighborhoods" className="text-gray-600 hover:text-gray-900">Neighborhoods</a>
-                <a href="/contact" className="text-gray-600 hover:text-gray-900">Contact</a>
+                <a href="/" className="text-gray-600 hover:text-gray-900">
+                  Home
+                </a>
+                <a href="/search" className="text-gray-600 hover:text-gray-900">
+                  Advanced Search
+                </a>
+                <a
+                  href="/home-value"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Home Value
+                </a>
+                <a
+                  href="/neighborhoods"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Neighborhoods
+                </a>
+                <a
+                  href="/contact"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Contact
+                </a>
               </div>
             </nav>
           </div>
         </header>
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <footer className="bg-gray-50 border-t border-gray-200 py-8">
           <div className="container mx-auto px-4 text-center text-gray-600">
             <p>&copy; 2024 Henderson Homes. All rights reserved.</p>

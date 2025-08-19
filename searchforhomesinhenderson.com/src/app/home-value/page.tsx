@@ -2,11 +2,19 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Henderson Home Value Estimator - What is My Home Worth?',
-  description: 'Get an instant home value estimate for your Henderson, Nevada property. Free online valuation tool with local market data and recent comparable sales.',
-  keywords: ['Henderson home value', 'home worth Henderson', 'property value Nevada', 'home valuation Henderson', 'real estate appraisal'],
+  description:
+    'Get an instant home value estimate for your Henderson, Nevada property. Free online valuation tool with local market data and recent comparable sales.',
+  keywords: [
+    'Henderson home value',
+    'home worth Henderson',
+    'property value Nevada',
+    'home valuation Henderson',
+    'real estate appraisal',
+  ],
   openGraph: {
     title: 'Henderson Home Value Estimator - Free Property Valuation',
-    description: 'Discover what your Henderson home is worth with our instant valuation tool',
+    description:
+      'Discover what your Henderson home is worth with our instant valuation tool',
     url: 'https://searchforhomesinhenderson.com/home-value',
   },
   alternates: {
@@ -27,7 +35,7 @@ export default function HomeValuePage() {
           --rs-background-color: #f9fafb;
         }
       `}</style>
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* SEO-Optimized Header */}
         <header className="text-center mb-12">
@@ -35,8 +43,9 @@ export default function HomeValuePage() {
             Henderson Home Value Estimator
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
-            Discover your property's current market value with our comprehensive home valuation tool. 
-            Get instant estimates based on recent sales, market trends, and neighborhood data.
+            Discover your property's current market value with our comprehensive
+            home valuation tool. Get instant estimates based on recent sales,
+            market trends, and neighborhood data.
           </p>
           <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
             ✓ Free • Instant • Accurate Market Data
@@ -55,7 +64,8 @@ export default function HomeValuePage() {
                 Property Features
               </h3>
               <p className="text-gray-600 text-sm">
-                Square footage, bedrooms, bathrooms, lot size, and unique amenities
+                Square footage, bedrooms, bathrooms, lot size, and unique
+                amenities
               </p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
@@ -64,7 +74,8 @@ export default function HomeValuePage() {
                 Location & Neighborhood
               </h3>
               <p className="text-gray-600 text-sm">
-                School districts, proximity to amenities, neighborhood desirability
+                School districts, proximity to amenities, neighborhood
+                desirability
               </p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
@@ -95,19 +106,23 @@ export default function HomeValuePage() {
               Get Your Free Home Valuation
             </h2>
             <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-              Our advanced algorithm analyzes recent sales, market trends, and property characteristics 
-              to provide an accurate estimate of your Henderson home's value.
+              Our advanced algorithm analyzes recent sales, market trends, and
+              property characteristics to provide an accurate estimate of your
+              Henderson home's value.
             </p>
             <div className="bg-white rounded-lg p-6 max-w-md mx-auto shadow-sm">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Enter Your Address
               </h3>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="123 Main St, Henderson, NV"
                 className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
-              <button className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              <button
+                type="button"
+                className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              >
                 Get My Home Value
               </button>
               <p className="text-xs text-gray-500 mt-2">
@@ -196,8 +211,9 @@ export default function HomeValuePage() {
               Need a Professional Appraisal?
             </h2>
             <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-              While our online estimator provides a great starting point, a professional appraisal 
-              offers the most accurate valuation for selling, refinancing, or insurance purposes.
+              While our online estimator provides a great starting point, a
+              professional appraisal offers the most accurate valuation for
+              selling, refinancing, or insurance purposes.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="text-left">
@@ -227,7 +243,10 @@ export default function HomeValuePage() {
                 </ul>
               </div>
             </div>
-            <button className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <button
+              type="button"
+              className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
               Schedule Professional Appraisal
             </button>
           </div>

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useEffect, useState } from 'react'
 
@@ -12,14 +12,15 @@ export function useRealScout() {
     const existingScript = document.querySelector(
       'script[src*="realscout-web-components"]'
     )
-    
+
     if (existingScript) {
       setIsLoaded(true)
       return
     }
 
     const script = document.createElement('script')
-    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+    script.src =
+      'https://em.realscout.com/widgets/realscout-web-components.umd.js'
     script.type = 'module'
     script.async = true
 

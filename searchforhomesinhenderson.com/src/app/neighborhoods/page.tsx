@@ -2,11 +2,19 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Henderson Nevada Neighborhoods Guide - Best Communities & Areas',
-  description: 'Explore Henderson NV neighborhoods including Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch. Find the perfect community with schools, amenities, and home prices.',
-  keywords: ['Henderson neighborhoods', 'Green Valley Henderson', 'Anthem community', 'Henderson communities', 'best neighborhoods Henderson Nevada'],
+  description:
+    'Explore Henderson NV neighborhoods including Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch. Find the perfect community with schools, amenities, and home prices.',
+  keywords: [
+    'Henderson neighborhoods',
+    'Green Valley Henderson',
+    'Anthem community',
+    'Henderson communities',
+    'best neighborhoods Henderson Nevada',
+  ],
   openGraph: {
     title: 'Henderson Nevada Neighborhoods Guide',
-    description: 'Discover the best neighborhoods and communities in Henderson, Nevada',
+    description:
+      'Discover the best neighborhoods and communities in Henderson, Nevada',
     url: 'https://searchforhomesinhenderson.com/neighborhoods',
   },
   alternates: {
@@ -22,8 +30,8 @@ export default function NeighborhoodsPage() {
           Henderson Nevada Neighborhoods
         </h1>
         <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-          Discover Henderson's premier communities, each offering unique amenities, 
-          top-rated schools, and distinctive lifestyle opportunities.
+          Discover Henderson's premier communities, each offering unique
+          amenities, top-rated schools, and distinctive lifestyle opportunities.
         </p>
       </header>
 
@@ -32,17 +40,20 @@ export default function NeighborhoodsPage() {
         <h2 className="text-3xl font-semibold text-gray-900 mb-8">
           Premier Henderson Communities
         </h2>
-        
+
         <div className="space-y-12">
           {/* Green Valley */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Green Valley</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Green Valley
+              </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <p className="text-gray-600 mb-4">
-                    Henderson's premier master-planned community featuring luxury homes, 
-                    championship golf courses, and upscale shopping at The District.
+                    Henderson's premier master-planned community featuring
+                    luxury homes, championship golf courses, and upscale
+                    shopping at The District.
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -51,7 +62,9 @@ export default function NeighborhoodsPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Home Types:</span>
-                      <span className="font-semibold">Single Family, Golf Course</span>
+                      <span className="font-semibold">
+                        Single Family, Golf Course
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">School Rating:</span>
@@ -60,7 +73,9 @@ export default function NeighborhoodsPage() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Community Features:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Community Features:
+                  </h4>
                   <ul className="text-gray-600 text-sm space-y-1">
                     <li>• Anthem Country Club & Golf Course</li>
                     <li>• Community Center with fitness facilities</li>
@@ -77,12 +92,15 @@ export default function NeighborhoodsPage() {
           {/* Stephanie Ranch */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Stephanie Ranch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Stephanie Ranch
+              </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <p className="text-gray-600 mb-4">
-                    Family-oriented community featuring affordable homes, excellent schools, 
-                    and abundant recreational facilities perfect for growing families.
+                    Family-oriented community featuring affordable homes,
+                    excellent schools, and abundant recreational facilities
+                    perfect for growing families.
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -91,7 +109,9 @@ export default function NeighborhoodsPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Home Types:</span>
-                      <span className="font-semibold">Single Family, Townhomes</span>
+                      <span className="font-semibold">
+                        Single Family, Townhomes
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">School Rating:</span>
@@ -100,7 +120,9 @@ export default function NeighborhoodsPage() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Community Features:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Community Features:
+                  </h4>
                   <ul className="text-gray-600 text-sm space-y-1">
                     <li>• Whitney Mesa Recreation Area</li>
                     <li>• Multiple community parks</li>
@@ -117,12 +139,15 @@ export default function NeighborhoodsPage() {
           {/* Whitney Ranch */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Whitney Ranch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Whitney Ranch
+              </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <p className="text-gray-600 mb-4">
-                    Established community offering affordable homes with mature landscaping, 
-                    well-maintained amenities, and strong neighborhood pride.
+                    Established community offering affordable homes with mature
+                    landscaping, well-maintained amenities, and strong
+                    neighborhood pride.
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -131,7 +156,9 @@ export default function NeighborhoodsPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Home Types:</span>
-                      <span className="font-semibold">Single Family, Condos</span>
+                      <span className="font-semibold">
+                        Single Family, Condos
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">School Rating:</span>
@@ -140,7 +167,9 @@ export default function NeighborhoodsPage() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Community Features:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Community Features:
+                  </h4>
                   <ul className="text-gray-600 text-sm space-y-1">
                     <li>• Whitney Mesa Recreation Center</li>
                     <li>• Community pools and spas</li>
@@ -167,7 +196,8 @@ export default function NeighborhoodsPage() {
               📚 Education Excellence
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              Henderson is served by Clark County School District with top-performing schools.
+              Henderson is served by Clark County School District with
+              top-performing schools.
             </p>
             <ul className="text-gray-600 text-sm space-y-1">
               <li>• Green Valley High School</li>
@@ -182,7 +212,8 @@ export default function NeighborhoodsPage() {
               🏌️ Recreation & Golf
             </h3>
             <p className="text-gray-600 text-sm mb-3">
-              World-class golf courses and recreation facilities throughout Henderson.
+              World-class golf courses and recreation facilities throughout
+              Henderson.
             </p>
             <ul className="text-gray-600 text-sm space-y-1">
               <li>• Legacy Golf Club</li>
@@ -237,19 +268,34 @@ export default function NeighborhoodsPage() {
             <div className="space-y-3 text-sm">
               <div className="bg-white p-3 rounded border-l-4 border-green-500">
                 <strong className="text-gray-900">Safety:</strong>
-                <span className="text-gray-600"> Henderson consistently ranks safer than Las Vegas with lower crime rates</span>
+                <span className="text-gray-600">
+                  {' '}
+                  Henderson consistently ranks safer than Las Vegas with lower
+                  crime rates
+                </span>
               </div>
               <div className="bg-white p-3 rounded border-l-4 border-blue-500">
                 <strong className="text-gray-900">Schools:</strong>
-                <span className="text-gray-600"> Higher-rated schools with better student-teacher ratios</span>
+                <span className="text-gray-600">
+                  {' '}
+                  Higher-rated schools with better student-teacher ratios
+                </span>
               </div>
               <div className="bg-white p-3 rounded border-l-4 border-purple-500">
                 <strong className="text-gray-900">Community:</strong>
-                <span className="text-gray-600"> More suburban feel with planned communities and family amenities</span>
+                <span className="text-gray-600">
+                  {' '}
+                  More suburban feel with planned communities and family
+                  amenities
+                </span>
               </div>
               <div className="bg-white p-3 rounded border-l-4 border-yellow-500">
                 <strong className="text-gray-900">Convenience:</strong>
-                <span className="text-gray-600"> Close enough to enjoy Vegas entertainment without the urban congestion</span>
+                <span className="text-gray-600">
+                  {' '}
+                  Close enough to enjoy Vegas entertainment without the urban
+                  congestion
+                </span>
               </div>
             </div>
           </div>

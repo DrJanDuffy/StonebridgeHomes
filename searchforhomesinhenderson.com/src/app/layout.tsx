@@ -9,10 +9,12 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: {
     default: 'Find Your Dream Home in Henderson, Nevada | Premier Real Estate',
-    template: '%s | Henderson Homes'
+    template: '%s | Henderson Homes',
   },
-  description: 'Discover exceptional properties in Henderson\'s premier residential communities. Expert local guidance and comprehensive market knowledge. Top-rated schools and master-planned living.',
-  keywords: 'Henderson Nevada homes, real estate Henderson NV, homes for sale Henderson, Green Valley homes, Anthem community, Henderson real estate agent',
+  description:
+    "Discover exceptional properties in Henderson's premier residential communities. Expert local guidance and comprehensive market knowledge. Top-rated schools and master-planned living.",
+  keywords:
+    'Henderson Nevada homes, real estate Henderson NV, homes for sale Henderson, Green Valley homes, Anthem community, Henderson real estate agent',
   authors: [{ name: 'Henderson Homes Team' }],
   creator: 'Henderson Homes',
   publisher: 'Henderson Homes',
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     url: 'https://searchforhomesinhenderson.com',
     siteName: 'Search for Homes in Henderson',
     title: 'Find Your Dream Home in Henderson, Nevada',
-    description: 'Premier real estate in Henderson\'s best communities',
+    description: "Premier real estate in Henderson's best communities",
   },
   twitter: {
     card: 'summary_large_image',
@@ -41,26 +43,34 @@ const realEstateSchema = {
   '@type': 'RealEstateAgent',
   name: 'Henderson Homes',
   url: 'https://searchforhomesinhenderson.com',
-  description: 'Premier real estate services in Henderson, Nevada specializing in Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch communities',
+  description:
+    'Premier real estate services in Henderson, Nevada specializing in Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch communities',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '2470 Paseo Verde Parkway, Suite 135',
     addressLocality: 'Henderson',
     addressRegion: 'Nevada',
     addressCountry: 'US',
-    postalCode: '89074'
+    postalCode: '89074',
   },
+  telephone: '(702) 500-1064',
   areaServed: [
     {
       '@type': 'City',
       name: 'Henderson',
       containedInPlace: {
-        '@type': 'State', 
-        name: 'Nevada'
-      }
-    }
+        '@type': 'State',
+        name: 'Nevada',
+      },
+    },
   ],
-  serviceType: ['Home Buying', 'Home Selling', 'Market Analysis', 'Investment Properties', 'Relocation Services'],
+  serviceType: [
+    'Home Buying',
+    'Home Selling',
+    'Market Analysis',
+    'Investment Properties',
+    'Relocation Services',
+  ],
   priceRange: '$400,000 - $1,200,000',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -69,20 +79,23 @@ const realEstateSchema = {
       {
         '@type': 'Service',
         name: 'Home Buying Services',
-        description: 'Expert buyer representation with market analysis, negotiation, and closing support'
+        description:
+          'Expert buyer representation with market analysis, negotiation, and closing support',
       },
       {
         '@type': 'Service',
-        name: 'Home Selling Services', 
-        description: 'Professional marketing, staging consultation, and pricing strategy for maximum value'
+        name: 'Home Selling Services',
+        description:
+          'Professional marketing, staging consultation, and pricing strategy for maximum value',
       },
       {
         '@type': 'Service',
         name: 'Market Analysis',
-        description: 'Comprehensive property valuations and Henderson market trend reports'
-      }
-    ]
-  }
+        description:
+          'Comprehensive property valuations and Henderson market trend reports',
+      },
+    ],
+  },
 }
 
 const neighborhoodSchema = {
@@ -94,28 +107,32 @@ const neighborhoodSchema = {
     {
       '@type': 'Neighborhood',
       name: 'Green Valley',
-      description: 'Luxury master-planned community with championship golf and upscale shopping',
-      priceRange: '$750,000 - $1,200,000'
-    },
-    {
-      '@type': 'Neighborhood', 
-      name: 'Anthem',
-      description: 'Hillside community with stunning views and resort-style amenities',
-      priceRange: '$650,000 - $950,000'
+      description:
+        'Luxury master-planned community with championship golf and upscale shopping',
+      priceRange: '$750,000 - $1,200,000',
     },
     {
       '@type': 'Neighborhood',
-      name: 'Stephanie Ranch', 
-      description: 'Family-friendly with excellent schools and recreational facilities',
-      priceRange: '$450,000 - $650,000'
+      name: 'Anthem',
+      description:
+        'Hillside community with stunning views and resort-style amenities',
+      priceRange: '$650,000 - $950,000',
+    },
+    {
+      '@type': 'Neighborhood',
+      name: 'Stephanie Ranch',
+      description:
+        'Family-friendly with excellent schools and recreational facilities',
+      priceRange: '$450,000 - $650,000',
     },
     {
       '@type': 'Neighborhood',
       name: 'Whitney Ranch',
-      description: 'Established community with mature landscaping and affordability', 
-      priceRange: '$400,000 - $600,000'
-    }
-  ]
+      description:
+        'Established community with mature landscaping and affordability',
+      priceRange: '$400,000 - $600,000',
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -167,7 +184,7 @@ export default function RootLayout({
               <h1 className="text-2xl font-bold text-gray-900">
                 Henderson Homes
               </h1>
-              <div className="hidden space-x-6 md:flex">
+              <div className="hidden space-x-6 md:flex items-center">
                 <a href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </a>
@@ -195,6 +212,12 @@ export default function RootLayout({
                 >
                   Contact
                 </a>
+                <div className="flex items-center space-x-2 text-blue-600 font-semibold ml-4">
+                  <span>📞</span>
+                  <a href="tel:7025001064" className="hover:text-blue-800 transition-colors">
+                    (702) 500-1064
+                  </a>
+                </div>
               </div>
             </nav>
           </div>
@@ -204,26 +227,42 @@ export default function RootLayout({
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 mb-6">
               <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Henderson Homes</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Henderson Homes
+                </h3>
                 <p className="text-gray-600 text-sm">
                   Premier real estate services in Henderson, Nevada
                 </p>
               </div>
               <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Office Location</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Office Location
+                </h3>
                 <address className="text-gray-600 text-sm not-italic">
-                  2470 Paseo Verde Parkway<br />
-                  Suite 135<br />
+                  2470 Paseo Verde Parkway
+                  <br />
+                  Suite 135
+                  <br />
                   Henderson, NV 89074
                 </address>
               </div>
               <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Contact</h3>
-                <p className="text-gray-600 text-sm">
-                  <a href="/contact" className="hover:text-blue-600 transition-colors">
-                    Get in Touch
-                  </a>
-                </p>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                  Contact
+                </h3>
+                <div className="space-y-2 text-gray-600 text-sm">
+                  <p>
+                    <span className="text-blue-600">📞</span> (702) 500-1064
+                  </p>
+                  <p>
+                    <a
+                      href="/contact"
+                      className="hover:text-blue-600 transition-colors"
+                    >
+                      Get in Touch
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
             <div className="text-center text-gray-600 border-t border-gray-200 pt-6">

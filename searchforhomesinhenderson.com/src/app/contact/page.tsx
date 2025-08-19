@@ -239,12 +239,13 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-blue-600">📞</span>
-                    <span className="text-gray-600">(702) 555-0123</span>
+                    <span className="text-gray-600">(702) 500-1064</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-blue-600">📍</span>
                     <span className="text-gray-600">
-                      2470 Paseo Verde Parkway, Suite 135<br />
+                      2470 Paseo Verde Parkway, Suite 135
+                      <br />
                       Henderson, NV 89074
                     </span>
                   </div>

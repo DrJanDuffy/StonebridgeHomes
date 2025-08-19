@@ -258,6 +258,20 @@ export default function HomePage() {
                 families.
               </p>
             </div>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-blue-800 mb-3">
+                Need Immediate Assistance?
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Our Henderson real estate experts are available to answer your questions and provide personalized guidance.
+              </p>
+              <div className="flex items-center space-x-3 text-lg">
+                <span className="text-blue-600">📞</span>
+                <a href="tel:7025001064" className="text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+                  (702) 500-1064
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -276,14 +290,22 @@ export default function HomePage() {
                     Henderson Homes Office
                   </h3>
                   <address className="text-gray-600 text-lg not-italic mb-4">
-                    2470 Paseo Verde Parkway<br />
-                    Suite 135<br />
+                    2470 Paseo Verde Parkway
+                    <br />
+                    Suite 135
+                    <br />
                     Henderson, NV 89074
                   </address>
                   <div className="space-y-2 text-gray-600">
-                    <p><strong>Hours:</strong> Mon-Fri: 9AM-6PM | Sat: 10AM-4PM</p>
-                    <p><strong>Phone:</strong> (702) 555-0123</p>
-                    <p><strong>Email:</strong> info@hendersonhomes.com</p>
+                    <p>
+                      <strong>Hours:</strong> Mon-Fri: 9AM-6PM | Sat: 10AM-4PM
+                    </p>
+                    <p>
+                      <strong>Phone:</strong> (702) 500-1064
+                    </p>
+                    <p>
+                      <strong>Email:</strong> info@hendersonhomes.com
+                    </p>
                   </div>
                 </div>
                 <div className="bg-blue-50 p-6 rounded-lg">

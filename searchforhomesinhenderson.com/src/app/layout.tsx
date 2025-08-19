@@ -583,23 +583,35 @@ export default function RootLayout({
             <div className="grid md:grid-cols-4 gap-6">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Henderson Homes</h3>
-                <p className="text-gray-300 text-sm">Premier Henderson Real Estate</p>
+                <p className="text-gray-300 text-sm">
+                  Premier Henderson Real Estate
+                </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-3">📍 Office Location</h4>
-                <p className="text-gray-300 text-sm">2470 Paseo Verde Parkway, Suite 150</p>
+                <p className="text-gray-300 text-sm">
+                  2470 Paseo Verde Parkway, Suite 150
+                </p>
                 <p className="text-gray-300 text-sm">Henderson, NV 89074</p>
                 <p className="text-gray-300 text-sm">(702) 555-0123</p>
               </div>
               <div>
                 <h4 className="font-semibold mb-3">🏘️ Service Areas</h4>
-                <p className="text-gray-300 text-sm">Green Valley • Anthem • Seven Hills</p>
-                <p className="text-gray-300 text-sm">Whitney Ranch • Stephanie Ranch</p>
+                <p className="text-gray-300 text-sm">
+                  Green Valley • Anthem • Seven Hills
+                </p>
+                <p className="text-gray-300 text-sm">
+                  Whitney Ranch • Stephanie Ranch
+                </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-4">📧 Contact</h4>
-                <p className="text-gray-300 text-sm">info@searchforhomesinhenderson.com</p>
-                <p className="text-gray-300 text-sm">Nevada License #S.XXXXXX</p>
+                <p className="text-gray-300 text-sm">
+                  info@searchforhomesinhenderson.com
+                </p>
+                                  <p className="text-gray-300 text-sm">
+                    Nevada License #S.0197614
+                  </p>
               </div>
             </div>
           </div>

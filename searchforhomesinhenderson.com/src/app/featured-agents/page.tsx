@@ -46,6 +46,39 @@ export const metadata: Metadata = {
 }
 
 export default function FeaturedAgentsPage() {
+  const handleFeaturedAgentsSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    
+    try {
+      const response = await fetch('/api/follow-up-boss', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.get('name')?.toString().split(' ')[0] || '',
+          lastName: formData.get('name')?.toString().split(' ').slice(1).join(' ') || '',
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          message: `Interested in ${formData.get('community')} - Henderson Market Analysis`,
+          source: 'Featured Agents Page',
+          leadType: 'Market Analysis Request'
+        }),
+      })
+
+      if (response.ok) {
+        alert('Thank you! Dr. Jan Duffy will contact you within 24 hours with your Henderson market analysis.')
+        e.currentTarget.reset()
+      } else {
+        alert('There was an error submitting your request. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('There was an error submitting your request. Please try again.')
+    }
+  }
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -849,38 +882,46 @@ export default function FeaturedAgentsPage() {
                 <h3 className="text-xl font-bold mb-4">
                   🏠 Henderson Home Search
                 </h3>
-                <form className="space-y-3">
+                <form className="space-y-3" onSubmit={handleFeaturedAgentsSubmit}>
                   <select
+                    name="community"
                     aria-label="Select Henderson Community"
                     className="w-full p-3 rounded bg-white/20 text-white"
+                    required
                   >
-                    <option>Select Henderson Community</option>
-                    <option>Green Valley ($750K-$1.2M)</option>
-                    <option>Anthem ($650K-$950K)</option>
-                    <option>Seven Hills ($800K-$2M+)</option>
-                    <option>Whitney Ranch ($400K-$600K)</option>
-                    <option>Stephanie Ranch ($450K-$650K)</option>
-                    <option>MacDonald Highlands ($1M-$5M+)</option>
-                    <option>Lake Las Vegas ($500K-$3M+)</option>
-                    <option>Downtown Henderson ($300K-$500K)</option>
+                    <option value="">Select Henderson Community</option>
+                    <option value="Green Valley ($750K-$1.2M)">Green Valley ($750K-$1.2M)</option>
+                    <option value="Anthem ($650K-$950K)">Anthem ($650K-$950K)</option>
+                    <option value="Seven Hills ($800K-$2M+)">Seven Hills ($800K-$2M+)</option>
+                    <option value="Whitney Ranch ($400K-$600K)">Whitney Ranch ($400K-$600K)</option>
+                    <option value="Stephanie Ranch ($450K-$650K)">Stephanie Ranch ($450K-$650K)</option>
+                    <option value="MacDonald Highlands ($1M-$5M+)">MacDonald Highlands ($1M-$5M+)</option>
+                    <option value="Lake Las Vegas ($500K-$3M+)">Lake Las Vegas ($500K-$3M+)</option>
+                    <option value="Downtown Henderson ($300K-$500K)">Downtown Henderson ($300K-$500K)</option>
                   </select>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Your Name"
                     className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
+                    required
                   />
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email Address"
                     className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
+                    required
                   />
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="Phone Number"
                     className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
+                    required
                   />
                   <button
-                    type="button"
+                    type="submit"
                     className="w-full bg-yellow-400 text-blue-900 p-3 rounded font-bold hover:bg-yellow-300 transition-colors"
                   >
                     Get Henderson Market Analysis from Dr. Duffy

@@ -2,12 +2,21 @@ import type { Metadata } from 'next'
 import { useId } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Contact Henderson Homes - Real Estate Experts in Nevada | Dr. Jan Duffy REALTOR',
-  description: 'Contact Dr. Jan Duffy, Henderson\'s #1 REALTOR for buying, selling, or property valuation services. Local expert helping you navigate the Nevada housing market. Call (702) 500-1064.',
+  title:
+    'Contact Henderson Homes - Real Estate Experts in Nevada | Dr. Jan Duffy REALTOR',
+  description:
+    "Contact Dr. Jan Duffy, Henderson's #1 REALTOR for buying, selling, or property valuation services. Local expert helping you navigate the Nevada housing market. Call (702) 500-1064.",
   keywords: [
-    'contact Henderson realtor', 'Nevada real estate agent', 'Henderson home buying', 
-    'real estate consultation', 'Henderson REALTOR', 'Dr. Jan Duffy', 'Green Valley realtor',
-    'Anthem realtor', 'Stephanie Ranch realtor', 'Whitney Ranch realtor'
+    'contact Henderson realtor',
+    'Nevada real estate agent',
+    'Henderson home buying',
+    'real estate consultation',
+    'Henderson REALTOR',
+    'Dr. Jan Duffy',
+    'Green Valley realtor',
+    'Anthem realtor',
+    'Stephanie Ranch realtor',
+    'Whitney Ranch realtor',
   ],
   authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
   creator: 'Dr. Jan Duffy - Henderson Homes',
@@ -22,8 +31,10 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
   },
   openGraph: {
-    title: 'Contact Henderson Homes - Real Estate Experts in Nevada | Dr. Jan Duffy REALTOR',
-    description: 'Get in touch with Dr. Jan Duffy, Henderson\'s premier real estate expert',
+    title:
+      'Contact Henderson Homes - Real Estate Experts in Nevada | Dr. Jan Duffy REALTOR',
+    description:
+      "Get in touch with Dr. Jan Duffy, Henderson's premier real estate expert",
     url: 'https://searchforhomesinhenderson.com/contact',
     siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
@@ -40,8 +51,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Henderson Homes | Dr. Jan Duffy REALTOR',
-    description: 'Get in touch with Henderson\'s premier real estate expert',
-    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
+    description: "Get in touch with Henderson's premier real estate expert",
+    images: [
+      'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+    ],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com/contact',
@@ -54,7 +67,8 @@ export const metadata: Metadata = {
     'DC.title': 'Contact Henderson Homes - Real Estate Experts',
     'DC.creator': 'Dr. Jan Duffy',
     'DC.subject': 'Henderson Real Estate Contact, Nevada Real Estate',
-    'DC.description': 'Contact Henderson\'s premier real estate expert for buying, selling, and property services',
+    'DC.description':
+      "Contact Henderson's premier real estate expert for buying, selling, and property services",
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
     'DC.date': '2024',
@@ -73,6 +87,39 @@ export default function ContactPage() {
   const emailId = useId()
   const phoneId = useId()
   const messageId = useId()
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    
+    try {
+      const response = await fetch('/api/follow-up-boss', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          message: formData.get('message'),
+          source: 'Contact Page',
+          leadType: 'General Inquiry'
+        }),
+      })
+
+      if (response.ok) {
+        alert('Thank you! We\'ll be in touch within 24 hours.')
+        e.currentTarget.reset()
+      } else {
+        alert('There was an error submitting your message. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('There was an error submitting your message. Please try again.')
+    }
+  }
 
   return (
     <main className="min-h-screen">
@@ -108,7 +155,7 @@ export default function ContactPage() {
                 estate needs.
               </p>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleContactSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label

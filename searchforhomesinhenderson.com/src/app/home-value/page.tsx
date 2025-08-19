@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { useId } from 'react'
 
 export const metadata: Metadata = {
   title: 'Henderson Home Value Estimator - What is My Home Worth? | Dr. Jan Duffy REALTOR',
@@ -67,6 +68,46 @@ export const metadata: Metadata = {
 }
 
 export default function HomeValuePage() {
+  const firstNameId = useId()
+  const lastNameId = useId()
+  const emailId = useId()
+  const phoneId = useId()
+  const addressId = useId()
+  const propertyTypeId = useId()
+
+  const handleHomeValueSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    
+    try {
+      const response = await fetch('/api/follow-up-boss', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          message: `Home Value Request for ${formData.get('address')} - ${formData.get('propertyType')}`,
+          source: 'Home Value Page',
+          leadType: 'Home Value Request'
+        }),
+      })
+
+      if (response.ok) {
+        alert('Thank you! We\'ll provide your home value estimate within 24 hours.')
+        e.currentTarget.reset()
+      } else {
+        alert('There was an error submitting your request. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('There was an error submitting your request. Please try again.')
+    }
+  }
+
   return (
     <main className="min-h-screen">
       {/* Hero Section with H1 */}
@@ -239,6 +280,127 @@ export default function HomeValuePage() {
                 <li>• Master-planned communities</li>
                 <li>• Excellent healthcare facilities</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Home Value Request Form */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+              Get Your Free Home Value Estimate
+            </h2>
+            <p className="text-center text-lg mb-8 text-gray-600">
+              Fill out the form below and Dr. Jan Duffy will provide you with a comprehensive home value analysis for your Henderson property.
+            </p>
+            
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <form onSubmit={handleHomeValueSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor={firstNameId} className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      id={firstNameId}
+                      type="text"
+                      name="firstName"
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Your first name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={lastNameId} className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      id={lastNameId}
+                      type="text"
+                      name="lastName"
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Your last name"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor={emailId} className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      id={emailId}
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={phoneId} className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      id={phoneId}
+                      type="tel"
+                      name="phone"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="(702) 555-0123"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor={addressId} className="block text-sm font-medium text-gray-700 mb-2">
+                      Property Address *
+                    </label>
+                    <input
+                      id={addressId}
+                      type="text"
+                      name="address"
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="123 Main St, Henderson, NV"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={propertyTypeId} className="block text-sm font-medium text-gray-700 mb-2">
+                      Property Type *
+                    </label>
+                    <select
+                      id={propertyTypeId}
+                      name="propertyType"
+                      required
+                      aria-label="Select Property Type"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="">Select Property Type</option>
+                      <option value="Single Family Home">Single Family Home</option>
+                      <option value="Townhouse">Townhouse</option>
+                      <option value="Condo">Condo</option>
+                      <option value="Luxury Home">Luxury Home</option>
+                      <option value="Investment Property">Investment Property</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
+                >
+                  Get My Free Home Value Estimate
+                </button>
+                
+                <p className="text-xs text-gray-500 text-center">
+                  By submitting this form, you agree to our privacy policy and consent to being contacted about your home value request.
+                </p>
+              </form>
             </div>
           </div>
         </div>

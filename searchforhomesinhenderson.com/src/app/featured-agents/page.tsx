@@ -808,33 +808,52 @@ export default function FeaturedAgentsPage() {
               Contact Dr. Jan Duffy - Your Henderson REALTOR
             </h2>
             <p className="text-center text-xl mb-8">
-              Henderson's trusted REALTOR for Green Valley, Anthem, Seven Hills & all Henderson communities
+              Henderson's trusted REALTOR for Green Valley, Anthem, Seven Hills
+              & all Henderson communities
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-4">📍 Henderson Office Location</h3>
+                <h3 className="text-xl font-bold mb-4">
+                  📍 Henderson Office Location
+                </h3>
                 <div className="space-y-2">
-                  <p><strong>Address:</strong> 2470 Paseo Verde Parkway, Suite 150</p>
+                  <p>
+                    <strong>Address:</strong> 2470 Paseo Verde Parkway, Suite
+                    150
+                  </p>
                   <p>Henderson, NV 89074 (Green Valley)</p>
-                  <p><strong>Phone:</strong> (702) 500-1064</p>
-                  <p><strong>Email:</strong> jan.duffy@searchforhomesinhenderson.com</p>
-                  <p><strong>License:</strong> Nevada REALTOR #S.XXXXXX</p>
+                  <p>
+                    <strong>Phone:</strong> (702) 500-1064
+                  </p>
+                  <p>
+                    <strong>Email:</strong>{' '}
+                    jan.duffy@searchforhomesinhenderson.com
+                  </p>
+                  <p>
+                    <strong>License:</strong> Nevada REALTOR #S.XXXXXX
+                  </p>
                 </div>
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Service Areas:</strong> All Henderson communities including 
-                    Green Valley, Anthem, Seven Hills, Whitney Ranch, Stephanie Ranch, 
-                    MacDonald Highlands, Lake Las Vegas, and downtown Henderson
+                    <strong>Service Areas:</strong> All Henderson communities
+                    including Green Valley, Anthem, Seven Hills, Whitney Ranch,
+                    Stephanie Ranch, MacDonald Highlands, Lake Las Vegas, and
+                    downtown Henderson
                   </p>
                 </div>
               </div>
-              
+
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <h3 className="text-xl font-bold mb-4">🏠 Henderson Home Search</h3>
+                <h3 className="text-xl font-bold mb-4">
+                  🏠 Henderson Home Search
+                </h3>
                 <form className="space-y-3">
-                  <select aria-label="Select Henderson Community" className="w-full p-3 rounded bg-white/20 text-white">
+                  <select
+                    aria-label="Select Henderson Community"
+                    className="w-full p-3 rounded bg-white/20 text-white"
+                  >
                     <option>Select Henderson Community</option>
                     <option>Green Valley ($750K-$1.2M)</option>
                     <option>Anthem ($650K-$950K)</option>
@@ -845,34 +864,39 @@ export default function FeaturedAgentsPage() {
                     <option>Lake Las Vegas ($500K-$3M+)</option>
                     <option>Downtown Henderson ($300K-$500K)</option>
                   </select>
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
+                  <input
+                    type="text"
+                    placeholder="Your Name"
                     className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
                   />
-                  <input 
-                    type="email" 
-                    placeholder="Email Address" 
+                  <input
+                    type="email"
+                    placeholder="Email Address"
                     className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
                   />
-                  <input 
-                    type="tel" 
-                    placeholder="Phone Number" 
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
                     className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
                   />
-                  <button type="button" className="w-full bg-yellow-400 text-blue-900 p-3 rounded font-bold hover:bg-yellow-300 transition-colors">
+                  <button
+                    type="button"
+                    className="w-full bg-yellow-400 text-blue-900 p-3 rounded font-bold hover:bg-yellow-300 transition-colors"
+                  >
                     Get Henderson Market Analysis from Dr. Duffy
                   </button>
                 </form>
               </div>
             </div>
-            
+
             <div className="text-center mt-8">
               <p className="text-lg">
-                <strong>Available:</strong> Monday-Friday 8:00 AM - 6:00 PM • Saturday by appointment
+                <strong>Available:</strong> Monday-Friday 8:00 AM - 6:00 PM •
+                Saturday by appointment
               </p>
               <p className="text-sm mt-2 opacity-90">
-                Serving Henderson since 2009 • Licensed Nevada REALTOR • Henderson resident
+                Serving Henderson since 2009 • Licensed Nevada REALTOR •
+                Henderson resident
               </p>
             </div>
           </div>
@@ -896,12 +920,12 @@ export default function FeaturedAgentsPage() {
             >
               Start Your Henderson Home Search
             </a>
-                          <a
-                href="tel:7025001064"
-                className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors"
-              >
-                📞 Call (702) 500-1064
-              </a>
+            <a
+              href="tel:7025001064"
+              className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors"
+            >
+              📞 Call (702) 500-1064
+            </a>
           </div>
           <p className="mt-6 text-gray-300 text-sm">
             Free consultation • No obligation • Henderson expertise guaranteed

@@ -2,18 +2,69 @@ import type { Metadata } from 'next'
 import { RealScoutWidget } from '@/components/RealScoutWidget'
 
 export const metadata: Metadata = {
-  title: 'Advanced Property Search Henderson NV | Find Homes for Sale',
-  description: 'Use our advanced search tools to find the perfect home in Henderson, NV. Filter by price, bedrooms, bathrooms, property type, and neighborhood. Expert real estate search.',
-  keywords: 'Henderson property search, Nevada home search, advanced real estate search, Henderson homes for sale, property finder Henderson, MLS search Henderson',
+  title: 'Advanced Property Search - Find Homes in Henderson, Nevada | Dr. Jan Duffy REALTOR',
+  description: 'Use our advanced search tools to find the perfect home in Henderson, NV with Dr. Jan Duffy. Filter by price, bedrooms, bathrooms, property type, and neighborhood to discover your ideal property. Call (702) 500-1064.',
+  keywords: [
+    'Henderson property search', 'Nevada home search', 'advanced real estate search', 
+    'Henderson homes for sale', 'property finder Henderson', 'Henderson REALTOR',
+    'Dr. Jan Duffy', 'Green Valley homes', 'Anthem homes', 'Stephanie Ranch homes',
+    'Whitney Ranch homes', 'Henderson MLS search'
+  ],
+  authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
+  creator: 'Dr. Jan Duffy - Henderson Homes',
+  publisher: 'Dr. Jan Duffy Real Estate',
+  category: 'Real Estate',
+  classification: 'Henderson Property Search',
+  robots: {
+    index: true,
+    follow: true,
+    'max-snippet': -1,
+    'max-image-preview': 'large',
+    'max-video-preview': -1,
+  },
   openGraph: {
-    title: 'Advanced Property Search - Henderson Homes',
-    description: 'Find your perfect home in Henderson with our advanced search tools',
+    title: 'Advanced Property Search - Find Homes in Henderson, Nevada | Dr. Jan Duffy REALTOR',
+    description: 'Find your perfect home in Henderson with our advanced search tools and Dr. Jan Duffy\'s expert guidance',
     url: 'https://searchforhomesinhenderson.com/search',
-    siteName: 'Search for Homes in Henderson',
+    siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Jan Duffy - Henderson Property Search',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Advanced Property Search - Henderson Homes | Dr. Jan Duffy',
+    description: 'Find your perfect home in Henderson with our advanced search tools',
+    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com/search',
+  },
+  other: {
+    'geo.region': 'US-NV',
+    'geo.placename': 'Henderson',
+    'geo.position': '36.0397;-115.0498',
+    ICBM: '36.0397, -115.0498',
+    'DC.title': 'Advanced Property Search - Henderson Homes',
+    'DC.creator': 'Dr. Jan Duffy',
+    'DC.subject': 'Henderson Property Search, Nevada Real Estate',
+    'DC.description': 'Advanced property search tools for Henderson, Nevada real estate',
+    'DC.publisher': 'Dr. Jan Duffy Real Estate',
+    'DC.contributor': 'Dr. Jan Duffy',
+    'DC.date': '2024',
+    'DC.type': 'Service',
+    'DC.format': 'text/html',
+    'DC.identifier': 'https://searchforhomesinhenderson.com/search',
+    'DC.language': 'en',
+    'DC.coverage': 'Henderson, Nevada, United States',
+    'DC.rights': 'Copyright 2024 Dr. Jan Duffy Real Estate',
   },
 }
 

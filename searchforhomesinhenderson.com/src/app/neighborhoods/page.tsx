@@ -1,21 +1,68 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Henderson Nevada Neighborhoods Guide | Best Places to Live',
-  description:
-    "Explore Henderson's premier neighborhoods: Green Valley, Anthem, Stephanie Ranch, Whitney Ranch and more. Find the perfect community with our comprehensive neighborhood guide including schools, amenities, and home prices.",
-  keywords:
-    'Henderson neighborhoods, Green Valley Henderson, Anthem Henderson, Stephanie Ranch Henderson, Whitney Ranch Henderson, best places to live Henderson NV',
+  title: 'Henderson Nevada Neighborhoods Guide - Best Communities & Areas | Dr. Jan Duffy REALTOR',
+  description: 'Explore Henderson NV neighborhoods including Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch with Dr. Jan Duffy. Find the perfect community with schools, amenities, and home prices. Call (702) 500-1064.',
+  keywords: [
+    'Henderson neighborhoods', 'Green Valley Henderson', 'Anthem community', 'Henderson communities', 
+    'best neighborhoods Henderson Nevada', 'Henderson REALTOR', 'Dr. Jan Duffy', 'Green Valley homes',
+    'Anthem homes', 'Stephanie Ranch homes', 'Whitney Ranch homes', 'Henderson school districts'
+  ],
+  authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
+  creator: 'Dr. Jan Duffy - Henderson Homes',
+  publisher: 'Dr. Jan Duffy Real Estate',
+  category: 'Real Estate',
+  classification: 'Henderson Neighborhoods Guide',
+  robots: {
+    index: true,
+    follow: true,
+    'max-snippet': -1,
+    'max-image-preview': 'large',
+    'max-video-preview': -1,
+  },
   openGraph: {
-    title: 'Henderson Neighborhoods Guide - Find Your Perfect Community',
-    description:
-      "Discover Henderson's best neighborhoods with detailed information on schools, amenities, and home prices",
+    title: 'Henderson Nevada Neighborhoods Guide - Best Communities & Areas | Dr. Jan Duffy REALTOR',
+    description: 'Discover the best neighborhoods and communities in Henderson, Nevada with Dr. Jan Duffy\'s expert guidance',
     url: 'https://searchforhomesinhenderson.com/neighborhoods',
-    siteName: 'Search for Homes in Henderson',
+    siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Jan Duffy - Henderson Neighborhoods Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Henderson Nevada Neighborhoods Guide | Dr. Jan Duffy REALTOR',
+    description: 'Discover the best neighborhoods and communities in Henderson, Nevada',
+    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com/neighborhoods',
+  },
+  other: {
+    'geo.region': 'US-NV',
+    'geo.placename': 'Henderson',
+    'geo.position': '36.0397;-115.0498',
+    ICBM: '36.0397, -115.0498',
+    'DC.title': 'Henderson Nevada Neighborhoods Guide',
+    'DC.creator': 'Dr. Jan Duffy',
+    'DC.subject': 'Henderson Neighborhoods, Nevada Communities',
+    'DC.description': 'Comprehensive guide to Henderson, Nevada neighborhoods and communities',
+    'DC.publisher': 'Dr. Jan Duffy Real Estate',
+    'DC.contributor': 'Dr. Jan Duffy',
+    'DC.date': '2024',
+    'DC.type': 'Guide',
+    'DC.format': 'text/html',
+    'DC.identifier': 'https://searchforhomesinhenderson.com/neighborhoods',
+    'DC.language': 'en',
+    'DC.coverage': 'Henderson, Nevada, United States',
+    'DC.rights': 'Copyright 2024 Dr. Jan Duffy Real Estate',
   },
 }
 

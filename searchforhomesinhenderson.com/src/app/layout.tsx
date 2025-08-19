@@ -8,33 +8,74 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Find Your Dream Home in Henderson, Nevada | Premier Real Estate',
-    template: '%s | Henderson Homes',
+    default: 'Henderson Homes - Premier Real Estate in Henderson, Nevada | Dr. Jan Duffy REALTOR',
+    template: '%s | Henderson Homes - Dr. Jan Duffy REALTOR',
   },
   description:
-    "Discover exceptional properties in Henderson's premier residential communities. Expert local guidance and comprehensive market knowledge. Top-rated schools and master-planned living.",
-  keywords:
-    'Henderson Nevada homes, real estate Henderson NV, homes for sale Henderson, Green Valley homes, Anthem community, Henderson real estate agent',
-  authors: [{ name: 'Henderson Homes Team' }],
-  creator: 'Henderson Homes',
-  publisher: 'Henderson Homes',
-  robots: 'index, follow',
+    "Find your dream home in Henderson, Nevada with Dr. Jan Duffy, Henderson's #1 REALTOR. Expert HOA navigation, school district strategy, golf communities & corporate relocation. Call (702) 500-1064.",
+  keywords: [
+    'Henderson homes', 'Nevada real estate', 'Henderson properties', 'luxury homes', 
+    'real estate agent', 'home values', 'property search', 'Henderson REALTOR',
+    'Dr. Jan Duffy', 'Green Valley realtor', 'Anthem realtor', 'Stephanie Ranch realtor',
+    'Whitney Ranch realtor', 'Henderson HOA expert', 'Henderson school district',
+    'golf course communities Henderson', 'Henderson home buying', 'Henderson home selling'
+  ],
+  authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
+  creator: 'Dr. Jan Duffy - Henderson Homes',
+  publisher: 'Dr. Jan Duffy Real Estate',
+  category: 'Real Estate',
+  classification: 'Henderson Real Estate Services',
+  robots: {
+    index: true,
+    follow: true,
+    'max-snippet': -1,
+    'max-image-preview': 'large',
+    'max-video-preview': -1,
+  },
   metadataBase: new URL('https://searchforhomesinhenderson.com'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://searchforhomesinhenderson.com',
-    siteName: 'Search for Homes in Henderson',
-    title: 'Find Your Dream Home in Henderson, Nevada',
-    description: "Premier real estate in Henderson's best communities",
+    title: 'Henderson Homes - Premier Real Estate with Dr. Jan Duffy REALTOR',
+    description: "Find your dream home in Henderson, Nevada with Henderson's #1 REALTOR. Expert HOA navigation, school districts & golf communities.",
+    siteName: 'Henderson Homes - Dr. Jan Duffy',
+    images: [
+      {
+        url: 'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Jan Duffy - Top Henderson REALTOR',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Henderson Homes - Premier Real Estate',
-    description: 'Find your dream home in Henderson, Nevada',
+    title: 'Henderson Homes - Premier Real Estate with Dr. Jan Duffy',
+    description: "Find your dream home in Henderson, Nevada with Henderson's #1 REALTOR",
+    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com',
+  },
+  other: {
+    'geo.region': 'US-NV',
+    'geo.placename': 'Henderson',
+    'geo.position': '36.0397;-115.0498',
+    ICBM: '36.0397, -115.0498',
+    'DC.title': 'Henderson Homes - Premier Real Estate in Henderson, Nevada',
+    'DC.creator': 'Dr. Jan Duffy',
+    'DC.subject': 'Henderson Real Estate, Nevada Homes, Dr. Jan Duffy REALTOR',
+    'DC.description': "Find your dream home in Henderson, Nevada with Dr. Jan Duffy, Henderson's #1 REALTOR",
+    'DC.publisher': 'Dr. Jan Duffy Real Estate',
+    'DC.contributor': 'Dr. Jan Duffy',
+    'DC.date': '2024',
+    'DC.type': 'Website',
+    'DC.format': 'text/html',
+    'DC.identifier': 'https://searchforhomesinhenderson.com',
+    'DC.language': 'en',
+    'DC.coverage': 'Henderson, Nevada, United States',
+    'DC.rights': 'Copyright 2024 Dr. Jan Duffy Real Estate',
   },
 }
 

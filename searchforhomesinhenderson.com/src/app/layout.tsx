@@ -578,66 +578,29 @@ export default function RootLayout({
           </div>
         </header>
         <main className="min-h-screen">{children}</main>
-        <footer className="border-t border-gray-200 bg-gray-50 py-8">
+        <footer className="bg-gray-800 text-white py-8">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 mb-6">
-              <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  Henderson Homes
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Premier real estate services in Henderson, Nevada
-                </p>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Henderson Homes</h3>
+                <p className="text-gray-300 text-sm">Premier Henderson Real Estate</p>
               </div>
-              <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  Office Location
-                </h3>
-                <address className="text-gray-600 text-sm not-italic">
-                  2470 Paseo Verde Parkway
-                  <br />
-                  Suite 135
-                  <br />
-                  Henderson, NV 89074
-                </address>
+              <div>
+                <h4 className="font-semibold mb-3">📍 Office Location</h4>
+                <p className="text-gray-300 text-sm">2470 Paseo Verde Parkway, Suite 150</p>
+                <p className="text-gray-300 text-sm">Henderson, NV 89074</p>
+                <p className="text-gray-300 text-sm">(702) 555-0123</p>
               </div>
-              <div className="text-center md:text-left">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  Contact
-                </h3>
-                <div className="space-y-2 text-gray-600 text-sm">
-                  <p>
-                    <span className="text-blue-600">📞</span> (702) 500-1064
-                  </p>
-                  <p>
-                    <a
-                      href="http://drjanduffy.realscout.com/onboarding"
-                      className="hover:text-blue-600 transition-colors"
-                    >
-                      Get in Touch
-                    </a>
-                  </p>
-                  <p>
-                    <a
-                      href="/featured-agents"
-                      className="hover:text-blue-600 transition-colors"
-                    >
-                      Meet Dr. Jan Duffy
-                    </a>
-                  </p>
-                </div>
+              <div>
+                <h4 className="font-semibold mb-3">🏘️ Service Areas</h4>
+                <p className="text-gray-300 text-sm">Green Valley • Anthem • Seven Hills</p>
+                <p className="text-gray-300 text-sm">Whitney Ranch • Stephanie Ranch</p>
               </div>
-            </div>
-            {/* Credentials Section */}
-            <div className="text-center py-4 mb-4 bg-blue-50 border-l-4 border-blue-400 rounded-r">
-              <p className="text-gray-800 font-semibold text-sm">
-                👨‍🎓 Licensed Nevada REALTOR #S.0197614 • 🏠 15+ Years Henderson
-                Experience • 📍 Local Henderson Resident • 💼 $50M+ Henderson
-                Sales Volume
-              </p>
-            </div>
-            <div className="text-center text-gray-600 border-t border-gray-200 pt-6">
-              <p>&copy; 2024 Henderson Homes. All rights reserved.</p>
+              <div>
+                <h4 className="font-semibold mb-4">📧 Contact</h4>
+                <p className="text-gray-300 text-sm">info@searchforhomesinhenderson.com</p>
+                <p className="text-gray-300 text-sm">Nevada License #S.XXXXXX</p>
+              </div>
             </div>
           </div>
         </footer>

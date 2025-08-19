@@ -8,17 +8,31 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Henderson Homes - Premier Real Estate in Henderson, Nevada | Dr. Jan Duffy REALTOR',
+    default:
+      'Henderson Homes - Premier Real Estate in Henderson, Nevada | Dr. Jan Duffy REALTOR',
     template: '%s | Henderson Homes - Dr. Jan Duffy REALTOR',
   },
   description:
     "Find your dream home in Henderson, Nevada with Dr. Jan Duffy, Henderson's #1 REALTOR. Expert HOA navigation, school district strategy, golf communities & corporate relocation. Call (702) 500-1064.",
   keywords: [
-    'Henderson homes', 'Nevada real estate', 'Henderson properties', 'luxury homes', 
-    'real estate agent', 'home values', 'property search', 'Henderson REALTOR',
-    'Dr. Jan Duffy', 'Green Valley realtor', 'Anthem realtor', 'Stephanie Ranch realtor',
-    'Whitney Ranch realtor', 'Henderson HOA expert', 'Henderson school district',
-    'golf course communities Henderson', 'Henderson home buying', 'Henderson home selling'
+    'Henderson homes',
+    'Nevada real estate',
+    'Henderson properties',
+    'luxury homes',
+    'real estate agent',
+    'home values',
+    'property search',
+    'Henderson REALTOR',
+    'Dr. Jan Duffy',
+    'Green Valley realtor',
+    'Anthem realtor',
+    'Stephanie Ranch realtor',
+    'Whitney Ranch realtor',
+    'Henderson HOA expert',
+    'Henderson school district',
+    'golf course communities Henderson',
+    'Henderson home buying',
+    'Henderson home selling',
   ],
   authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
   creator: 'Dr. Jan Duffy - Henderson Homes',
@@ -38,7 +52,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://searchforhomesinhenderson.com',
     title: 'Henderson Homes - Premier Real Estate with Dr. Jan Duffy REALTOR',
-    description: "Find your dream home in Henderson, Nevada with Henderson's #1 REALTOR. Expert HOA navigation, school districts & golf communities.",
+    description:
+      "Find your dream home in Henderson, Nevada with Henderson's #1 REALTOR. Expert HOA navigation, school districts & golf communities.",
     siteName: 'Henderson Homes - Dr. Jan Duffy',
     images: [
       {
@@ -52,8 +67,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Henderson Homes - Premier Real Estate with Dr. Jan Duffy',
-    description: "Find your dream home in Henderson, Nevada with Henderson's #1 REALTOR",
-    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
+    description:
+      "Find your dream home in Henderson, Nevada with Henderson's #1 REALTOR",
+    images: [
+      'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+    ],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com',
@@ -66,7 +84,8 @@ export const metadata: Metadata = {
     'DC.title': 'Henderson Homes - Premier Real Estate in Henderson, Nevada',
     'DC.creator': 'Dr. Jan Duffy',
     'DC.subject': 'Henderson Real Estate, Nevada Homes, Dr. Jan Duffy REALTOR',
-    'DC.description': "Find your dream home in Henderson, Nevada with Dr. Jan Duffy, Henderson's #1 REALTOR",
+    'DC.description':
+      "Find your dream home in Henderson, Nevada with Dr. Jan Duffy, Henderson's #1 REALTOR",
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
     'DC.date': '2024',
@@ -236,7 +255,8 @@ const realEstateSchema = {
         ratingValue: '5',
         bestRating: '5',
       },
-      reviewBody: 'Dr. Jan Duffy helped us find our dream home in Green Valley. Her expertise in the Henderson market is unmatched!',
+      reviewBody:
+        'Dr. Jan Duffy helped us find our dream home in Green Valley. Her expertise in the Henderson market is unmatched!',
     },
     {
       '@type': 'Review',
@@ -249,7 +269,8 @@ const realEstateSchema = {
         ratingValue: '5',
         bestRating: '5',
       },
-      reviewBody: 'Professional, knowledgeable, and always available. Dr. Duffy made our home buying experience seamless.',
+      reviewBody:
+        'Professional, knowledgeable, and always available. Dr. Duffy made our home buying experience seamless.',
     },
   ],
   knowsAbout: [
@@ -377,7 +398,8 @@ const localBusinessSchema = {
   url: 'https://searchforhomesinhenderson.com',
   logo: 'https://searchforhomesinhenderson.com/logo.png',
   image: 'https://searchforhomesinhenderson.com/office.jpg',
-  description: 'Premier real estate services in Henderson, Nevada. Expert guidance from Dr. Jan Duffy.',
+  description:
+    'Premier real estate services in Henderson, Nevada. Expert guidance from Dr. Jan Duffy.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '2470 Paseo Verde Parkway, Suite 135',
@@ -401,7 +423,8 @@ const localBusinessSchema = {
       name: 'Nevada',
     },
   },
-  hasMap: 'https://maps.google.com/?q=2470+Paseo+Verde+Parkway+Suite+135+Henderson+NV+89074',
+  hasMap:
+    'https://maps.google.com/?q=2470+Paseo+Verde+Parkway+Suite+135+Henderson+NV+89074',
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 36.0397,
@@ -424,24 +447,36 @@ export default function RootLayout({
       <head>
         {/* SEO Meta Tags */}
         <meta name="author" content="Dr. Jan Duffy" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
         <meta name="googlebot" content="index, follow" />
         <meta name="bingbot" content="index, follow" />
-        
+
         {/* Local Business Meta Tags */}
         <meta name="geo.region" content="US-NV" />
         <meta name="geo.placename" content="Henderson" />
         <meta name="geo.position" content="36.0397;-115.0498" />
         <meta name="ICBM" content="36.0397, -115.0498" />
-        
+
         {/* Business Information */}
-        <meta name="business:contact_data:street_address" content="2470 Paseo Verde Parkway, Suite 135" />
+        <meta
+          name="business:contact_data:street_address"
+          content="2470 Paseo Verde Parkway, Suite 135"
+        />
         <meta name="business:contact_data:locality" content="Henderson" />
         <meta name="business:contact_data:region" content="Nevada" />
         <meta name="business:contact_data:postal_code" content="89074" />
-        <meta name="business:contact_data:country_name" content="United States" />
-        <meta name="business:contact_data:phone_number" content="(702) 500-1064" />
-        
+        <meta
+          name="business:contact_data:country_name"
+          content="United States"
+        />
+        <meta
+          name="business:contact_data:phone_number"
+          content="(702) 500-1064"
+        />
+
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
@@ -505,13 +540,19 @@ export default function RootLayout({
                 <a href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </a>
-                <a href="http://drjanduffy.realscout.com/onboarding" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="http://drjanduffy.realscout.com/onboarding"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Advanced Search
                 </a>
                 <a href="/blog" className="text-gray-600 hover:text-gray-900">
                   Market Insights
                 </a>
-                <a href="/featured-agents" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="/featured-agents"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Featured Agents
                 </a>
                 <a
@@ -588,10 +629,11 @@ export default function RootLayout({
               </div>
             </div>
             {/* Credentials Section */}
-            <div className="text-center py-4 mb-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r">
+            <div className="text-center py-4 mb-4 bg-blue-50 border-l-4 border-blue-400 rounded-r">
               <p className="text-gray-800 font-semibold text-sm">
-                👨‍🎓 Licensed Nevada REALTOR #S.0197614 • 🏠 15+ Years Henderson Experience • 
-                📍 Local Henderson Resident • 💼 $50M+ Henderson Sales Volume
+                👨‍🎓 Licensed Nevada REALTOR #S.0197614 • 🏠 15+ Years Henderson
+                Experience • 📍 Local Henderson Resident • 💼 $50M+ Henderson
+                Sales Volume
               </p>
             </div>
             <div className="text-center text-gray-600 border-t border-gray-200 pt-6">

@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Henderson Real Estate Market News & Insights | Henderson Homes Blog',
-  description: 'Stay informed with the latest Henderson Nevada real estate market trends, home buying tips, and local housing insights from industry experts.',
-  keywords: 'Henderson real estate market, Nevada housing trends, Henderson home buying tips, real estate market insights, Henderson housing market',
+  description:
+    'Stay informed with the latest Henderson Nevada real estate market trends, home buying tips, and local housing insights from industry experts.',
+  keywords:
+    'Henderson real estate market, Nevada housing trends, Henderson home buying tips, real estate market insights, Henderson housing market',
   openGraph: {
     title: 'Henderson Real Estate Market Insights & News',
-    description: 'Latest market trends and insights for Henderson homebuyers and sellers',
+    description:
+      'Latest market trends and insights for Henderson homebuyers and sellers',
     url: 'https://searchforhomesinhenderson.com/blog',
     siteName: 'Henderson Homes Blog',
     type: 'article',
@@ -27,11 +30,11 @@ export default function BlogPage() {
               Henderson Real Estate Market Insights
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay informed with the latest market trends, home buying tips, and insights 
-              that matter to Henderson homebuyers and sellers.
+              Stay informed with the latest market trends, home buying tips, and
+              insights that matter to Henderson homebuyers and sellers.
             </p>
           </header>
-          
+
           {/* RSS Feed Content */}
           <section className="bg-white rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -39,23 +42,24 @@ export default function BlogPage() {
             </h2>
             <div className="bg-gray-50 rounded-lg p-4 mb-4">
               <p className="text-sm text-gray-600 mb-2">
-                📊 <strong>Real-time market data</strong> from industry experts at Simplifying the Market
+                📊 <strong>Real-time market data</strong> from industry experts
+                at Simplifying the Market
               </p>
             </div>
-            <iframe 
-              src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18" 
-              scrolling="yes" 
-              frameBorder="0" 
-              marginHeight="0" 
-              marginWidth="0" 
-              height="1200px" 
-              width="100%" 
-              allowFullScreen
-              className="w-full border-0 rounded"
-              title="Real Estate Market Insights"
-            />
+                         <iframe
+               src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18"
+               scrolling="yes"
+               frameBorder="0"
+               marginHeight={0}
+               marginWidth={0}
+               height="1200px"
+               width="100%"
+               allowFullScreen
+               className="w-full border-0 rounded"
+               title="Real Estate Market Insights"
+             />
           </section>
-          
+
           {/* Value Proposition Section */}
           <section className="bg-blue-50 p-8 rounded-lg mb-8">
             <h2 className="text-2xl font-semibold mb-6 text-blue-800 text-center">
@@ -122,7 +126,8 @@ export default function BlogPage() {
                   🏘️ Green Valley
                 </h3>
                 <p className="text-sm text-gray-600">
-                  Luxury market segment with high-end amenities and premium pricing
+                  Luxury market segment with high-end amenities and premium
+                  pricing
                 </p>
               </div>
               <div className="text-center">
@@ -130,7 +135,8 @@ export default function BlogPage() {
                   🏔️ Anthem
                 </h3>
                 <p className="text-sm text-gray-600">
-                  Hillside properties with views, golf access, and resort-style living
+                  Hillside properties with views, golf access, and resort-style
+                  living
                 </p>
               </div>
               <div className="text-center">
@@ -138,7 +144,8 @@ export default function BlogPage() {
                   👨‍👩‍👧‍👦 Family Areas
                 </h3>
                 <p className="text-sm text-gray-600">
-                  Stephanie Ranch and Whitney Ranch offer excellent schools and affordability
+                  Stephanie Ranch and Whitney Ranch offer excellent schools and
+                  affordability
                 </p>
               </div>
             </div>
@@ -150,7 +157,8 @@ export default function BlogPage() {
               Ready to Apply These Insights?
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Let our Henderson experts help you navigate the market with confidence
+              Let our Henderson experts help you navigate the market with
+              confidence
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -88,6 +88,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Credentials Section */}
+      <section className="py-8 bg-yellow-50 border-l-4 border-yellow-400">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center">
+            <div className="text-center">
+              <p className="text-gray-800 font-semibold">
+                👨‍🎓 Licensed Nevada REALTOR #S.0197614  • 🏠 15+ Years Henderson Experience • 
+                📍 Local Henderson Resident • 💼 $50M+ Henderson Sales Volume
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Henderson Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">

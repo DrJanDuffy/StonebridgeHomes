@@ -1,12 +1,23 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Henderson Home Value Estimator - What is My Home Worth? | Dr. Jan Duffy REALTOR',
-  description: 'Get an instant home value estimate for your Henderson, Nevada property with Dr. Jan Duffy. Free online valuation tool with local market data and recent comparable sales. Call (702) 500-1064.',
+  title:
+    'Henderson Home Value Estimator - What is My Home Worth? | Dr. Jan Duffy REALTOR',
+  description:
+    'Get an instant home value estimate for your Henderson, Nevada property with Dr. Jan Duffy. Free online valuation tool with local market data and recent comparable sales. Call (702) 500-1064.',
   keywords: [
-    'Henderson home value', 'home worth Henderson', 'property value Nevada', 'home valuation Henderson',
-    'real estate appraisal', 'Henderson REALTOR', 'Dr. Jan Duffy', 'Henderson property value',
-    'Green Valley home value', 'Anthem home value', 'Stephanie Ranch home value', 'Whitney Ranch home value'
+    'Henderson home value',
+    'home worth Henderson',
+    'property value Nevada',
+    'home valuation Henderson',
+    'real estate appraisal',
+    'Henderson REALTOR',
+    'Dr. Jan Duffy',
+    'Henderson property value',
+    'Green Valley home value',
+    'Anthem home value',
+    'Stephanie Ranch home value',
+    'Whitney Ranch home value',
   ],
   authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
   creator: 'Dr. Jan Duffy - Henderson Homes',
@@ -21,8 +32,10 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
   },
   openGraph: {
-    title: 'Henderson Home Value Estimator - Free Property Valuation | Dr. Jan Duffy REALTOR',
-    description: 'Discover what your Henderson home is worth with our instant valuation tool and Dr. Jan Duffy\'s expert guidance',
+    title:
+      'Henderson Home Value Estimator - Free Property Valuation | Dr. Jan Duffy REALTOR',
+    description:
+      "Discover what your Henderson home is worth with our instant valuation tool and Dr. Jan Duffy's expert guidance",
     url: 'https://searchforhomesinhenderson.com/home-value',
     siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
@@ -39,8 +52,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Henderson Home Value Estimator | Dr. Jan Duffy REALTOR',
-    description: 'Discover what your Henderson home is worth with our instant valuation tool',
-    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
+    description:
+      'Discover what your Henderson home is worth with our instant valuation tool',
+    images: [
+      'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+    ],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com/home-value',
@@ -53,7 +69,8 @@ export const metadata: Metadata = {
     'DC.title': 'Henderson Home Value Estimator',
     'DC.creator': 'Dr. Jan Duffy',
     'DC.subject': 'Henderson Home Valuation, Nevada Property Value',
-    'DC.description': 'Free home value estimator for Henderson, Nevada properties',
+    'DC.description':
+      'Free home value estimator for Henderson, Nevada properties',
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
     'DC.date': '2024',

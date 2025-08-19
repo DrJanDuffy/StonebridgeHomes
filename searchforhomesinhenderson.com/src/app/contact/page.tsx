@@ -12,7 +12,7 @@ export default function ContactPage() {
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    
+
     try {
       const response = await fetch('/api/follow-up-boss', {
         method: 'POST',
@@ -26,12 +26,12 @@ export default function ContactPage() {
           phone: formData.get('phone'),
           message: formData.get('message'),
           source: 'Contact Page',
-          leadType: 'General Inquiry'
+          leadType: 'General Inquiry',
         }),
       })
 
       if (response.ok) {
-        alert('Thank you! We\'ll be in touch within 24 hours.')
+        alert("Thank you! We'll be in touch within 24 hours.")
         e.currentTarget.reset()
       } else {
         alert('There was an error submitting your message. Please try again.')

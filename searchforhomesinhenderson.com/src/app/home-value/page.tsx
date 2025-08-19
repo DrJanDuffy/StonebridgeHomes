@@ -13,7 +13,7 @@ export default function HomeValuePage() {
   const handleHomeValueSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    
+
     try {
       const response = await fetch('/api/follow-up-boss', {
         method: 'POST',
@@ -27,12 +27,14 @@ export default function HomeValuePage() {
           phone: formData.get('phone'),
           message: `Home Value Request for ${formData.get('address')} - ${formData.get('propertyType')}`,
           source: 'Home Value Page',
-          leadType: 'Home Value Request'
+          leadType: 'Home Value Request',
         }),
       })
 
       if (response.ok) {
-        alert('Thank you! We\'ll provide your home value estimate within 24 hours.')
+        alert(
+          "Thank you! We'll provide your home value estimate within 24 hours."
+        )
         e.currentTarget.reset()
       } else {
         alert('There was an error submitting your request. Please try again.')
@@ -228,14 +230,18 @@ export default function HomeValuePage() {
               Get Your Free Home Value Estimate
             </h2>
             <p className="text-center text-lg mb-8 text-gray-600">
-              Fill out the form below and Dr. Jan Duffy will provide you with a comprehensive home value analysis for your Henderson property.
+              Fill out the form below and Dr. Jan Duffy will provide you with a
+              comprehensive home value analysis for your Henderson property.
             </p>
-            
+
             <div className="bg-white rounded-lg shadow-lg p-8">
               <form onSubmit={handleHomeValueSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor={firstNameId} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={firstNameId}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       First Name *
                     </label>
                     <input
@@ -248,7 +254,10 @@ export default function HomeValuePage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor={lastNameId} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={lastNameId}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Last Name *
                     </label>
                     <input
@@ -261,10 +270,13 @@ export default function HomeValuePage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor={emailId} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={emailId}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -277,7 +289,10 @@ export default function HomeValuePage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor={phoneId} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={phoneId}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -289,10 +304,13 @@ export default function HomeValuePage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor={addressId} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={addressId}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Property Address *
                     </label>
                     <input
@@ -305,7 +323,10 @@ export default function HomeValuePage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor={propertyTypeId} className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor={propertyTypeId}
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Property Type *
                     </label>
                     <select
@@ -316,24 +337,29 @@ export default function HomeValuePage() {
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="">Select Property Type</option>
-                      <option value="Single Family Home">Single Family Home</option>
+                      <option value="Single Family Home">
+                        Single Family Home
+                      </option>
                       <option value="Townhouse">Townhouse</option>
                       <option value="Condo">Condo</option>
                       <option value="Luxury Home">Luxury Home</option>
-                      <option value="Investment Property">Investment Property</option>
+                      <option value="Investment Property">
+                        Investment Property
+                      </option>
                     </select>
                   </div>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
                 >
                   Get My Free Home Value Estimate
                 </button>
-                
+
                 <p className="text-xs text-gray-500 text-center">
-                  By submitting this form, you agree to our privacy policy and consent to being contacted about your home value request.
+                  By submitting this form, you agree to our privacy policy and
+                  consent to being contacted about your home value request.
                 </p>
               </form>
             </div>

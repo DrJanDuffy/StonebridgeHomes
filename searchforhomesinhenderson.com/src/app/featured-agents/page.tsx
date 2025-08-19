@@ -1,10 +1,12 @@
 'use client'
 
 export default function FeaturedAgentsPage() {
-  const handleFeaturedAgentsSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFeaturedAgentsSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    
+
     try {
       const response = await fetch('/api/follow-up-boss', {
         method: 'POST',
@@ -13,17 +15,21 @@ export default function FeaturedAgentsPage() {
         },
         body: JSON.stringify({
           firstName: formData.get('name')?.toString().split(' ')[0] || '',
-          lastName: formData.get('name')?.toString().split(' ').slice(1).join(' ') || '',
+          lastName:
+            formData.get('name')?.toString().split(' ').slice(1).join(' ') ||
+            '',
           email: formData.get('email'),
           phone: formData.get('phone'),
           message: `Interested in ${formData.get('community')} - Henderson Market Analysis`,
           source: 'Featured Agents Page',
-          leadType: 'Market Analysis Request'
+          leadType: 'Market Analysis Request',
         }),
       })
 
       if (response.ok) {
-        alert('Thank you! Dr. Jan Duffy will contact you within 24 hours with your Henderson market analysis.')
+        alert(
+          'Thank you! Dr. Jan Duffy will contact you within 24 hours with your Henderson market analysis.'
+        )
         e.currentTarget.reset()
       } else {
         alert('There was an error submitting your request. Please try again.')
@@ -837,7 +843,10 @@ export default function FeaturedAgentsPage() {
                 <h3 className="text-xl font-bold mb-4">
                   🏠 Henderson Home Search
                 </h3>
-                <form className="space-y-3" onSubmit={handleFeaturedAgentsSubmit}>
+                <form
+                  className="space-y-3"
+                  onSubmit={handleFeaturedAgentsSubmit}
+                >
                   <select
                     name="community"
                     aria-label="Select Henderson Community"
@@ -845,14 +854,30 @@ export default function FeaturedAgentsPage() {
                     required
                   >
                     <option value="">Select Henderson Community</option>
-                    <option value="Green Valley ($750K-$1.2M)">Green Valley ($750K-$1.2M)</option>
-                    <option value="Anthem ($650K-$950K)">Anthem ($650K-$950K)</option>
-                    <option value="Seven Hills ($800K-$2M+)">Seven Hills ($800K-$2M+)</option>
-                    <option value="Whitney Ranch ($400K-$600K)">Whitney Ranch ($400K-$600K)</option>
-                    <option value="Stephanie Ranch ($450K-$650K)">Stephanie Ranch ($450K-$650K)</option>
-                    <option value="MacDonald Highlands ($1M-$5M+)">MacDonald Highlands ($1M-$5M+)</option>
-                    <option value="Lake Las Vegas ($500K-$3M+)">Lake Las Vegas ($500K-$3M+)</option>
-                    <option value="Downtown Henderson ($300K-$500K)">Downtown Henderson ($300K-$500K)</option>
+                    <option value="Green Valley ($750K-$1.2M)">
+                      Green Valley ($750K-$1.2M)
+                    </option>
+                    <option value="Anthem ($650K-$950K)">
+                      Anthem ($650K-$950K)
+                    </option>
+                    <option value="Seven Hills ($800K-$2M+)">
+                      Seven Hills ($800K-$2M+)
+                    </option>
+                    <option value="Whitney Ranch ($400K-$600K)">
+                      Whitney Ranch ($400K-$600K)
+                    </option>
+                    <option value="Stephanie Ranch ($450K-$650K)">
+                      Stephanie Ranch ($450K-$650K)
+                    </option>
+                    <option value="MacDonald Highlands ($1M-$5M+)">
+                      MacDonald Highlands ($1M-$5M+)
+                    </option>
+                    <option value="Lake Las Vegas ($500K-$3M+)">
+                      Lake Las Vegas ($500K-$3M+)
+                    </option>
+                    <option value="Downtown Henderson ($300K-$500K)">
+                      Downtown Henderson ($300K-$500K)
+                    </option>
                   </select>
                   <input
                     type="text"

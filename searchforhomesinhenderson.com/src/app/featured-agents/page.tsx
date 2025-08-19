@@ -617,81 +617,110 @@ export default function FeaturedAgentsPage() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Dr. Jan Duffy's Henderson REALTOR Success Stories
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
-                  <span className="font-semibold text-blue-600">Green Valley Sale</span>
+                  <span className="font-semibold text-blue-600">
+                    Green Valley Sale
+                  </span>
                 </div>
                 <blockquote className="text-gray-700 mb-4">
-                  "Dr. Duffy sold our Green Valley home for $892,000 - $47,000 over asking! 
-                  Her knowledge of The District proximity premium and Green Valley Ranch Resort 
-                  access helped us price perfectly. Sold in 11 days with multiple offers."
+                  "Dr. Duffy sold our Green Valley home for $892,000 - $47,000
+                  over asking! Her knowledge of The District proximity premium
+                  and Green Valley Ranch Resort access helped us price
+                  perfectly. Sold in 11 days with multiple offers."
                 </blockquote>
                 <cite className="text-sm">
-                  <strong>- Mark & Jennifer Thompson</strong><br/>
-                  <span className="text-gray-500">2847 Paseo Hills Way, Green Valley</span>
+                  <strong>- Mark & Jennifer Thompson</strong>
+                  <br />
+                  <span className="text-gray-500">
+                    2847 Paseo Hills Way, Green Valley
+                  </span>
                 </cite>
                 <div className="mt-3 text-xs text-blue-600 bg-blue-100 p-2 rounded">
-                  <strong>Result:</strong> $47K over asking • 11 days on market • 6 offers received
+                  <strong>Result:</strong> $47K over asking • 11 days on market
+                  • 6 offers received
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
-                  <span className="font-semibold text-purple-600">Anthem Purchase</span>
+                  <span className="font-semibold text-purple-600">
+                    Anthem Purchase
+                  </span>
                 </div>
                 <blockquote className="text-gray-700 mb-4">
-                  "Dr. Duffy found us the perfect Anthem home with Strip views and helped 
-                  negotiate Anthem Country Club membership transfer. Her knowledge of HOA 
-                  fees and amenities saved us $15,000 in unexpected costs."
+                  "Dr. Duffy found us the perfect Anthem home with Strip views
+                  and helped negotiate Anthem Country Club membership transfer.
+                  Her knowledge of HOA fees and amenities saved us $15,000 in
+                  unexpected costs."
                 </blockquote>
                 <cite className="text-sm">
-                  <strong>- David & Lisa Chang</strong><br/>
-                  <span className="text-gray-500">1247 Anthem View Drive, Anthem</span>
+                  <strong>- David & Lisa Chang</strong>
+                  <br />
+                  <span className="text-gray-500">
+                    1247 Anthem View Drive, Anthem
+                  </span>
                 </cite>
                 <div className="mt-3 text-xs text-purple-600 bg-purple-100 p-2 rounded">
-                  <strong>Result:</strong> $15K savings identified • Golf membership secured • Perfect school zone
+                  <strong>Result:</strong> $15K savings identified • Golf
+                  membership secured • Perfect school zone
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
-                  <span className="font-semibold text-green-600">Corporate Relocation</span>
+                  <span className="font-semibold text-green-600">
+                    Corporate Relocation
+                  </span>
                 </div>
                 <blockquote className="text-gray-700 mb-4">
-                  "Relocating from Chicago to work at Switch data center, Dr. Duffy made 
-                  Henderson house hunting seamless. She arranged virtual tours, handled 
-                  inspections remotely, and found us a home near excellent schools."
+                  "Relocating from Chicago to work at Switch data center, Dr.
+                  Duffy made Henderson house hunting seamless. She arranged
+                  virtual tours, handled inspections remotely, and found us a
+                  home near excellent schools."
                 </blockquote>
                 <cite className="text-sm">
-                  <strong>- Roberto & Maria Gonzalez</strong><br/>
-                  <span className="text-gray-500">Tesla Employee Relocation to Whitney Ranch</span>
+                  <strong>- Roberto & Maria Gonzalez</strong>
+                  <br />
+                  <span className="text-gray-500">
+                    Tesla Employee Relocation to Whitney Ranch
+                  </span>
                 </cite>
                 <div className="mt-3 text-xs text-green-600 bg-green-100 p-2 rounded">
-                  <strong>Result:</strong> Remote purchase • School district optimized • Corporate benefits maximized
+                  <strong>Result:</strong> Remote purchase • School district
+                  optimized • Corporate benefits maximized
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
-                  <span className="font-semibold text-orange-600">Investment Property</span>
+                  <span className="font-semibold text-orange-600">
+                    Investment Property
+                  </span>
                 </div>
                 <blockquote className="text-gray-700 mb-4">
-                  "Dr. Duffy's analysis of Henderson rental markets led us to a Stephanie 
-                  Ranch property generating $3,200/month rent. Her knowledge of appreciation 
-                  patterns and tenant demand was spot-on."
+                  "Dr. Duffy's analysis of Henderson rental markets led us to a
+                  Stephanie Ranch property generating $3,200/month rent. Her
+                  knowledge of appreciation patterns and tenant demand was
+                  spot-on."
                 </blockquote>
                 <cite className="text-sm">
-                  <strong>- James Wilson</strong><br/>
-                  <span className="text-gray-500">Investment Property Portfolio, Multiple Henderson Communities</span>
+                  <strong>- James Wilson</strong>
+                  <br />
+                  <span className="text-gray-500">
+                    Investment Property Portfolio, Multiple Henderson
+                    Communities
+                  </span>
                 </cite>
                 <div className="mt-3 text-xs text-orange-600 bg-orange-100 p-2 rounded">
-                  <strong>Result:</strong> 8.2% cap rate • $380K appreciation (2 years) • Ideal tenant attracted
+                  <strong>Result:</strong> 8.2% cap rate • $380K appreciation (2
+                  years) • Ideal tenant attracted
                 </div>
               </div>
             </div>
@@ -771,8 +800,87 @@ export default function FeaturedAgentsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contact Section */}
       <section className="py-16 bg-blue-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">
+              Contact Dr. Jan Duffy - Your Henderson REALTOR
+            </h2>
+            <p className="text-center text-xl mb-8">
+              Henderson's trusted REALTOR for Green Valley, Anthem, Seven Hills & all Henderson communities
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-4">📍 Henderson Office Location</h3>
+                <div className="space-y-2">
+                  <p><strong>Address:</strong> 2470 Paseo Verde Parkway, Suite 150</p>
+                  <p>Henderson, NV 89074 (Green Valley)</p>
+                  <p><strong>Phone:</strong> (702) 500-1064</p>
+                  <p><strong>Email:</strong> jan.duffy@searchforhomesinhenderson.com</p>
+                  <p><strong>License:</strong> Nevada REALTOR #S.XXXXXX</p>
+                </div>
+                
+                <div className="mt-4 pt-4 border-t border-white/20">
+                  <p className="text-sm">
+                    <strong>Service Areas:</strong> All Henderson communities including 
+                    Green Valley, Anthem, Seven Hills, Whitney Ranch, Stephanie Ranch, 
+                    MacDonald Highlands, Lake Las Vegas, and downtown Henderson
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-4">🏠 Henderson Home Search</h3>
+                <form className="space-y-3">
+                  <select aria-label="Select Henderson Community" className="w-full p-3 rounded bg-white/20 text-white">
+                    <option>Select Henderson Community</option>
+                    <option>Green Valley ($750K-$1.2M)</option>
+                    <option>Anthem ($650K-$950K)</option>
+                    <option>Seven Hills ($800K-$2M+)</option>
+                    <option>Whitney Ranch ($400K-$600K)</option>
+                    <option>Stephanie Ranch ($450K-$650K)</option>
+                    <option>MacDonald Highlands ($1M-$5M+)</option>
+                    <option>Lake Las Vegas ($500K-$3M+)</option>
+                    <option>Downtown Henderson ($300K-$500K)</option>
+                  </select>
+                  <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
+                  />
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
+                  />
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    className="w-full p-3 rounded bg-white/20 placeholder-white/70 text-white"
+                  />
+                  <button type="button" className="w-full bg-yellow-400 text-blue-900 p-3 rounded font-bold hover:bg-yellow-300 transition-colors">
+                    Get Henderson Market Analysis from Dr. Duffy
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-lg">
+                <strong>Available:</strong> Monday-Friday 8:00 AM - 6:00 PM • Saturday by appointment
+              </p>
+              <p className="text-sm mt-2 opacity-90">
+                Serving Henderson since 2009 • Licensed Nevada REALTOR • Henderson resident
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Work with Henderson's Top REALTOR?
@@ -784,18 +892,18 @@ export default function FeaturedAgentsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="http://drjanduffy.realscout.com/onboarding"
-              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Start Your Henderson Home Search
             </a>
-            <a
-              href="tel:7025001064"
-              className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
-            >
-              📞 Call (702) 500-1064
-            </a>
+                          <a
+                href="tel:7025001064"
+                className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors"
+              >
+                📞 Call (702) 500-1064
+              </a>
           </div>
-          <p className="mt-6 text-blue-100 text-sm">
+          <p className="mt-6 text-gray-300 text-sm">
             Free consultation • No obligation • Henderson expertise guaranteed
           </p>
         </div>

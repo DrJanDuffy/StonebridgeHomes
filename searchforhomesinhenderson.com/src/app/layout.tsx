@@ -483,6 +483,19 @@ export default function RootLayout({
           strategy="afterInteractive"
           crossOrigin="anonymous"
         />
+        <Script id={`inp-optimization-${Date.now()}`} strategy="afterInteractive">
+          {`
+            // INP optimization for August 2025
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(() => {
+                // Defer non-critical JavaScript
+                document.querySelectorAll('[data-defer]').forEach(el => {
+                  el.removeAttribute('data-defer')
+                })
+              })
+            }
+          `}
+        </Script>
         <style>{`
           realscout-office-listings {
             --rs-listing-divider-color: rgb(101, 141, 172);

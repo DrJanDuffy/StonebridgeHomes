@@ -24,19 +24,16 @@ export default function HomePage() {
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
-            Find Your Dream Home in Henderson, Nevada
+            Find Your Dream Home in{' '}
+            <span className="text-blue-600">Henderson, Nevada</span>
           </h1>
           <p className="text-xl md:text-2xl text-center max-w-4xl mx-auto mb-8">
-            Discover exceptional properties in Henderson's premier residential communities. 
-            Your perfect home awaits with our expert local guidance and comprehensive market knowledge.
+            Discover exceptional properties in Henderson's premier residential
+            communities. Your perfect home awaits with our expert local guidance
+            and comprehensive market knowledge.
           </p>
           <div className="text-center">
-            <a
-              href="/search"
-              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-            >
-              Start Your Search
-            </a>
+            <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
           </div>
         </div>
       </section>
@@ -107,28 +104,28 @@ export default function HomePage() {
               <p className="text-gray-600 mb-2">
                 Luxury master-planned community with championship golf and upscale shopping
               </p>
-              <p className="font-semibold text-green-600">$750K - $1.2M</p>
+              <p className="text-sm font-semibold text-green-600">$750K - $1.2M</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">Anthem</h3>
               <p className="text-gray-600 mb-2">
                 Hillside community with stunning views and resort-style amenities
               </p>
-              <p className="font-semibold text-green-600">$650K - $950K</p>
+              <p className="text-sm font-semibold text-blue-600">$650K - $950K</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">Stephanie Ranch</h3>
               <p className="text-gray-600 mb-2">
                 Family-friendly with excellent schools and recreational facilities
               </p>
-              <p className="font-semibold text-green-600">$450K - $650K</p>
+              <p className="text-sm font-semibold text-purple-600">$450K - $650K</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">Whitney Ranch</h3>
               <p className="text-gray-600 mb-2">
                 Established community with mature landscaping and affordability
               </p>
-              <p className="font-semibold text-green-600">$400K - $600K</p>
+              <p className="text-sm font-semibold text-orange-600">$400K - $600K</p>
             </div>
           </div>
         </div>

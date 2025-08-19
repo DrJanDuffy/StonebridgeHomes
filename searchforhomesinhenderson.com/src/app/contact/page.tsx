@@ -3,8 +3,10 @@ import { useId } from 'react'
 
 export const metadata: Metadata = {
   title: 'Contact Henderson Real Estate Experts | Get Expert Help',
-  description: 'Contact our Henderson, Nevada real estate experts for personalized assistance. Get expert guidance on buying, selling, or investing in Henderson properties. Free consultation available.',
-  keywords: 'Henderson real estate agent, contact Henderson realtor, Nevada real estate consultation, Henderson property expert, real estate help Henderson',
+  description:
+    'Contact our Henderson, Nevada real estate experts for personalized assistance. Get expert guidance on buying, selling, or investing in Henderson properties. Free consultation available.',
+  keywords:
+    'Henderson real estate agent, contact Henderson realtor, Nevada real estate consultation, Henderson property expert, real estate help Henderson',
   openGraph: {
     title: 'Contact Henderson Real Estate Experts',
     description: 'Get expert real estate guidance in Henderson, Nevada',
@@ -33,9 +35,9 @@ export default function ContactPage() {
             Contact Henderson Real Estate Experts
           </h1>
           <p className="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
-            Ready to find your dream home in Henderson? Our local experts are here
-            to guide you through every step of your real estate journey with
-            personalized service and market expertise.
+            Ready to find your dream home in Henderson? Our local experts are
+            here to guide you through every step of your real estate journey
+            with personalized service and market expertise.
           </p>
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
             📞 Free Consultation • Expert Guidance • Local Knowledge
@@ -53,8 +55,9 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
               <p className="text-gray-600 mb-8">
-                Fill out the form below and we'll get back to you within 24 hours
-                with personalized assistance for your Henderson real estate needs.
+                Fill out the form below and we'll get back to you within 24
+                hours with personalized assistance for your Henderson real
+                estate needs.
               </p>
 
               <form className="space-y-6">
@@ -230,7 +233,9 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <span className="text-blue-600">📧</span>
-                    <span className="text-gray-600">info@hendersonhomes.com</span>
+                    <span className="text-gray-600">
+                      info@hendersonhomes.com
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-blue-600">📞</span>
@@ -262,7 +267,9 @@ export default function ContactPage() {
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Respond to all inquiries within 24 hours</li>
                   <li>• Provide same-day property showings when possible</li>
-                  <li>• Offer immediate market analysis for urgent decisions</li>
+                  <li>
+                    • Offer immediate market analysis for urgent decisions
+                  </li>
                   <li>• Maintain flexible scheduling for busy professionals</li>
                 </ul>
               </div>
@@ -287,7 +294,9 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Anthem</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Anthem
+              </h3>
               <p className="text-gray-600 text-sm">
                 Hillside community with stunning views and amenities
               </p>

@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Henderson Nevada Neighborhoods Guide | Best Places to Live',
-  description: 'Explore Henderson\'s premier neighborhoods: Green Valley, Anthem, Stephanie Ranch, Whitney Ranch and more. Find the perfect community with our comprehensive neighborhood guide including schools, amenities, and home prices.',
-  keywords: 'Henderson neighborhoods, Green Valley Henderson, Anthem Henderson, Stephanie Ranch Henderson, Whitney Ranch Henderson, best places to live Henderson NV',
+  description:
+    "Explore Henderson's premier neighborhoods: Green Valley, Anthem, Stephanie Ranch, Whitney Ranch and more. Find the perfect community with our comprehensive neighborhood guide including schools, amenities, and home prices.",
+  keywords:
+    'Henderson neighborhoods, Green Valley Henderson, Anthem Henderson, Stephanie Ranch Henderson, Whitney Ranch Henderson, best places to live Henderson NV',
   openGraph: {
     title: 'Henderson Neighborhoods Guide - Find Your Perfect Community',
-    description: 'Discover Henderson\'s best neighborhoods with detailed information on schools, amenities, and home prices',
+    description:
+      "Discover Henderson's best neighborhoods with detailed information on schools, amenities, and home prices",
     url: 'https://searchforhomesinhenderson.com/neighborhoods',
     siteName: 'Search for Homes in Henderson',
     type: 'website',
@@ -58,7 +61,9 @@ export default function NeighborhoodsPage() {
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Home Prices:</span>
-                    <span className="font-semibold text-green-600">$750K - $1.2M</span>
+                    <span className="font-semibold text-green-600">
+                      $750K - $1.2M
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Schools:</span>
@@ -82,16 +87,20 @@ export default function NeighborhoodsPage() {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Anthem</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Anthem
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Hillside community offering stunning mountain views, resort-style
-                  amenities, and a tight-knit neighborhood feel with excellent
-                  schools and recreational facilities.
+                  Hillside community offering stunning mountain views,
+                  resort-style amenities, and a tight-knit neighborhood feel
+                  with excellent schools and recreational facilities.
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Home Prices:</span>
-                    <span className="font-semibold text-blue-600">$650K - $950K</span>
+                    <span className="font-semibold text-blue-600">
+                      $650K - $950K
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Schools:</span>
@@ -120,13 +129,15 @@ export default function NeighborhoodsPage() {
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Family-friendly community known for excellent schools, safe
-                  neighborhoods, and recreational facilities. Perfect for growing
-                  families seeking quality education and community.
+                  neighborhoods, and recreational facilities. Perfect for
+                  growing families seeking quality education and community.
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Home Prices:</span>
-                    <span className="font-semibold text-purple-600">$450K - $650K</span>
+                    <span className="font-semibold text-purple-600">
+                      $450K - $650K
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Schools:</span>
@@ -134,7 +145,9 @@ export default function NeighborhoodsPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Amenities:</span>
-                    <span className="font-semibold">Schools, Parks, Rec Center</span>
+                    <span className="font-semibold">
+                      Schools, Parks, Rec Center
+                    </span>
                   </div>
                 </div>
                 <a
@@ -161,7 +174,9 @@ export default function NeighborhoodsPage() {
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Home Prices:</span>
-                    <span className="font-semibold text-orange-600">$400K - $600K</span>
+                    <span className="font-semibold text-orange-600">
+                      $400K - $600K
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Schools:</span>
@@ -169,7 +184,9 @@ export default function NeighborhoodsPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Amenities:</span>
-                    <span className="font-semibold">Shopping, Dining, Parks</span>
+                    <span className="font-semibold">
+                      Shopping, Dining, Parks
+                    </span>
                   </div>
                 </div>
                 <a

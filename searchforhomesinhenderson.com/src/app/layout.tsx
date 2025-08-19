@@ -74,6 +74,13 @@ export default function RootLayout({
             --rs-listing-divider-color: rgb(101, 141, 172);
             width: 100%;
           }
+          
+          realscout-simple-search {
+            --rs-ss-font-primary-color: #726a6d;
+            --rs-ss-searchbar-border-color: #1d6fbd;
+            --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+            --rs-ss-widget-width: 500px !important;
+          }
         `}</style>
       </head>
       <body className={inter.className}>
@@ -87,7 +94,10 @@ export default function RootLayout({
                 <a href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </a>
-                <a href="/search" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="/search"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Advanced Search
                 </a>
                 <a

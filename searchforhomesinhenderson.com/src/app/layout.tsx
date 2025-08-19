@@ -437,6 +437,46 @@ const localBusinessSchema = {
   ],
 }
 
+const enhancedLocalSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent", 
+  "name": "Henderson Homes",
+  "url": "https://www.searchforhomesinhenderson.com",
+  "telephone": "(702) 555-0123",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2470 Paseo Verde Parkway, Suite 150", 
+    "addressLocality": "Henderson",
+    "addressRegion": "Nevada",
+    "postalCode": "89074",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "36.0711",
+    "longitude": "-115.0673"
+  },
+  "openingHours": ["Mo-Fr 08:00-18:00"],
+  "priceRange": "$400,000-$1,200,000",
+  "areaServed": [
+    {"@type": "Place", "name": "Green Valley, Henderson, NV"},
+    {"@type": "Place", "name": "Anthem, Henderson, NV"},
+    {"@type": "Place", "name": "Seven Hills, Henderson, NV"}
+  ],
+  "hasCredential": "Nevada Real Estate License",
+  "knowsAbout": [
+    "Henderson Nevada Real Estate",
+    "Green Valley Homes",
+    "Anthem Properties", 
+    "Henderson Luxury Real Estate"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47"
+  }
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -483,7 +523,10 @@ export default function RootLayout({
           strategy="afterInteractive"
           crossOrigin="anonymous"
         />
-        <Script id={`inp-optimization-${Date.now()}`} strategy="afterInteractive">
+        <Script
+          id={`inp-optimization-${Date.now()}`}
+          strategy="afterInteractive"
+        >
           {`
             // INP optimization for August 2025
             if ('requestIdleCallback' in window) {
@@ -531,6 +574,13 @@ export default function RootLayout({
           strategy="beforeInteractive"
         >
           {JSON.stringify(localBusinessSchema)}
+        </Script>
+        <Script
+          id={`enhanced-local-schema-${Date.now()}`}
+          type="application/ld+json"
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify(enhancedLocalSchema)}
         </Script>
         <header className="border-b border-gray-200 bg-white py-4">
           <div className="container mx-auto px-4">
@@ -622,9 +672,9 @@ export default function RootLayout({
                 <p className="text-gray-300 text-sm">
                   info@searchforhomesinhenderson.com
                 </p>
-                                  <p className="text-gray-300 text-sm">
-                    Nevada License #S.0197614
-                  </p>
+                <p className="text-gray-300 text-sm">
+                  Nevada License #S.0197614
+                </p>
               </div>
             </div>
           </div>

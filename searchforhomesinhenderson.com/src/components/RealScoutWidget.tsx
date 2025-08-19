@@ -33,7 +33,7 @@ interface RealScoutWidgetProps {
 }
 
 export function RealScoutWidget({
-  agentEncodedId = process.env.NEXT_PUBLIC_RESCOUT_AGENT_ID,
+  agentEncodedId = 'QWdlbnQtMjI1MDUw',
   sortOrder = 'STATUS_AND_SIGNIFICANT_CHANGE',
   listingStatus = 'For Sale',
   propertyTypes = 'SFR,MF',
@@ -43,14 +43,6 @@ export function RealScoutWidget({
   title,
   description,
 }: RealScoutWidgetProps) {
-  if (!agentEncodedId) {
-    return (
-      <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-        <p className="text-red-600">Error: RealScout Agent ID not configured</p>
-      </div>
-    )
-  }
-
   return (
     <div className={`w-full ${className}`}>
       {title && (

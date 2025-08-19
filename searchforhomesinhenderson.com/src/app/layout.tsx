@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,10 +17,11 @@ export const metadata: Metadata = {
     'Henderson homes',
     'Nevada real estate',
     'Henderson properties',
-    'luxury homes',
-    'real estate agent',
-    'home values',
-    'property search',
+    'luxury homes Henderson',
+    'homes for sale Henderson',
+    'real estate agent Henderson',
+    'home values Henderson',
+    'property search Nevada',
   ],
   authors: [{ name: 'Henderson Homes Team' }],
   creator: 'Henderson Homes',
@@ -40,6 +42,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com',
@@ -49,7 +58,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  readonly children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -59,22 +68,29 @@ export default function RootLayout({
           type="module"
           strategy="afterInteractive"
           crossOrigin="anonymous"
-          // Add integrity when RealScout publishes SRI hash
-          // integrity="sha384-..."
         />
+        <style>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}</style>
       </head>
       <body className={inter.className}>
-        <header className="bg-white border-b border-gray-200 py-4">
+        <header className="border-b border-gray-200 bg-white py-4">
           <div className="container mx-auto px-4">
-            <nav className="flex justify-between items-center">
+            <nav className="flex items-center justify-between">
               <h1 className="text-2xl font-bold text-gray-900">
                 Henderson Homes
               </h1>
-              <div className="hidden md:flex space-x-6">
+              <div className="hidden space-x-6 md:flex">
                 <a href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </a>
-                <a href="/search" className="text-gray-600 hover:text-gray-900">
+                <a
+                  href="/search"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Advanced Search
                 </a>
                 <a
@@ -100,7 +116,7 @@ export default function RootLayout({
           </div>
         </header>
         <main className="min-h-screen">{children}</main>
-        <footer className="bg-gray-50 border-t border-gray-200 py-8">
+        <footer className="border-t border-gray-200 bg-gray-50 py-8">
           <div className="container mx-auto px-4 text-center text-gray-600">
             <p>&copy; 2024 Henderson Homes. All rights reserved.</p>
           </div>

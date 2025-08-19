@@ -232,6 +232,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">What's the average home price in Henderson?</h3>
+              <p className="text-gray-600">Henderson home prices range from $400K in Whitney Ranch to $1.2M+ in Green Valley, with most homes between $500K-$800K.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Which Henderson neighborhood is best for families?</h3>
+              <p className="text-gray-600">Stephanie Ranch and Whitney Ranch offer excellent schools, family amenities, and more affordable pricing for growing families.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">

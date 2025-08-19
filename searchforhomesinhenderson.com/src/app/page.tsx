@@ -2,20 +2,66 @@ import type { Metadata } from 'next'
 import { RealScoutWidget } from '@/components/RealScoutWidget'
 
 export const metadata: Metadata = {
-  title: 'Find Your Dream Home in Henderson, Nevada | Premier Real Estate',
+  title: 'Henderson Nevada Real Estate | Find Homes for Sale in Henderson, NV | Dr. Jan Duffy',
   description:
-    "Discover exceptional properties in Henderson's premier residential communities. Expert local guidance and comprehensive market knowledge. Top-rated schools and master-planned living.",
+    "Find your dream home in Henderson, Nevada with Dr. Jan Duffy. Browse luxury homes in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch. Expert real estate services, home valuations & market insights. Call (702) 500-1064 today!",
   keywords:
-    'Henderson Nevada homes, real estate Henderson NV, homes for sale Henderson, Green Valley homes, Anthem community, Henderson real estate agent',
+    'Henderson Nevada real estate, homes for sale Henderson NV, Henderson realtor, Dr. Jan Duffy, Green Valley homes, Anthem community, Stephanie Ranch, Whitney Ranch, Henderson homes, Nevada real estate agent, Henderson property search, home values Henderson',
+  authors: [{ name: 'Dr. Jan Duffy' }],
+  creator: 'Dr. Jan Duffy - Henderson Real Estate Expert',
+  publisher: 'Henderson Homes',
+  category: 'Real Estate',
+  classification: 'Business',
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+  },
   openGraph: {
-    title: 'Find Your Dream Home in Henderson, Nevada',
-    description: "Premier real estate in Henderson's best communities",
+    title: 'Henderson Nevada Real Estate | Find Your Dream Home | Dr. Jan Duffy',
+    description: "Expert real estate services in Henderson, Nevada. Browse luxury homes in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch. Call (702) 500-1064 for personalized assistance.",
     url: 'https://searchforhomesinhenderson.com',
-    siteName: 'Search for Homes in Henderson',
+    siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://searchforhomesinhenderson.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Henderson Nevada Real Estate - Dr. Jan Duffy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Henderson Nevada Real Estate | Dr. Jan Duffy',
+    description: "Find your dream home in Henderson, Nevada. Expert real estate services in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch.",
+    images: ['https://searchforhomesinhenderson.com/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com',
+  },
+  other: {
+    'geo.region': 'US-NV',
+    'geo.placename': 'Henderson',
+    'geo.position': '36.0397;-115.0498',
+    'ICBM': '36.0397, -115.0498',
+    'DC.title': 'Henderson Nevada Real Estate | Dr. Jan Duffy',
+    'DC.creator': 'Dr. Jan Duffy',
+    'DC.subject': 'Real Estate, Henderson, Nevada, Homes for Sale',
+    'DC.description': "Expert real estate services in Henderson, Nevada. Find your dream home with Dr. Jan Duffy.",
+    'DC.publisher': 'Henderson Homes',
+    'DC.contributor': 'Dr. Jan Duffy',
+    'DC.date': '2024',
+    'DC.type': 'Service',
+    'DC.format': 'text/html',
+    'DC.identifier': 'https://searchforhomesinhenderson.com',
+    'DC.language': 'en',
+    'DC.coverage': 'Henderson, Nevada, United States',
+    'DC.rights': 'Copyright 2024 Dr. Jan Duffy - Henderson Homes',
   },
 }
 
@@ -263,11 +309,15 @@ export default function HomePage() {
                 Need Immediate Assistance?
               </h3>
               <p className="text-gray-700 mb-4">
-                Our Henderson real estate experts are available to answer your questions and provide personalized guidance.
+                Our Henderson real estate experts are available to answer your
+                questions and provide personalized guidance.
               </p>
               <div className="flex items-center space-x-3 text-lg">
                 <span className="text-blue-600">📞</span>
-                <a href="tel:7025001064" className="text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+                <a
+                  href="tel:7025001064"
+                  className="text-blue-600 hover:text-blue-800 font-semibold transition-colors"
+                >
                   (702) 500-1064
                 </a>
               </div>

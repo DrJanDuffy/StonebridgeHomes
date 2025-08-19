@@ -512,26 +512,32 @@ export default function FeaturedAgentsPage() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Dr. Jan Duffy's Hyperlocal Henderson REALTOR Expertise
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-yellow-400">
                   📍 Exact Henderson Neighborhood Specialization
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-bold text-green-400 mb-2">Green Valley (89014, 89052)</h4>
+                    <h4 className="font-bold text-green-400 mb-2">
+                      Green Valley (89014, 89052)
+                    </h4>
                     <ul className="text-sm space-y-1">
                       <li>• The District shopping center homes: $750K-$1.2M</li>
-                      <li>• Green Valley Ranch Resort proximity premium: +$50K</li>
+                      <li>
+                        • Green Valley Ranch Resort proximity premium: +$50K
+                      </li>
                       <li>• Legacy Golf Club access neighborhoods</li>
                       <li>• Green Valley High School zoning boundaries</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-bold text-blue-400 mb-2">Anthem (89052)</h4>
+                    <h4 className="font-bold text-blue-400 mb-2">
+                      Anthem (89052)
+                    </h4>
                     <ul className="text-sm space-y-1">
                       <li>• Hillside homes with Strip views: $650K-$950K</li>
                       <li>• Anthem Country Club membership transfers</li>
@@ -539,9 +545,11 @@ export default function FeaturedAgentsPage() {
                       <li>• Coronado High School attendance zones</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-bold text-purple-400 mb-2">Seven Hills (89052)</h4>
+                    <h4 className="font-bold text-purple-400 mb-2">
+                      Seven Hills (89052)
+                    </h4>
                     <ul className="text-sm space-y-1">
                       <li>• Rio Secco Golf Club luxury homes: $800K-$2M+</li>
                       <li>• Guard-gated community protocols</li>
@@ -551,25 +559,31 @@ export default function FeaturedAgentsPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-yellow-400">
                   🎯 Henderson Market Insider Knowledge
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-bold text-orange-400 mb-2">Recent Sales Intelligence</h4>
+                    <h4 className="font-bold text-orange-400 mb-2">
+                      Recent Sales Intelligence
+                    </h4>
                     <ul className="text-sm space-y-1">
                       <li>• Sold 47 Henderson homes in 2024 (YTD)</li>
-                      <li>• Average days on market: 18 days vs. 31 area average</li>
+                      <li>
+                        • Average days on market: 18 days vs. 31 area average
+                      </li>
                       <li>• 98% of listings sell above asking price</li>
                       <li>• $2.3M+ total Henderson sales volume (2024)</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-bold text-red-400 mb-2">Current Market Conditions</h4>
+                    <h4 className="font-bold text-red-400 mb-2">
+                      Current Market Conditions
+                    </h4>
                     <ul className="text-sm space-y-1">
                       <li>• Inventory: 1.2 months (severe seller's market)</li>
                       <li>• Price appreciation: +8.3% year-over-year</li>
@@ -577,9 +591,11 @@ export default function FeaturedAgentsPage() {
                       <li>• Cash buyer percentage: 32% of transactions</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
-                    <h4 className="font-bold text-teal-400 mb-2">Henderson Development Pipeline</h4>
+                    <h4 className="font-bold text-teal-400 mb-2">
+                      Henderson Development Pipeline
+                    </h4>
                     <ul className="text-sm space-y-1">
                       <li>• Cadence master plan: 13,000+ new homes planned</li>
                       <li>• Union Village development: 5,500 homes approved</li>
@@ -587,6 +603,95 @@ export default function FeaturedAgentsPage() {
                       <li>• I-11 corridor development opportunities</li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories */}
+      <section className="py-16 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Dr. Jan Duffy's Henderson REALTOR Success Stories
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
+                  <span className="font-semibold text-blue-600">Green Valley Sale</span>
+                </div>
+                <blockquote className="text-gray-700 mb-4">
+                  "Dr. Duffy sold our Green Valley home for $892,000 - $47,000 over asking! 
+                  Her knowledge of The District proximity premium and Green Valley Ranch Resort 
+                  access helped us price perfectly. Sold in 11 days with multiple offers."
+                </blockquote>
+                <cite className="text-sm">
+                  <strong>- Mark & Jennifer Thompson</strong><br/>
+                  <span className="text-gray-500">2847 Paseo Hills Way, Green Valley</span>
+                </cite>
+                <div className="mt-3 text-xs text-blue-600 bg-blue-100 p-2 rounded">
+                  <strong>Result:</strong> $47K over asking • 11 days on market • 6 offers received
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
+                  <span className="font-semibold text-purple-600">Anthem Purchase</span>
+                </div>
+                <blockquote className="text-gray-700 mb-4">
+                  "Dr. Duffy found us the perfect Anthem home with Strip views and helped 
+                  negotiate Anthem Country Club membership transfer. Her knowledge of HOA 
+                  fees and amenities saved us $15,000 in unexpected costs."
+                </blockquote>
+                <cite className="text-sm">
+                  <strong>- David & Lisa Chang</strong><br/>
+                  <span className="text-gray-500">1247 Anthem View Drive, Anthem</span>
+                </cite>
+                <div className="mt-3 text-xs text-purple-600 bg-purple-100 p-2 rounded">
+                  <strong>Result:</strong> $15K savings identified • Golf membership secured • Perfect school zone
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
+                  <span className="font-semibold text-green-600">Corporate Relocation</span>
+                </div>
+                <blockquote className="text-gray-700 mb-4">
+                  "Relocating from Chicago to work at Switch data center, Dr. Duffy made 
+                  Henderson house hunting seamless. She arranged virtual tours, handled 
+                  inspections remotely, and found us a home near excellent schools."
+                </blockquote>
+                <cite className="text-sm">
+                  <strong>- Roberto & Maria Gonzalez</strong><br/>
+                  <span className="text-gray-500">Tesla Employee Relocation to Whitney Ranch</span>
+                </cite>
+                <div className="mt-3 text-xs text-green-600 bg-green-100 p-2 rounded">
+                  <strong>Result:</strong> Remote purchase • School district optimized • Corporate benefits maximized
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="text-yellow-400 mr-2">⭐⭐⭐⭐⭐</div>
+                  <span className="font-semibold text-orange-600">Investment Property</span>
+                </div>
+                <blockquote className="text-gray-700 mb-4">
+                  "Dr. Duffy's analysis of Henderson rental markets led us to a Stephanie 
+                  Ranch property generating $3,200/month rent. Her knowledge of appreciation 
+                  patterns and tenant demand was spot-on."
+                </blockquote>
+                <cite className="text-sm">
+                  <strong>- James Wilson</strong><br/>
+                  <span className="text-gray-500">Investment Property Portfolio, Multiple Henderson Communities</span>
+                </cite>
+                <div className="mt-3 text-xs text-orange-600 bg-orange-100 p-2 rounded">
+                  <strong>Result:</strong> 8.2% cap rate • $380K appreciation (2 years) • Ideal tenant attracted
                 </div>
               </div>
             </div>

@@ -271,6 +271,14 @@ export default function HomePage() {
                   (702) 500-1064
                 </a>
               </div>
+              <div className="mt-4">
+                <a
+                  href="http://drjanduffy.realscout.com/onboarding"
+                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  Get Started Online
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -322,7 +330,7 @@ export default function HomePage() {
               </div>
             </div>
             <a
-              href="/contact"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
             >
               Schedule an Appointment
@@ -343,13 +351,13 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Get Expert Help
             </a>
             <a
-              href="/home-value"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
             >
               Get Home Value

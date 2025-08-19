@@ -335,13 +335,13 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/search"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Start Searching
             </a>
             <a
-              href="/home-value"
+              href="http://drjanduffy.realscout.com/onboarding"
               className="inline-block bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
             >
               Get Home Value

@@ -161,18 +161,18 @@ export default function BlogPage() {
               confidence
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Get Expert Consultation
-              </a>
-              <a
-                href="/search"
-                className="inline-block bg-transparent text-white border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                Search Henderson Homes
-              </a>
+                          <a
+              href="http://drjanduffy.realscout.com/onboarding"
+              className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Get Expert Consultation
+            </a>
+            <a
+              href="http://drjanduffy.realscout.com/onboarding"
+              className="inline-block bg-transparent text-white border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+            >
+              Search Henderson Homes
+            </a>
             </div>
           </section>
         </div>

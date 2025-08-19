@@ -187,7 +187,10 @@ export default function RootLayout({
                 </h1>
                 <div className="flex items-center space-x-2 text-blue-600 font-semibold">
                   <span>📞</span>
-                  <a href="tel:7025001064" className="hover:text-blue-800 transition-colors">
+                  <a
+                    href="tel:7025001064"
+                    className="hover:text-blue-800 transition-colors"
+                  >
                     (702) 500-1064
                   </a>
                 </div>
@@ -196,26 +199,26 @@ export default function RootLayout({
                 <a href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </a>
-                <a href="/search" className="text-gray-600 hover:text-gray-900">
+                <a href="http://drjanduffy.realscout.com/onboarding" className="text-gray-600 hover:text-gray-900">
                   Advanced Search
                 </a>
                 <a href="/blog" className="text-gray-600 hover:text-gray-900">
                   Market Insights
                 </a>
                 <a
-                  href="/home-value"
+                  href="http://drjanduffy.realscout.com/onboarding"
                   className="text-gray-600 hover:text-gray-900"
                 >
                   Home Value
                 </a>
                 <a
-                  href="/neighborhoods"
+                  href="http://drjanduffy.realscout.com/onboarding"
                   className="text-gray-600 hover:text-gray-900"
                 >
                   Neighborhoods
                 </a>
                 <a
-                  href="/contact"
+                  href="http://drjanduffy.realscout.com/onboarding"
                   className="text-gray-600 hover:text-gray-900"
                 >
                   Contact
@@ -258,7 +261,7 @@ export default function RootLayout({
                   </p>
                   <p>
                     <a
-                      href="/contact"
+                      href="http://drjanduffy.realscout.com/onboarding"
                       className="hover:text-blue-600 transition-colors"
                     >
                       Get in Touch

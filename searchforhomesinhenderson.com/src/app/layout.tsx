@@ -438,43 +438,43 @@ const localBusinessSchema = {
 }
 
 const enhancedLocalSchema = {
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent", 
-  "name": "Henderson Homes",
-  "url": "https://www.searchforhomesinhenderson.com",
-  "telephone": "(702) 555-0123",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "2470 Paseo Verde Parkway, Suite 150", 
-    "addressLocality": "Henderson",
-    "addressRegion": "Nevada",
-    "postalCode": "89074",
-    "addressCountry": "US"
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  name: 'Henderson Homes',
+  url: 'https://www.searchforhomesinhenderson.com',
+  telephone: '(702) 555-0123',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2470 Paseo Verde Parkway, Suite 150',
+    addressLocality: 'Henderson',
+    addressRegion: 'Nevada',
+    postalCode: '89074',
+    addressCountry: 'US',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "36.0711",
-    "longitude": "-115.0673"
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '36.0711',
+    longitude: '-115.0673',
   },
-  "openingHours": ["Mo-Fr 08:00-18:00"],
-  "priceRange": "$400,000-$1,200,000",
-  "areaServed": [
-    {"@type": "Place", "name": "Green Valley, Henderson, NV"},
-    {"@type": "Place", "name": "Anthem, Henderson, NV"},
-    {"@type": "Place", "name": "Seven Hills, Henderson, NV"}
+  openingHours: ['Mo-Fr 08:00-18:00'],
+  priceRange: '$400,000-$1,200,000',
+  areaServed: [
+    { '@type': 'Place', name: 'Green Valley, Henderson, NV' },
+    { '@type': 'Place', name: 'Anthem, Henderson, NV' },
+    { '@type': 'Place', name: 'Seven Hills, Henderson, NV' },
   ],
-  "hasCredential": "Nevada Real Estate License",
-  "knowsAbout": [
-    "Henderson Nevada Real Estate",
-    "Green Valley Homes",
-    "Anthem Properties", 
-    "Henderson Luxury Real Estate"
+  hasCredential: 'Nevada Real Estate License',
+  knowsAbout: [
+    'Henderson Nevada Real Estate',
+    'Green Valley Homes',
+    'Anthem Properties',
+    'Henderson Luxury Real Estate',
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "47"
-  }
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '47',
+  },
 }
 
 export default function RootLayout({
@@ -611,6 +611,9 @@ export default function RootLayout({
                 </a>
                 <a href="/blog" className="text-gray-600 hover:text-gray-900">
                   Market Insights
+                </a>
+                <a href="/faq" className="text-gray-600 hover:text-gray-900">
+                  FAQ
                 </a>
                 <a
                   href="/featured-agents"

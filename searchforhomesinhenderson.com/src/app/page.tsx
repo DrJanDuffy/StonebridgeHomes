@@ -396,6 +396,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Frequently Asked Henderson Real Estate Questions
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div itemScope itemType="https://schema.org/Question">
+              <h3 itemProp="name" className="text-xl font-semibold mb-3">
+                What's the average home price in Henderson Nevada?
+              </h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p itemProp="text" className="text-gray-600">
+                  Henderson home prices range from $400K in Whitney Ranch to $1.2M+ in Green Valley, 
+                  with most properties between $500K-$800K. Our licensed Henderson REALTOR provides 
+                  current market analysis for all Henderson neighborhoods.
+                </p>
+              </div>
+            </div>
+            
+            <div itemScope itemType="https://schema.org/Question">
+              <h3 itemProp="name" className="text-xl font-semibold mb-3">
+                Which Henderson neighborhood is best for families?
+              </h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p itemProp="text" className="text-gray-600">
+                  Stephanie Ranch and Whitney Ranch offer excellent schools, family amenities, and 
+                  more affordable pricing. Green Valley provides luxury family living with top-rated 
+                  schools and resort-style communities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">

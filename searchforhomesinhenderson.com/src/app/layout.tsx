@@ -173,6 +173,9 @@ export default function RootLayout({
                 <a href="/search" className="text-gray-600 hover:text-gray-900">
                   Advanced Search
                 </a>
+                <a href="/blog" className="text-gray-600 hover:text-gray-900">
+                  Market Insights
+                </a>
                 <a
                   href="/home-value"
                   className="text-gray-600 hover:text-gray-900"

@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Henderson Homes Team' }],
   creator: 'Henderson Homes',
+  publisher: 'Henderson Homes',
   metadataBase: new URL('https://searchforhomesinhenderson.com'),
   openGraph: {
     type: 'website',
@@ -84,6 +85,54 @@ export default function RootLayout({
         `}</style>
       </head>
       <body className={inter.className}>
+        <Script
+          id={`structured-data-${Date.now()}`}
+          type="application/ld+json"
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": "Henderson Homes",
+            "url": "https://searchforhomesinhenderson.com",
+            "description": "Premier real estate services in Henderson, Nevada",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Henderson",
+              "addressRegion": "Nevada",
+              "addressCountry": "US"
+            },
+            "serviceArea": {
+              "@type": "City",
+              "name": "Henderson",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Nevada"
+              }
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Real Estate Services",
+              "itemListElement": [
+                {
+                  "@type": "Service",
+                  "name": "Home Buying Services",
+                  "description": "Expert buyer representation with market analysis"
+                },
+                {
+                  "@type": "Service", 
+                  "name": "Home Selling Services",
+                  "description": "Professional marketing and pricing strategy"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Property Valuation",
+                  "description": "Comprehensive home value estimates and market analysis"
+                }
+              ]
+            }
+          })}
+        </Script>
         <header className="border-b border-gray-200 bg-white py-4">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">

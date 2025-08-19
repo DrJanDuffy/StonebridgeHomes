@@ -262,6 +262,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Office Location Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">
+              Visit Our Henderson Office
+            </h2>
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="text-left">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                    Henderson Homes Office
+                  </h3>
+                  <address className="text-gray-600 text-lg not-italic mb-4">
+                    2470 Paseo Verde Parkway<br />
+                    Suite 135<br />
+                    Henderson, NV 89074
+                  </address>
+                  <div className="space-y-2 text-gray-600">
+                    <p><strong>Hours:</strong> Mon-Fri: 9AM-6PM | Sat: 10AM-4PM</p>
+                    <p><strong>Phone:</strong> (702) 555-0123</p>
+                    <p><strong>Email:</strong> info@hendersonhomes.com</p>
+                  </div>
+                </div>
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h4 className="text-lg font-semibold text-blue-800 mb-3">
+                    Why Visit Our Office?
+                  </h4>
+                  <ul className="text-left text-gray-700 space-y-2">
+                    <li>• Meet our expert team in person</li>
+                    <li>• View current listings on large displays</li>
+                    <li>• Get immediate market analysis</li>
+                    <li>• Discuss your real estate goals</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a
+              href="/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
+            >
+              Schedule an Appointment
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">

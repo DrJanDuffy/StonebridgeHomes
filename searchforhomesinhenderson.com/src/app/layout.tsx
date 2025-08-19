@@ -44,10 +44,11 @@ const realEstateSchema = {
   description: 'Premier real estate services in Henderson, Nevada specializing in Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch communities',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '2470 Paseo Verde Parkway, Suite 135',
     addressLocality: 'Henderson',
     addressRegion: 'Nevada',
     addressCountry: 'US',
-    postalCode: '89052'
+    postalCode: '89074'
   },
   areaServed: [
     {
@@ -200,8 +201,34 @@ export default function RootLayout({
         </header>
         <main className="min-h-screen">{children}</main>
         <footer className="border-t border-gray-200 bg-gray-50 py-8">
-          <div className="container mx-auto px-4 text-center text-gray-600">
-            <p>&copy; 2024 Henderson Homes. All rights reserved.</p>
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-8 mb-6">
+              <div className="text-center md:text-left">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Henderson Homes</h3>
+                <p className="text-gray-600 text-sm">
+                  Premier real estate services in Henderson, Nevada
+                </p>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Office Location</h3>
+                <address className="text-gray-600 text-sm not-italic">
+                  2470 Paseo Verde Parkway<br />
+                  Suite 135<br />
+                  Henderson, NV 89074
+                </address>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Contact</h3>
+                <p className="text-gray-600 text-sm">
+                  <a href="/contact" className="hover:text-blue-600 transition-colors">
+                    Get in Touch
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="text-center text-gray-600 border-t border-gray-200 pt-6">
+              <p>&copy; 2024 Henderson Homes. All rights reserved.</p>
+            </div>
           </div>
         </footer>
       </body>

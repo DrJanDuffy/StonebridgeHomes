@@ -244,7 +244,8 @@ export default function ContactPage() {
                   <div className="flex items-center space-x-3">
                     <span className="text-blue-600">📍</span>
                     <span className="text-gray-600">
-                      Henderson, Nevada 89002
+                      2470 Paseo Verde Parkway, Suite 135<br />
+                      Henderson, NV 89074
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">

@@ -46,18 +46,18 @@ export default function BlogPage() {
                 at Simplifying the Market
               </p>
             </div>
-                         <iframe
-               src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18"
-               scrolling="yes"
-               frameBorder="0"
-               marginHeight={0}
-               marginWidth={0}
-               height="1200px"
-               width="100%"
-               allowFullScreen
-               className="w-full border-0 rounded"
-               title="Real Estate Market Insights"
-             />
+            <iframe
+              src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18"
+              scrolling="yes"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              height="1200px"
+              width="100%"
+              allowFullScreen
+              className="w-full border-0 rounded"
+              title="Real Estate Market Insights"
+            />
           </section>
 
           {/* Value Proposition Section */}

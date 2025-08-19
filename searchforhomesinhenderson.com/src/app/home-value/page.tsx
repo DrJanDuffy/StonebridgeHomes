@@ -1,6 +1,35 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+
 export default function HomeValuePage() {
+  const widgetRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Load RealScout script
+    const script = document.createElement('script')
+    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+    script.type = 'module'
+    
+    script.onload = () => {
+      // Create the widget element after script loads
+      if (widgetRef.current) {
+        const widget = document.createElement('realscout-home-value')
+        widget.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+        widgetRef.current.appendChild(widget)
+      }
+    }
+    
+    document.head.appendChild(script)
+    
+    // Cleanup
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script)
+      }
+    }
+  }, [])
+
   return (
     <main className="min-h-screen">
       {/* Hero Section with H1 */}
@@ -186,13 +215,17 @@ export default function HomeValuePage() {
               Get Your Free Home Value Estimate
             </h2>
             <p className="text-center text-lg mb-8 text-gray-600">
-              Use our advanced home value widget to get an instant estimate of your Henderson property's current market value.
+              Use our advanced home value widget to get an instant estimate of
+              your Henderson property's current market value.
             </p>
 
             <div className="bg-white rounded-lg shadow-lg p-8">
               {/* RealScout Script */}
-              <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
-              
+              <script
+                src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+                type="module"
+              ></script>
+
               {/* RealScout Home Value Widget Styling */}
               <style>
                 {`
@@ -208,13 +241,16 @@ export default function HomeValuePage() {
                   }
                 `}
               </style>
-              
+
               {/* RealScout Home Value Widget */}
-              <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
-              
+              <div
+                ref={widgetRef}
+              />
+
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
-                  This widget provides instant home value estimates based on current market data and recent sales in your area.
+                  This widget provides instant home value estimates based on
+                  current market data and recent sales in your area.
                 </p>
               </div>
             </div>

@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { RealScoutWidget } from '@/components/RealScoutWidget'
 
 export const metadata: Metadata = {
-  title: 'Henderson Nevada Real Estate | Find Homes for Sale in Henderson, NV | Dr. Jan Duffy',
+  title:
+    'Henderson Nevada Real Estate | Find Homes for Sale in Henderson, NV | Dr. Jan Duffy',
   description:
-    "Find your dream home in Henderson, Nevada with Dr. Jan Duffy. Browse luxury homes in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch. Expert real estate services, home valuations & market insights. Call (702) 500-1064 today!",
+    'Find your dream home in Henderson, Nevada with Dr. Jan Duffy. Browse luxury homes in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch. Expert real estate services, home valuations & market insights. Call (702) 500-1064 today!',
   keywords:
     'Henderson Nevada real estate, homes for sale Henderson NV, Henderson realtor, Dr. Jan Duffy, Green Valley homes, Anthem community, Stephanie Ranch, Whitney Ranch, Henderson homes, Nevada real estate agent, Henderson property search, home values Henderson',
   authors: [{ name: 'Dr. Jan Duffy' }],
@@ -20,8 +21,10 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
   },
   openGraph: {
-    title: 'Henderson Nevada Real Estate | Find Your Dream Home | Dr. Jan Duffy',
-    description: "Expert real estate services in Henderson, Nevada. Browse luxury homes in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch. Call (702) 500-1064 for personalized assistance.",
+    title:
+      'Henderson Nevada Real Estate | Find Your Dream Home | Dr. Jan Duffy',
+    description:
+      'Expert real estate services in Henderson, Nevada. Browse luxury homes in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch. Call (702) 500-1064 for personalized assistance.',
     url: 'https://searchforhomesinhenderson.com',
     siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
@@ -38,7 +41,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Henderson Nevada Real Estate | Dr. Jan Duffy',
-    description: "Find your dream home in Henderson, Nevada. Expert real estate services in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch.",
+    description:
+      'Find your dream home in Henderson, Nevada. Expert real estate services in Green Valley, Anthem, Stephanie Ranch & Whitney Ranch.',
     images: ['https://searchforhomesinhenderson.com/og-image.jpg'],
   },
   alternates: {
@@ -48,11 +52,12 @@ export const metadata: Metadata = {
     'geo.region': 'US-NV',
     'geo.placename': 'Henderson',
     'geo.position': '36.0397;-115.0498',
-    'ICBM': '36.0397, -115.0498',
+    ICBM: '36.0397, -115.0498',
     'DC.title': 'Henderson Nevada Real Estate | Dr. Jan Duffy',
     'DC.creator': 'Dr. Jan Duffy',
     'DC.subject': 'Real Estate, Henderson, Nevada, Homes for Sale',
-    'DC.description': "Expert real estate services in Henderson, Nevada. Find your dream home with Dr. Jan Duffy.",
+    'DC.description':
+      'Expert real estate services in Henderson, Nevada. Find your dream home with Dr. Jan Duffy.',
     'DC.publisher': 'Henderson Homes',
     'DC.contributor': 'Dr. Jan Duffy',
     'DC.date': '2024',
@@ -88,19 +93,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Credentials Section */}
-      <section className="py-8 bg-yellow-50 border-l-4 border-yellow-400">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-gray-800 font-semibold">
-                👨‍🎓 Licensed Nevada REALTOR #S.0197614  • 🏠 15+ Years Henderson Experience • 
-                📍 Local Henderson Resident • 💼 $50M+ Henderson Sales Volume
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Why Henderson Section */}
       <section className="py-16 bg-gray-50">

@@ -587,6 +587,13 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
+            {/* Credentials Section */}
+            <div className="text-center py-4 mb-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r">
+              <p className="text-gray-800 font-semibold text-sm">
+                👨‍🎓 Licensed Nevada REALTOR #S.0197614 • 🏠 15+ Years Henderson Experience • 
+                📍 Local Henderson Resident • 💼 $50M+ Henderson Sales Volume
+              </p>
+            </div>
             <div className="text-center text-gray-600 border-t border-gray-200 pt-6">
               <p>&copy; 2024 Henderson Homes. All rights reserved.</p>
             </div>

@@ -1,50 +1,6 @@
 'use client'
 
-import { useId } from 'react'
-
 export default function HomeValuePage() {
-  const firstNameId = useId()
-  const lastNameId = useId()
-  const emailId = useId()
-  const phoneId = useId()
-  const addressId = useId()
-  const propertyTypeId = useId()
-
-  const handleHomeValueSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-
-    try {
-      const response = await fetch('/api/follow-up-boss', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: formData.get('firstName'),
-          lastName: formData.get('lastName'),
-          email: formData.get('email'),
-          phone: formData.get('phone'),
-          message: `Home Value Request for ${formData.get('address')} - ${formData.get('propertyType')}`,
-          source: 'Home Value Page',
-          leadType: 'Home Value Request',
-        }),
-      })
-
-      if (response.ok) {
-        alert(
-          "Thank you! We'll provide your home value estimate within 24 hours."
-        )
-        e.currentTarget.reset()
-      } else {
-        alert('There was an error submitting your request. Please try again.')
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error)
-      alert('There was an error submitting your request. Please try again.')
-    }
-  }
-
   return (
     <main className="min-h-screen">
       {/* Hero Section with H1 */}
@@ -222,7 +178,7 @@ export default function HomeValuePage() {
         </div>
       </section>
 
-      {/* Home Value Request Form */}
+      {/* RealScout Home Value Widget */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -230,138 +186,37 @@ export default function HomeValuePage() {
               Get Your Free Home Value Estimate
             </h2>
             <p className="text-center text-lg mb-8 text-gray-600">
-              Fill out the form below and Dr. Jan Duffy will provide you with a
-              comprehensive home value analysis for your Henderson property.
+              Use our advanced home value widget to get an instant estimate of your Henderson property's current market value.
             </p>
 
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <form onSubmit={handleHomeValueSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor={firstNameId}
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      First Name *
-                    </label>
-                    <input
-                      id={firstNameId}
-                      type="text"
-                      name="firstName"
-                      required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your first name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor={lastNameId}
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Last Name *
-                    </label>
-                    <input
-                      id={lastNameId}
-                      type="text"
-                      name="lastName"
-                      required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your last name"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor={emailId}
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Email Address *
-                    </label>
-                    <input
-                      id={emailId}
-                      type="email"
-                      name="email"
-                      required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor={phoneId}
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Phone Number
-                    </label>
-                    <input
-                      id={phoneId}
-                      type="tel"
-                      name="phone"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="(702) 555-0123"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor={addressId}
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Property Address *
-                    </label>
-                    <input
-                      id={addressId}
-                      type="text"
-                      name="address"
-                      required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="123 Main St, Henderson, NV"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor={propertyTypeId}
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Property Type *
-                    </label>
-                    <select
-                      id={propertyTypeId}
-                      name="propertyType"
-                      required
-                      aria-label="Select Property Type"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    >
-                      <option value="">Select Property Type</option>
-                      <option value="Single Family Home">
-                        Single Family Home
-                      </option>
-                      <option value="Townhouse">Townhouse</option>
-                      <option value="Condo">Condo</option>
-                      <option value="Luxury Home">Luxury Home</option>
-                      <option value="Investment Property">
-                        Investment Property
-                      </option>
-                    </select>
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors"
-                >
-                  Get My Free Home Value Estimate
-                </button>
-
-                <p className="text-xs text-gray-500 text-center">
-                  By submitting this form, you agree to our privacy policy and
-                  consent to being contacted about your home value request.
+              {/* RealScout Script */}
+              <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+              
+              {/* RealScout Home Value Widget Styling */}
+              <style>
+                {`
+                  realscout-home-value {
+                    --rs-hvw-background-color: #ffffff;
+                    --rs-hvw-title-color: #000000;
+                    --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.5);
+                    --rs-hvw-primary-button-text-color: #ffffff;
+                    --rs-hvw-primary-button-color: rgb(35, 93, 137);
+                    --rs-hvw-secondary-button-text-color: rgb(35, 93, 137);
+                    --rs-hvw-secondary-button-color: #ffffff;
+                    --rs-hvw-widget-width: auto;
+                  }
+                `}
+              </style>
+              
+              {/* RealScout Home Value Widget */}
+              <realscout-home-value agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-home-value>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-600">
+                  This widget provides instant home value estimates based on current market data and recent sales in your area.
                 </p>
-              </form>
+              </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Henderson Real Estate FAQ - Common Questions Answered | Dr. Jan Duffy REALTOR',
-  description: 'Get answers to frequently asked questions about Henderson, Nevada real estate. Expert insights on home buying, selling, neighborhoods, schools, and market trends. Call (702) 500-1064.',
+  title:
+    'Henderson Real Estate FAQ - Common Questions Answered | Dr. Jan Duffy REALTOR',
+  description:
+    'Get answers to frequently asked questions about Henderson, Nevada real estate. Expert insights on home buying, selling, neighborhoods, schools, and market trends. Call (702) 500-1064.',
   keywords: [
     'Henderson real estate FAQ',
     'Henderson home buying questions',
@@ -29,7 +31,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Henderson Real Estate FAQ - Expert Answers to Common Questions',
-    description: 'Comprehensive FAQ covering Henderson home buying, selling, neighborhoods, schools, and market insights',
+    description:
+      'Comprehensive FAQ covering Henderson home buying, selling, neighborhoods, schools, and market insights',
     url: 'https://searchforhomesinhenderson.com/faq',
     siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
@@ -62,7 +65,8 @@ export const metadata: Metadata = {
     'DC.title': 'Henderson Real Estate FAQ',
     'DC.creator': 'Dr. Jan Duffy',
     'DC.subject': 'Henderson Real Estate FAQ, Nevada Real Estate Questions',
-    'DC.description': 'Comprehensive FAQ covering all aspects of Henderson, Nevada real estate',
+    'DC.description':
+      'Comprehensive FAQ covering all aspects of Henderson, Nevada real estate',
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
     'DC.date': '2024',
@@ -75,10 +79,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function FAQLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function FAQLayout({ children }: { children: React.ReactNode }) {
   return children
 }

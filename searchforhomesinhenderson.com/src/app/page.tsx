@@ -27,7 +27,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
             Find Your Dream Home in{' '}
-            <span className="text-blue-600">Henderson, Nevada</span>
+            <span className="text-white font-extrabold drop-shadow-lg">
+              Henderson, Nevada
+            </span>
           </h1>
           <p className="text-xl md:text-2xl text-center max-w-4xl mx-auto mb-8">
             Discover exceptional properties in Henderson's premier residential

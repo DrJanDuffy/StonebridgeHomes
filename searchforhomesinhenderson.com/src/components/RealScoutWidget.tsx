@@ -19,7 +19,7 @@ declare global {
       'realscout-simple-search': React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement> & {
           'agent-encoded-id'?: string
-          'placeholder'?: string
+          placeholder?: string
           'widget-width'?: string
         },
         HTMLElement

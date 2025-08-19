@@ -3,11 +3,13 @@ import { RealScoutWidget } from '@/components/RealScoutWidget'
 
 export const metadata: Metadata = {
   title: 'Find Your Dream Home in Henderson, Nevada | Premier Real Estate',
-  description: 'Discover exceptional properties in Henderson\'s premier residential communities. Expert local guidance and comprehensive market knowledge. Top-rated schools and master-planned living.',
-  keywords: 'Henderson Nevada homes, real estate Henderson NV, homes for sale Henderson, Green Valley homes, Anthem community, Henderson real estate agent',
+  description:
+    "Discover exceptional properties in Henderson's premier residential communities. Expert local guidance and comprehensive market knowledge. Top-rated schools and master-planned living.",
+  keywords:
+    'Henderson Nevada homes, real estate Henderson NV, homes for sale Henderson, Green Valley homes, Anthem community, Henderson real estate agent',
   openGraph: {
     title: 'Find Your Dream Home in Henderson, Nevada',
-    description: 'Premier real estate in Henderson\'s best communities',
+    description: "Premier real estate in Henderson's best communities",
     url: 'https://searchforhomesinhenderson.com',
     siteName: 'Search for Homes in Henderson',
     type: 'website',
@@ -46,21 +48,30 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-600">Award-Winning City</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-blue-600">
+                Award-Winning City
+              </h3>
               <p className="text-gray-600">
-                Consistently ranked among America's safest and most livable cities with excellent municipal services.
+                Consistently ranked among America's safest and most livable
+                cities with excellent municipal services.
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-600">Top-Rated Schools</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-blue-600">
+                Top-Rated Schools
+              </h3>
               <p className="text-gray-600">
-                Access to Clark County's highest-performing schools with excellent student-teacher ratios.
+                Access to Clark County's highest-performing schools with
+                excellent student-teacher ratios.
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-600">Master-Planned Living</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-blue-600">
+                Master-Planned Living
+              </h3>
               <p className="text-gray-600">
-                Beautiful communities with golf courses, parks, and resort-style amenities throughout the city.
+                Beautiful communities with golf courses, parks, and resort-style
+                amenities throughout the city.
               </p>
             </div>
           </div>
@@ -74,10 +85,11 @@ export default function HomePage() {
             Featured Henderson Properties
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Explore our carefully curated selection of homes in Henderson's most desirable neighborhoods 
-            including Green Valley, Anthem, and Stephanie Ranch.
+            Explore our carefully curated selection of homes in Henderson's most
+            desirable neighborhoods including Green Valley, Anthem, and
+            Stephanie Ranch.
           </p>
-          
+
           <RealScoutWidget
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
@@ -100,32 +112,51 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-blue-600">Green Valley</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Green Valley
+              </h3>
               <p className="text-gray-600 mb-2">
-                Luxury master-planned community with championship golf and upscale shopping
+                Luxury master-planned community with championship golf and
+                upscale shopping
               </p>
-              <p className="text-sm font-semibold text-green-600">$750K - $1.2M</p>
+              <p className="text-sm font-semibold text-green-600">
+                $750K - $1.2M
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-blue-600">Anthem</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Anthem
+              </h3>
               <p className="text-gray-600 mb-2">
-                Hillside community with stunning views and resort-style amenities
+                Hillside community with stunning views and resort-style
+                amenities
               </p>
-              <p className="text-sm font-semibold text-blue-600">$650K - $950K</p>
+              <p className="text-sm font-semibold text-blue-600">
+                $650K - $950K
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-blue-600">Stephanie Ranch</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Stephanie Ranch
+              </h3>
               <p className="text-gray-600 mb-2">
-                Family-friendly with excellent schools and recreational facilities
+                Family-friendly with excellent schools and recreational
+                facilities
               </p>
-              <p className="text-sm font-semibold text-purple-600">$450K - $650K</p>
+              <p className="text-sm font-semibold text-purple-600">
+                $450K - $650K
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-blue-600">Whitney Ranch</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Whitney Ranch
+              </h3>
               <p className="text-gray-600 mb-2">
                 Established community with mature landscaping and affordability
               </p>
-              <p className="text-sm font-semibold text-orange-600">$400K - $600K</p>
+              <p className="text-sm font-semibold text-orange-600">
+                $400K - $600K
+              </p>
             </div>
           </div>
         </div>
@@ -138,44 +169,61 @@ export default function HomePage() {
             Comprehensive Real Estate Services
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-4xl mx-auto">
-            From finding your first home to building an investment portfolio, our Henderson experts 
-            provide full-service real estate solutions.
+            From finding your first home to building an investment portfolio,
+            our Henderson experts provide full-service real estate solutions.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">🏠 Home Buying</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                🏠 Home Buying
+              </h3>
               <p className="text-gray-600">
-                Expert buyer representation with market analysis, negotiation, and closing support
+                Expert buyer representation with market analysis, negotiation,
+                and closing support
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">💰 Home Selling</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                💰 Home Selling
+              </h3>
               <p className="text-gray-600">
-                Professional marketing, staging consultation, and pricing strategy for maximum value
+                Professional marketing, staging consultation, and pricing
+                strategy for maximum value
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">📊 Market Analysis</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                📊 Market Analysis
+              </h3>
               <p className="text-gray-600">
-                Comprehensive property valuations and Henderson market trend reports
+                Comprehensive property valuations and Henderson market trend
+                reports
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">🏢 Investment Properties</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                🏢 Investment Properties
+              </h3>
               <p className="text-gray-600">
                 Rental property analysis and investment strategy consultation
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">🚛 Relocation Services</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                🚛 Relocation Services
+              </h3>
               <p className="text-gray-600">
-                Complete assistance for families moving to Henderson from other states
+                Complete assistance for families moving to Henderson from other
+                states
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">🔍 Property Search</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
+                🔍 Property Search
+              </h3>
               <p className="text-gray-600">
-                Custom searches with advanced filtering and automated listing alerts
+                Custom searches with advanced filtering and automated listing
+                alerts
               </p>
             </div>
           </div>
@@ -189,7 +237,8 @@ export default function HomePage() {
             Ready to Find Your Henderson Home?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our local experts are here to guide you through every step of your real estate journey.
+            Our local experts are here to guide you through every step of your
+            real estate journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

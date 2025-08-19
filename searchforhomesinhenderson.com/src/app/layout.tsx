@@ -718,64 +718,64 @@ export default function RootLayout({
               </div>
             </nav>
             {/* Mobile navigation menu */}
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="md:hidden mt-4 pb-4 border-t border-gray-200 bg-white">
               <div className="space-y-2">
                 <a
                   href="/"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Home
                 </a>
                 <a
                   href="/search"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Search Homes
                 </a>
                 <a
                   href="/home-value"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Home Value
                 </a>
-                <div className="py-2">
-                  <div className="text-gray-600 font-medium mb-2">
+                <div className="py-3 px-4">
+                  <div className="text-gray-600 font-medium mb-3">
                     Neighborhoods
                   </div>
-                  <div className="pl-4 space-y-1">
+                  <div className="space-y-2">
                     <a
                       href="/neighborhoods"
-                      className="block py-1 text-gray-600 hover:text-gray-900"
+                      className="block py-2 pl-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       All Neighborhoods
                     </a>
                     <a
                       href="/neighborhoods/green-valley"
-                      className="block py-1 text-gray-600 hover:text-gray-900"
+                      className="block py-2 pl-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       Green Valley
                     </a>
                     <a
                       href="/neighborhoods"
-                      className="block py-1 text-gray-600 hover:text-gray-900"
+                      className="block py-2 pl-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       Anthem
                     </a>
                     <a
                       href="/neighborhoods"
-                      className="block py-1 text-gray-600 hover:text-gray-900"
+                      className="block py-2 pl-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       Seven Hills
                     </a>
                     <a
                       href="/neighborhoods"
-                      className="block py-1 text-gray-600 hover:text-gray-900"
+                      className="block py-2 pl-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       Whitney Ranch
                     </a>
                     <a
                       href="/neighborhoods"
-                      className="block py-1 text-gray-600 hover:text-gray-900"
+                      className="block py-2 pl-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
                       Stephanie Ranch
                     </a>
@@ -783,25 +783,25 @@ export default function RootLayout({
                 </div>
                 <a
                   href="/blog"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Market Insights
                 </a>
                 <a
                   href="/faq"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   FAQ
                 </a>
                 <a
                   href="/featured-agents"
-                  className="block py-2 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Featured Agents
                 </a>
                 <a
                   href="/contact"
-                  className="block py-1 text-gray-600 hover:text-gray-900"
+                  className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Contact
                 </a>

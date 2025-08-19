@@ -8,9 +8,10 @@ export default function HomeValuePage() {
   useEffect(() => {
     // Load RealScout script
     const script = document.createElement('script')
-    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+    script.src =
+      'https://em.realscout.com/widgets/realscout-web-components.umd.js'
     script.type = 'module'
-    
+
     script.onload = () => {
       // Create the widget element after script loads
       if (widgetRef.current) {
@@ -19,9 +20,9 @@ export default function HomeValuePage() {
         widgetRef.current.appendChild(widget)
       }
     }
-    
+
     document.head.appendChild(script)
-    
+
     // Cleanup
     return () => {
       if (document.head.contains(script)) {
@@ -243,9 +244,7 @@ export default function HomeValuePage() {
               </style>
 
               {/* RealScout Home Value Widget */}
-              <div
-                ref={widgetRef}
-              />
+              <div ref={widgetRef} />
 
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">

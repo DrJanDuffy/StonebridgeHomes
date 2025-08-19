@@ -181,10 +181,18 @@ export default function RootLayout({
         <header className="border-b border-gray-200 bg-white py-4">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
-              <h1 className="text-2xl font-bold text-gray-900">
-                Henderson Homes
-              </h1>
-              <div className="hidden space-x-6 md:flex items-center">
+              <div className="flex items-center space-x-6">
+                <h1 className="text-2xl font-bold text-gray-900">
+                  Henderson Homes
+                </h1>
+                <div className="flex items-center space-x-2 text-blue-600 font-semibold">
+                  <span>📞</span>
+                  <a href="tel:7025001064" className="hover:text-blue-800 transition-colors">
+                    (702) 500-1064
+                  </a>
+                </div>
+              </div>
+              <div className="hidden space-x-6 md:flex">
                 <a href="/" className="text-gray-600 hover:text-gray-900">
                   Home
                 </a>
@@ -212,12 +220,6 @@ export default function RootLayout({
                 >
                   Contact
                 </a>
-                <div className="flex items-center space-x-2 text-blue-600 font-semibold ml-4">
-                  <span>📞</span>
-                  <a href="tel:7025001064" className="hover:text-blue-800 transition-colors">
-                    (702) 500-1064
-                  </a>
-                </div>
               </div>
             </nav>
           </div>

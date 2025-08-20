@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { config } from '@/lib/config'
+import { APIError, logError } from '@/lib/errors'
 
 interface ContactData {
   firstName: string
@@ -13,11 +14,17 @@ interface ContactData {
 
 export async function POST(request: NextRequest) {
   try {
-    // Check if API key is configured
+        // Check if API key is configured
     if (!config.followUpBoss.apiKey) {
-      console.error('Follow Up Boss API key not configured')
+      logError(new APIError('Follow Up Boss API key not configured', 503, 'CONFIG_MISSING'), {
+        endpoint: '/api/follow-up-boss',
+        method: 'POST'
+      })
       return NextResponse.json(
-        { error: 'Contact service temporarily unavailable. Please try again later.' },
+        {
+          error: 'Contact service temporarily unavailable. Please try again later.',
+          code: 'SERVICE_UNAVAILABLE'
+        },
         { status: 503 }
       )
     }
@@ -85,9 +92,16 @@ export async function POST(request: NextRequest) {
       contactId: result.people?.[0]?.id,
     })
   } catch (error) {
-    console.error('Error in Follow Up Boss API route:', error)
+    logError(error, {
+      endpoint: '/api/follow-up-boss',
+      method: 'POST',
+      context: 'Follow Up Boss API route'
+    })
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { 
+        error: 'Internal server error',
+        code: 'INTERNAL_ERROR'
+      },
       { status: 500 }
     )
   }

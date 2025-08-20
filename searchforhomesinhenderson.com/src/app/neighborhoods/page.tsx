@@ -112,7 +112,7 @@ export default function NeighborhoodsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Green Valley */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
+              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   <a
@@ -162,7 +162,7 @@ export default function NeighborhoodsPage() {
 
             {/* Anthem */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   Anthem
@@ -199,7 +199,7 @@ export default function NeighborhoodsPage() {
 
             {/* Stephanie Ranch */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600"></div>
+              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   Stephanie Ranch
@@ -238,7 +238,7 @@ export default function NeighborhoodsPage() {
 
             {/* Whitney Ranch */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600"></div>
+              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   Whitney Ranch

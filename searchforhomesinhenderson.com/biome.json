@@ -29,14 +29,6 @@
       "semicolons": "asNeeded"
     }
   },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  },
   "css": {
     "formatter": {
       "enabled": true

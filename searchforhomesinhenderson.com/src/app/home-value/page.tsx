@@ -225,7 +225,7 @@ export default function HomeValuePage() {
               <script
                 src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
                 type="module"
-              ></script>
+              />
 
               {/* RealScout Home Value Widget Styling */}
               <style>

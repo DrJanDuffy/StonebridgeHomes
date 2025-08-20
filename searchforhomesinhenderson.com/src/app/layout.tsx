@@ -489,20 +489,32 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         {/* Performance optimizations */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="dns-prefetch" href="https://em.realscout.com" />
-        
+
         {/* Critical CSS */}
         <link rel="stylesheet" href="/critical.css" />
-        
+
         {/* Resource hints */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
-        <link rel="preload" href="/_next/static/chunks/webpack.js" as="script" />
-        
+        <link
+          rel="preload"
+          href="/_next/static/css/app/layout.css"
+          as="style"
+        />
+        <link
+          rel="preload"
+          href="/_next/static/chunks/webpack.js"
+          as="script"
+        />
+
         {/* SEO Meta Tags */}
         <meta name="author" content="Dr. Jan Duffy" />
         <meta

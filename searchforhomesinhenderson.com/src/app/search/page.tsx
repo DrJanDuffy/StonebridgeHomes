@@ -1,14 +1,24 @@
-import type { Metadata } from 'next'
 import { RealScoutWidget } from '@/components/RealScoutWidget'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Advanced Property Search - Find Homes in Henderson, Nevada | Dr. Jan Duffy REALTOR',
-  description: 'Use our advanced search tools to find the perfect home in Henderson, NV with Dr. Jan Duffy. Filter by price, bedrooms, bathrooms, property type, and neighborhood to discover your ideal property. Call (702) 500-1064.',
+  title:
+    'Advanced Property Search - Find Homes in Henderson, Nevada | Dr. Jan Duffy REALTOR',
+  description:
+    'Use our advanced search tools to find the perfect home in Henderson, NV with Dr. Jan Duffy. Filter by price, bedrooms, bathrooms, property type, and neighborhood to discover your ideal property. Call (702) 500-1064.',
   keywords: [
-    'Henderson property search', 'Nevada home search', 'advanced real estate search', 
-    'Henderson homes for sale', 'property finder Henderson', 'Henderson REALTOR',
-    'Dr. Jan Duffy', 'Green Valley homes', 'Anthem homes', 'Stephanie Ranch homes',
-    'Whitney Ranch homes', 'Henderson MLS search'
+    'Henderson property search',
+    'Nevada home search',
+    'advanced real estate search',
+    'Henderson homes for sale',
+    'property finder Henderson',
+    'Henderson REALTOR',
+    'Dr. Jan Duffy',
+    'Green Valley homes',
+    'Anthem homes',
+    'Stephanie Ranch homes',
+    'Whitney Ranch homes',
+    'Henderson MLS search',
   ],
   authors: [{ name: 'Dr. Jan Duffy - Henderson REALTOR' }],
   creator: 'Dr. Jan Duffy - Henderson Homes',
@@ -23,8 +33,10 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
   },
   openGraph: {
-    title: 'Advanced Property Search - Find Homes in Henderson, Nevada | Dr. Jan Duffy REALTOR',
-    description: 'Find your perfect home in Henderson with our advanced search tools and Dr. Jan Duffy\'s expert guidance',
+    title:
+      'Advanced Property Search - Find Homes in Henderson, Nevada | Dr. Jan Duffy REALTOR',
+    description:
+      "Find your perfect home in Henderson with our advanced search tools and Dr. Jan Duffy's expert guidance",
     url: 'https://searchforhomesinhenderson.com/search',
     siteName: 'Henderson Homes - Dr. Jan Duffy',
     type: 'website',
@@ -41,8 +53,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Advanced Property Search - Henderson Homes | Dr. Jan Duffy',
-    description: 'Find your perfect home in Henderson with our advanced search tools',
-    images: ['https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg'],
+    description:
+      'Find your perfect home in Henderson with our advanced search tools',
+    images: [
+      'https://searchforhomesinhenderson.com/dr-jan-duffy-henderson-realtor.jpg',
+    ],
   },
   alternates: {
     canonical: 'https://searchforhomesinhenderson.com/search',
@@ -55,7 +70,8 @@ export const metadata: Metadata = {
     'DC.title': 'Advanced Property Search - Henderson Homes',
     'DC.creator': 'Dr. Jan Duffy',
     'DC.subject': 'Henderson Property Search, Nevada Real Estate',
-    'DC.description': 'Advanced property search tools for Henderson, Nevada real estate',
+    'DC.description':
+      'Advanced property search tools for Henderson, Nevada real estate',
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
     'DC.date': '2024',
@@ -192,26 +208,32 @@ export default function AdvancedSearchPage() {
                 Green Valley
               </h3>
               <p className="text-gray-600 text-sm mb-3">
-                Luxury master-planned community with championship golf and upscale
-                shopping
+                Luxury master-planned community with championship golf and
+                upscale shopping
               </p>
               <p className="text-sm font-semibold text-green-600">
                 $750K - $1.2M
               </p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Anthem</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Anthem
+              </h3>
               <p className="text-gray-600 text-sm mb-3">
-                Hillside community with stunning views and resort-style amenities
+                Hillside community with stunning views and resort-style
+                amenities
               </p>
-              <p className="text-sm font-semibold text-blue-600">$650K - $950K</p>
+              <p className="text-sm font-semibold text-blue-600">
+                $650K - $950K
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Stephanie Ranch
               </h3>
               <p className="text-gray-600 text-sm mb-3">
-                Family-friendly with excellent schools and recreational facilities
+                Family-friendly with excellent schools and recreational
+                facilities
               </p>
               <p className="text-sm font-semibold text-purple-600">
                 $450K - $650K

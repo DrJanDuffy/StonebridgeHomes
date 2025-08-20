@@ -8,7 +8,7 @@ declare global {
     gtag?: (
       command: string,
       action: string,
-      params: Record<string, any>
+      params: Record<string, unknown>
     ) => void
   }
 }
@@ -39,7 +39,7 @@ export default function PerformanceMonitor() {
         // FID (First Input Delay)
         const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries()
-          entries.forEach((entry) => {
+          for (const entry of entries) {
             const fid = entry.processingStart - entry.startTime
             console.log('FID:', fid)
             if (typeof window.gtag === 'function') {
@@ -49,7 +49,7 @@ export default function PerformanceMonitor() {
                 event_label: window.location.pathname,
               })
             }
-          })
+          }
         })
         fidObserver.observe({ entryTypes: ['first-input'] })
 
@@ -57,11 +57,18 @@ export default function PerformanceMonitor() {
         const clsObserver = new PerformanceObserver((list) => {
           let clsValue = 0
           const entries = list.getEntries()
-          entries.forEach((entry: any) => {
-            if (!entry.hadRecentInput) {
-              clsValue += entry.value
+          for (const entry of entries) {
+            const layoutShiftEntry = entry as PerformanceEntry & {
+              hadRecentInput?: boolean
+              value?: number
             }
-          })
+            if (
+              !layoutShiftEntry.hadRecentInput &&
+              layoutShiftEntry.value !== undefined
+            ) {
+              clsValue += layoutShiftEntry.value
+            }
+          }
           console.log('CLS:', clsValue)
           if (typeof window.gtag === 'function') {
             window.gtag('event', 'CLS', {
@@ -76,17 +83,27 @@ export default function PerformanceMonitor() {
         // INP (Interaction to Next Paint)
         const inpObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries()
-          entries.forEach((entry: any) => {
-            const inp = entry.processingStart - entry.startTime
-            console.log('INP:', inp)
-            if (typeof window.gtag === 'function') {
-              window.gtag('event', 'INP', {
-                value: Math.round(inp),
-                event_category: 'Web Vitals',
-                event_label: window.location.pathname,
-              })
+          for (const entry of entries) {
+            const interactionEntry = entry as PerformanceEntry & {
+              processingStart?: number
+              startTime?: number
             }
-          })
+            if (
+              interactionEntry.processingStart !== undefined &&
+              interactionEntry.startTime !== undefined
+            ) {
+              const inp =
+                interactionEntry.processingStart - interactionEntry.startTime
+              console.log('INP:', inp)
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'INP', {
+                  value: Math.round(inp),
+                  event_category: 'Web Vitals',
+                  event_label: window.location.pathname,
+                })
+              }
+            }
+          }
         })
         inpObserver.observe({ entryTypes: ['interaction'] })
 

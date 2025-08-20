@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
 const FOLLOW_UP_BOSS_API_KEY = 'fka_0N4mnNW7Q94BLjEMKvoC0Lz9bYtIH0dU5c'
 const FOLLOW_UP_BOSS_API_URL = 'https://api.followupboss.com/v1'
@@ -16,7 +16,7 @@ interface ContactData {
 export async function POST(request: NextRequest) {
   try {
     const body: ContactData = await request.json()
-    
+
     // Validate required fields
     if (!body.firstName || !body.lastName || !body.email) {
       return NextResponse.json(
@@ -37,17 +37,17 @@ export async function POST(request: NextRequest) {
           customFields: {
             'Lead Source': body.source,
             'Lead Type': body.leadType,
-            'Message': body.message,
-            'Location': 'Henderson, Nevada'
-          }
-        }
-      ]
+            Message: body.message,
+            Location: 'Henderson, Nevada',
+          },
+        },
+      ],
     }
 
     const response = await fetch(`${FOLLOW_UP_BOSS_API_URL}/people`, {
       method: 'POST',
       headers: {
-        'Authorization': `Basic ${Buffer.from(FOLLOW_UP_BOSS_API_KEY + ':').toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(`${FOLLOW_UP_BOSS_API_KEY}:`).toString('base64')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(contactData),
@@ -63,16 +63,15 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await response.json()
-    
+
     // Log successful contact creation
     console.log('Contact created in Follow Up Boss:', result)
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       message: 'Contact created successfully',
-      contactId: result.people?.[0]?.id 
+      contactId: result.people?.[0]?.id,
     })
-
   } catch (error) {
     console.error('Error in Follow Up Boss API route:', error)
     return NextResponse.json(

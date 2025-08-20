@@ -3,17 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  // ESLint configuration for build stability
+  // Disable ESLint since we're using Biome
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   
   // Vercel optimizations
   output: 'standalone',
   poweredByHeader: false,
-  
+
   // Performance optimizations
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
@@ -62,7 +60,7 @@ const nextConfig = {
         },
       }
     }
-    
+
     return config
   },
 

@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
 import { RealScoutWidget } from '@/components/RealScoutWidget'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title:
@@ -88,7 +88,7 @@ export default function HomePage() {
             and comprehensive market knowledge.
           </p>
           <div className="text-center">
-            <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+            <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw" />
           </div>
         </div>
       </section>

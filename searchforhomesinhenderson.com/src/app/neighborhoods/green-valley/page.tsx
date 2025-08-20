@@ -1,7 +1,7 @@
+import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
-import Breadcrumbs from '@/components/ui/Breadcrumbs'
 
 export const metadata: Metadata = {
   title:

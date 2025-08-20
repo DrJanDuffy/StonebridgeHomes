@@ -217,7 +217,8 @@ export default function HyperlocalDemoPage() {
 
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-4">
-                Next steps: Train ML models on Henderson market data for predictive insights
+                Next steps: Train ML models on Henderson market data for
+                predictive insights
               </p>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
                 <span className="text-sm font-medium">

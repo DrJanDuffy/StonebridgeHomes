@@ -169,7 +169,10 @@ export const HENDERSON_SCHOOL_DATA: Record<string, SchoolZone[]> = {
 }
 
 // Convert FUB property to PropertyData
-function convertFUBToPropertyData(fubProperty: FUBProperty, distance?: number): PropertyData {
+function convertFUBToPropertyData(
+  fubProperty: FUBProperty,
+  distance?: number
+): PropertyData {
   return {
     id: fubProperty.id,
     address: fubProperty.address,
@@ -688,9 +691,9 @@ export class StreetCompsService {
 
       // Get properties from FUB API
       const fubProperties = await fubApiService.getProperties(filters)
-      
+
       // Convert to PropertyData format and calculate distances
-      const comps: PropertyData[] = fubProperties.map(fubProp => {
+      const comps: PropertyData[] = fubProperties.map((fubProp) => {
         const distance = calculateDistance(
           scope.center[0],
           scope.center[1],
@@ -702,7 +705,7 @@ export class StreetCompsService {
 
       // Sort by distance and limit to scope radius
       return comps
-        .filter(comp => comp.distance && comp.distance <= scope.radiusMeters)
+        .filter((comp) => comp.distance && comp.distance <= scope.radiusMeters)
         .sort((a, b) => (a.distance || 0) - (b.distance || 0))
         .slice(0, 10) // Limit to top 10 closest comps
     } catch (error) {
@@ -774,7 +777,7 @@ export class StreetCompsService {
       }
 
       const marketData = await fubApiService.getMarketData(filters)
-      
+
       return {
         pricePerSqft: marketData.averagePricePerSqFt,
         daysOnMarket: marketData.averageDaysOnMarket,

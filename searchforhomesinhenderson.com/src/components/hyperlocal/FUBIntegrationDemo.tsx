@@ -1,36 +1,49 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { fubApiService, type FUBProperty, type FUBMarketData } from '@/services/fubApiService'
+import {
+  fubApiService,
+  type FUBProperty,
+  type FUBMarketData,
+} from '@/services/fubApiService'
 
 interface FUBIntegrationDemoProps {
   className?: string
 }
 
-export default function FUBIntegrationDemo({ className = '' }: FUBIntegrationDemoProps) {
+export default function FUBIntegrationDemo({
+  className = '',
+}: FUBIntegrationDemoProps) {
   const [properties, setProperties] = useState<FUBProperty[]>([])
   const [marketData, setMarketData] = useState<FUBMarketData | null>(null)
   const [loading, setLoading] = useState(true)
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState('Green Valley')
+  const [selectedNeighborhood, setSelectedNeighborhood] =
+    useState('Green Valley')
 
-  const neighborhoods = ['Green Valley', 'Anthem', 'Seven Hills', 'Whitney Ranch', 'Stephanie Ranch']
+  const neighborhoods = [
+    'Green Valley',
+    'Anthem',
+    'Seven Hills',
+    'Whitney Ranch',
+    'Stephanie Ranch',
+  ]
 
   const loadFUBData = useCallback(async () => {
     try {
       setLoading(true)
-      
+
       // Load properties for selected neighborhood
       const filters = {
         city: 'Henderson',
         neighborhood: selectedNeighborhood,
         status: 'Active',
       }
-      
+
       const [propertiesData, marketDataResult] = await Promise.all([
         fubApiService.getProperties(filters),
-        fubApiService.getMarketData(filters)
+        fubApiService.getMarketData(filters),
       ])
-      
+
       setProperties(propertiesData)
       setMarketData(marketDataResult)
     } catch (error) {
@@ -67,13 +80,17 @@ export default function FUBIntegrationDemo({ className = '' }: FUBIntegrationDem
           Follow Up Boss API Integration Demo
         </h3>
         <p className="text-gray-600 text-sm">
-          Real-time property data from FUB • Live market analysis • 15-minute cache refresh
+          Real-time property data from FUB • Live market analysis • 15-minute
+          cache refresh
         </p>
       </div>
 
       {/* Neighborhood Selector */}
       <div className="mb-6">
-        <label htmlFor="neighborhood-select" className="block text-sm font-medium text-gray-700 mb-2">
+        <label
+          htmlFor="neighborhood-select"
+          className="block text-sm font-medium text-gray-700 mb-2"
+        >
           Select Neighborhood
         </label>
         <select
@@ -99,7 +116,9 @@ export default function FUBIntegrationDemo({ className = '' }: FUBIntegrationDem
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{marketData.totalProperties}</div>
+              <div className="text-2xl font-bold text-blue-600">
+                {marketData.totalProperties}
+              </div>
               <div className="text-xs text-gray-600">Total Properties</div>
             </div>
             <div className="text-center">
@@ -128,18 +147,23 @@ export default function FUBIntegrationDemo({ className = '' }: FUBIntegrationDem
               <div className="font-medium mb-1">Market Conditions:</div>
               <div className="flex items-center justify-between">
                 <span>Current Market:</span>
-                <span className={`font-medium px-2 py-1 rounded text-xs ${
-                  marketData.marketConditions === 'seller' ? 'bg-red-100 text-red-800' :
-                  marketData.marketConditions === 'buyer' ? 'bg-green-100 text-green-800' :
-                  'bg-blue-100 text-blue-800'
-                }`}>
+                <span
+                  className={`font-medium px-2 py-1 rounded text-xs ${
+                    marketData.marketConditions === 'seller'
+                      ? 'bg-red-100 text-red-800'
+                      : marketData.marketConditions === 'buyer'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-blue-100 text-blue-800'
+                  }`}
+                >
                   {marketData.marketConditions.toUpperCase()}
                 </span>
               </div>
               <div className="flex items-center justify-between">
                 <span>Price Range:</span>
                 <span className="font-medium">
-                  ${(marketData.priceRange.min / 1000).toFixed(0)}K - ${(marketData.priceRange.max / 1000).toFixed(0)}K
+                  ${(marketData.priceRange.min / 1000).toFixed(0)}K - $
+                  {(marketData.priceRange.max / 1000).toFixed(0)}K
                 </span>
               </div>
             </div>
@@ -185,13 +209,14 @@ export default function FUBIntegrationDemo({ className = '' }: FUBIntegrationDem
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Property Features */}
                 {property.features.length > 0 && (
                   <div className="mt-2 pt-2 border-t border-gray-100">
                     <div className="text-xs text-gray-600">
                       Features: {property.features.slice(0, 3).join(', ')}
-                      {property.features.length > 3 && ` +${property.features.length - 3} more`}
+                      {property.features.length > 3 &&
+                        ` +${property.features.length - 3} more`}
                     </div>
                   </div>
                 )}

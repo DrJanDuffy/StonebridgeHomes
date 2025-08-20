@@ -75,11 +75,13 @@ export interface FUBFilters {
 export class FUBApiService {
   private apiKey: string
   private baseUrl: string
-  private cache: Map<string, { data: FUBProperty[]; timestamp: number }> = new Map()
+  private cache: Map<string, { data: FUBProperty[]; timestamp: number }> =
+    new Map()
   private cacheTTL = 15 * 60 * 1000 // 15 minutes
 
   constructor() {
-    this.apiKey = process.env.FUB_API_KEY || 'fka_0N4mnNW7Q94BLjEMKvoC0Lz9bYtIH0dU5c'
+    this.apiKey =
+      process.env.FUB_API_KEY || 'fka_0N4mnNW7Q94BLjEMKvoC0Lz9bYtIH0dU5c'
     this.baseUrl = 'https://api.followupboss.com/v1'
   }
 
@@ -94,11 +96,11 @@ export class FUBApiService {
 
     try {
       const properties = await this.fetchPropertiesFromFUB(filters)
-      
+
       // Cache the results
       this.cache.set(cacheKey, {
         data: properties,
-        timestamp: Date.now()
+        timestamp: Date.now(),
       })
 
       return properties
@@ -111,24 +113,28 @@ export class FUBApiService {
   // Get market data for a specific area
   async getMarketData(filters: FUBFilters): Promise<FUBMarketData> {
     const properties = await this.getProperties(filters)
-    
+
     if (properties.length === 0) {
       return this.getDefaultMarketData()
     }
 
-    const prices = properties.map(p => p.price).filter(p => p > 0)
-    const soldProperties = properties.filter(p => p.status === 'Sold')
-    const activeProperties = properties.filter(p => p.status === 'Active')
+    const prices = properties.map((p) => p.price).filter((p) => p > 0)
+    const soldProperties = properties.filter((p) => p.status === 'Sold')
+    const activeProperties = properties.filter((p) => p.status === 'Active')
 
-    const averagePrice = prices.length > 0 ? prices.reduce((a, b) => a + b, 0) / prices.length : 0
-    const averagePricePerSqFt = properties
-      .filter(p => p.price > 0 && p.squareFeet > 0)
-      .reduce((sum, p) => sum + (p.price / p.squareFeet), 0) / 
-      properties.filter(p => p.price > 0 && p.squareFeet > 0).length
+    const averagePrice =
+      prices.length > 0 ? prices.reduce((a, b) => a + b, 0) / prices.length : 0
+    const averagePricePerSqFt =
+      properties
+        .filter((p) => p.price > 0 && p.squareFeet > 0)
+        .reduce((sum, p) => sum + p.price / p.squareFeet, 0) /
+      properties.filter((p) => p.price > 0 && p.squareFeet > 0).length
 
-    const averageDaysOnMarket = activeProperties.length > 0 
-      ? activeProperties.reduce((sum, p) => sum + p.daysOnMarket, 0) / activeProperties.length 
-      : 0
+    const averageDaysOnMarket =
+      activeProperties.length > 0
+        ? activeProperties.reduce((sum, p) => sum + p.daysOnMarket, 0) /
+          activeProperties.length
+        : 0
 
     // Calculate price trends (simplified - in real implementation, you'd compare historical data)
     const priceTrends = this.calculatePriceTrends(properties)
@@ -141,16 +147,16 @@ export class FUBApiService {
       priceRange: {
         min: Math.min(...prices),
         max: Math.max(...prices),
-        median: this.calculateMedian(prices)
+        median: this.calculateMedian(prices),
       },
       inventoryByStatus: {
         active: activeProperties.length,
-        pending: properties.filter(p => p.status === 'Pending').length,
+        pending: properties.filter((p) => p.status === 'Pending').length,
         sold: soldProperties.length,
-        expired: properties.filter(p => p.status === 'Expired').length
+        expired: properties.filter((p) => p.status === 'Expired').length,
       },
       priceTrends,
-      marketConditions: this.determineMarketConditions(properties, priceTrends)
+      marketConditions: this.determineMarketConditions(properties, priceTrends),
     }
   }
 
@@ -162,17 +168,17 @@ export class FUBApiService {
     additionalFilters: Partial<FUBFilters> = {}
   ): Promise<FUBProperty[]> {
     const allProperties = await this.getProperties(additionalFilters)
-    
-    return allProperties.filter(property => {
+
+    return allProperties.filter((property) => {
       if (!property.latitude || !property.longitude) return false
-      
+
       const distance = this.calculateDistance(
         centerLat,
         centerLng,
         property.latitude,
         property.longitude
       )
-      
+
       return distance <= radiusMiles
     })
   }
@@ -185,11 +191,14 @@ export class FUBApiService {
     const properties = await this.getProperties(filters)
     const cutoffDate = new Date()
     cutoffDate.setDate(cutoffDate.getDate() - daysBack)
-    
+
     return properties
-      .filter(p => p.status === 'Sold' && p.soldDate)
-      .filter(p => new Date(p.soldDate) >= cutoffDate)
-      .sort((a, b) => new Date(b.soldDate).getTime() - new Date(a.soldDate).getTime())
+      .filter((p) => p.status === 'Sold' && p.soldDate)
+      .filter((p) => new Date(p.soldDate) >= cutoffDate)
+      .sort(
+        (a, b) =>
+          new Date(b.soldDate).getTime() - new Date(a.soldDate).getTime()
+      )
   }
 
   // Get market trends for predictive analysis
@@ -197,34 +206,42 @@ export class FUBApiService {
     filters: FUBFilters,
     timeframes: number[] = [30, 90, 180, 365]
   ): Promise<Record<number, { priceChange: number; confidence: number }>> {
-    const trends: Record<number, { priceChange: number; confidence: number }> = {}
-    
+    const trends: Record<number, { priceChange: number; confidence: number }> =
+      {}
+
     for (const days of timeframes) {
       const recentSales = await this.getRecentSales(filters, days)
       const olderSales = await this.getRecentSales(filters, days * 2)
-      
+
       if (recentSales.length > 0 && olderSales.length > 0) {
-        const recentAvg = recentSales.reduce((sum, p) => sum + (p.soldPrice || 0), 0) / recentSales.length
-        const olderAvg = olderSales.reduce((sum, p) => sum + (p.soldPrice || 0), 0) / olderSales.length
-        
-        const priceChange = olderAvg > 0 ? ((recentAvg - olderAvg) / olderAvg) * 100 : 0
+        const recentAvg =
+          recentSales.reduce((sum, p) => sum + (p.soldPrice || 0), 0) /
+          recentSales.length
+        const olderAvg =
+          olderSales.reduce((sum, p) => sum + (p.soldPrice || 0), 0) /
+          olderSales.length
+
+        const priceChange =
+          olderAvg > 0 ? ((recentAvg - olderAvg) / olderAvg) * 100 : 0
         const confidence = Math.min(95, Math.max(50, recentSales.length * 5)) // Confidence based on data points
-        
+
         trends[days] = {
           priceChange: Math.round(priceChange * 100) / 100,
-          confidence
+          confidence,
         }
       }
     }
-    
+
     return trends
   }
 
   // Private methods
-  private async fetchPropertiesFromFUB(filters: FUBFilters): Promise<FUBProperty[]> {
+  private async fetchPropertiesFromFUB(
+    filters: FUBFilters
+  ): Promise<FUBProperty[]> {
     // TODO: Implement actual FUB API calls
     // For now, return sophisticated mock data that matches FUB structure
-    
+
     const mockProperties: FUBProperty[] = [
       {
         id: '1',
@@ -249,13 +266,17 @@ export class FUBApiService {
         hoaFees: 150,
         lotSize: 6000,
         yearBuilt: 2010,
-        features: ['Solar Panels', 'Granite Countertops', 'Stainless Appliances'],
+        features: [
+          'Solar Panels',
+          'Granite Countertops',
+          'Stainless Appliances',
+        ],
         images: ['https://example.com/image1.jpg'],
         description: 'Beautiful Green Valley home with mountain views',
         agentId: 'agent123',
         agentName: 'Dr. Jan Duffy',
         officeId: 'office456',
-        officeName: 'Henderson Homes'
+        officeName: 'Henderson Homes',
       },
       {
         id: '2',
@@ -286,7 +307,7 @@ export class FUBApiService {
         agentId: 'agent123',
         agentName: 'Dr. Jan Duffy',
         officeId: 'office456',
-        officeName: 'Henderson Homes'
+        officeName: 'Henderson Homes',
       },
       {
         id: '3',
@@ -311,54 +332,62 @@ export class FUBApiService {
         hoaFees: 200,
         lotSize: 8000,
         yearBuilt: 2015,
-        features: ['Golf Course View', 'Chef\'s Kitchen', 'Home Theater'],
+        features: ['Golf Course View', "Chef's Kitchen", 'Home Theater'],
         images: ['https://example.com/image3.jpg'],
         description: 'Luxury Seven Hills estate with golf course views',
         agentId: 'agent123',
         agentName: 'Dr. Jan Duffy',
         officeId: 'office456',
-        officeName: 'Henderson Homes'
-      }
+        officeName: 'Henderson Homes',
+      },
     ]
 
     // Apply filters
     let filtered = mockProperties
 
     if (filters.city) {
-      filtered = filtered.filter(p => p.city.toLowerCase().includes(filters.city?.toLowerCase() || ''))
+      filtered = filtered.filter((p) =>
+        p.city.toLowerCase().includes(filters.city?.toLowerCase() || '')
+      )
     }
 
     if (filters.neighborhood) {
-      filtered = filtered.filter(p => p.neighborhood.toLowerCase().includes(filters.neighborhood?.toLowerCase() || ''))
+      filtered = filtered.filter((p) =>
+        p.neighborhood
+          .toLowerCase()
+          .includes(filters.neighborhood?.toLowerCase() || '')
+      )
     }
 
     if (filters.priceMin) {
-      filtered = filtered.filter(p => p.price >= (filters.priceMin || 0))
+      filtered = filtered.filter((p) => p.price >= (filters.priceMin || 0))
     }
 
     if (filters.priceMax) {
-      filtered = filtered.filter(p => p.price <= (filters.priceMax || Number.POSITIVE_INFINITY))
+      filtered = filtered.filter(
+        (p) => p.price <= (filters.priceMax || Number.POSITIVE_INFINITY)
+      )
     }
 
     if (filters.bedrooms) {
-      filtered = filtered.filter(p => p.bedrooms >= (filters.bedrooms || 0))
+      filtered = filtered.filter((p) => p.bedrooms >= (filters.bedrooms || 0))
     }
 
     if (filters.bathrooms) {
-      filtered = filtered.filter(p => p.bathrooms >= (filters.bathrooms || 0))
+      filtered = filtered.filter((p) => p.bathrooms >= (filters.bathrooms || 0))
     }
 
     if (filters.propertyType) {
-      filtered = filtered.filter(p => p.propertyType === filters.propertyType)
+      filtered = filtered.filter((p) => p.propertyType === filters.propertyType)
     }
 
     if (filters.status) {
-      filtered = filtered.filter(p => p.status === filters.status)
+      filtered = filtered.filter((p) => p.status === filters.status)
     }
 
     // Apply geographic radius filter if specified
     if (filters.radiusMiles && filters.centerLat && filters.centerLng) {
-      filtered = filtered.filter(property => {
+      filtered = filtered.filter((property) => {
         const distance = this.calculateDistance(
           filters.centerLat || 0,
           filters.centerLng || 0,
@@ -372,14 +401,22 @@ export class FUBApiService {
     return filtered
   }
 
-  private calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  private calculateDistance(
+    lat1: number,
+    lon1: number,
+    lat2: number,
+    lon2: number
+  ): number {
     const R = 3959 // Earth's radius in miles
-    const dLat = (lat2 - lat1) * Math.PI / 180
-    const dLon = (lon2 - lon1) * Math.PI / 180
-    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-              Math.sin(dLon/2) * Math.sin(dLon/2)
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+    const dLat = ((lat2 - lat1) * Math.PI) / 180
+    const dLon = ((lon2 - lon1) * Math.PI) / 180
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2)
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
     return R * c
   }
 
@@ -387,31 +424,36 @@ export class FUBApiService {
     if (numbers.length === 0) return 0
     const sorted = numbers.sort((a, b) => a - b)
     const middle = Math.floor(sorted.length / 2)
-    return sorted.length % 2 === 0 
-      ? (sorted[middle - 1] + sorted[middle]) / 2 
+    return sorted.length % 2 === 0
+      ? (sorted[middle - 1] + sorted[middle]) / 2
       : sorted[middle]
   }
 
-  private calculatePriceTrends(properties: FUBProperty[]): Record<number, number> {
+  private calculatePriceTrends(
+    properties: FUBProperty[]
+  ): { last30Days: number; last90Days: number; last6Months: number; last12Months: number } {
     // Simplified price trend calculation
     // In real implementation, you'd compare historical data points
     return {
-      30: 2.5,
-      90: 4.2,
-      180: 6.8,
-      365: 8.5
+      last30Days: 2.5,
+      last90Days: 4.2,
+      last6Months: 6.8,
+      last12Months: 8.5,
     }
   }
 
   private determineMarketConditions(
-    properties: FUBProperty[], 
-    priceTrends: Record<number, number>
+    properties: FUBProperty[],
+    priceTrends: { last30Days: number; last90Days: number; last6Months: number; last12Months: number }
   ): 'buyer' | 'seller' | 'balanced' {
-    const activeInventory = properties.filter(p => p.status === 'Active').length
-    const avgDaysOnMarket = properties
-      .filter(p => p.status === 'Active')
-      .reduce((sum, p) => sum + p.daysOnMarket, 0) / 
-      properties.filter(p => p.status === 'Active').length
+    const activeInventory = properties.filter(
+      (p) => p.status === 'Active'
+    ).length
+    const avgDaysOnMarket =
+      properties
+        .filter((p) => p.status === 'Active')
+        .reduce((sum, p) => sum + p.daysOnMarket, 0) /
+      properties.filter((p) => p.status === 'Active').length
 
     // Market conditions logic based on inventory and days on market
     if (activeInventory < 10 && avgDaysOnMarket < 20) return 'seller'
@@ -428,7 +470,7 @@ export class FUBApiService {
       priceRange: { min: 0, max: 0, median: 0 },
       inventoryByStatus: { active: 0, pending: 0, sold: 0, expired: 0 },
       priceTrends: { 30: 0, 90: 0, 180: 0, 365: 0 },
-      marketConditions: 'balanced'
+      marketConditions: 'balanced',
     }
   }
 }

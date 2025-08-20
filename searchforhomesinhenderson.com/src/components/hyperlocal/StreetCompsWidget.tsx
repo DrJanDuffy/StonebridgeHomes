@@ -9,11 +9,11 @@ import {
   HENDERSON_SCHOOL_DATA,
 } from '@/services/hyperlocalService'
 import type { PropertyData } from '@/services/hyperlocalService'
-import type { 
-  WalkabilityScore, 
-  SchoolZone, 
-  MicroMarketPricing, 
-  PredictiveMarketTrends 
+import type {
+  WalkabilityScore,
+  SchoolZone,
+  MicroMarketPricing,
+  PredictiveMarketTrends,
 } from '@/types/hyperlocal'
 
 interface StreetCompsWidgetProps {
@@ -38,8 +38,10 @@ export default function StreetCompsWidget({
     daysOnMarket: number
     priceChange: number
   } | null>(null)
-  const [microMarketPricing, setMicroMarketPricing] = useState<MicroMarketPricing | null>(null)
-  const [predictiveTrends, setPredictiveTrends] = useState<PredictiveMarketTrends | null>(null)
+  const [microMarketPricing, setMicroMarketPricing] =
+    useState<MicroMarketPricing | null>(null)
+  const [predictiveTrends, setPredictiveTrends] =
+    useState<PredictiveMarketTrends | null>(null)
 
   useEffect(() => {
     async function loadStreetComps() {
@@ -185,41 +187,87 @@ export default function StreetCompsWidget({
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div className="bg-white rounded p-3">
-              <div className="font-medium text-purple-700 mb-2">Block Level (500m)</div>
+              <div className="font-medium text-purple-700 mb-2">
+                Block Level (500m)
+              </div>
               <div className="space-y-1 text-xs">
-                <div>Avg Price: ${microMarketPricing.blockLevel.averagePrice.toLocaleString()}</div>
-                <div>Price/Sq Ft: ${microMarketPricing.blockLevel.pricePerSqft}</div>
-                <div>Variation: {microMarketPricing.blockLevel.priceVariation}%</div>
+                <div>
+                  Avg Price: $
+                  {microMarketPricing.blockLevel.averagePrice.toLocaleString()}
+                </div>
+                <div>
+                  Price/Sq Ft: ${microMarketPricing.blockLevel.pricePerSqft}
+                </div>
+                <div>
+                  Variation: {microMarketPricing.blockLevel.priceVariation}%
+                </div>
                 <div>Comps: {microMarketPricing.blockLevel.compCount}</div>
               </div>
             </div>
             <div className="bg-white rounded p-3">
-              <div className="font-medium text-purple-700 mb-2">Street Level</div>
+              <div className="font-medium text-purple-700 mb-2">
+                Street Level
+              </div>
               <div className="space-y-1 text-xs">
-                <div>Avg Price: ${microMarketPricing.streetLevel.averagePrice.toLocaleString()}</div>
-                <div>Price/Sq Ft: ${microMarketPricing.streetLevel.pricePerSqft}</div>
-                <div>Street Premium: +{microMarketPricing.streetLevel.streetPremium}%</div>
+                <div>
+                  Avg Price: $
+                  {microMarketPricing.streetLevel.averagePrice.toLocaleString()}
+                </div>
+                <div>
+                  Price/Sq Ft: ${microMarketPricing.streetLevel.pricePerSqft}
+                </div>
+                <div>
+                  Street Premium: +
+                  {microMarketPricing.streetLevel.streetPremium}%
+                </div>
                 <div>Comps: {microMarketPricing.streetLevel.compCount}</div>
               </div>
             </div>
             <div className="bg-white rounded p-3">
-              <div className="font-medium text-purple-700 mb-2">Neighborhood</div>
+              <div className="font-medium text-purple-700 mb-2">
+                Neighborhood
+              </div>
               <div className="space-y-1 text-xs">
-                <div>Trend: <span className={`font-medium ${
-                  microMarketPricing.neighborhoodLevel.marketTrend === 'rising' ? 'text-green-600' :
-                  microMarketPricing.neighborhoodLevel.marketTrend === 'declining' ? 'text-red-600' :
-                  'text-blue-600'
-                }`}>{microMarketPricing.neighborhoodLevel.marketTrend}</span></div>
-                <div>Days on Market: {microMarketPricing.neighborhoodLevel.daysOnMarket}</div>
-                <div>Inventory: <span className={`font-medium ${
-                  microMarketPricing.neighborhoodLevel.inventoryLevel === 'low' ? 'text-red-600' :
-                  microMarketPricing.neighborhoodLevel.inventoryLevel === 'high' ? 'text-green-600' :
-                  'text-yellow-600'
-                }`}>{microMarketPricing.neighborhoodLevel.inventoryLevel}</span></div>
+                <div>
+                  Trend:{' '}
+                  <span
+                    className={`font-medium ${
+                      microMarketPricing.neighborhoodLevel.marketTrend ===
+                      'rising'
+                        ? 'text-green-600'
+                        : microMarketPricing.neighborhoodLevel.marketTrend ===
+                            'declining'
+                          ? 'text-red-600'
+                          : 'text-blue-600'
+                    }`}
+                  >
+                    {microMarketPricing.neighborhoodLevel.marketTrend}
+                  </span>
+                </div>
+                <div>
+                  Days on Market:{' '}
+                  {microMarketPricing.neighborhoodLevel.daysOnMarket}
+                </div>
+                <div>
+                  Inventory:{' '}
+                  <span
+                    className={`font-medium ${
+                      microMarketPricing.neighborhoodLevel.inventoryLevel ===
+                      'low'
+                        ? 'text-red-600'
+                        : microMarketPricing.neighborhoodLevel
+                              .inventoryLevel === 'high'
+                          ? 'text-green-600'
+                          : 'text-yellow-600'
+                    }`}
+                  >
+                    {microMarketPricing.neighborhoodLevel.inventoryLevel}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-          
+
           {/* Seasonal Adjustments */}
           <div className="mt-3 pt-3 border-t border-purple-200">
             <div className="text-xs text-purple-800">
@@ -227,26 +275,60 @@ export default function StreetCompsWidget({
               <div className="grid grid-cols-4 gap-2">
                 <div className="text-center">
                   <div className="font-medium">Spring</div>
-                  <div className={microMarketPricing.seasonalAdjustments.spring > 0 ? 'text-green-600' : 'text-gray-600'}>
-                    {microMarketPricing.seasonalAdjustments.spring > 0 ? '+' : ''}{microMarketPricing.seasonalAdjustments.spring}%
+                  <div
+                    className={
+                      microMarketPricing.seasonalAdjustments.spring > 0
+                        ? 'text-green-600'
+                        : 'text-gray-600'
+                    }
+                  >
+                    {microMarketPricing.seasonalAdjustments.spring > 0
+                      ? '+'
+                      : ''}
+                    {microMarketPricing.seasonalAdjustments.spring}%
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="font-medium">Summer</div>
-                  <div className={microMarketPricing.seasonalAdjustments.summer > 0 ? 'text-green-600' : 'text-gray-600'}>
-                    {microMarketPricing.seasonalAdjustments.summer > 0 ? '+' : ''}{microMarketPricing.seasonalAdjustments.summer}%
+                  <div
+                    className={
+                      microMarketPricing.seasonalAdjustments.summer > 0
+                        ? 'text-green-600'
+                        : 'text-gray-600'
+                    }
+                  >
+                    {microMarketPricing.seasonalAdjustments.summer > 0
+                      ? '+'
+                      : ''}
+                    {microMarketPricing.seasonalAdjustments.summer}%
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="font-medium">Fall</div>
-                  <div className={microMarketPricing.seasonalAdjustments.fall > 0 ? 'text-green-600' : 'text-gray-600'}>
-                    {microMarketPricing.seasonalAdjustments.fall > 0 ? '+' : ''}{microMarketPricing.seasonalAdjustments.fall}%
+                  <div
+                    className={
+                      microMarketPricing.seasonalAdjustments.fall > 0
+                        ? 'text-green-600'
+                        : 'text-gray-600'
+                    }
+                  >
+                    {microMarketPricing.seasonalAdjustments.fall > 0 ? '+' : ''}
+                    {microMarketPricing.seasonalAdjustments.fall}%
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="font-medium">Winter</div>
-                  <div className={microMarketPricing.seasonalAdjustments.winter > 0 ? 'text-green-600' : 'text-red-600'}>
-                    {microMarketPricing.seasonalAdjustments.winter > 0 ? '+' : ''}{microMarketPricing.seasonalAdjustments.winter}%
+                  <div
+                    className={
+                      microMarketPricing.seasonalAdjustments.winter > 0
+                        ? 'text-green-600'
+                        : 'text-red-600'
+                    }
+                  >
+                    {microMarketPricing.seasonalAdjustments.winter > 0
+                      ? '+'
+                      : ''}
+                    {microMarketPricing.seasonalAdjustments.winter}%
                   </div>
                 </div>
               </div>
@@ -263,34 +345,81 @@ export default function StreetCompsWidget({
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div className="bg-white rounded p-3">
-              <div className="font-medium text-indigo-700 mb-2">Short Term (30-90 days)</div>
+              <div className="font-medium text-indigo-700 mb-2">
+                Short Term (30-90 days)
+              </div>
               <div className="space-y-1 text-xs">
-                <div>30 days: +{predictiveTrends.shortTerm.next30Days.priceChange}% ({predictiveTrends.shortTerm.next30Days.confidence}% confidence)</div>
-                <div>90 days: +{predictiveTrends.shortTerm.next90Days.priceChange}% ({predictiveTrends.shortTerm.next90Days.confidence}% confidence)</div>
+                <div>
+                  30 days: +{predictiveTrends.shortTerm.next30Days.priceChange}%
+                  ({predictiveTrends.shortTerm.next30Days.confidence}%
+                  confidence)
+                </div>
+                <div>
+                  90 days: +{predictiveTrends.shortTerm.next90Days.priceChange}%
+                  ({predictiveTrends.shortTerm.next90Days.confidence}%
+                  confidence)
+                </div>
               </div>
             </div>
             <div className="bg-white rounded p-3">
-              <div className="font-medium text-indigo-700 mb-2">Medium Term (6-12 months)</div>
+              <div className="font-medium text-indigo-700 mb-2">
+                Medium Term (6-12 months)
+              </div>
               <div className="space-y-1 text-xs">
-                <div>6 months: +{predictiveTrends.mediumTerm.next6Months.priceChange}% ({predictiveTrends.mediumTerm.next6Months.confidence}% confidence)</div>
-                <div>12 months: +{predictiveTrends.mediumTerm.next12Months.priceChange}% ({predictiveTrends.mediumTerm.next12Months.confidence}% confidence)</div>
-                <div>Market: <span className={`font-medium ${
-                  predictiveTrends.mediumTerm.next12Months.marketConditions === 'seller' ? 'text-red-600' :
-                  predictiveTrends.mediumTerm.next12Months.marketConditions === 'buyer' ? 'text-green-600' :
-                  'text-blue-600'
-                }`}>{predictiveTrends.mediumTerm.next12Months.marketConditions}</span></div>
+                <div>
+                  6 months: +
+                  {predictiveTrends.mediumTerm.next6Months.priceChange}% (
+                  {predictiveTrends.mediumTerm.next6Months.confidence}%
+                  confidence)
+                </div>
+                <div>
+                  12 months: +
+                  {predictiveTrends.mediumTerm.next12Months.priceChange}% (
+                  {predictiveTrends.mediumTerm.next12Months.confidence}%
+                  confidence)
+                </div>
+                <div>
+                  Market:{' '}
+                  <span
+                    className={`font-medium ${
+                      predictiveTrends.mediumTerm.next12Months
+                        .marketConditions === 'seller'
+                        ? 'text-red-600'
+                        : predictiveTrends.mediumTerm.next12Months
+                              .marketConditions === 'buyer'
+                          ? 'text-green-600'
+                          : 'text-blue-600'
+                    }`}
+                  >
+                    {predictiveTrends.mediumTerm.next12Months.marketConditions}
+                  </span>
+                </div>
               </div>
             </div>
             <div className="bg-white rounded p-3">
-              <div className="font-medium text-indigo-700 mb-2">Long Term (2 years)</div>
+              <div className="font-medium text-indigo-700 mb-2">
+                Long Term (2 years)
+              </div>
               <div className="space-y-1 text-xs">
-                <div>2 years: +{predictiveTrends.longTerm.next2Years.priceChange}% ({predictiveTrends.longTerm.next2Years.confidence}% confidence)</div>
-                <div>Expected Return: {predictiveTrends.opportunities.expectedReturn}%</div>
-                <div>Timing: <span className="font-medium text-indigo-600">{predictiveTrends.opportunities.timing}</span></div>
+                <div>
+                  2 years: +{predictiveTrends.longTerm.next2Years.priceChange}%
+                  ({predictiveTrends.longTerm.next2Years.confidence}%
+                  confidence)
+                </div>
+                <div>
+                  Expected Return:{' '}
+                  {predictiveTrends.opportunities.expectedReturn}%
+                </div>
+                <div>
+                  Timing:{' '}
+                  <span className="font-medium text-indigo-600">
+                    {predictiveTrends.opportunities.timing}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-          
+
           {/* Key Factors */}
           <div className="mt-3 pt-3 border-t border-indigo-200">
             <div className="text-xs text-indigo-800">
@@ -298,11 +427,19 @@ export default function StreetCompsWidget({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <div>
                   <div className="font-medium text-red-600">High Risk:</div>
-                  <div className="text-xs">{predictiveTrends.riskFactors.high.slice(0, 2).join(', ')}</div>
+                  <div className="text-xs">
+                    {predictiveTrends.riskFactors.high.slice(0, 2).join(', ')}
+                  </div>
                 </div>
                 <div>
-                  <div className="font-medium text-green-600">Opportunities:</div>
-                  <div className="text-xs">{predictiveTrends.opportunities.strategy.slice(0, 2).join(', ')}</div>
+                  <div className="font-medium text-green-600">
+                    Opportunities:
+                  </div>
+                  <div className="text-xs">
+                    {predictiveTrends.opportunities.strategy
+                      .slice(0, 2)
+                      .join(', ')}
+                  </div>
                 </div>
               </div>
             </div>
@@ -434,7 +571,9 @@ export default function StreetCompsWidget({
             </div>
             <div>
               <span className="text-blue-700">Days on Market:</span>
-              <span className="ml-2 font-medium">{marketTrends.daysOnMarket}</span>
+              <span className="ml-2 font-medium">
+                {marketTrends.daysOnMarket}
+              </span>
             </div>
             <div>
               <span className="text-blue-700">Price Change:</span>
@@ -480,7 +619,8 @@ export default function StreetCompsWidget({
                       ${comp.salePrice.toLocaleString()}
                     </div>
                     <div className="text-xs text-gray-500">
-                      {comp.distance}m away • {new Date(comp.saleDate).toLocaleDateString()}
+                      {comp.distance}m away •{' '}
+                      {new Date(comp.saleDate).toLocaleDateString()}
                     </div>
                   </div>
                 </div>

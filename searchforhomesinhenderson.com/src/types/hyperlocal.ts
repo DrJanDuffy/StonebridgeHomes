@@ -136,6 +136,7 @@ export interface PredictiveMarketTrends {
     next2Years: {
       priceChange: number
       confidence: number
+      factors: string[]
       economicFactors: string[]
       developmentFactors: string[]
     }

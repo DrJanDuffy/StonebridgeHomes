@@ -378,7 +378,7 @@ export class MarketIntelligenceService {
   ): Promise<PredictiveMarketTrends> {
     // TODO: Integrate with ML models trained on Henderson market data
     // For now, return sophisticated mock data based on your 15+ years experience
-    
+
     return {
       shortTerm: {
         next30Days: {
@@ -484,25 +484,25 @@ export class MarketIntelligenceService {
   ): Promise<MicroMarketPricing> {
     // TODO: Integrate with real MLS data and FUB API
     // For now, calculate sophisticated mock data
-    
+
     const basePrice = 750000
     const basePricePerSqft = 300
-    
+
     // Calculate seasonal adjustments based on Henderson market patterns
     const now = new Date()
     const month = now.getMonth()
     const seasonalAdjustments = this.calculateSeasonalAdjustments(month)
-    
+
     // Calculate block-level variations (500m radius)
     const blockVariation = Math.random() * 0.15 - 0.075 // ±7.5%
     const blockPrice = basePrice * (1 + blockVariation)
-    
+
     // Calculate street-level premium (same street properties)
-    const streetPremium = Math.random() * 0.10 + 0.05 // 5-15% premium
-    
+    const streetPremium = Math.random() * 0.1 + 0.05 // 5-15% premium
+
     // Calculate neighborhood trends based on Henderson market data
     const marketTrend = this.determineMarketTrend(scope)
-    
+
     return {
       blockLevel: {
         averagePrice: Math.round(blockPrice),
@@ -544,7 +544,9 @@ export class MarketIntelligenceService {
     }
   }
 
-  private determineMarketTrend(scope: GeoScope): 'rising' | 'stable' | 'declining' {
+  private determineMarketTrend(
+    scope: GeoScope
+  ): 'rising' | 'stable' | 'declining' {
     // Henderson market analysis based on your 15+ years experience
     const trends: Record<string, 'rising' | 'stable' | 'declining'> = {
       greenValley: 'rising',
@@ -553,14 +555,16 @@ export class MarketIntelligenceService {
       whitneyRanch: 'stable',
       stephanieRanch: 'rising',
     }
-    
+
     // Find which neighborhood this scope belongs to
-    for (const [neighborhood, data] of Object.entries(HENDERSON_HYPERLOCAL_DATA.neighborhoods)) {
+    for (const [neighborhood, data] of Object.entries(
+      HENDERSON_HYPERLOCAL_DATA.neighborhoods
+    )) {
       if (isWithinScope(scope.center, data)) {
         return trends[neighborhood] || 'stable'
       }
     }
-    
+
     return 'stable'
   }
 
@@ -573,13 +577,15 @@ export class MarketIntelligenceService {
       whitneyRanch: 'medium', // Family market, steady supply
       stephanieRanch: 'low', // Premium market, low inventory
     }
-    
-    for (const [neighborhood, data] of Object.entries(HENDERSON_HYPERLOCAL_DATA.neighborhoods)) {
+
+    for (const [neighborhood, data] of Object.entries(
+      HENDERSON_HYPERLOCAL_DATA.neighborhoods
+    )) {
       if (isWithinScope(scope.center, data)) {
         return inventoryLevels[neighborhood] || 'medium'
       }
     }
-    
+
     return 'medium'
   }
 

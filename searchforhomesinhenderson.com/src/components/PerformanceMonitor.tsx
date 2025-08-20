@@ -55,7 +55,10 @@ export default function PerformanceMonitor() {
           const entries = list.getEntries()
           for (const entry of entries) {
             const fidEntry = entry as FirstInputEntry
-            if (fidEntry.processingStart !== undefined && fidEntry.startTime !== undefined) {
+            if (
+              fidEntry.processingStart !== undefined &&
+              fidEntry.startTime !== undefined
+            ) {
               const fid = fidEntry.processingStart - fidEntry.startTime
               console.log('FID:', fid)
               if (typeof window.gtag === 'function') {
@@ -76,7 +79,10 @@ export default function PerformanceMonitor() {
           const entries = list.getEntries()
           for (const entry of entries) {
             const layoutShiftEntry = entry as LayoutShiftEntry
-            if (!layoutShiftEntry.hadRecentInput && layoutShiftEntry.value !== undefined) {
+            if (
+              !layoutShiftEntry.hadRecentInput &&
+              layoutShiftEntry.value !== undefined
+            ) {
               clsValue += layoutShiftEntry.value
             }
           }
@@ -96,8 +102,12 @@ export default function PerformanceMonitor() {
           const entries = list.getEntries()
           for (const entry of entries) {
             const interactionEntry = entry as InteractionEntry
-            if (interactionEntry.processingStart !== undefined && interactionEntry.startTime !== undefined) {
-              const inp = interactionEntry.processingStart - interactionEntry.startTime
+            if (
+              interactionEntry.processingStart !== undefined &&
+              interactionEntry.startTime !== undefined
+            ) {
+              const inp =
+                interactionEntry.processingStart - interactionEntry.startTime
               console.log('INP:', inp)
               if (typeof window.gtag === 'function') {
                 window.gtag('event', 'INP', {

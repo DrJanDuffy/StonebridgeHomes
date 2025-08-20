@@ -14,8 +14,7 @@ const nextConfig = {
 
   // Performance optimizations
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    optimizeCss: true,
+    // Keep only essential, stable features
     turbo: {
       rules: {
         '*.svg': {
@@ -46,18 +45,13 @@ const nextConfig = {
   },
 
   // Webpack optimizations
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      // Production optimizations
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-        },
+  webpack: (config, { isServer }) => {
+    // Handle Node.js modules in client-side code
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+        net: false,
+        tls: false,
       }
     }
 

@@ -7,6 +7,7 @@ import type {
   MicroMarketPricing,
   PredictiveMarketTrends,
 } from '@/types/hyperlocal'
+import { fubApiService, type FUBProperty } from './fubApiService'
 
 // Property data interface
 export interface PropertyData {
@@ -165,6 +166,22 @@ export const HENDERSON_SCHOOL_DATA: Record<string, SchoolZone[]> = {
       testScores: { math: 90, reading: 88, science: 91 },
     },
   ],
+}
+
+// Convert FUB property to PropertyData
+function convertFUBToPropertyData(fubProperty: FUBProperty, distance?: number): PropertyData {
+  return {
+    id: fubProperty.id,
+    address: fubProperty.address,
+    salePrice: fubProperty.soldPrice || fubProperty.price,
+    saleDate: fubProperty.soldDate || fubProperty.listDate,
+    sqft: fubProperty.squareFeet,
+    bedrooms: fubProperty.bedrooms,
+    bathrooms: fubProperty.bathrooms,
+    latitude: fubProperty.latitude,
+    longitude: fubProperty.longitude,
+    distance,
+  }
 }
 
 // Calculate distance between two points using Haversine formula
@@ -622,7 +639,7 @@ export class MarketIntelligenceService {
   }
 }
 
-// Street-level market comps service
+// Street-level market comps service with FUB integration
 export class StreetCompsService {
   private cache: Map<string, { data: PropertyData[]; timestamp: number }> =
     new Map()
@@ -640,7 +657,7 @@ export class StreetCompsService {
     }
 
     try {
-      // TODO: Integrate with FUB API for real property data
+      // Use FUB API for real property data
       const comps = await this.fetchStreetCompsFromFUB(address, scope)
 
       this.cache.set(cacheKey, {
@@ -659,11 +676,47 @@ export class StreetCompsService {
     address: string,
     scope: StreetComps['geoScope']
   ): Promise<PropertyData[]> {
-    // TODO: Implement FUB API integration
-    // This would fetch properties from Follow Up Boss
-    // and filter by geographic scope
+    try {
+      // Convert scope to FUB filters
+      const filters = {
+        city: 'Henderson',
+        radiusMiles: scope.radiusMeters / 1609.34, // Convert meters to miles
+        centerLat: scope.center[0],
+        centerLng: scope.center[1],
+        status: 'Sold',
+      }
 
-    // Mock data for now
+      // Get properties from FUB API
+      const fubProperties = await fubApiService.getProperties(filters)
+      
+      // Convert to PropertyData format and calculate distances
+      const comps: PropertyData[] = fubProperties.map(fubProp => {
+        const distance = calculateDistance(
+          scope.center[0],
+          scope.center[1],
+          fubProp.latitude,
+          fubProp.longitude
+        )
+        return convertFUBToPropertyData(fubProp, distance)
+      })
+
+      // Sort by distance and limit to scope radius
+      return comps
+        .filter(comp => comp.distance && comp.distance <= scope.radiusMeters)
+        .sort((a, b) => (a.distance || 0) - (b.distance || 0))
+        .slice(0, 10) // Limit to top 10 closest comps
+    } catch (error) {
+      console.error('Error fetching from FUB API:', error)
+      // Fallback to mock data if FUB API fails
+      return this.getMockStreetComps(address, scope)
+    }
+  }
+
+  private getMockStreetComps(
+    address: string,
+    scope: StreetComps['geoScope']
+  ): PropertyData[] {
+    // Fallback mock data if FUB API is unavailable
     return [
       {
         id: '1',
@@ -706,17 +759,35 @@ export class StreetCompsService {
     return Math.min(score, 100)
   }
 
-  // Get local market trends
-  getLocalMarketTrends(scope: GeoScope): {
+  // Get local market trends from FUB API
+  async getLocalMarketTrends(scope: GeoScope): Promise<{
     pricePerSqft: number
     daysOnMarket: number
     priceChange: number
-  } {
-    // TODO: Calculate from real FUB data
-    return {
-      pricePerSqft: 300,
-      daysOnMarket: 18,
-      priceChange: 2.5, // percentage
+  }> {
+    try {
+      const filters = {
+        city: 'Henderson',
+        radiusMiles: scope.radiusMeters / 1609.34,
+        centerLat: scope.center[0],
+        centerLng: scope.center[1],
+      }
+
+      const marketData = await fubApiService.getMarketData(filters)
+      
+      return {
+        pricePerSqft: marketData.averagePricePerSqFt,
+        daysOnMarket: marketData.averageDaysOnMarket,
+        priceChange: marketData.priceTrends.last90Days,
+      }
+    } catch (error) {
+      console.error('Error fetching market trends from FUB:', error)
+      // Fallback to default values
+      return {
+        pricePerSqft: 300,
+        daysOnMarket: 18,
+        priceChange: 2.5, // percentage
+      }
     }
   }
 }

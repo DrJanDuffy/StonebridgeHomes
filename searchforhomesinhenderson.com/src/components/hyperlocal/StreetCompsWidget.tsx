@@ -71,8 +71,7 @@ export default function StreetCompsWidget({
         setSchoolZones(schools)
 
         // Get market trends
-        const trends =
-          streetCompsService.getLocalMarketTrends(neighborhoodScope)
+        const trends = await streetCompsService.getLocalMarketTrends(neighborhoodScope)
 
         setMarketTrends(trends)
 

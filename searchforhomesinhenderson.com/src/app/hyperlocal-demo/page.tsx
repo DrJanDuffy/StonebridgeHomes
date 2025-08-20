@@ -1,12 +1,8 @@
+'use client'
+
 import type { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
 import Script from 'next/script'
-
-export const metadata: Metadata = {
-  title: 'Hyperlocal Real Estate Demo | Henderson Homes',
-  description:
-    'Experience the future of hyperlocal real estate with AI-powered market intelligence, street-level comps, and predictive analytics.',
-}
 
 export default function HyperlocalDemoPage() {
   return (

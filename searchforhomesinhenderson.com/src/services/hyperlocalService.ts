@@ -118,7 +118,10 @@ export const HENDERSON_SCHOOL_DATA: Record<string, SchoolZone[]> = {
       district: 'CCSD',
       rating: 8,
       enrollment: 2800,
-      boundary: [[36.0700, -115.0660], [36.0720, -115.0680]],
+      boundary: [
+        [36.07, -115.066],
+        [36.072, -115.068],
+      ],
       distance: 0,
       walkTime: 15,
       driveTime: 3,
@@ -131,7 +134,10 @@ export const HENDERSON_SCHOOL_DATA: Record<string, SchoolZone[]> = {
       district: 'CCSD',
       rating: 9,
       enrollment: 680,
-      boundary: [[36.0690, -115.0650], [36.0710, -115.0670]],
+      boundary: [
+        [36.069, -115.065],
+        [36.071, -115.067],
+      ],
       distance: 0,
       walkTime: 8,
       driveTime: 2,
@@ -146,7 +152,10 @@ export const HENDERSON_SCHOOL_DATA: Record<string, SchoolZone[]> = {
       district: 'CCSD',
       rating: 9,
       enrollment: 720,
-      boundary: [[36.0880, -115.0570], [36.0900, -115.0590]],
+      boundary: [
+        [36.088, -115.057],
+        [36.09, -115.059],
+      ],
       distance: 0,
       walkTime: 10,
       driveTime: 2,
@@ -231,27 +240,54 @@ export class WalkabilityService {
   ): Promise<WalkabilityScore> {
     // TODO: Integrate with real APIs (Google Places, OpenStreetMap)
     // For now, calculate based on amenity proximity
-    
+
     const [lat, lng] = scope.center
     const amenities = HENDERSON_HYPERLOCAL_DATA.amenities
-    
+
     // Calculate scores for each category
-    const shoppingScore = this.calculateCategoryScore(amenities.shopping, scope, 40)
+    const shoppingScore = this.calculateCategoryScore(
+      amenities.shopping,
+      scope,
+      40
+    )
     const diningScore = this.calculateCategoryScore(amenities.dining, scope, 30)
     const parksScore = this.calculateCategoryScore(amenities.parks, scope, 20)
-    const healthcareScore = this.calculateCategoryScore(amenities.healthcare, scope, 10)
-    
-    const overall = Math.min(100, shoppingScore + diningScore + parksScore + healthcareScore)
-    
+    const healthcareScore = this.calculateCategoryScore(
+      amenities.healthcare,
+      scope,
+      10
+    )
+
+    const overall = Math.min(
+      100,
+      shoppingScore + diningScore + parksScore + healthcareScore
+    )
+
     return {
       overall,
       categories: {
-        shopping: { score: shoppingScore, nearby: ['The District', 'Target'], distance: 500 },
-        dining: { score: diningScore, nearby: ['Yard House', 'Brio'], distance: 500 },
-        parks: { score: parksScore, nearby: ['Green Valley Ranch'], distance: 1000 },
+        shopping: {
+          score: shoppingScore,
+          nearby: ['The District', 'Target'],
+          distance: 500,
+        },
+        dining: {
+          score: diningScore,
+          nearby: ['Yard House', 'Brio'],
+          distance: 500,
+        },
+        parks: {
+          score: parksScore,
+          nearby: ['Green Valley Ranch'],
+          distance: 1000,
+        },
         schools: { score: 85, nearby: ['Green Valley High'], distance: 800 },
         transit: { score: 70, nearby: ['RTC Bus Routes'], distance: 1000 },
-        healthcare: { score: healthcareScore, nearby: ['Henderson Hospital'], distance: 2000 },
+        healthcare: {
+          score: healthcareScore,
+          nearby: ['Henderson Hospital'],
+          distance: 2000,
+        },
       },
       insights: [
         'Excellent shopping access within 0.5 miles',
@@ -281,7 +317,7 @@ export class WalkabilityService {
         amenity.center[0],
         amenity.center[1]
       )
-      
+
       if (distance <= 500) score += maxScore * 0.8
       else if (distance <= 1000) score += maxScore * 0.6
       else if (distance <= 2000) score += maxScore * 0.4
@@ -301,7 +337,9 @@ export class WalkabilityService {
         healthcare: { score: 40, nearby: [], distance: 2000 },
       },
       insights: ['Moderate walkability score'],
-      recommendations: ['Consider proximity to amenities when choosing location'],
+      recommendations: [
+        'Consider proximity to amenities when choosing location',
+      ],
     }
   }
 }

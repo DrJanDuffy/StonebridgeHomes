@@ -76,9 +76,16 @@ export interface SchoolZone {
 // Local knowledge encoding
 export interface LocalKnowledge {
   schoolZones: SchoolZone[]
-  floodPlains: Array<{ name: string; boundary: [number, number][]; risk: 'low' | 'medium' | 'high' }>
+  floodPlains: Array<{
+    name: string
+    boundary: [number, number][]
+    risk: 'low' | 'medium' | 'high'
+  }>
   walkabilityScores: Record<string, WalkabilityScore>
-  noiseLevels: Record<string, { level: 'low' | 'medium' | 'high'; source: string; decibels: number }>
+  noiseLevels: Record<
+    string,
+    { level: 'low' | 'medium' | 'high'; source: string; decibels: number }
+  >
   localInsights: string[]
   marketTrends: {
     pricePerSqft: { current: number; trend: number; forecast: number }

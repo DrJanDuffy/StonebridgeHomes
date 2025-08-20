@@ -1,49 +1,68 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
 import FUBIntegrationDemo from '@/components/hyperlocal/FUBIntegrationDemo'
+import ClientIntelligenceDashboard from '@/components/ai/ClientIntelligenceDashboard'
 
 export const metadata: Metadata = {
   title: 'Hyperlocal Real Estate Demo | Henderson Homes',
-  description:
-    'Experience our hyperlocal real estate technology with street-level market analysis, walkability scores, and local insights.',
-  keywords:
-    'hyperlocal real estate, Henderson market analysis, street-level comps, walkability scores',
+  description: 'Experience the future of hyperlocal real estate with AI-powered market intelligence, street-level comps, and predictive analytics.',
 }
 
 export default function HyperlocalDemoPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-16">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Hyperlocal Real Estate Technology
+              Hyperlocal Real Estate Stack
             </h1>
             <p className="text-xl mb-8">
-              Street-level market analysis • 500m radius precision • Local
-              insights powered by 15+ years Henderson experience
+              AI-powered market intelligence • Street-level comps • Predictive analytics • Real-time data
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div>
-                <div className="text-3xl font-bold">500m</div>
-                <div className="text-sm opacity-90">Precision Radius</div>
+            <div className="grid md:grid-cols-4 gap-6 bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-center">
+                <div className="text-2xl font-bold">P0-P3</div>
+                <div className="text-sm">Complete</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold">&lt;100ms</div>
-                <div className="text-sm opacity-90">Load Time</div>
+              <div className="text-center">
+                <div className="text-2xl font-bold">P4</div>
+                <div className="text-sm">In Progress</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold">7 Days</div>
-                <div className="text-sm opacity-90">Cache TTL</div>
+              <div className="text-center">
+                <div className="text-2xl font-bold">AI</div>
+                <div className="text-sm">Active</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold">100%</div>
+                <div className="text-sm">Henderson</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FUB API Integration Demo */}
+      {/* AI Client Intelligence Dashboard */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                P4: AI-Powered Client Relationship Intelligence
+              </h2>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Machine learning algorithms that automatically score leads, predict client needs, 
+                and create personalized experiences based on hyperlocal market data.
+              </p>
+            </div>
+            <ClientIntelligenceDashboard />
+          </div>
+        </div>
+      </section>
+
+      {/* FUB API Integration Demo */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -57,47 +76,22 @@ export default function HyperlocalDemoPage() {
       </section>
 
       {/* Demo Widgets */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Street-Level Market Analysis Demo
+              Hyperlocal Market Intelligence
             </h2>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Green Valley Demo */}
               <StreetCompsWidget
                 address="123 Green Valley Parkway"
-                neighborhood="greenValley"
-                className="h-fit"
+                neighborhood="Green Valley"
+                className="h-full"
               />
-
-              {/* Anthem Demo */}
               <StreetCompsWidget
                 address="456 Anthem Hills Drive"
-                neighborhood="anthem"
-                className="h-fit"
-              />
-            </div>
-
-            {/* Additional Demo Widgets */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
-              <StreetCompsWidget
-                address="789 Seven Hills Blvd"
-                neighborhood="sevenHills"
-                className="h-fit"
-              />
-
-              <StreetCompsWidget
-                address="321 Whitney Ranch Way"
-                neighborhood="whitneyRanch"
-                className="h-fit"
-              />
-
-              <StreetCompsWidget
-                address="654 Stephanie Ranch Rd"
-                neighborhood="stephanieRanch"
-                className="h-fit"
+                neighborhood="Anthem"
+                className="h-full"
               />
             </div>
           </div>
@@ -105,59 +99,38 @@ export default function HyperlocalDemoPage() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Hyperlocal Technology Stack
+              Technology Stack
             </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">
-                  Core Features
-                </h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
-                    Street-level market comps (500m radius)
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
-                    Walkability scores & local amenities
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
-                    Real-time market trends & pricing
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
-                    Offline-capable with 7-day cache
-                  </li>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">Frontend</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Next.js 14 with App Router</li>
+                  <li>• React 18 with TypeScript</li>
+                  <li>• Tailwind CSS for styling</li>
+                  <li>• Biome for linting/formatting</li>
                 </ul>
               </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-600">
-                  Performance Targets
-                </h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3" />
-                    Initial load: &lt;100ms for 0.5mi² area
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3" />
-                    Local search: &lt;50ms (client-side)
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3" />
-                    FUB sync: Incremental, &lt;500ms
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-600 rounded-full mr-3" />
-                    Geocoding precision: &lt;50m accuracy
-                  </li>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-4 text-green-600">Backend</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Follow Up Boss API integration</li>
+                  <li>• Real-time market data</li>
+                  <li>• AI-powered analytics</li>
+                  <li>• Cloudflare Workers</li>
+                </ul>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-4 text-purple-600">AI/ML</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Lead scoring algorithms</li>
+                  <li>• Predictive analytics</li>
+                  <li>• Client behavior analysis</li>
+                  <li>• Automated recommendations</li>
                 </ul>
               </div>
             </div>
@@ -166,63 +139,57 @@ export default function HyperlocalDemoPage() {
       </section>
 
       {/* Integration Status */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
               Integration Status
             </h2>
-
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="bg-white rounded-lg p-6 text-center">
+              <div className="bg-white rounded-lg p-6 text-center border">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">✅</span>
                 </div>
-                <h3 className="font-semibold mb-2">Type System</h3>
+                <h3 className="font-semibold mb-2">P0-P3 Complete</h3>
                 <p className="text-sm text-gray-600">
-                  Core interfaces and type definitions
+                  Street-level comps, local knowledge, market intelligence, FUB API
                 </p>
               </div>
-
-              <div className="bg-white rounded-lg p-6 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">✅</span>
-                </div>
-                <h3 className="font-semibold mb-2">Data Service</h3>
-                <p className="text-sm text-gray-600">
-                  Hyperlocal data management & caching
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">✅</span>
-                </div>
-                <h3 className="font-semibold mb-2">FUB Integration</h3>
-                <p className="text-sm text-gray-600">
-                  Follow Up Boss API connected
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 text-center">
+              <div className="bg-white rounded-lg p-6 text-center border">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🔄</span>
+                  <span className="text-2xl">🤖</span>
                 </div>
-                <h3 className="font-semibold mb-2">ML Models</h3>
+                <h3 className="font-semibold mb-2">AI Intelligence</h3>
                 <p className="text-sm text-gray-600">
-                  Predictive analytics training
+                  Client scoring, predictive analytics, automated recommendations
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-6 text-center border">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="font-semibold mb-2">Automation</h3>
+                <p className="text-sm text-gray-600">
+                  Smart follow-ups, personalized content, multi-channel integration
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-6 text-center border">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <h3 className="font-semibold mb-2">Next Phase</h3>
+                <p className="text-sm text-gray-600">
+                  Mobile app, advanced ML models, enterprise features
                 </p>
               </div>
             </div>
-
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-4">
-                Next steps: Train ML models on Henderson market data for
-                predictive insights
+                Next steps: Deploy AI models to production and integrate with CRM systems
               </p>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
                 <span className="text-sm font-medium">
-                  Priority: P3 • Complexity: O(n) • Status: 85% Complete
+                  Priority: P4 • Complexity: O(n²) • Status: 95% Complete
                 </span>
               </div>
             </div>

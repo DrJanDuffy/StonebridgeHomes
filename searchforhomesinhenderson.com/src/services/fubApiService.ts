@@ -191,7 +191,7 @@ export class FUBApiService {
     const properties = await this.getProperties(filters)
     const cutoffDate = new Date()
     cutoffDate.setDate(cutoffDate.getDate() - daysBack)
-    
+
     return properties
       .filter((p) => p.status === 'Sold' && p.soldDate)
       .filter((p) => {
@@ -482,11 +482,11 @@ export class FUBApiService {
       averageDaysOnMarket: 0,
       priceRange: { min: 0, max: 0, median: 0 },
       inventoryByStatus: { active: 0, pending: 0, sold: 0, expired: 0 },
-      priceTrends: { 
-        last30Days: 0, 
-        last90Days: 0, 
-        last6Months: 0, 
-        last12Months: 0 
+      priceTrends: {
+        last30Days: 0,
+        last90Days: 0,
+        last6Months: 0,
+        last12Months: 0,
       },
       marketConditions: 'balanced',
     }

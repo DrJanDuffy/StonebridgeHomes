@@ -88,12 +88,12 @@ export default function HyperlocalDemoPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <StreetCompsWidget
                 address="123 Green Valley Parkway"
-                neighborhood="Green Valley"
+                neighborhood="greenValley"
                 className="h-full"
               />
               <StreetCompsWidget
                 address="456 Anthem Hills Drive"
-                neighborhood="Anthem"
+                neighborhood="anthem"
                 className="h-full"
               />
             </div>

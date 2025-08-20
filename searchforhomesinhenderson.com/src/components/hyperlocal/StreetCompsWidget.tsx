@@ -154,18 +154,18 @@ function generateDynamicData(address: string, neighborhood: string) {
         'Consider new construction',
       ][seed % 3],
     },
-         riskFactors: {
-       high: [
-         'Interest rate volatility',
-         'Economic recession risk',
-         'Supply chain disruptions',
-       ].slice(0, 2),
-       medium: [
-         'Local market saturation',
-         'Regulatory changes',
-         'Environmental factors',
-       ].slice(0, 2),
-     },
+    riskFactors: {
+      high: [
+        'Interest rate volatility',
+        'Economic recession risk',
+        'Supply chain disruptions',
+      ].slice(0, 2),
+      medium: [
+        'Local market saturation',
+        'Regulatory changes',
+        'Environmental factors',
+      ].slice(0, 2),
+    },
   }
 
   return {

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Hyperlocal Real Estate Demo | Henderson Homes',
@@ -9,7 +10,40 @@ export const metadata: Metadata = {
 
 export default function HyperlocalDemoPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <>
+      {/* RealScout Widget Script and Styles */}
+      <Script 
+        src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+        type="module"
+        strategy="beforeInteractive"
+      />
+      <style jsx global>{`
+        realscout-office-listings {
+          --rs-listing-divider-color: rgb(101, 141, 172);
+          --rs-listing-background-color: #ffffff;
+          --rs-listing-border-radius: 12px;
+          --rs-listing-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          --rs-listing-padding: 20px;
+          --rs-listing-margin: 16px 0;
+          width: 100%;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          background: #ffffff;
+        }
+        
+        realscout-office-listings::part(listing-item) {
+          border-radius: 8px;
+          margin-bottom: 16px;
+          transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        realscout-office-listings::part(listing-item):hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+      `}</style>
+      
+      <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto px-4">
@@ -186,79 +220,43 @@ export default function HyperlocalDemoPage() {
               </div>
             </div>
 
-            {/* Interactive Search Demo */}
+            {/* Live RealScout Listings */}
             <div className="bg-gray-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
-                🏠 Find Your Perfect Home
+                🏠 Live Henderson Property Listings
               </h3>
-              <div className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <div>
-                    <label
-                      htmlFor="price-range"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Price Range
-                    </label>
-                    <select
-                      id="price-range"
-                      name="price-range"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      aria-label="Select price range"
-                    >
-                      <option value="300-500">$300k - $500k</option>
-                      <option value="500-750">$500k - $750k</option>
-                      <option value="750-1000">$750k - $1M</option>
-                      <option value="1000+">$1M+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="bedrooms"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Bedrooms
-                    </label>
-                    <select
-                      id="bedrooms"
-                      name="bedrooms"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      aria-label="Select number of bedrooms"
-                    >
-                      <option value="2">2+</option>
-                      <option value="3">3+</option>
-                      <option value="4">4+</option>
-                      <option value="5">5+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="neighborhood"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Neighborhood
-                    </label>
-                    <select
-                      id="neighborhood"
-                      name="neighborhood"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      aria-label="Select neighborhood"
-                    >
-                      <option value="all">All Areas</option>
-                      <option value="green-valley">Green Valley</option>
-                      <option value="anthem">Anthem</option>
-                      <option value="seven-hills">Seven Hills</option>
-                      <option value="whitney-ranch">Whitney Ranch</option>
-                    </select>
-                  </div>
+              <p className="text-center text-gray-600 mb-6">
+                Browse real-time listings from our MLS database. These are actual properties currently for sale in Henderson.
+              </p>
+              <div className="max-w-6xl mx-auto space-y-8">
+                {/* Primary Listings - Mid-range homes */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+                    Mid-Range Homes ($500k - $750k)
+                  </h4>
+                  <realscout-office-listings 
+                    agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                    sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+                    listing-status="For Sale" 
+                    property-types="SFR,MF" 
+                    price-min="500000" 
+                    price-max="750000"
+                  />
                 </div>
-                <div className="text-center">
-                  <button
-                    type="button"
-                    className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-                  >
-                    Search Properties
-                  </button>
+                
+                {/* Secondary Listings - Higher-end homes */}
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+                    Premium Homes ($750k+)
+                  </h4>
+                  <realscout-office-listings 
+                    agent-encoded-id="QWdlbnQtMjI1MDUw" 
+                    sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+                    listing-status="For Sale" 
+                    property-types="SFR,MF" 
+                    price-min="750000" 
+                    price-max="2000000"
+                  />
                 </div>
               </div>
             </div>
@@ -397,5 +395,6 @@ export default function HyperlocalDemoPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

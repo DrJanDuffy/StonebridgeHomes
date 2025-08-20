@@ -13,6 +13,20 @@ declare global {
   }
 }
 
+// Performance entry interfaces
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number
+}
+
+interface LayoutShiftEntry extends PerformanceEntry {
+  hadRecentInput?: boolean
+  value?: number
+}
+
+interface InteractionEntry extends PerformanceEntry {
+  processingStart?: number
+}
+
 export default function PerformanceMonitor() {
   useEffect(() => {
     // Core Web Vitals monitoring
@@ -40,14 +54,17 @@ export default function PerformanceMonitor() {
         const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries()
           for (const entry of entries) {
-            const fid = entry.processingStart - entry.startTime
-            console.log('FID:', fid)
-            if (typeof window.gtag === 'function') {
-              window.gtag('event', 'FID', {
-                value: Math.round(fid),
-                event_category: 'Web Vitals',
-                event_label: window.location.pathname,
-              })
+            const fidEntry = entry as FirstInputEntry
+            if (fidEntry.processingStart !== undefined && fidEntry.startTime !== undefined) {
+              const fid = fidEntry.processingStart - fidEntry.startTime
+              console.log('FID:', fid)
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'FID', {
+                  value: Math.round(fid),
+                  event_category: 'Web Vitals',
+                  event_label: window.location.pathname,
+                })
+              }
             }
           }
         })
@@ -58,14 +75,8 @@ export default function PerformanceMonitor() {
           let clsValue = 0
           const entries = list.getEntries()
           for (const entry of entries) {
-            const layoutShiftEntry = entry as PerformanceEntry & {
-              hadRecentInput?: boolean
-              value?: number
-            }
-            if (
-              !layoutShiftEntry.hadRecentInput &&
-              layoutShiftEntry.value !== undefined
-            ) {
+            const layoutShiftEntry = entry as LayoutShiftEntry
+            if (!layoutShiftEntry.hadRecentInput && layoutShiftEntry.value !== undefined) {
               clsValue += layoutShiftEntry.value
             }
           }
@@ -84,16 +95,9 @@ export default function PerformanceMonitor() {
         const inpObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries()
           for (const entry of entries) {
-            const interactionEntry = entry as PerformanceEntry & {
-              processingStart?: number
-              startTime?: number
-            }
-            if (
-              interactionEntry.processingStart !== undefined &&
-              interactionEntry.startTime !== undefined
-            ) {
-              const inp =
-                interactionEntry.processingStart - interactionEntry.startTime
+            const interactionEntry = entry as InteractionEntry
+            if (interactionEntry.processingStart !== undefined && interactionEntry.startTime !== undefined) {
+              const inp = interactionEntry.processingStart - interactionEntry.startTime
               console.log('INP:', inp)
               if (typeof window.gtag === 'function') {
                 window.gtag('event', 'INP', {

@@ -31,13 +31,15 @@ export default function AdminLayout({
               This area is restricted to authorized personnel only.
             </p>
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-yellow-800">
-              <p className="font-semibold mb-2">⚠️ Authentication Not Implemented</p>
+              <p className="font-semibold mb-2">
+                ⚠️ Authentication Not Implemented
+              </p>
               <p>
-                To access the admin dashboard, you need to implement proper authentication.
-                Contact your developer to set up secure access.
+                To access the admin dashboard, you need to implement proper
+                authentication. Contact your developer to set up secure access.
               </p>
             </div>
-            <a 
+            <a
               href="/"
               className="inline-block mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
             >
@@ -49,9 +51,5 @@ export default function AdminLayout({
     )
   }
 
-  return (
-    <div className="admin-layout">
-      {children}
-    </div>
-  )
+  return <div className="admin-layout">{children}</div>
 }

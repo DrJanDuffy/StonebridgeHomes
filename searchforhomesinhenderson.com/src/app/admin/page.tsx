@@ -14,9 +14,7 @@ export default function AdminPage() {
       <section className="py-8 bg-gradient-to-r from-purple-600 to-blue-700 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl font-bold mb-4">
-              🚀 Admin Dashboard
-            </h1>
+            <h1 className="text-3xl font-bold mb-4">🚀 Admin Dashboard</h1>
             <p className="text-lg opacity-90">
               Lead management • Client intelligence • Market analytics
             </p>
@@ -74,11 +72,14 @@ export default function AdminPage() {
                 <p className="text-blue-700 mb-4">
                   Check lead performance and conversion metrics
                 </p>
-                <button type="button" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                <button
+                  type="button"
+                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                >
                   Open Analytics
                 </button>
               </div>
-              
+
               <div className="bg-green-50 p-6 rounded-lg text-center">
                 <h3 className="text-lg font-semibold mb-3 text-green-800">
                   👥 Manage Leads
@@ -86,11 +87,14 @@ export default function AdminPage() {
                 <p className="text-green-700 mb-4">
                   Review and update lead information
                 </p>
-                <button type="button" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+                <button
+                  type="button"
+                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors"
+                >
                   Manage Leads
                 </button>
               </div>
-              
+
               <div className="bg-purple-50 p-6 rounded-lg text-center">
                 <h3 className="text-lg font-semibold mb-3 text-purple-800">
                   ⚙️ Settings
@@ -98,7 +102,10 @@ export default function AdminPage() {
                 <p className="text-purple-700 mb-4">
                   Configure integrations and preferences
                 </p>
-                <button type="button" className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">
+                <button
+                  type="button"
+                  className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors"
+                >
                   Settings
                 </button>
               </div>

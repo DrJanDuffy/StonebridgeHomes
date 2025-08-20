@@ -52,8 +52,9 @@ export default function HyperlocalDemoPage() {
                 Henderson Market Intelligence
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                Experience our advanced real estate technology with live market data,
-                neighborhood insights, and property valuations for Henderson, Nevada.
+                Experience our advanced real estate technology with live market
+                data, neighborhood insights, and property valuations for
+                Henderson, Nevada.
               </p>
             </div>
             <div className="bg-blue-50 p-8 rounded-lg text-center">
@@ -61,11 +62,12 @@ export default function HyperlocalDemoPage() {
                 🏠 Interactive Property Search
               </h3>
               <p className="text-blue-700 mb-6">
-                Use our advanced search tools to find your perfect home in Henderson.
-                Get real-time market data, neighborhood insights, and property valuations.
+                Use our advanced search tools to find your perfect home in
+                Henderson. Get real-time market data, neighborhood insights, and
+                property valuations.
               </p>
-              <a 
-                href="/search" 
+              <a
+                href="/search"
                 className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Start Your Search
@@ -84,10 +86,11 @@ export default function HyperlocalDemoPage() {
             </h2>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <p className="text-center text-gray-600 mb-6">
-                Ready to find your dream home in Henderson? Our expert team is here to help.
+                Ready to find your dream home in Henderson? Our expert team is
+                here to help.
               </p>
-              <a 
-                href="/contact" 
+              <a
+                href="/contact"
                 className="block w-full text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
               >
                 Contact Our Team
@@ -97,13 +100,158 @@ export default function HyperlocalDemoPage() {
         </div>
       </section>
 
-      {/* Demo Widgets */}
+      {/* Interactive Market Intelligence */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Hyperlocal Market Intelligence
+              Interactive Market Intelligence
             </h2>
+            
+            {/* Market Overview Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-blue-800">Henderson Market</h3>
+                  <span className="text-2xl">📈</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-blue-700">Avg. Price:</span>
+                    <span className="font-semibold text-blue-800">$485,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-700">Days on Market:</span>
+                    <span className="font-semibold text-blue-800">23</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-blue-700">Inventory:</span>
+                    <span className="font-semibold text-blue-800">156</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-green-800">Green Valley</h3>
+                  <span className="text-2xl">🏘️</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-green-700">Avg. Price:</span>
+                    <span className="font-semibold text-green-800">$520,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-green-700">Price/Sq Ft:</span>
+                    <span className="font-semibold text-green-800">$245</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-green-700">Schools:</span>
+                    <span className="font-semibold text-green-800">9.2/10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-purple-800">Anthem</h3>
+                  <span className="text-2xl">🌄</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-purple-700">Avg. Price:</span>
+                    <span className="font-semibold text-purple-800">$480,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-purple-700">Price/Sq Ft:</span>
+                    <span className="font-semibold text-purple-800">$230</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-purple-700">Amenities:</span>
+                    <span className="font-semibold text-purple-800">High</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Search Demo */}
+            <div className="bg-gray-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
+                🏠 Find Your Perfect Home
+              </h3>
+              <div className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <div>
+                    <label htmlFor="price-range" className="block text-sm font-medium text-gray-700 mb-2">
+                      Price Range
+                    </label>
+                    <select 
+                      id="price-range"
+                      name="price-range"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      aria-label="Select price range"
+                    >
+                      <option value="300-500">$300k - $500k</option>
+                      <option value="500-750">$500k - $750k</option>
+                      <option value="750-1000">$750k - $1M</option>
+                      <option value="1000+">$1M+</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700 mb-2">
+                      Bedrooms
+                    </label>
+                    <select 
+                      id="bedrooms"
+                      name="bedrooms"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      aria-label="Select number of bedrooms"
+                    >
+                      <option value="2">2+</option>
+                      <option value="3">3+</option>
+                      <option value="4">4+</option>
+                      <option value="5">5+</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="neighborhood" className="block text-sm font-medium text-gray-700 mb-2">
+                      Neighborhood
+                    </label>
+                    <select 
+                      id="neighborhood"
+                      name="neighborhood"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      aria-label="Select neighborhood"
+                    >
+                      <option value="all">All Areas</option>
+                      <option value="green-valley">Green Valley</option>
+                      <option value="anthem">Anthem</option>
+                      <option value="seven-hills">Seven Hills</option>
+                      <option value="whitney-ranch">Whitney Ranch</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <button 
+                    type="button"
+                    className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  >
+                    Search Properties
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Live Street Comps */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
+                📊 Live Street-Level Comps
+              </h3>
+              <p className="text-center text-gray-600 mb-8">
+                See real-time comparable sales in your target neighborhoods
+              </p>
+            </div>
+            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <StreetCompsWidget
                 address="123 Green Valley Parkway"
@@ -115,6 +263,33 @@ export default function HyperlocalDemoPage() {
                 neighborhood="anthem"
                 className="h-full"
               />
+            </div>
+
+            {/* Market Trends */}
+            <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-700 text-white p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-center mb-6">
+                📈 Market Trends & Insights
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-lg font-semibold mb-4">Current Market Conditions</h4>
+                  <ul className="space-y-2 text-blue-100">
+                    <li>• Inventory levels: 23% below average</li>
+                    <li>• Price appreciation: +8.5% year-over-year</li>
+                    <li>• Days on market: 23 (down from 45 last year)</li>
+                    <li>• Buyer demand: Strong in all price ranges</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-4">Neighborhood Highlights</h4>
+                  <ul className="space-y-2 text-blue-100">
+                    <li>• Green Valley: Premium location, top schools</li>
+                    <li>• Anthem: Family-friendly, great amenities</li>
+                    <li>• Seven Hills: Luxury homes, golf course access</li>
+                    <li>• Whitney Ranch: Value, growing community</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

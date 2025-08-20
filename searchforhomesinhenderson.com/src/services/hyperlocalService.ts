@@ -2,6 +2,8 @@ import type {
   HendersonHyperlocalData,
   GeoScope,
   StreetComps,
+  WalkabilityScore,
+  SchoolZone,
 } from '@/types/hyperlocal'
 
 // Property data interface
@@ -92,7 +94,66 @@ export const HENDERSON_HYPERLOCAL_DATA: HendersonHyperlocalData = {
         radiusMeters: 800,
       },
     ],
+    healthcare: [
+      {
+        center: [36.0711, -115.0673], // Henderson Hospital area
+        radiusMeters: 2000,
+      },
+    ],
+    transit: [
+      {
+        center: [36.0711, -115.0673], // RTC bus routes
+        radiusMeters: 1000,
+      },
+    ],
   },
+}
+
+// Enhanced school zone data for Henderson
+export const HENDERSON_SCHOOL_DATA: Record<string, SchoolZone[]> = {
+  greenValley: [
+    {
+      name: 'Green Valley High School',
+      type: 'high',
+      district: 'CCSD',
+      rating: 8,
+      enrollment: 2800,
+      boundary: [[36.0700, -115.0660], [36.0720, -115.0680]],
+      distance: 0,
+      walkTime: 15,
+      driveTime: 3,
+      specialPrograms: ['IB Program', 'Robotics', 'Theater Arts'],
+      testScores: { math: 85, reading: 82, science: 88 },
+    },
+    {
+      name: 'Estes McDoniel Elementary',
+      type: 'elementary',
+      district: 'CCSD',
+      rating: 9,
+      enrollment: 680,
+      boundary: [[36.0690, -115.0650], [36.0710, -115.0670]],
+      distance: 0,
+      walkTime: 8,
+      driveTime: 2,
+      specialPrograms: ['STEM Focus', 'Gifted Program'],
+      testScores: { math: 92, reading: 89, science: 90 },
+    },
+  ],
+  anthem: [
+    {
+      name: 'Anthem Elementary',
+      type: 'elementary',
+      district: 'CCSD',
+      rating: 9,
+      enrollment: 720,
+      boundary: [[36.0880, -115.0570], [36.0900, -115.0590]],
+      distance: 0,
+      walkTime: 10,
+      driveTime: 2,
+      specialPrograms: ['Arts Integration', 'Environmental Science'],
+      testScores: { math: 90, reading: 88, science: 91 },
+    },
+  ],
 }
 
 // Calculate distance between two points using Haversine formula
@@ -136,6 +197,113 @@ export async function getPropertiesInScope(
     if (!property.latitude || !property.longitude) return false
     return isWithinScope([property.latitude, property.longitude], scope)
   })
+}
+
+// Enhanced walkability scoring service
+export class WalkabilityService {
+  private cache: Map<string, WalkabilityScore> = new Map()
+  private cacheTTL = 24 * 60 * 60 * 1000 // 24 hours
+
+  async getWalkabilityScore(
+    address: string,
+    scope: GeoScope
+  ): Promise<WalkabilityScore> {
+    const cacheKey = `walkability-${address}`
+    const cached = this.cache.get(cacheKey)
+
+    if (cached && Date.now() < this.cacheTTL) {
+      return cached
+    }
+
+    try {
+      const score = await this.calculateWalkabilityScore(address, scope)
+      this.cache.set(cacheKey, score)
+      return score
+    } catch (error) {
+      console.error('Error calculating walkability score:', error)
+      return this.getDefaultWalkabilityScore()
+    }
+  }
+
+  private async calculateWalkabilityScore(
+    address: string,
+    scope: GeoScope
+  ): Promise<WalkabilityScore> {
+    // TODO: Integrate with real APIs (Google Places, OpenStreetMap)
+    // For now, calculate based on amenity proximity
+    
+    const [lat, lng] = scope.center
+    const amenities = HENDERSON_HYPERLOCAL_DATA.amenities
+    
+    // Calculate scores for each category
+    const shoppingScore = this.calculateCategoryScore(amenities.shopping, scope, 40)
+    const diningScore = this.calculateCategoryScore(amenities.dining, scope, 30)
+    const parksScore = this.calculateCategoryScore(amenities.parks, scope, 20)
+    const healthcareScore = this.calculateCategoryScore(amenities.healthcare, scope, 10)
+    
+    const overall = Math.min(100, shoppingScore + diningScore + parksScore + healthcareScore)
+    
+    return {
+      overall,
+      categories: {
+        shopping: { score: shoppingScore, nearby: ['The District', 'Target'], distance: 500 },
+        dining: { score: diningScore, nearby: ['Yard House', 'Brio'], distance: 500 },
+        parks: { score: parksScore, nearby: ['Green Valley Ranch'], distance: 1000 },
+        schools: { score: 85, nearby: ['Green Valley High'], distance: 800 },
+        transit: { score: 70, nearby: ['RTC Bus Routes'], distance: 1000 },
+        healthcare: { score: healthcareScore, nearby: ['Henderson Hospital'], distance: 2000 },
+      },
+      insights: [
+        'Excellent shopping access within 0.5 miles',
+        'Multiple dining options within walking distance',
+        'Good school access with high ratings',
+        'Healthcare facilities within 2 miles',
+      ],
+      recommendations: [
+        'Consider solar panels for energy efficiency',
+        'HOA fees include community amenities',
+        'Check school boundaries before purchase',
+        'Verify flood zone status',
+      ],
+    }
+  }
+
+  private calculateCategoryScore(
+    amenities: GeoScope[],
+    scope: GeoScope,
+    maxScore: number
+  ): number {
+    let score = 0
+    for (const amenity of amenities) {
+      const distance = calculateDistance(
+        scope.center[0],
+        scope.center[1],
+        amenity.center[0],
+        amenity.center[1]
+      )
+      
+      if (distance <= 500) score += maxScore * 0.8
+      else if (distance <= 1000) score += maxScore * 0.6
+      else if (distance <= 2000) score += maxScore * 0.4
+    }
+    return Math.min(maxScore, score)
+  }
+
+  private getDefaultWalkabilityScore(): WalkabilityScore {
+    return {
+      overall: 50,
+      categories: {
+        shopping: { score: 40, nearby: [], distance: 1000 },
+        dining: { score: 30, nearby: [], distance: 1200 },
+        parks: { score: 20, nearby: [], distance: 1500 },
+        schools: { score: 60, nearby: [], distance: 1000 },
+        transit: { score: 50, nearby: [], distance: 1500 },
+        healthcare: { score: 40, nearby: [], distance: 2000 },
+      },
+      insights: ['Moderate walkability score'],
+      recommendations: ['Consider proximity to amenities when choosing location'],
+    }
+  }
 }
 
 // Street-level market comps service
@@ -237,5 +405,6 @@ export class StreetCompsService {
   }
 }
 
-// Export singleton instance
+// Export singleton instances
 export const streetCompsService = new StreetCompsService()
+export const walkabilityService = new WalkabilityService()

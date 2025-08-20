@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react'
 import {
   streetCompsService,
+  walkabilityService,
   HENDERSON_HYPERLOCAL_DATA,
+  HENDERSON_SCHOOL_DATA,
 } from '@/services/hyperlocalService'
-import type { PropertyData } from '@/services/hyperlocalService'
+import type { PropertyData, WalkabilityScore, SchoolZone } from '@/services/hyperlocalService'
 
 interface StreetCompsWidgetProps {
   address: string
@@ -21,7 +23,8 @@ export default function StreetCompsWidget({
   const [comps, setComps] = useState<PropertyData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [walkabilityScore, setWalkabilityScore] = useState<number>(0)
+  const [walkabilityScore, setWalkabilityScore] = useState<WalkabilityScore | null>(null)
+  const [schoolZones, setSchoolZones] = useState<SchoolZone[]>([])
   const [marketTrends, setMarketTrends] = useState<{
     pricePerSqft: number
     daysOnMarket: number
@@ -44,15 +47,21 @@ export default function StreetCompsWidget({
 
         setComps(streetComps)
 
-        // Get additional local data
-        const walkScore = streetCompsService.getWalkabilityScore(
+        // Get enhanced walkability score
+        const walkScore = await walkabilityService.getWalkabilityScore(
           address,
           neighborhoodScope
         )
+        setWalkabilityScore(walkScore)
+
+        // Get school zone data
+        const schools = HENDERSON_SCHOOL_DATA[neighborhood] || []
+        setSchoolZones(schools)
+
+        // Get market trends
         const trends =
           streetCompsService.getLocalMarketTrends(neighborhoodScope)
 
-        setWalkabilityScore(walkScore)
         setMarketTrends(trends)
       } catch (err) {
         setError('Failed to load street comps')
@@ -139,30 +148,124 @@ export default function StreetCompsWidget({
         </div>
         <div className="text-center">
           <div className="text-2xl font-bold text-orange-600">
-            {walkabilityScore}
+            {walkabilityScore?.overall || 0}
           </div>
           <div className="text-xs text-gray-600">Walk Score</div>
         </div>
       </div>
 
+      {/* Enhanced Walkability Score */}
+      {walkabilityScore && (
+        <div className="bg-blue-50 rounded-lg p-4 mb-6">
+          <h4 className="font-semibold text-blue-900 mb-3">
+            Advanced Walkability Analysis
+          </h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+            <div className="bg-white rounded p-2">
+              <div className="font-medium text-blue-700">Shopping</div>
+              <div className="text-xs text-gray-600">
+                {walkabilityScore.categories.shopping.score}/40 •{' '}
+                {walkabilityScore.categories.shopping.distance}m
+              </div>
+            </div>
+            <div className="bg-white rounded p-2">
+              <div className="font-medium text-green-700">Dining</div>
+              <div className="text-xs text-gray-600">
+                {walkabilityScore.categories.dining.score}/30 •{' '}
+                {walkabilityScore.categories.dining.distance}m
+              </div>
+            </div>
+            <div className="bg-white rounded p-2">
+              <div className="font-medium text-purple-700">Parks</div>
+              <div className="text-xs text-gray-600">
+                {walkabilityScore.categories.parks.score}/20 •{' '}
+                {walkabilityScore.categories.parks.distance}m
+              </div>
+            </div>
+            <div className="bg-white rounded p-2">
+              <div className="font-medium text-orange-700">Schools</div>
+              <div className="text-xs text-gray-600">
+                {walkabilityScore.categories.schools.score}/100 •{' '}
+                {walkabilityScore.categories.schools.distance}m
+              </div>
+            </div>
+            <div className="bg-white rounded p-2">
+              <div className="font-medium text-red-700">Transit</div>
+              <div className="text-xs text-gray-600">
+                {walkabilityScore.categories.transit.score}/100 •{' '}
+                {walkabilityScore.categories.transit.distance}m
+              </div>
+            </div>
+            <div className="bg-white rounded p-2">
+              <div className="font-medium text-indigo-700">Healthcare</div>
+              <div className="text-xs text-gray-600">
+                {walkabilityScore.categories.healthcare.score}/10 •{' '}
+                {walkabilityScore.categories.healthcare.distance}m
+              </div>
+            </div>
+          </div>
+          
+          {/* Walkability Insights */}
+          <div className="mt-3 pt-3 border-t border-blue-200">
+            <div className="text-xs text-blue-800">
+              <div className="font-medium mb-1">Key Insights:</div>
+              {walkabilityScore.insights.slice(0, 2).map((insight) => (
+                <div key={`insight-${insight.slice(0, 20)}`} className="flex items-start">
+                  <span className="text-blue-600 mr-1">•</span>
+                  <span>{insight}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* School Zone Information */}
+      {schoolZones.length > 0 && (
+        <div className="bg-green-50 rounded-lg p-4 mb-6">
+          <h4 className="font-semibold text-green-900 mb-3">
+            School Zone Analysis
+          </h4>
+          <div className="space-y-3">
+            {schoolZones.map((school) => (
+              <div key={`school-${school.name}`} className="bg-white rounded p-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="font-medium text-green-800">{school.name}</div>
+                    <div className="text-xs text-gray-600">
+                      {school.type} • {school.district} • Rating: {school.rating}/10
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      {school.specialPrograms.slice(0, 2).join(', ')}
+                    </div>
+                  </div>
+                  <div className="text-right text-sm">
+                    <div className="font-medium text-green-700">
+                      {school.walkTime} min walk
+                    </div>
+                    <div className="text-gray-500">
+                      {school.driveTime} min drive
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Market Trends */}
       {marketTrends && (
         <div className="bg-blue-50 rounded-lg p-4 mb-6">
-          <h4 className="font-semibold text-blue-900 mb-2">
-            Local Market Trends
-          </h4>
+          <h4 className="font-semibold text-blue-900 mb-2">Local Market Trends</h4>
           <div className="grid grid-cols-3 gap-4 text-sm">
             <div>
               <span className="text-blue-700">Price/Sq Ft:</span>
-              <span className="ml-2 font-medium">
-                ${marketTrends.pricePerSqft}
-              </span>
+              <span className="ml-2 font-medium">${marketTrends.pricePerSqft}</span>
             </div>
             <div>
               <span className="text-blue-700">Days on Market:</span>
-              <span className="ml-2 font-medium">
-                {marketTrends.daysOnMarket}
-              </span>
+              <span className="ml-2 font-medium">{marketTrends.daysOnMarket}</span>
             </div>
             <div>
               <span className="text-blue-700">Price Change:</span>
@@ -179,13 +282,9 @@ export default function StreetCompsWidget({
 
       {/* Street Comps */}
       <div>
-        <h4 className="font-semibold text-gray-900 mb-3">
-          Recent Sales Nearby
-        </h4>
+        <h4 className="font-semibold text-gray-900 mb-3">Recent Sales Nearby</h4>
         {comps.length === 0 ? (
-          <p className="text-gray-500 text-sm">
-            No recent sales found in this area.
-          </p>
+          <p className="text-gray-500 text-sm">No recent sales found in this area.</p>
         ) : (
           <div className="space-y-3">
             {comps.map((comp) => (
@@ -208,8 +307,7 @@ export default function StreetCompsWidget({
                       ${comp.salePrice.toLocaleString()}
                     </div>
                     <div className="text-xs text-gray-500">
-                      {comp.distance}m away •{' '}
-                      {new Date(comp.saleDate).toLocaleDateString()}
+                      {comp.distance}m away • {new Date(comp.saleDate).toLocaleDateString()}
                     </div>
                   </div>
                 </div>
@@ -226,20 +324,18 @@ export default function StreetCompsWidget({
           <div className="bg-gray-50 rounded-lg p-3">
             <div className="font-medium text-gray-900 mb-1">Walkability</div>
             <div className="text-gray-600">
-              {walkabilityScore >= 80
+              {walkabilityScore?.overall || 0 >= 80
                 ? 'Excellent'
-                : walkabilityScore >= 60
+                : walkabilityScore?.overall || 0 >= 60
                   ? 'Good'
-                  : walkabilityScore >= 40
+                  : walkabilityScore?.overall || 0 >= 40
                     ? 'Fair'
                     : 'Poor'}{' '}
               walking access to amenities
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3">
-            <div className="font-medium text-gray-900 mb-1">
-              Market Activity
-            </div>
+            <div className="font-medium text-gray-900 mb-1">Market Activity</div>
             <div className="text-gray-600">
               {comps.length} recent sales indicate{' '}
               {comps.length >= 3 ? 'active' : 'moderate'} market activity

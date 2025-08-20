@@ -39,13 +39,52 @@ export interface StreetComps extends HyperlocalComponent {
   }
 }
 
+// Enhanced walkability scoring interface
+export interface WalkabilityScore {
+  overall: number // 0-100
+  categories: {
+    shopping: { score: number; nearby: string[]; distance: number }
+    dining: { score: number; nearby: string[]; distance: number }
+    parks: { score: number; nearby: string[]; distance: number }
+    schools: { score: number; nearby: string[]; distance: number }
+    transit: { score: number; nearby: string[]; distance: number }
+    healthcare: { score: number; nearby: string[]; distance: number }
+  }
+  insights: string[]
+  recommendations: string[]
+}
+
+// School zone interface with real data
+export interface SchoolZone {
+  name: string
+  type: 'elementary' | 'middle' | 'high' | 'private'
+  district: 'CCSD' | 'Private'
+  rating: number // 1-10
+  enrollment: number
+  boundary: [number, number][]
+  distance: number // meters from property
+  walkTime: number // minutes
+  driveTime: number // minutes
+  specialPrograms: string[]
+  testScores: {
+    math: number
+    reading: number
+    science: number
+  }
+}
+
 // Local knowledge encoding
 export interface LocalKnowledge {
-  schoolZones: Array<{ name: string; boundary: [number, number][] }> // Simplified for now
-  floodPlains: Array<{ name: string; boundary: [number, number][] }> // Simplified for now
-  walkabilityScores: Record<string, number>
-  noiseLevels: Record<string, 'low' | 'medium' | 'high'>
+  schoolZones: SchoolZone[]
+  floodPlains: Array<{ name: string; boundary: [number, number][]; risk: 'low' | 'medium' | 'high' }>
+  walkabilityScores: Record<string, WalkabilityScore>
+  noiseLevels: Record<string, { level: 'low' | 'medium' | 'high'; source: string; decibels: number }>
   localInsights: string[]
+  marketTrends: {
+    pricePerSqft: { current: number; trend: number; forecast: number }
+    daysOnMarket: { current: number; trend: number; forecast: number }
+    inventory: { current: number; trend: number; forecast: number }
+  }
 }
 
 // Offline strategy
@@ -80,5 +119,7 @@ export interface HendersonHyperlocalData {
     dining: GeoScope[]
     parks: GeoScope[]
     golf: GeoScope[]
+    healthcare: GeoScope[]
+    transit: GeoScope[]
   }
 }

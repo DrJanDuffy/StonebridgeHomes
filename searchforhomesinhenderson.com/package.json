@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:vercel": "next build && next-sitemap",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "format": "biome format --write .",
@@ -13,7 +14,10 @@
     "lint:check": "biome lint .",
     "check": "biome check --write .",
     "check:ci": "biome ci .",
-    "fix": "biome check --write . && biome format --write ."
+    "fix": "biome check --write . && biome format --write .",
+    "analyze": "ANALYZE=true next build",
+    "export": "next build && next export",
+    "vercel-build": "npm run build:vercel"
   },
   "dependencies": {
     "next": "14.2.31",

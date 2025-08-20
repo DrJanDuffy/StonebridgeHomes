@@ -19,22 +19,16 @@ export default function Header() {
               </a>
             </div>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden space-x-6 md:flex">
             <a href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </a>
-            <a
-              href="/search"
-              className="text-gray-600 hover:text-gray-900"
-            >
+            <a href="/search" className="text-gray-600 hover:text-gray-900">
               Search Homes
             </a>
-            <a
-              href="/home-value"
-              className="text-gray-600 hover:text-gray-900"
-            >
+            <a href="/home-value" className="text-gray-600 hover:text-gray-900">
               Home Value
             </a>
             <div className="relative group">
@@ -111,14 +105,11 @@ export default function Header() {
             >
               Featured Agents
             </a>
-            <a
-              href="/contact"
-              className="text-gray-600 hover:text-gray-900"
-            >
+            <a href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </a>
           </div>
-          
+
           {/* Client Component for Mobile Navigation */}
           <MobileNav>
             <NavigationItems />
@@ -152,9 +143,7 @@ function NavigationItems() {
         Home Value
       </a>
       <div className="py-3 px-4">
-        <div className="text-gray-600 font-medium mb-3">
-          Neighborhoods
-        </div>
+        <div className="text-gray-600 font-medium mb-3">Neighborhoods</div>
         <div className="space-y-2">
           <a
             href="/neighborhoods"

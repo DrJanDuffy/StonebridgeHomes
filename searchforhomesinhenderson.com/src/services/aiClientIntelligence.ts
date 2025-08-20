@@ -215,7 +215,7 @@ export class AIClientIntelligenceService {
 
     // Update behavior
     profile.behavior = { ...profile.behavior, ...behaviorUpdate }
-    profile.lastActivity = new Date()
+    profile.behavior.lastActivity = new Date()
 
     // Recalculate engagement score
     profile.behavior.engagementScore = this.calculateEngagementScore(profile)

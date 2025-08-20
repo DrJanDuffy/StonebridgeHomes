@@ -3,7 +3,6 @@
 export interface GeoScope {
   center: [number, number] // [lat, lng]
   radiusMeters: number
-  boundary?: GeoJSON
   preferSameStreet?: boolean
 }
 
@@ -42,8 +41,8 @@ export interface StreetComps extends HyperlocalComponent {
 
 // Local knowledge encoding
 export interface LocalKnowledge {
-  schoolZones: GeoJSON[]
-  floodPlains: GeoJSON[]
+  schoolZones: Array<{ name: string; boundary: [number, number][] }> // Simplified for now
+  floodPlains: Array<{ name: string; boundary: [number, number][] }> // Simplified for now
   walkabilityScores: Record<string, number>
   noiseLevels: Record<string, 'low' | 'medium' | 'high'>
   localInsights: string[]

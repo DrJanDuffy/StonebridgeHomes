@@ -1,7 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { streetCompsService, HENDERSON_HYPERLOCAL_DATA } from '@/services/hyperlocalService'
+import {
+  streetCompsService,
+  HENDERSON_HYPERLOCAL_DATA,
+} from '@/services/hyperlocalService'
 import type { PropertyData } from '@/services/hyperlocalService'
 
 interface StreetCompsWidgetProps {
@@ -30,20 +33,25 @@ export default function StreetCompsWidget({
       try {
         setLoading(true)
         setError(null)
-        
-        const neighborhoodScope = HENDERSON_HYPERLOCAL_DATA.neighborhoods[neighborhood]
+
+        const neighborhoodScope =
+          HENDERSON_HYPERLOCAL_DATA.neighborhoods[neighborhood]
         const streetComps = await streetCompsService.getStreetComps(address, {
           ...neighborhoodScope,
           radiusMeters: 500, // Street-level scope
           preferSameStreet: true,
         })
-        
+
         setComps(streetComps)
-        
+
         // Get additional local data
-        const walkScore = streetCompsService.getWalkabilityScore(address, neighborhoodScope)
-        const trends = streetCompsService.getLocalMarketTrends(neighborhoodScope)
-        
+        const walkScore = streetCompsService.getWalkabilityScore(
+          address,
+          neighborhoodScope
+        )
+        const trends =
+          streetCompsService.getLocalMarketTrends(neighborhoodScope)
+
         setWalkabilityScore(walkScore)
         setMarketTrends(trends)
       } catch (err) {
@@ -76,7 +84,9 @@ export default function StreetCompsWidget({
 
   if (error) {
     return (
-      <div className={`bg-red-50 border border-red-200 rounded-lg p-6 ${className}`}>
+      <div
+        className={`bg-red-50 border border-red-200 rounded-lg p-6 ${className}`}
+      >
         <div className="text-red-800">
           <h3 className="font-semibold mb-2">Unable to Load Street Comps</h3>
           <p className="text-sm">{error}</p>
@@ -85,13 +95,16 @@ export default function StreetCompsWidget({
     )
   }
 
-  const avgPrice = comps.length > 0 
-    ? comps.reduce((sum, comp) => sum + comp.salePrice, 0) / comps.length 
-    : 0
+  const avgPrice =
+    comps.length > 0
+      ? comps.reduce((sum, comp) => sum + comp.salePrice, 0) / comps.length
+      : 0
 
-  const avgPricePerSqft = comps.length > 0 
-    ? comps.reduce((sum, comp) => sum + (comp.salePrice / comp.sqft), 0) / comps.length 
-    : 0
+  const avgPricePerSqft =
+    comps.length > 0
+      ? comps.reduce((sum, comp) => sum + comp.salePrice / comp.sqft, 0) /
+        comps.length
+      : 0
 
   return (
     <div className={`bg-white rounded-lg shadow-lg p-6 ${className}`}>
@@ -101,16 +114,15 @@ export default function StreetCompsWidget({
           Street-Level Market Analysis
         </h3>
         <p className="text-gray-600 text-sm">
-          Recent sales within 500m of {address} • {neighborhood.replace(/([A-Z])/g, ' $1')}
+          Recent sales within 500m of {address} •{' '}
+          {neighborhood.replace(/([A-Z])/g, ' $1')}
         </p>
       </div>
 
       {/* Market Overview */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="text-center">
-          <div className="text-2xl font-bold text-blue-600">
-            {comps.length}
-          </div>
+          <div className="text-2xl font-bold text-blue-600">{comps.length}</div>
           <div className="text-xs text-gray-600">Recent Sales</div>
         </div>
         <div className="text-center">
@@ -136,20 +148,29 @@ export default function StreetCompsWidget({
       {/* Market Trends */}
       {marketTrends && (
         <div className="bg-blue-50 rounded-lg p-4 mb-6">
-          <h4 className="font-semibold text-blue-900 mb-2">Local Market Trends</h4>
+          <h4 className="font-semibold text-blue-900 mb-2">
+            Local Market Trends
+          </h4>
           <div className="grid grid-cols-3 gap-4 text-sm">
             <div>
               <span className="text-blue-700">Price/Sq Ft:</span>
-              <span className="ml-2 font-medium">${marketTrends.pricePerSqft}</span>
+              <span className="ml-2 font-medium">
+                ${marketTrends.pricePerSqft}
+              </span>
             </div>
             <div>
               <span className="text-blue-700">Days on Market:</span>
-              <span className="ml-2 font-medium">{marketTrends.daysOnMarket}</span>
+              <span className="ml-2 font-medium">
+                {marketTrends.daysOnMarket}
+              </span>
             </div>
             <div>
               <span className="text-blue-700">Price Change:</span>
-              <span className={`ml-2 font-medium ${marketTrends.priceChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                {marketTrends.priceChange >= 0 ? '+' : ''}{marketTrends.priceChange}%
+              <span
+                className={`ml-2 font-medium ${marketTrends.priceChange >= 0 ? 'text-green-600' : 'text-red-600'}`}
+              >
+                {marketTrends.priceChange >= 0 ? '+' : ''}
+                {marketTrends.priceChange}%
               </span>
             </div>
           </div>
@@ -158,18 +179,28 @@ export default function StreetCompsWidget({
 
       {/* Street Comps */}
       <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Recent Sales Nearby</h4>
+        <h4 className="font-semibold text-gray-900 mb-3">
+          Recent Sales Nearby
+        </h4>
         {comps.length === 0 ? (
-          <p className="text-gray-500 text-sm">No recent sales found in this area.</p>
+          <p className="text-gray-500 text-sm">
+            No recent sales found in this area.
+          </p>
         ) : (
           <div className="space-y-3">
             {comps.map((comp) => (
-              <div key={comp.id} className="border border-gray-200 rounded-lg p-3">
+              <div
+                key={comp.id}
+                className="border border-gray-200 rounded-lg p-3"
+              >
                 <div className="flex justify-between items-start">
                   <div>
-                    <div className="font-medium text-gray-900">{comp.address}</div>
+                    <div className="font-medium text-gray-900">
+                      {comp.address}
+                    </div>
                     <div className="text-sm text-gray-600">
-                      {comp.bedrooms} bed, {comp.bathrooms} bath • {comp.sqft.toLocaleString()} sq ft
+                      {comp.bedrooms} bed, {comp.bathrooms} bath •{' '}
+                      {comp.sqft.toLocaleString()} sq ft
                     </div>
                   </div>
                   <div className="text-right">
@@ -177,7 +208,8 @@ export default function StreetCompsWidget({
                       ${comp.salePrice.toLocaleString()}
                     </div>
                     <div className="text-xs text-gray-500">
-                      {comp.distance}m away • {new Date(comp.saleDate).toLocaleDateString()}
+                      {comp.distance}m away •{' '}
+                      {new Date(comp.saleDate).toLocaleDateString()}
                     </div>
                   </div>
                 </div>
@@ -194,15 +226,23 @@ export default function StreetCompsWidget({
           <div className="bg-gray-50 rounded-lg p-3">
             <div className="font-medium text-gray-900 mb-1">Walkability</div>
             <div className="text-gray-600">
-              {walkabilityScore >= 80 ? 'Excellent' : 
-               walkabilityScore >= 60 ? 'Good' : 
-               walkabilityScore >= 40 ? 'Fair' : 'Poor'} walking access to amenities
+              {walkabilityScore >= 80
+                ? 'Excellent'
+                : walkabilityScore >= 60
+                  ? 'Good'
+                  : walkabilityScore >= 40
+                    ? 'Fair'
+                    : 'Poor'}{' '}
+              walking access to amenities
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3">
-            <div className="font-medium text-gray-900 mb-1">Market Activity</div>
+            <div className="font-medium text-gray-900 mb-1">
+              Market Activity
+            </div>
             <div className="text-gray-600">
-              {comps.length} recent sales indicate {comps.length >= 3 ? 'active' : 'moderate'} market activity
+              {comps.length} recent sales indicate{' '}
+              {comps.length >= 3 ? 'active' : 'moderate'} market activity
             </div>
           </div>
         </div>

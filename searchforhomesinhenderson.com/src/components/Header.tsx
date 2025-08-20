@@ -99,7 +99,10 @@ export default function Header() {
             <a href="/faq" className="text-gray-600 hover:text-gray-900">
               FAQ
             </a>
-            <a href="/hyperlocal-demo" className="text-gray-600 hover:text-gray-900">
+            <a
+              href="/hyperlocal-demo"
+              className="text-gray-600 hover:text-gray-900"
+            >
               Hyperlocal Demo
             </a>
             <a

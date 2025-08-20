@@ -1,7 +1,11 @@
-import type { HendersonHyperlocalData, GeoScope, StreetComps } from '@/types/hyperlocal'
+import type {
+  HendersonHyperlocalData,
+  GeoScope,
+  StreetComps,
+} from '@/types/hyperlocal'
 
 // Property data interface
-interface PropertyData {
+export interface PropertyData {
   id: string
   address: string
   salePrice: number
@@ -136,7 +140,8 @@ export async function getPropertiesInScope(
 
 // Street-level market comps service
 export class StreetCompsService {
-  private cache: Map<string, { data: PropertyData[]; timestamp: number }> = new Map()
+  private cache: Map<string, { data: PropertyData[]; timestamp: number }> =
+    new Map()
   private cacheTTL = 7 * 24 * 60 * 60 * 1000 // 7 days in milliseconds
 
   async getStreetComps(
@@ -145,7 +150,7 @@ export class StreetCompsService {
   ): Promise<PropertyData[]> {
     const cacheKey = `street-comps-${address}-${scope.radiusMeters}`
     const cached = this.cache.get(cacheKey)
-    
+
     if (cached && Date.now() - cached.timestamp < this.cacheTTL) {
       return cached.data
     }
@@ -153,12 +158,12 @@ export class StreetCompsService {
     try {
       // TODO: Integrate with FUB API for real property data
       const comps = await this.fetchStreetCompsFromFUB(address, scope)
-      
+
       this.cache.set(cacheKey, {
         data: comps,
         timestamp: Date.now(),
       })
-      
+
       return comps
     } catch (error) {
       console.error('Error fetching street comps:', error)
@@ -173,7 +178,7 @@ export class StreetCompsService {
     // TODO: Implement FUB API integration
     // This would fetch properties from Follow Up Boss
     // and filter by geographic scope
-    
+
     // Mock data for now
     return [
       {
@@ -209,11 +214,11 @@ export class StreetCompsService {
     // For now, return a score based on proximity to amenities
     const amenities = HENDERSON_HYPERLOCAL_DATA.amenities
     let score = 50 // Base score
-    
+
     // Boost score based on nearby amenities
     if (scope.radiusMeters <= 500) score += 30
     if (scope.radiusMeters <= 1000) score += 20
-    
+
     return Math.min(score, 100)
   }
 

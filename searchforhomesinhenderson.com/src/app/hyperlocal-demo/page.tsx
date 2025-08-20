@@ -1,10 +1,12 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
 
 export const metadata: Metadata = {
   title: 'Hyperlocal Real Estate Demo | Henderson Homes',
-  description: 'Experience our hyperlocal real estate technology with street-level market analysis, walkability scores, and local insights.',
-  keywords: 'hyperlocal real estate, Henderson market analysis, street-level comps, walkability scores',
+  description:
+    'Experience our hyperlocal real estate technology with street-level market analysis, walkability scores, and local insights.',
+  keywords:
+    'hyperlocal real estate, Henderson market analysis, street-level comps, walkability scores',
 }
 
 export default function HyperlocalDemoPage() {
@@ -18,7 +20,8 @@ export default function HyperlocalDemoPage() {
               Hyperlocal Real Estate Technology
             </h1>
             <p className="text-xl mb-8">
-              Street-level market analysis • 500m radius precision • Local insights powered by 15+ years Henderson experience
+              Street-level market analysis • 500m radius precision • Local
+              insights powered by 15+ years Henderson experience
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div>
@@ -45,7 +48,7 @@ export default function HyperlocalDemoPage() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Street-Level Market Analysis Demo
             </h2>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Green Valley Demo */}
               <StreetCompsWidget
@@ -53,7 +56,7 @@ export default function HyperlocalDemoPage() {
                 neighborhood="greenValley"
                 className="h-fit"
               />
-              
+
               {/* Anthem Demo */}
               <StreetCompsWidget
                 address="456 Anthem Hills Drive"
@@ -69,13 +72,13 @@ export default function HyperlocalDemoPage() {
                 neighborhood="sevenHills"
                 className="h-fit"
               />
-              
+
               <StreetCompsWidget
                 address="321 Whitney Ranch Way"
                 neighborhood="whitneyRanch"
                 className="h-fit"
               />
-              
+
               <StreetCompsWidget
                 address="654 Stephanie Ranch Rd"
                 neighborhood="stephanieRanch"
@@ -93,10 +96,12 @@ export default function HyperlocalDemoPage() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Hyperlocal Technology Stack
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">Core Features</h3>
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">
+                  Core Features
+                </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
@@ -116,9 +121,11 @@ export default function HyperlocalDemoPage() {
                   </li>
                 </ul>
               </div>
-              
+
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-600">Performance Targets</h3>
+                <h3 className="text-xl font-semibold mb-4 text-green-600">
+                  Performance Targets
+                </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-green-600 rounded-full mr-3" />
@@ -150,36 +157,43 @@ export default function HyperlocalDemoPage() {
             <h2 className="text-3xl font-bold text-center mb-12">
               Integration Status
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">✅</span>
                 </div>
                 <h3 className="font-semibold mb-2">Type System</h3>
-                <p className="text-sm text-gray-600">Core interfaces and type definitions</p>
+                <p className="text-sm text-gray-600">
+                  Core interfaces and type definitions
+                </p>
               </div>
-              
+
               <div className="bg-white rounded-lg p-6 text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">🔄</span>
                 </div>
                 <h3 className="font-semibold mb-2">Data Service</h3>
-                <p className="text-sm text-gray-600">Hyperlocal data management & caching</p>
+                <p className="text-sm text-gray-600">
+                  Hyperlocal data management & caching
+                </p>
               </div>
-              
+
               <div className="bg-white rounded-lg p-6 text-center">
                 <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">⚠️</span>
                 </div>
                 <h3 className="font-semibold mb-2">FUB Integration</h3>
-                <p className="text-sm text-gray-600">Follow Up Boss API connection needed</p>
+                <p className="text-sm text-gray-600">
+                  Follow Up Boss API connection needed
+                </p>
               </div>
             </div>
-            
+
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-4">
-                Next steps: Integrate with Follow Up Boss API for real property data
+                Next steps: Integrate with Follow Up Boss API for real property
+                data
               </p>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
                 <span className="text-sm font-medium">

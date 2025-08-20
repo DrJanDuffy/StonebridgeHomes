@@ -23,9 +23,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Add rate limiting check (basic implementation)
-    const clientIP = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    const clientIP =
+      request.ip || request.headers.get('x-forwarded-for') || 'unknown'
     // TODO: Implement proper rate limiting with Redis or similar
-    
+
     const body: ContactData = await request.json()
 
     // Validate required fields

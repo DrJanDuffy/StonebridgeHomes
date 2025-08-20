@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
-import FUBIntegrationDemo from '@/components/hyperlocal/FUBIntegrationDemo'
-import ClientIntelligenceDashboard from '@/components/ai/ClientIntelligenceDashboard'
 
 export const metadata: Metadata = {
   title: 'Hyperlocal Real Estate Demo | Henderson Homes',
@@ -45,34 +43,55 @@ export default function HyperlocalDemoPage() {
         </div>
       </section>
 
-      {/* AI Client Intelligence Dashboard */}
+      {/* Public Market Intelligence Demo */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">
-                P4: AI-Powered Client Relationship Intelligence
+                Henderson Market Intelligence
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                Machine learning algorithms that automatically score leads,
-                predict client needs, and create personalized experiences based
-                on hyperlocal market data.
+                Experience our advanced real estate technology with live market data,
+                neighborhood insights, and property valuations for Henderson, Nevada.
               </p>
             </div>
-            <ClientIntelligenceDashboard />
+            <div className="bg-blue-50 p-8 rounded-lg text-center">
+              <h3 className="text-xl font-semibold mb-4 text-blue-800">
+                🏠 Interactive Property Search
+              </h3>
+              <p className="text-blue-700 mb-6">
+                Use our advanced search tools to find your perfect home in Henderson.
+                Get real-time market data, neighborhood insights, and property valuations.
+              </p>
+              <a 
+                href="/search" 
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Start Your Search
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FUB API Integration Demo */}
+      {/* Contact Form Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Follow Up Boss API Integration
+              Get Personalized Assistance
             </h2>
-            <div className="max-w-4xl mx-auto">
-              <FUBIntegrationDemo />
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <p className="text-center text-gray-600 mb-6">
+                Ready to find your dream home in Henderson? Our expert team is here to help.
+              </p>
+              <a 
+                href="/contact" 
+                className="block w-full text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Contact Our Team
+              </a>
             </div>
           </div>
         </div>

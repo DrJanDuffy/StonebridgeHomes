@@ -11,7 +11,10 @@ const getEnvVar = (key: string, fallback?: string): string | undefined => {
 const getEnvVarRequired = (key: string): string => {
   const value = process.env[key]
   if (!value) {
-    throw new ConfigurationError(`Missing required environment variable: ${key}`, [key])
+    throw new ConfigurationError(
+      `Missing required environment variable: ${key}`,
+      [key]
+    )
   }
   return value
 }
@@ -19,7 +22,7 @@ const getEnvVarRequired = (key: string): string => {
 const getEnvVarNumber = (key: string, fallback: number): number => {
   const value = process.env[key]
   if (!value) return fallback
-  
+
   const parsed = Number.parseInt(value, 10)
   return Number.isNaN(parsed) ? fallback : parsed
 }

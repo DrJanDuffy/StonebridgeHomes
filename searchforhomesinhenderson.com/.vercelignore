@@ -144,6 +144,9 @@ src/components/ai/
 src/components/hyperlocal/
 src/components/real-estate/
 
+# ADMIN: Protect admin interface from public deployment
+src/app/admin/
+
 # Environment files
 .env*
 vercel.env

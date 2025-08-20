@@ -13,107 +13,167 @@ function generateDynamicData(address: string, neighborhood: string) {
   // Use address hash to generate consistent but varied data
   let addressHash = 0
   for (let i = 0; i < address.length; i++) {
-    addressHash = ((addressHash << 5) - addressHash + address.charCodeAt(i)) & 0xffffffff
+    addressHash =
+      ((addressHash << 5) - addressHash + address.charCodeAt(i)) & 0xffffffff
   }
-  
+
   const seed = addressHash % 1000
-  
+
   // Generate varied comps based on address
   const comps = Array.from({ length: Math.max(1, (seed % 5) + 1) }, (_, i) => {
-    const basePrice = 400000 + (seed % 300000) + (i * 25000)
-    const sqft = 1500 + (seed % 1000) + (i * 100)
+    const basePrice = 400000 + (seed % 300000) + i * 25000
+    const sqft = 1500 + (seed % 1000) + i * 100
     const bedrooms = 3 + (seed % 2)
     const bathrooms = 2 + (seed % 2)
-    
+
     return {
       id: `comp-${addressHash}-${i}`,
       address: `${100 + (seed % 200) + i * 50} ${neighborhood} ${['Street', 'Avenue', 'Drive', 'Way'][seed % 4]}`,
       salePrice: basePrice,
-      saleDate: new Date(Date.now() - (seed % 90) * 24 * 60 * 60 * 1000).toISOString(),
+      saleDate: new Date(
+        Date.now() - (seed % 90) * 24 * 60 * 60 * 1000
+      ).toISOString(),
       sqft,
       bedrooms,
       bathrooms,
-      distance: 50 + (seed % 450) + (i * 100)
+      distance: 50 + (seed % 450) + i * 100,
     }
   })
-  
+
   // Generate varied market data
   const marketData = {
     pricePerSqft: 200 + (seed % 150),
     daysOnMarket: 15 + (seed % 45),
-    priceChange: -5 + (seed % 20)
+    priceChange: -5 + (seed % 20),
   }
-  
+
   // Generate varied walkability scores
   const walkabilityData = {
     overall: 60 + (seed % 40),
     categories: {
-      shopping: { score: 30 + (seed % 40), nearby: ['The District', 'Target'], distance: 300 + (seed % 700) },
-      dining: { score: 25 + (seed % 35), nearby: ['Yard House', 'Brio'], distance: 400 + (seed % 800) },
-      parks: { score: 15 + (seed % 25), nearby: ['Green Valley Ranch'], distance: 800 + (seed % 1200) },
-      schools: { score: 70 + (seed % 30), nearby: ['Green Valley High'], distance: 600 + (seed % 1000) },
-      transit: { score: 60 + (seed % 40), nearby: ['RTC Bus Routes'], distance: 800 + (seed % 1200) },
-      healthcare: { score: 5 + (seed % 15), nearby: ['Henderson Hospital'], distance: 1500 + (seed % 1500) }
-    }
+      shopping: {
+        score: 30 + (seed % 40),
+        nearby: ['The District', 'Target'],
+        distance: 300 + (seed % 700),
+      },
+      dining: {
+        score: 25 + (seed % 35),
+        nearby: ['Yard House', 'Brio'],
+        distance: 400 + (seed % 800),
+      },
+      parks: {
+        score: 15 + (seed % 25),
+        nearby: ['Green Valley Ranch'],
+        distance: 800 + (seed % 1200),
+      },
+      schools: {
+        score: 70 + (seed % 30),
+        nearby: ['Green Valley High'],
+        distance: 600 + (seed % 1000),
+      },
+      transit: {
+        score: 60 + (seed % 40),
+        nearby: ['RTC Bus Routes'],
+        distance: 800 + (seed % 1200),
+      },
+      healthcare: {
+        score: 5 + (seed % 15),
+        nearby: ['Henderson Hospital'],
+        distance: 1500 + (seed % 1500),
+      },
+    },
   }
-  
+
   // Generate varied micro-market pricing
   const microMarketData = {
     blockLevel: {
       averagePrice: 450000 + (seed % 200000),
       pricePerSqft: 220 + (seed % 100),
       priceVariation: -8 + (seed % 16),
-      compCount: 2 + (seed % 4)
+      compCount: 2 + (seed % 4),
     },
     streetLevel: {
       averagePrice: 480000 + (seed % 250000),
       pricePerSqft: 250 + (seed % 120),
       streetPremium: 2 + (seed % 8),
-      compCount: 3 + (seed % 5)
+      compCount: 3 + (seed % 5),
     },
     neighborhoodLevel: {
-      marketTrend: ['rising', 'stable', 'declining'][seed % 3] as 'rising' | 'stable' | 'declining',
+      marketTrend: ['rising', 'stable', 'declining'][seed % 3] as
+        | 'rising'
+        | 'stable'
+        | 'declining',
       daysOnMarket: 20 + (seed % 40),
-      inventoryLevel: ['low', 'medium', 'high'][seed % 3] as 'low' | 'medium' | 'high'
+      inventoryLevel: ['low', 'medium', 'high'][seed % 3] as
+        | 'low'
+        | 'medium'
+        | 'high',
     },
     seasonalAdjustments: {
       spring: -2 + (seed % 6),
       summer: 1 + (seed % 5),
       fall: -1 + (seed % 4),
-      winter: -3 + (seed % 6)
-    }
+      winter: -3 + (seed % 6),
+    },
   }
-  
+
   // Generate varied predictive trends
   const predictiveData = {
     shortTerm: {
       next30Days: { priceChange: 1 + (seed % 4), confidence: 75 + (seed % 20) },
-      next90Days: { priceChange: 2 + (seed % 6), confidence: 70 + (seed % 25) }
+      next90Days: { priceChange: 2 + (seed % 6), confidence: 70 + (seed % 25) },
     },
     mediumTerm: {
-      next6Months: { priceChange: 4 + (seed % 8), confidence: 65 + (seed % 30) },
-      next12Months: { priceChange: 6 + (seed % 10), confidence: 60 + (seed % 35), marketConditions: ['buyer', 'seller', 'balanced'][seed % 3] as 'buyer' | 'seller' | 'balanced' }
+      next6Months: {
+        priceChange: 4 + (seed % 8),
+        confidence: 65 + (seed % 30),
+      },
+      next12Months: {
+        priceChange: 6 + (seed % 10),
+        confidence: 60 + (seed % 35),
+        marketConditions: ['buyer', 'seller', 'balanced'][seed % 3] as
+          | 'buyer'
+          | 'seller'
+          | 'balanced',
+      },
     },
     longTerm: {
-      next2Years: { priceChange: 8 + (seed % 15), confidence: 55 + (seed % 40) }
+      next2Years: {
+        priceChange: 8 + (seed % 15),
+        confidence: 55 + (seed % 40),
+      },
     },
     opportunities: {
       expectedReturn: 12 + (seed % 8),
-      timing: ['immediate', 'within 6 months', 'wait for better prices'][seed % 3],
-      strategy: ['Focus on premium properties', 'Target value opportunities', 'Consider new construction'][seed % 3]
+      timing: ['immediate', 'within 6 months', 'wait for better prices'][
+        seed % 3
+      ],
+      strategy: [
+        'Focus on premium properties',
+        'Target value opportunities',
+        'Consider new construction',
+      ][seed % 3],
     },
-    riskFactors: {
-      high: ['Interest rate volatility', 'Economic recession risk', 'Supply chain disruptions'][seed % 3],
-      medium: ['Local market saturation', 'Regulatory changes', 'Environmental factors'][seed % 3]
-    }
+         riskFactors: {
+       high: [
+         'Interest rate volatility',
+         'Economic recession risk',
+         'Supply chain disruptions',
+       ].slice(0, 2),
+       medium: [
+         'Local market saturation',
+         'Regulatory changes',
+         'Environmental factors',
+       ].slice(0, 2),
+     },
   }
-  
+
   return {
     comps,
     marketData,
     walkabilityData,
     microMarketData,
-    predictiveData
+    predictiveData,
   }
 }
 
@@ -136,17 +196,49 @@ interface GeneratedData {
   }
   walkabilityData: {
     overall: number
-    categories: Record<string, { score: number; nearby: string[]; distance: number }>
+    categories: Record<
+      string,
+      { score: number; nearby: string[]; distance: number }
+    >
   }
   microMarketData: {
-    blockLevel: { averagePrice: number; pricePerSqft: number; priceVariation: number; compCount: number }
-    streetLevel: { averagePrice: number; pricePerSqft: number; streetPremium: number; compCount: number }
-    neighborhoodLevel: { marketTrend: 'rising' | 'stable' | 'declining'; daysOnMarket: number; inventoryLevel: 'low' | 'medium' | 'high' }
-    seasonalAdjustments: { spring: number; summer: number; fall: number; winter: number }
+    blockLevel: {
+      averagePrice: number
+      pricePerSqft: number
+      priceVariation: number
+      compCount: number
+    }
+    streetLevel: {
+      averagePrice: number
+      pricePerSqft: number
+      streetPremium: number
+      compCount: number
+    }
+    neighborhoodLevel: {
+      marketTrend: 'rising' | 'stable' | 'declining'
+      daysOnMarket: number
+      inventoryLevel: 'low' | 'medium' | 'high'
+    }
+    seasonalAdjustments: {
+      spring: number
+      summer: number
+      fall: number
+      winter: number
+    }
   }
   predictiveData: {
-    shortTerm: { next30Days: { priceChange: number; confidence: number }; next90Days: { priceChange: number; confidence: number } }
-    mediumTerm: { next6Months: { priceChange: number; confidence: number }; next12Months: { priceChange: number; confidence: number; marketConditions: 'buyer' | 'seller' | 'balanced' } }
+    shortTerm: {
+      next30Days: { priceChange: number; confidence: number }
+      next90Days: { priceChange: number; confidence: number }
+    }
+    mediumTerm: {
+      next6Months: { priceChange: number; confidence: number }
+      next12Months: {
+        priceChange: number
+        confidence: number
+        marketConditions: 'buyer' | 'seller' | 'balanced'
+      }
+    }
     longTerm: { next2Years: { priceChange: number; confidence: number } }
     opportunities: { expectedReturn: number; timing: string; strategy: string }
     riskFactors: { high: string[]; medium: string[] }
@@ -163,11 +255,14 @@ export default function StreetCompsWidget({
 
   useEffect(() => {
     // Simulate API call delay
-    const timer = setTimeout(() => {
-      const dynamicData = generateDynamicData(address, neighborhood)
-      setData(dynamicData)
-      setLoading(false)
-    }, 500 + Math.random() * 1000) // Random delay between 500ms-1500ms
+    const timer = setTimeout(
+      () => {
+        const dynamicData = generateDynamicData(address, neighborhood)
+        setData(dynamicData)
+        setLoading(false)
+      },
+      500 + Math.random() * 1000
+    ) // Random delay between 500ms-1500ms
 
     return () => clearTimeout(timer)
   }, [address, neighborhood])
@@ -189,15 +284,27 @@ export default function StreetCompsWidget({
 
   if (!data) return null
 
-  const { comps, marketData, walkabilityData, microMarketData, predictiveData } = data
+  const {
+    comps,
+    marketData,
+    walkabilityData,
+    microMarketData,
+    predictiveData,
+  } = data
 
-  const avgPrice = comps.length > 0
-    ? comps.reduce((sum: number, comp) => sum + comp.salePrice, 0) / comps.length
-    : 0
+  const avgPrice =
+    comps.length > 0
+      ? comps.reduce((sum: number, comp) => sum + comp.salePrice, 0) /
+        comps.length
+      : 0
 
-  const avgPricePerSqft = comps.length > 0
-    ? comps.reduce((sum: number, comp) => sum + comp.salePrice / comp.sqft, 0) / comps.length
-    : 0
+  const avgPricePerSqft =
+    comps.length > 0
+      ? comps.reduce(
+          (sum: number, comp) => sum + comp.salePrice / comp.sqft,
+          0
+        ) / comps.length
+      : 0
 
   return (
     <div className={`bg-white rounded-lg shadow-lg p-6 ${className}`}>
@@ -207,7 +314,8 @@ export default function StreetCompsWidget({
           Street-Level Market Analysis
         </h3>
         <p className="text-gray-600 text-sm">
-          Recent sales within 500m of {address} • {neighborhood.replace(/([A-Z])/g, ' $1')}
+          Recent sales within 500m of {address} •{' '}
+          {neighborhood.replace(/([A-Z])/g, ' $1')}
         </p>
       </div>
 
@@ -249,24 +357,20 @@ export default function StreetCompsWidget({
             </div>
             <div className="space-y-1 text-xs">
               <div>
-                Avg Price: ${microMarketData.blockLevel.averagePrice.toLocaleString()}
+                Avg Price: $
+                {microMarketData.blockLevel.averagePrice.toLocaleString()}
               </div>
-              <div>
-                Price/Sq Ft: ${microMarketData.blockLevel.pricePerSqft}
-              </div>
-              <div>
-                Variation: {microMarketData.blockLevel.priceVariation}%
-              </div>
+              <div>Price/Sq Ft: ${microMarketData.blockLevel.pricePerSqft}</div>
+              <div>Variation: {microMarketData.blockLevel.priceVariation}%</div>
               <div>Comps: {microMarketData.blockLevel.compCount}</div>
             </div>
           </div>
           <div className="bg-white rounded p-3">
-            <div className="font-medium text-purple-700 mb-2">
-              Street Level
-            </div>
+            <div className="font-medium text-purple-700 mb-2">Street Level</div>
             <div className="space-y-1 text-xs">
               <div>
-                Avg Price: ${microMarketData.streetLevel.averagePrice.toLocaleString()}
+                Avg Price: $
+                {microMarketData.streetLevel.averagePrice.toLocaleString()}
               </div>
               <div>
                 Price/Sq Ft: ${microMarketData.streetLevel.pricePerSqft}
@@ -278,9 +382,7 @@ export default function StreetCompsWidget({
             </div>
           </div>
           <div className="bg-white rounded p-3">
-            <div className="font-medium text-purple-700 mb-2">
-              Neighborhood
-            </div>
+            <div className="font-medium text-purple-700 mb-2">Neighborhood</div>
             <div className="space-y-1 text-xs">
               <div>
                 Trend:{' '}
@@ -288,7 +390,8 @@ export default function StreetCompsWidget({
                   className={`font-medium ${
                     microMarketData.neighborhoodLevel.marketTrend === 'rising'
                       ? 'text-green-600'
-                      : microMarketData.neighborhoodLevel.marketTrend === 'declining'
+                      : microMarketData.neighborhoodLevel.marketTrend ===
+                          'declining'
                         ? 'text-red-600'
                         : 'text-blue-600'
                   }`}
@@ -305,7 +408,8 @@ export default function StreetCompsWidget({
                   className={`font-medium ${
                     microMarketData.neighborhoodLevel.inventoryLevel === 'low'
                       ? 'text-red-600'
-                      : microMarketData.neighborhoodLevel.inventoryLevel === 'high'
+                      : microMarketData.neighborhoodLevel.inventoryLevel ===
+                          'high'
                         ? 'text-green-600'
                         : 'text-yellow-600'
                   }`}
@@ -391,12 +495,12 @@ export default function StreetCompsWidget({
             </div>
             <div className="space-y-1 text-xs">
               <div>
-                30 days: +{predictiveData.shortTerm.next30Days.priceChange}%
-                ({predictiveData.shortTerm.next30Days.confidence}% confidence)
+                30 days: +{predictiveData.shortTerm.next30Days.priceChange}% (
+                {predictiveData.shortTerm.next30Days.confidence}% confidence)
               </div>
               <div>
-                90 days: +{predictiveData.shortTerm.next90Days.priceChange}%
-                ({predictiveData.shortTerm.next90Days.confidence}% confidence)
+                90 days: +{predictiveData.shortTerm.next90Days.priceChange}% (
+                {predictiveData.shortTerm.next90Days.confidence}% confidence)
               </div>
             </div>
           </div>
@@ -406,20 +510,23 @@ export default function StreetCompsWidget({
             </div>
             <div className="space-y-1 text-xs">
               <div>
-                6 months: +{predictiveData.mediumTerm.next6Months.priceChange}% (
-                {predictiveData.mediumTerm.next6Months.confidence}% confidence)
+                6 months: +{predictiveData.mediumTerm.next6Months.priceChange}%
+                ({predictiveData.mediumTerm.next6Months.confidence}% confidence)
               </div>
               <div>
-                12 months: +{predictiveData.mediumTerm.next12Months.priceChange}% (
-                {predictiveData.mediumTerm.next12Months.confidence}% confidence)
+                12 months: +{predictiveData.mediumTerm.next12Months.priceChange}
+                % ({predictiveData.mediumTerm.next12Months.confidence}%
+                confidence)
               </div>
               <div>
                 Market:{' '}
                 <span
                   className={`font-medium ${
-                    predictiveData.mediumTerm.next12Months.marketConditions === 'seller'
+                    predictiveData.mediumTerm.next12Months.marketConditions ===
+                    'seller'
                       ? 'text-red-600'
-                      : predictiveData.mediumTerm.next12Months.marketConditions === 'buyer'
+                      : predictiveData.mediumTerm.next12Months
+                            .marketConditions === 'buyer'
                         ? 'text-green-600'
                         : 'text-blue-600'
                   }`}
@@ -435,8 +542,8 @@ export default function StreetCompsWidget({
             </div>
             <div className="space-y-1 text-xs">
               <div>
-                2 years: +{predictiveData.longTerm.next2Years.priceChange}%
-                ({predictiveData.longTerm.next2Years.confidence}% confidence)
+                2 years: +{predictiveData.longTerm.next2Years.priceChange}% (
+                {predictiveData.longTerm.next2Years.confidence}% confidence)
               </div>
               <div>
                 Expected Return: {predictiveData.opportunities.expectedReturn}%
@@ -482,37 +589,43 @@ export default function StreetCompsWidget({
           <div className="bg-white rounded p-2">
             <div className="font-medium text-blue-700">Shopping</div>
             <div className="text-xs text-gray-600">
-              {walkabilityData.categories.shopping.score}/40 • {walkabilityData.categories.shopping.distance}m
+              {walkabilityData.categories.shopping.score}/40 •{' '}
+              {walkabilityData.categories.shopping.distance}m
             </div>
           </div>
           <div className="bg-white rounded p-2">
             <div className="font-medium text-green-700">Dining</div>
             <div className="text-xs text-gray-600">
-              {walkabilityData.categories.dining.score}/30 • {walkabilityData.categories.dining.distance}m
+              {walkabilityData.categories.dining.score}/30 •{' '}
+              {walkabilityData.categories.dining.distance}m
             </div>
           </div>
           <div className="bg-white rounded p-2">
             <div className="font-medium text-purple-700">Parks</div>
             <div className="text-xs text-gray-600">
-              {walkabilityData.categories.parks.score}/20 • {walkabilityData.categories.parks.distance}m
+              {walkabilityData.categories.parks.score}/20 •{' '}
+              {walkabilityData.categories.parks.distance}m
             </div>
           </div>
           <div className="bg-white rounded p-2">
             <div className="font-medium text-orange-700">Schools</div>
             <div className="text-xs text-gray-600">
-              {walkabilityData.categories.schools.score}/100 • {walkabilityData.categories.schools.distance}m
+              {walkabilityData.categories.schools.score}/100 •{' '}
+              {walkabilityData.categories.schools.distance}m
             </div>
           </div>
           <div className="bg-white rounded p-2">
             <div className="font-medium text-red-700">Transit</div>
             <div className="text-xs text-gray-600">
-              {walkabilityData.categories.transit.score}/100 • {walkabilityData.categories.transit.distance}m
+              {walkabilityData.categories.transit.score}/100 •{' '}
+              {walkabilityData.categories.transit.distance}m
             </div>
           </div>
           <div className="bg-white rounded p-2">
             <div className="font-medium text-indigo-700">Healthcare</div>
             <div className="text-xs text-gray-600">
-              {walkabilityData.categories.healthcare.score}/10 • {walkabilityData.categories.healthcare.distance}m
+              {walkabilityData.categories.healthcare.score}/10 •{' '}
+              {walkabilityData.categories.healthcare.distance}m
             </div>
           </div>
         </div>
@@ -553,12 +666,8 @@ export default function StreetCompsWidget({
                 </div>
               </div>
               <div className="text-right text-sm">
-                <div className="font-medium text-green-700">
-                  15 min walk
-                </div>
-                <div className="text-gray-500">
-                  3 min drive
-                </div>
+                <div className="font-medium text-green-700">15 min walk</div>
+                <div className="text-gray-500">3 min drive</div>
               </div>
             </div>
           </div>
@@ -576,12 +685,8 @@ export default function StreetCompsWidget({
                 </div>
               </div>
               <div className="text-right text-sm">
-                <div className="font-medium text-green-700">
-                  8 min walk
-                </div>
-                <div className="text-gray-500">
-                  2 min drive
-                </div>
+                <div className="font-medium text-green-700">8 min walk</div>
+                <div className="text-gray-500">2 min drive</div>
               </div>
             </div>
           </div>
@@ -596,15 +701,11 @@ export default function StreetCompsWidget({
         <div className="grid grid-cols-3 gap-4 text-sm">
           <div>
             <span className="text-blue-700">Price/Sq Ft:</span>
-            <span className="ml-2 font-medium">
-              ${marketData.pricePerSqft}
-            </span>
+            <span className="ml-2 font-medium">${marketData.pricePerSqft}</span>
           </div>
           <div>
             <span className="text-blue-700">Days on Market:</span>
-            <span className="ml-2 font-medium">
-              {marketData.daysOnMarket}
-            </span>
+            <span className="ml-2 font-medium">{marketData.daysOnMarket}</span>
           </div>
           <div>
             <span className="text-blue-700">Price Change:</span>
@@ -640,7 +741,8 @@ export default function StreetCompsWidget({
                       {comp.address}
                     </div>
                     <div className="text-sm text-gray-600">
-                      {comp.bedrooms} bed, {comp.bathrooms} bath • {comp.sqft.toLocaleString()} sq ft
+                      {comp.bedrooms} bed, {comp.bathrooms} bath •{' '}
+                      {comp.sqft.toLocaleString()} sq ft
                     </div>
                   </div>
                   <div className="text-right">
@@ -648,7 +750,8 @@ export default function StreetCompsWidget({
                       ${comp.salePrice.toLocaleString()}
                     </div>
                     <div className="text-xs text-gray-500">
-                      {comp.distance}m away • {new Date(comp.saleDate).toLocaleDateString()}
+                      {comp.distance}m away •{' '}
+                      {new Date(comp.saleDate).toLocaleDateString()}
                     </div>
                   </div>
                 </div>

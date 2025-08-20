@@ -133,3 +133,23 @@ coverage/
 
 # Bundle analyzer
 bundle-analyzer-report.html
+
+# SECURITY: Protect sensitive files and services
+src/services/aiClientIntelligence.ts
+src/services/fubApiService.ts
+src/services/hyperlocalService.ts
+src/types/hyperlocal.ts
+src/hooks/useRealScout.ts
+src/components/ai/
+src/components/hyperlocal/
+src/components/real-estate/
+
+# Environment files
+.env*
+vercel.env
+cloudflare.env
+
+# Configuration files with sensitive data
+cloudflare.toml
+cloudflare-worker.js
+deploy-cloudflare.sh

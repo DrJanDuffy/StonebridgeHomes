@@ -1,7 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server'
-
-const FOLLOW_UP_BOSS_API_KEY = 'fka_0N4mnNW7Q94BLjEMKvoC0Lz9bYtIH0dU5c'
-const FOLLOW_UP_BOSS_API_URL = 'https://api.followupboss.com/v1'
+import { config } from '@/lib/config'
 
 interface ContactData {
   firstName: string
@@ -15,6 +13,19 @@ interface ContactData {
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is configured
+    if (!config.followUpBoss.apiKey) {
+      console.error('Follow Up Boss API key not configured')
+      return NextResponse.json(
+        { error: 'Service not configured' },
+        { status: 500 }
+      )
+    }
+
+    // Add rate limiting check (basic implementation)
+    const clientIP = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    // TODO: Implement proper rate limiting with Redis or similar
+    
     const body: ContactData = await request.json()
 
     // Validate required fields
@@ -44,10 +55,10 @@ export async function POST(request: NextRequest) {
       ],
     }
 
-    const response = await fetch(`${FOLLOW_UP_BOSS_API_URL}/people`, {
+    const response = await fetch(`${config.followUpBoss.apiUrl}/people`, {
       method: 'POST',
       headers: {
-        Authorization: `Basic ${Buffer.from(`${FOLLOW_UP_BOSS_API_KEY}:`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(`${config.followUpBoss.apiKey}:`).toString('base64')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(contactData),
@@ -64,8 +75,8 @@ export async function POST(request: NextRequest) {
 
     const result = await response.json()
 
-    // Log successful contact creation
-    console.log('Contact created in Follow Up Boss:', result)
+    // Log successful contact creation (remove sensitive data)
+    console.log('Contact created in Follow Up Boss for:', body.email)
 
     return NextResponse.json({
       success: true,

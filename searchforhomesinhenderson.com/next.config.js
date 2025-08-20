@@ -2,12 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  
+
   // Disable ESLint since we're using Biome
   eslint: {
     ignoreDuringBuilds: true,
   },
-  
+
   // Vercel optimizations
   output: 'standalone',
   poweredByHeader: false,

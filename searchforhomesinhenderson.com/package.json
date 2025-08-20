@@ -20,12 +20,11 @@
     "export": "next build && next export",
     "vercel-build": "npm run build:vercel",
     "cloudflare-build": "npm run build:cloudflare",
-    "deploy:cloudflare": "npm run cloudflare-build && wrangler deploy",
+    "deploy:cloudflare": "npm run cloudflare:build && wrangler deploy",
     "cloudflare:worker": "wrangler dev --local",
     "cloudflare:deploy": "wrangler deploy",
     "cloudflare:tail": "wrangler tail",
     "cloudflare:secret": "wrangler secret put",
-    "prebuild": "biome check .",
     "precommit": "biome check --write . && biome format --write ."
   },
   "dependencies": {

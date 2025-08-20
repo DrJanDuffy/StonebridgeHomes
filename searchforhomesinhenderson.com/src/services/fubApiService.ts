@@ -191,14 +191,19 @@ export class FUBApiService {
     const properties = await this.getProperties(filters)
     const cutoffDate = new Date()
     cutoffDate.setDate(cutoffDate.getDate() - daysBack)
-
+    
     return properties
       .filter((p) => p.status === 'Sold' && p.soldDate)
-      .filter((p) => new Date(p.soldDate) >= cutoffDate)
-      .sort(
-        (a, b) =>
-          new Date(b.soldDate).getTime() - new Date(a.soldDate).getTime()
-      )
+      .filter((p) => {
+        // Type guard: ensure soldDate exists before creating Date object
+        if (!p.soldDate) return false
+        return new Date(p.soldDate) >= cutoffDate
+      })
+      .sort((a, b) => {
+        // Type guard: ensure soldDate exists before creating Date object
+        if (!a.soldDate || !b.soldDate) return 0
+        return new Date(b.soldDate).getTime() - new Date(a.soldDate).getTime()
+      })
   }
 
   // Get market trends for predictive analysis
@@ -429,9 +434,12 @@ export class FUBApiService {
       : sorted[middle]
   }
 
-  private calculatePriceTrends(
-    properties: FUBProperty[]
-  ): { last30Days: number; last90Days: number; last6Months: number; last12Months: number } {
+  private calculatePriceTrends(properties: FUBProperty[]): {
+    last30Days: number
+    last90Days: number
+    last6Months: number
+    last12Months: number
+  } {
     // Simplified price trend calculation
     // In real implementation, you'd compare historical data points
     return {
@@ -444,7 +452,12 @@ export class FUBApiService {
 
   private determineMarketConditions(
     properties: FUBProperty[],
-    priceTrends: { last30Days: number; last90Days: number; last6Months: number; last12Months: number }
+    priceTrends: {
+      last30Days: number
+      last90Days: number
+      last6Months: number
+      last12Months: number
+    }
   ): 'buyer' | 'seller' | 'balanced' {
     const activeInventory = properties.filter(
       (p) => p.status === 'Active'
@@ -469,7 +482,12 @@ export class FUBApiService {
       averageDaysOnMarket: 0,
       priceRange: { min: 0, max: 0, median: 0 },
       inventoryByStatus: { active: 0, pending: 0, sold: 0, expired: 0 },
-      priceTrends: { 30: 0, 90: 0, 180: 0, 365: 0 },
+      priceTrends: { 
+        last30Days: 0, 
+        last90Days: 0, 
+        last6Months: 0, 
+        last12Months: 0 
+      },
       marketConditions: 'balanced',
     }
   }

@@ -2,12 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  
+
   // Cloudflare optimizations
   output: 'standalone',
   poweredByHeader: false,
   compress: true,
-  
+
   // Performance optimizations for Cloudflare
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
@@ -69,7 +69,7 @@ const nextConfig = {
           },
         },
       }
-      
+
       // Cloudflare Worker compatibility
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -78,7 +78,7 @@ const nextConfig = {
         tls: false,
       }
     }
-    
+
     return config
   },
 

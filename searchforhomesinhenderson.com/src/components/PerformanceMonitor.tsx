@@ -2,6 +2,17 @@
 
 import { useEffect } from 'react'
 
+// TypeScript declarations for global functions
+declare global {
+  interface Window {
+    gtag?: (
+      command: string,
+      action: string,
+      params: Record<string, any>
+    ) => void
+  }
+}
+
 export default function PerformanceMonitor() {
   useEffect(() => {
     // Core Web Vitals monitoring
@@ -13,8 +24,8 @@ export default function PerformanceMonitor() {
           const lastEntry = entries[entries.length - 1]
           if (lastEntry) {
             console.log('LCP:', lastEntry.startTime)
-            // Send to analytics service
-            if (window.gtag) {
+            // Send to analytics service if available
+            if (typeof window.gtag === 'function') {
               window.gtag('event', 'LCP', {
                 value: Math.round(lastEntry.startTime),
                 event_category: 'Web Vitals',
@@ -29,10 +40,11 @@ export default function PerformanceMonitor() {
         const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries()
           entries.forEach((entry) => {
-            console.log('FID:', entry.processingStart - entry.startTime)
-            if (window.gtag) {
+            const fid = entry.processingStart - entry.startTime
+            console.log('FID:', fid)
+            if (typeof window.gtag === 'function') {
               window.gtag('event', 'FID', {
-                value: Math.round(entry.processingStart - entry.startTime),
+                value: Math.round(fid),
                 event_category: 'Web Vitals',
                 event_label: window.location.pathname,
               })
@@ -51,7 +63,7 @@ export default function PerformanceMonitor() {
             }
           })
           console.log('CLS:', clsValue)
-          if (window.gtag) {
+          if (typeof window.gtag === 'function') {
             window.gtag('event', 'CLS', {
               value: Math.round(clsValue * 1000) / 1000,
               event_category: 'Web Vitals',
@@ -67,7 +79,7 @@ export default function PerformanceMonitor() {
           entries.forEach((entry: any) => {
             const inp = entry.processingStart - entry.startTime
             console.log('INP:', inp)
-            if (window.gtag) {
+            if (typeof window.gtag === 'function') {
               window.gtag('event', 'INP', {
                 value: Math.round(inp),
                 event_category: 'Web Vitals',

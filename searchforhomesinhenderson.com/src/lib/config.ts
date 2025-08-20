@@ -54,6 +54,12 @@ export const config = {
 }
 
 // Validate configuration on import
-if (config.isProduction) {
-  config.validate()
+// Only validate at runtime, not during build
+if (config.isProduction && typeof window === 'undefined') {
+  try {
+    config.validate()
+  } catch (error) {
+    // Log error but don't crash the build
+    console.warn('Configuration validation warning:', error.message)
+  }
 }

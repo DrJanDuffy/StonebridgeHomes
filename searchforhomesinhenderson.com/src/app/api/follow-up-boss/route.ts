@@ -17,8 +17,8 @@ export async function POST(request: NextRequest) {
     if (!config.followUpBoss.apiKey) {
       console.error('Follow Up Boss API key not configured')
       return NextResponse.json(
-        { error: 'Service not configured' },
-        { status: 500 }
+        { error: 'Contact service temporarily unavailable. Please try again later.' },
+        { status: 503 }
       )
     }
 

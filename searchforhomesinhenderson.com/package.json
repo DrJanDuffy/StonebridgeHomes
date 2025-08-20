@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:vercel": "next build && next-sitemap",
+    "build:cloudflare": "next build --config next.config.cloudflare.js",
     "start": "next start",
     "type-check": "tsc --noEmit",
     "format": "biome format --write .",
@@ -17,7 +18,13 @@
     "fix": "biome check --write . && biome format --write .",
     "analyze": "ANALYZE=true next build",
     "export": "next build && next export",
-    "vercel-build": "npm run build:vercel"
+    "vercel-build": "npm run build:vercel",
+    "cloudflare-build": "npm run build:cloudflare",
+    "deploy:cloudflare": "npm run cloudflare-build && wrangler deploy",
+    "cloudflare:worker": "wrangler dev --local",
+    "cloudflare:deploy": "wrangler deploy",
+    "cloudflare:tail": "wrangler tail",
+    "cloudflare:secret": "wrangler secret put"
   },
   "dependencies": {
     "next": "14.2.31",

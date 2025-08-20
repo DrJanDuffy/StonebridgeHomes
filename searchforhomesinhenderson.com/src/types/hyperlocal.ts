@@ -73,6 +73,85 @@ export interface SchoolZone {
   }
 }
 
+// Micro-market pricing analysis
+export interface MicroMarketPricing {
+  blockLevel: {
+    averagePrice: number
+    pricePerSqft: number
+    priceVariation: number // percentage
+    compCount: number
+    lastUpdated: string
+  }
+  streetLevel: {
+    averagePrice: number
+    pricePerSqft: number
+    priceVariation: number
+    compCount: number
+    streetPremium: number // premium for same street
+  }
+  neighborhoodLevel: {
+    averagePrice: number
+    pricePerSqft: number
+    marketTrend: 'rising' | 'stable' | 'declining'
+    daysOnMarket: number
+    inventoryLevel: 'low' | 'medium' | 'high'
+  }
+  seasonalAdjustments: {
+    spring: number // percentage adjustment
+    summer: number
+    fall: number
+    winter: number
+  }
+}
+
+// Predictive market trends with ML insights
+export interface PredictiveMarketTrends {
+  shortTerm: {
+    next30Days: {
+      priceChange: number // percentage
+      confidence: number // 0-100
+      factors: string[]
+    }
+    next90Days: {
+      priceChange: number
+      confidence: number
+      factors: string[]
+    }
+  }
+  mediumTerm: {
+    next6Months: {
+      priceChange: number
+      confidence: number
+      marketConditions: 'buyer' | 'seller' | 'balanced'
+      factors: string[]
+    }
+    next12Months: {
+      priceChange: number
+      confidence: number
+      marketConditions: 'buyer' | 'seller' | 'balanced'
+      factors: string[]
+    }
+  }
+  longTerm: {
+    next2Years: {
+      priceChange: number
+      confidence: number
+      economicFactors: string[]
+      developmentFactors: string[]
+    }
+  }
+  riskFactors: {
+    high: string[]
+    medium: string[]
+    low: string[]
+  }
+  opportunities: {
+    timing: 'immediate' | 'short-term' | 'long-term'
+    strategy: string[]
+    expectedReturn: number
+  }
+}
+
 // Local knowledge encoding
 export interface LocalKnowledge {
   schoolZones: SchoolZone[]
@@ -92,6 +171,8 @@ export interface LocalKnowledge {
     daysOnMarket: { current: number; trend: number; forecast: number }
     inventory: { current: number; trend: number; forecast: number }
   }
+  microMarketPricing: Record<string, MicroMarketPricing>
+  predictiveTrends: Record<string, PredictiveMarketTrends>
 }
 
 // Offline strategy

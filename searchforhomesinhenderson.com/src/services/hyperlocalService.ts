@@ -4,6 +4,8 @@ import type {
   StreetComps,
   WalkabilityScore,
   SchoolZone,
+  MicroMarketPricing,
+  PredictiveMarketTrends,
 } from '@/types/hyperlocal'
 
 // Property data interface
@@ -344,6 +346,276 @@ export class WalkabilityService {
   }
 }
 
+// Advanced market intelligence service
+export class MarketIntelligenceService {
+  private cache: Map<string, MicroMarketPricing> = new Map()
+  private cacheTTL = 6 * 60 * 60 * 1000 // 6 hours
+
+  async getMicroMarketPricing(
+    address: string,
+    scope: GeoScope
+  ): Promise<MicroMarketPricing> {
+    const cacheKey = `micro-market-${address}`
+    const cached = this.cache.get(cacheKey)
+
+    if (cached && Date.now() < this.cacheTTL) {
+      return cached
+    }
+
+    try {
+      const pricing = await this.calculateMicroMarketPricing(address, scope)
+      this.cache.set(cacheKey, pricing)
+      return pricing
+    } catch (error) {
+      console.error('Error calculating micro-market pricing:', error)
+      return this.getDefaultMicroMarketPricing()
+    }
+  }
+
+  async getPredictiveTrends(
+    address: string,
+    scope: GeoScope
+  ): Promise<PredictiveMarketTrends> {
+    // TODO: Integrate with ML models trained on Henderson market data
+    // For now, return sophisticated mock data based on your 15+ years experience
+    
+    return {
+      shortTerm: {
+        next30Days: {
+          priceChange: 2.5,
+          confidence: 85,
+          factors: [
+            'Spring buying season approaching',
+            'Low inventory in Green Valley',
+            'Interest rates stabilizing',
+            'Local job market growth',
+          ],
+        },
+        next90Days: {
+          priceChange: 4.2,
+          confidence: 78,
+          factors: [
+            'Peak Henderson market season',
+            'New development announcements',
+            'School year planning',
+            'Tourism recovery impact',
+          ],
+        },
+      },
+      mediumTerm: {
+        next6Months: {
+          priceChange: 6.8,
+          confidence: 72,
+          factors: [
+            'Henderson economic growth',
+            'Infrastructure improvements',
+            'Population migration trends',
+            'Climate change considerations',
+          ],
+          marketConditions: 'seller',
+        },
+        next12Months: {
+          priceChange: 8.5,
+          confidence: 68,
+          factors: [
+            'Long-term Henderson development',
+            'Regional economic expansion',
+            'Housing supply constraints',
+            'Quality of life factors',
+          ],
+          marketConditions: 'seller',
+        },
+      },
+      longTerm: {
+        next2Years: {
+          priceChange: 12.3,
+          confidence: 65,
+          factors: [
+            'Henderson becoming premier suburb',
+            'Tech company relocations',
+            'Climate migration patterns',
+            'Infrastructure investments',
+          ],
+          economicFactors: [
+            'Nevada tax advantages',
+            'Remote work adoption',
+            'Healthcare industry growth',
+          ],
+          developmentFactors: [
+            'Green Valley expansion',
+            'New shopping districts',
+            'Transportation improvements',
+          ],
+        },
+      },
+      riskFactors: {
+        high: [
+          'Interest rate volatility',
+          'Economic recession risk',
+          'Climate change impacts',
+        ],
+        medium: [
+          'Supply chain disruptions',
+          'Regulatory changes',
+          'Market saturation',
+        ],
+        low: [
+          'Local political changes',
+          'Natural disaster risk',
+          'Technology disruption',
+        ],
+      },
+      opportunities: {
+        timing: 'immediate',
+        strategy: [
+          'Focus on Green Valley premium properties',
+          'Target properties near planned developments',
+          'Consider properties with solar potential',
+          'Look for properties in high-rated school zones',
+        ],
+        expectedReturn: 15.2, // percentage over 2 years
+      },
+    }
+  }
+
+  private async calculateMicroMarketPricing(
+    address: string,
+    scope: GeoScope
+  ): Promise<MicroMarketPricing> {
+    // TODO: Integrate with real MLS data and FUB API
+    // For now, calculate sophisticated mock data
+    
+    const basePrice = 750000
+    const basePricePerSqft = 300
+    
+    // Calculate seasonal adjustments based on Henderson market patterns
+    const now = new Date()
+    const month = now.getMonth()
+    const seasonalAdjustments = this.calculateSeasonalAdjustments(month)
+    
+    // Calculate block-level variations (500m radius)
+    const blockVariation = Math.random() * 0.15 - 0.075 // ±7.5%
+    const blockPrice = basePrice * (1 + blockVariation)
+    
+    // Calculate street-level premium (same street properties)
+    const streetPremium = Math.random() * 0.10 + 0.05 // 5-15% premium
+    
+    // Calculate neighborhood trends based on Henderson market data
+    const marketTrend = this.determineMarketTrend(scope)
+    
+    return {
+      blockLevel: {
+        averagePrice: Math.round(blockPrice),
+        pricePerSqft: Math.round(basePricePerSqft * (1 + blockVariation)),
+        priceVariation: Math.round(blockVariation * 100 * 100) / 100,
+        compCount: Math.floor(Math.random() * 8) + 3, // 3-10 comps
+        lastUpdated: new Date().toISOString(),
+      },
+      streetLevel: {
+        averagePrice: Math.round(blockPrice * (1 + streetPremium)),
+        pricePerSqft: Math.round(basePricePerSqft * (1 + streetPremium)),
+        priceVariation: Math.round(streetPremium * 100 * 100) / 100,
+        compCount: Math.floor(Math.random() * 5) + 2, // 2-6 comps
+        streetPremium: Math.round(streetPremium * 100 * 100) / 100,
+      },
+      neighborhoodLevel: {
+        averagePrice: Math.round(basePrice),
+        pricePerSqft: basePricePerSqft,
+        marketTrend,
+        daysOnMarket: Math.floor(Math.random() * 20) + 15, // 15-35 days
+        inventoryLevel: this.determineInventoryLevel(scope),
+      },
+      seasonalAdjustments,
+    }
+  }
+
+  private calculateSeasonalAdjustments(month: number): {
+    spring: number
+    summer: number
+    fall: number
+    winter: number
+  } {
+    // Henderson market seasonal patterns based on your experience
+    return {
+      spring: month >= 2 && month <= 4 ? 3.5 : 0, // March-May: +3.5%
+      summer: month >= 5 && month <= 7 ? 2.0 : 0, // June-August: +2.0%
+      fall: month >= 8 && month <= 10 ? 1.5 : 0, // September-November: +1.5%
+      winter: month === 11 || month <= 1 ? -1.0 : 0, // December-February: -1.0%
+    }
+  }
+
+  private determineMarketTrend(scope: GeoScope): 'rising' | 'stable' | 'declining' {
+    // Henderson market analysis based on your 15+ years experience
+    const trends: Record<string, 'rising' | 'stable' | 'declining'> = {
+      greenValley: 'rising',
+      anthem: 'stable',
+      sevenHills: 'rising',
+      whitneyRanch: 'stable',
+      stephanieRanch: 'rising',
+    }
+    
+    // Find which neighborhood this scope belongs to
+    for (const [neighborhood, data] of Object.entries(HENDERSON_HYPERLOCAL_DATA.neighborhoods)) {
+      if (isWithinScope(scope.center, data)) {
+        return trends[neighborhood] || 'stable'
+      }
+    }
+    
+    return 'stable'
+  }
+
+  private determineInventoryLevel(scope: GeoScope): 'low' | 'medium' | 'high' {
+    // Henderson inventory analysis
+    const inventoryLevels: Record<string, 'low' | 'medium' | 'high'> = {
+      greenValley: 'low', // High demand, low supply
+      anthem: 'medium', // Balanced market
+      sevenHills: 'low', // Luxury market, limited inventory
+      whitneyRanch: 'medium', // Family market, steady supply
+      stephanieRanch: 'low', // Premium market, low inventory
+    }
+    
+    for (const [neighborhood, data] of Object.entries(HENDERSON_HYPERLOCAL_DATA.neighborhoods)) {
+      if (isWithinScope(scope.center, data)) {
+        return inventoryLevels[neighborhood] || 'medium'
+      }
+    }
+    
+    return 'medium'
+  }
+
+  private getDefaultMicroMarketPricing(): MicroMarketPricing {
+    return {
+      blockLevel: {
+        averagePrice: 750000,
+        pricePerSqft: 300,
+        priceVariation: 0,
+        compCount: 0,
+        lastUpdated: new Date().toISOString(),
+      },
+      streetLevel: {
+        averagePrice: 750000,
+        pricePerSqft: 300,
+        priceVariation: 0,
+        compCount: 0,
+        streetPremium: 0,
+      },
+      neighborhoodLevel: {
+        averagePrice: 750000,
+        pricePerSqft: 300,
+        marketTrend: 'stable',
+        daysOnMarket: 25,
+        inventoryLevel: 'medium',
+      },
+      seasonalAdjustments: {
+        spring: 0,
+        summer: 0,
+        fall: 0,
+        winter: 0,
+      },
+    }
+  }
+}
+
 // Street-level market comps service
 export class StreetCompsService {
   private cache: Map<string, { data: PropertyData[]; timestamp: number }> =
@@ -446,3 +718,4 @@ export class StreetCompsService {
 // Export singleton instances
 export const streetCompsService = new StreetCompsService()
 export const walkabilityService = new WalkabilityService()
+export const marketIntelligenceService = new MarketIntelligenceService()

@@ -1,11 +1,12 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
 import FUBIntegrationDemo from '@/components/hyperlocal/FUBIntegrationDemo'
 import ClientIntelligenceDashboard from '@/components/ai/ClientIntelligenceDashboard'
 
 export const metadata: Metadata = {
   title: 'Hyperlocal Real Estate Demo | Henderson Homes',
-  description: 'Experience the future of hyperlocal real estate with AI-powered market intelligence, street-level comps, and predictive analytics.',
+  description:
+    'Experience the future of hyperlocal real estate with AI-powered market intelligence, street-level comps, and predictive analytics.',
 }
 
 export default function HyperlocalDemoPage() {
@@ -19,7 +20,8 @@ export default function HyperlocalDemoPage() {
               Hyperlocal Real Estate Stack
             </h1>
             <p className="text-xl mb-8">
-              AI-powered market intelligence • Street-level comps • Predictive analytics • Real-time data
+              AI-powered market intelligence • Street-level comps • Predictive
+              analytics • Real-time data
             </p>
             <div className="grid md:grid-cols-4 gap-6 bg-white/10 backdrop-blur-sm p-6 rounded-lg">
               <div className="text-center">
@@ -52,8 +54,9 @@ export default function HyperlocalDemoPage() {
                 P4: AI-Powered Client Relationship Intelligence
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                Machine learning algorithms that automatically score leads, predict client needs, 
-                and create personalized experiences based on hyperlocal market data.
+                Machine learning algorithms that automatically score leads,
+                predict client needs, and create personalized experiences based
+                on hyperlocal market data.
               </p>
             </div>
             <ClientIntelligenceDashboard />
@@ -107,7 +110,9 @@ export default function HyperlocalDemoPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">Frontend</h3>
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">
+                  Frontend
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Next.js 14 with App Router</li>
                   <li>• React 18 with TypeScript</li>
@@ -116,7 +121,9 @@ export default function HyperlocalDemoPage() {
                 </ul>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-green-600">Backend</h3>
+                <h3 className="text-xl font-semibold mb-4 text-green-600">
+                  Backend
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Follow Up Boss API integration</li>
                   <li>• Real-time market data</li>
@@ -125,7 +132,9 @@ export default function HyperlocalDemoPage() {
                 </ul>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-purple-600">AI/ML</h3>
+                <h3 className="text-xl font-semibold mb-4 text-purple-600">
+                  AI/ML
+                </h3>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Lead scoring algorithms</li>
                   <li>• Predictive analytics</li>
@@ -152,7 +161,8 @@ export default function HyperlocalDemoPage() {
                 </div>
                 <h3 className="font-semibold mb-2">P0-P3 Complete</h3>
                 <p className="text-sm text-gray-600">
-                  Street-level comps, local knowledge, market intelligence, FUB API
+                  Street-level comps, local knowledge, market intelligence, FUB
+                  API
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 text-center border">
@@ -161,7 +171,8 @@ export default function HyperlocalDemoPage() {
                 </div>
                 <h3 className="font-semibold mb-2">AI Intelligence</h3>
                 <p className="text-sm text-gray-600">
-                  Client scoring, predictive analytics, automated recommendations
+                  Client scoring, predictive analytics, automated
+                  recommendations
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 text-center border">
@@ -170,7 +181,8 @@ export default function HyperlocalDemoPage() {
                 </div>
                 <h3 className="font-semibold mb-2">Automation</h3>
                 <p className="text-sm text-gray-600">
-                  Smart follow-ups, personalized content, multi-channel integration
+                  Smart follow-ups, personalized content, multi-channel
+                  integration
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 text-center border">
@@ -185,7 +197,8 @@ export default function HyperlocalDemoPage() {
             </div>
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-4">
-                Next steps: Deploy AI models to production and integrate with CRM systems
+                Next steps: Deploy AI models to production and integrate with
+                CRM systems
               </p>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
                 <span className="text-sm font-medium">

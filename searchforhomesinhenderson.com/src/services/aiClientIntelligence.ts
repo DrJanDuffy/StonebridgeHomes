@@ -83,16 +83,19 @@ export class AIClientIntelligenceService {
     const marketTiming = this.calculateMarketTimingScore(profile, marketData)
     const financialReadiness = this.calculateFinancialReadinessScore(profile)
     const engagementLevel = this.calculateEngagementScore(profile)
-    const localOpportunity = this.calculateLocalOpportunityScore(profile, marketData)
+    const localOpportunity = this.calculateLocalOpportunityScore(
+      profile,
+      marketData
+    )
     const competitionLevel = this.calculateCompetitionScore(profile, marketData)
 
     // Weighted overall score
     const overall = Math.round(
       marketTiming * 0.25 +
-      financialReadiness * 0.20 +
-      engagementLevel * 0.25 +
-      localOpportunity * 0.20 +
-      competitionLevel * 0.10
+        financialReadiness * 0.2 +
+        engagementLevel * 0.25 +
+        localOpportunity * 0.2 +
+        competitionLevel * 0.1
     )
 
     const factors = {
@@ -129,12 +132,19 @@ export class AIClientIntelligenceService {
     // Analyze client behavior patterns
     const behaviorPatterns = this.analyzeBehaviorPatterns(profile)
     const marketOpportunities = this.identifyMarketOpportunities(profile)
-    const personalizedRecommendations = this.generatePersonalizedRecommendations(profile)
+    const personalizedRecommendations =
+      this.generatePersonalizedRecommendations(profile)
 
     // Determine next best action using ML model
-    const nextBestAction = this.determineNextBestAction(profile, behaviorPatterns)
+    const nextBestAction = this.determineNextBestAction(
+      profile,
+      behaviorPatterns
+    )
     const predictedTimeline = this.predictTimeline(profile, behaviorPatterns)
-    const confidence = this.calculatePredictionConfidence(profile, behaviorPatterns)
+    const confidence = this.calculatePredictionConfidence(
+      profile,
+      behaviorPatterns
+    )
 
     return {
       nextBestAction,
@@ -147,9 +157,11 @@ export class AIClientIntelligenceService {
   }
 
   // Create or update client profile
-  async createClientProfile(clientData: Partial<ClientProfile>): Promise<ClientProfile> {
+  async createClientProfile(
+    clientData: Partial<ClientProfile>
+  ): Promise<ClientProfile> {
     const id = clientData.id || this.generateClientId()
-    
+
     const profile: ClientProfile = {
       id,
       email: clientData.email || '',
@@ -221,19 +233,31 @@ export class AIClientIntelligenceService {
 
     // Market timing recommendations
     if (profile.marketContext.marketConditions === 'buyer') {
-      recommendations.push('Market conditions favor buyers - consider expanding your search')
-      recommendations.push('Inventory is high - you have more negotiating power')
+      recommendations.push(
+        'Market conditions favor buyers - consider expanding your search'
+      )
+      recommendations.push(
+        'Inventory is high - you have more negotiating power'
+      )
     } else if (profile.marketContext.marketConditions === 'seller') {
-      recommendations.push('Market conditions favor sellers - act quickly on desirable properties')
-      recommendations.push('Low inventory - be prepared to make competitive offers')
+      recommendations.push(
+        'Market conditions favor sellers - act quickly on desirable properties'
+      )
+      recommendations.push(
+        'Low inventory - be prepared to make competitive offers'
+      )
     }
 
     // Property-specific recommendations
     if (profile.preferences.priceRange[1] > 800000) {
-      recommendations.push('Consider luxury properties in Seven Hills or Green Valley Ranch')
+      recommendations.push(
+        'Consider luxury properties in Seven Hills or Green Valley Ranch'
+      )
     }
     if (profile.preferences.bedrooms.includes(5)) {
-      recommendations.push('Large family homes available in Anthem and Whitney Ranch')
+      recommendations.push(
+        'Large family homes available in Anthem and Whitney Ranch'
+      )
     }
 
     // Engagement recommendations
@@ -246,7 +270,10 @@ export class AIClientIntelligenceService {
   }
 
   // Private methods for AI calculations
-  private calculateMarketTimingScore(profile: ClientProfile, marketData: any): number {
+  private calculateMarketTimingScore(
+    profile: ClientProfile,
+    marketData: any
+  ): number {
     let score = 50 // Base score
 
     // Market conditions factor
@@ -268,14 +295,22 @@ export class AIClientIntelligenceService {
     let score = 50
 
     // Price range analysis
-    const avgPrice = (profile.preferences.priceRange[0] + profile.preferences.priceRange[1]) / 2
-    if (avgPrice > 1000000) score += 20 // High-end buyer
-    else if (avgPrice > 600000) score += 15 // Mid-range buyer
+    const avgPrice =
+      (profile.preferences.priceRange[0] + profile.preferences.priceRange[1]) /
+      2
+    if (avgPrice > 1000000)
+      score += 20 // High-end buyer
+    else if (avgPrice > 600000)
+      score += 15 // Mid-range buyer
     else score += 10 // Entry-level buyer
 
     // Property type preference
     if (profile.preferences.propertyTypes.includes('Single Family')) score += 15
-    if (profile.preferences.bedrooms.includes(4) || profile.preferences.bedrooms.includes(5)) score += 10
+    if (
+      profile.preferences.bedrooms.includes(4) ||
+      profile.preferences.bedrooms.includes(5)
+    )
+      score += 10
 
     return Math.min(100, Math.max(0, score))
   }
@@ -293,7 +328,9 @@ export class AIClientIntelligenceService {
     score += Math.min(100, profile.behavior.contactActions * 25)
 
     // Recency factor
-    const daysSinceLastActivity = (Date.now() - profile.behavior.lastActivity.getTime()) / (1000 * 60 * 60 * 24)
+    const daysSinceLastActivity =
+      (Date.now() - profile.behavior.lastActivity.getTime()) /
+      (1000 * 60 * 60 * 24)
     if (daysSinceLastActivity <= 1) score += 25
     else if (daysSinceLastActivity <= 7) score += 15
     else if (daysSinceLastActivity <= 30) score += 5
@@ -301,13 +338,16 @@ export class AIClientIntelligenceService {
     return Math.min(100, Math.max(0, score))
   }
 
-  private calculateLocalOpportunityScore(profile: ClientProfile, marketData: any): number {
+  private calculateLocalOpportunityScore(
+    profile: ClientProfile,
+    marketData: any
+  ): number {
     let score = 50
 
     // Neighborhood-specific opportunities
     const neighborhoodOpportunities: Record<string, number> = {
       'Green Valley': 20,
-      'Anthem': 15,
+      Anthem: 15,
       'Seven Hills': 25,
       'Whitney Ranch': 10,
       'Stephanie Ranch': 20,
@@ -322,7 +362,10 @@ export class AIClientIntelligenceService {
     return Math.min(100, Math.max(0, score))
   }
 
-  private calculateCompetitionScore(profile: ClientProfile, marketData: any): number {
+  private calculateCompetitionScore(
+    profile: ClientProfile,
+    marketData: any
+  ): number {
     let score = 50
 
     // Competition level factor (inverse relationship)
@@ -331,15 +374,22 @@ export class AIClientIntelligenceService {
     else score += 0
 
     // Price range competition
-    const avgPrice = (profile.preferences.priceRange[0] + profile.preferences.priceRange[1]) / 2
-    if (avgPrice > 800000) score += 20 // Less competition in luxury segment
-    else if (avgPrice > 500000) score += 10 // Moderate competition
+    const avgPrice =
+      (profile.preferences.priceRange[0] + profile.preferences.priceRange[1]) /
+      2
+    if (avgPrice > 800000)
+      score += 20 // Less competition in luxury segment
+    else if (avgPrice > 500000)
+      score += 10 // Moderate competition
     else score += 0 // High competition in entry-level
 
     return Math.min(100, Math.max(0, score))
   }
 
-  private generateInsights(factors: LeadScore['factors'], profile: ClientProfile): string[] {
+  private generateInsights(
+    factors: LeadScore['factors'],
+    profile: ClientProfile
+  ): string[] {
     const insights: string[] = []
 
     if (factors.marketTiming > 80) {
@@ -361,27 +411,39 @@ export class AIClientIntelligenceService {
     return insights
   }
 
-  private generateRecommendations(factors: LeadScore['factors'], profile: ClientProfile): string[] {
+  private generateRecommendations(
+    factors: LeadScore['factors'],
+    profile: ClientProfile
+  ): string[] {
     const recommendations: string[] = []
 
     if (factors.marketTiming > 80) {
       recommendations.push('Act quickly - market conditions are optimal')
-      recommendations.push('Consider expanding search criteria to maximize opportunities')
+      recommendations.push(
+        'Consider expanding search criteria to maximize opportunities'
+      )
     }
 
     if (factors.engagementLevel < 50) {
-      recommendations.push('Schedule personalized consultation to increase engagement')
+      recommendations.push(
+        'Schedule personalized consultation to increase engagement'
+      )
       recommendations.push('Provide educational content about local market')
     }
 
     if (factors.financialReadiness > 80) {
-      recommendations.push('Ready for immediate action - focus on property selection')
+      recommendations.push(
+        'Ready for immediate action - focus on property selection'
+      )
     }
 
     return recommendations
   }
 
-  private determineUrgency(overall: number, factors: LeadScore['factors']): LeadScore['urgency'] {
+  private determineUrgency(
+    overall: number,
+    factors: LeadScore['factors']
+  ): LeadScore['urgency'] {
     if (overall >= 85 || factors.marketTiming >= 90) return 'immediate'
     if (overall >= 70 || factors.marketTiming >= 75) return 'high'
     if (overall >= 50 || factors.engagementLevel >= 60) return 'medium'
@@ -395,8 +457,10 @@ export class AIClientIntelligenceService {
         `Property views: ${profile.behavior.propertyViews} properties viewed`,
         `Last activity: ${profile.behavior.lastActivity.toLocaleDateString()}`,
       ],
-      engagementTrend: profile.behavior.engagementScore > 50 ? 'increasing' : 'decreasing',
-      readinessLevel: profile.behavior.contactActions > 2 ? 'ready' : 'exploring',
+      engagementTrend:
+        profile.behavior.engagementScore > 50 ? 'increasing' : 'decreasing',
+      readinessLevel:
+        profile.behavior.contactActions > 2 ? 'ready' : 'exploring',
     }
   }
 
@@ -416,14 +480,20 @@ export class AIClientIntelligenceService {
     return opportunities
   }
 
-  private generatePersonalizedRecommendations(profile: ClientProfile): string[] {
+  private generatePersonalizedRecommendations(
+    profile: ClientProfile
+  ): string[] {
     const recommendations: string[] = []
 
     // Price-based recommendations
-    const avgPrice = (profile.preferences.priceRange[0] + profile.preferences.priceRange[1]) / 2
+    const avgPrice =
+      (profile.preferences.priceRange[0] + profile.preferences.priceRange[1]) /
+      2
     if (avgPrice > 800000) {
       recommendations.push('Consider luxury properties in Seven Hills')
-      recommendations.push('Explore golf course communities in Green Valley Ranch')
+      recommendations.push(
+        'Explore golf course communities in Green Valley Ranch'
+      )
     }
 
     // Family size recommendations
@@ -435,7 +505,10 @@ export class AIClientIntelligenceService {
     return recommendations
   }
 
-  private determineNextBestAction(profile: ClientProfile, behaviorPatterns: any): string {
+  private determineNextBestAction(
+    profile: ClientProfile,
+    behaviorPatterns: any
+  ): string {
     if (profile.behavior.engagementScore < 30) return 'Schedule Consultation'
     if (profile.behavior.contactActions === 0) return 'Initial Contact'
     if (profile.behavior.propertyViews > 5) return 'Schedule Property Tours'
@@ -443,8 +516,14 @@ export class AIClientIntelligenceService {
     return 'Follow Up'
   }
 
-  private predictTimeline(profile: ClientProfile, behaviorPatterns: any): PredictiveInsights['predictedTimeline'] {
-    if (profile.behavior.engagementScore > 80 && profile.behavior.contactActions > 2) {
+  private predictTimeline(
+    profile: ClientProfile,
+    behaviorPatterns: any
+  ): PredictiveInsights['predictedTimeline'] {
+    if (
+      profile.behavior.engagementScore > 80 &&
+      profile.behavior.contactActions > 2
+    ) {
       return 'immediate'
     }
     if (profile.behavior.engagementScore > 60) {
@@ -456,7 +535,10 @@ export class AIClientIntelligenceService {
     return '3-6 months'
   }
 
-  private calculatePredictionConfidence(profile: ClientProfile, behaviorPatterns: any): number {
+  private calculatePredictionConfidence(
+    profile: ClientProfile,
+    behaviorPatterns: any
+  ): number {
     let confidence = 50
 
     // More data points = higher confidence
@@ -465,7 +547,9 @@ export class AIClientIntelligenceService {
     if (profile.behavior.searchFrequency > 5) confidence += 10
 
     // Recent activity = higher confidence
-    const daysSinceLastActivity = (Date.now() - profile.behavior.lastActivity.getTime()) / (1000 * 60 * 60 * 24)
+    const daysSinceLastActivity =
+      (Date.now() - profile.behavior.lastActivity.getTime()) /
+      (1000 * 60 * 60 * 24)
     if (daysSinceLastActivity <= 7) confidence += 20
     else if (daysSinceLastActivity <= 30) confidence += 10
 
@@ -488,7 +572,9 @@ export class AIClientIntelligenceService {
     profile.followUpPriority = this.determineFollowUpPriority(profile)
   }
 
-  private determineFollowUpPriority(profile: ClientProfile): ClientProfile['followUpPriority'] {
+  private determineFollowUpPriority(
+    profile: ClientProfile
+  ): ClientProfile['followUpPriority'] {
     if (profile.behavior.engagementScore > 80) return 'immediate'
     if (profile.behavior.engagementScore > 60) return 'high'
     if (profile.behavior.engagementScore > 40) return 'medium'
@@ -503,8 +589,14 @@ export class AIClientIntelligenceService {
     // Initialize ML models for predictions
     // In production, this would load trained models
     this.predictiveModels.set('leadScoring', { version: '1.0', trained: true })
-    this.predictiveModels.set('needsPrediction', { version: '1.0', trained: true })
-    this.predictiveModels.set('timelinePrediction', { version: '1.0', trained: true })
+    this.predictiveModels.set('needsPrediction', {
+      version: '1.0',
+      trained: true,
+    })
+    this.predictiveModels.set('timelinePrediction', {
+      version: '1.0',
+      trained: true,
+    })
   }
 
   // Get all client profiles

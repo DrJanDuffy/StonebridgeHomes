@@ -1,5 +1,7 @@
 'use client'
 
+import { ProfileImage } from '@/components/ui/OptimizedImage'
+
 export default function FeaturedAgentsPage() {
   const handleFeaturedAgentsSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -83,10 +85,11 @@ export default function FeaturedAgentsPage() {
                 <div className="mb-8 text-center">
                   <div className="relative inline-block">
                     <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
-                      <img
-                        src="/dr-jan-duffy-placeholder.svg"
+                      <ProfileImage
+                        src="/images/photos/agents/dr-jan-duffy-placeholder.svg"
                         alt="Dr. Jan Duffy - Henderson REALTOR"
-                        className="w-full h-full object-cover"
+                        size={192}
+                        priority={true}
                       />
                     </div>
                     <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">

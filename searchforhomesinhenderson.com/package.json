@@ -25,7 +25,9 @@
     "cloudflare:deploy": "wrangler deploy",
     "cloudflare:tail": "wrangler tail",
     "cloudflare:secret": "wrangler secret put",
-    "precommit": "biome check --write . && biome format --write ."
+    "precommit": "biome check --write . && biome format --write .",
+    "optimize-images": "node scripts/optimize-images.js",
+    "setup-images": "mkdir -p public/images/{photos/{agents,clients,events},properties/{featured,sold,virtual-tours},neighborhoods,team,logos,icons}"
   },
   "dependencies": {
     "next": "14.2.31",

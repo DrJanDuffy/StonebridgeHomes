@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hyperlocal Real Estate Demo | Henderson Homes',
+  title: 'Live Henderson Property Listings | Henderson Homes',
   description:
-    'Experience the future of hyperlocal real estate with AI-powered market intelligence, street-level comps, and predictive analytics.',
+    'Browse real-time MLS listings in Henderson, Nevada. View live property data, market analysis, and neighborhood insights with our advanced real estate technology.',
 }
 
 export default function HyperlocalDemoLayout({

@@ -13,7 +13,7 @@ export default function HyperlocalDemoPage() {
         type="module"
         strategy="beforeInteractive"
       />
-             <style jsx global>{`
+      <style jsx global>{`
          realscout-office-listings {
            --rs-listing-divider-color: rgb(101, 141, 172);
            --rs-listing-background-color: #ffffff;
@@ -248,149 +248,164 @@ export default function HyperlocalDemoPage() {
                 </div>
               </div>
 
-                             {/* Enhanced RealScout Listings with Market Analysis */}
-               <div className="bg-gray-50 p-8 rounded-lg mb-12">
-                 <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
-                   🏠 Live Henderson Property Listings
-                 </h3>
-                 <p className="text-center text-gray-600 mb-6">
-                   Browse real-time listings from our MLS database with live market analysis. 
-                   Click any property to view full details and contact us directly.
-                 </p>
-                 
-                 {/* Featured Listings - All Price Ranges */}
-                 <div className="mb-8">
-                   <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-                     Featured Properties - All Price Ranges
-                   </h4>
-                   <realscout-office-listings
-                     agent-encoded-id="QWdlbnQtMjI1MDUw"
-                     sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
-                     listing-status="For Sale"
-                     property-types="SFR,MF"
-                     price-min="400000"
-                     price-max="1000000"
-                     max-listings="12"
-                     show-filters="true"
-                   />
-                 </div>
-                 
-                 {/* Market Analysis Section */}
-                 <div className="bg-white p-6 rounded-lg border border-gray-200">
-                   <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-                     📊 Live Market Analysis
-                   </h4>
-                   <p className="text-center text-gray-600 mb-4">
-                     Real-time market insights powered by MLS data
-                   </p>
-                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                     <div className="text-center p-3 bg-blue-50 rounded-lg">
-                       <div className="text-2xl font-bold text-blue-600">156</div>
-                       <div className="text-gray-600">Active Listings</div>
-                     </div>
-                     <div className="text-center p-3 bg-green-50 rounded-lg">
-                       <div className="text-2xl font-bold text-green-600">$485K</div>
-                       <div className="text-gray-600">Avg Price</div>
-                     </div>
-                     <div className="text-center p-3 bg-purple-50 rounded-lg">
-                       <div className="text-2xl font-bold text-purple-600">23</div>
-                       <div className="text-gray-600">Days on Market</div>
-                     </div>
-                   </div>
-                                  </div>
-               </div>
- 
-               {/* Engagement Call-to-Action */}
-               <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-6 rounded-lg mt-8">
-                 <div className="text-center">
-                   <h4 className="text-xl font-bold mb-3">
-                     🎯 Ready to Take Action?
-                   </h4>
-                   <p className="text-blue-100 mb-4">
-                     Save properties, get market alerts, and connect with our expert team
-                   </p>
-                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                     <button type="button" className="bg-white text-blue-600 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-sm">
-                       💾 Save Properties
-                     </button>
-                     <button type="button" className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold text-sm">
-                       🔔 Market Alerts
-                     </button>
-                     <a
-                       href="/contact"
-                       className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors font-semibold text-sm"
-                     >
-                       📞 Contact Agent
-                     </a>
-                   </div>
-                 </div>
-               </div>
- 
-               {/* Enhanced Street-Level Market Analysis */}
-             <div className="mb-8">
-               <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
-                 📊 Street-Level Market Intelligence
-               </h3>
-               <p className="text-center text-gray-600 mb-8">
-                 AI-powered analysis of recent sales and market trends in your target neighborhoods
-               </p>
-             </div>
- 
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-               {/* Green Valley Analysis */}
-               <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                 <div className="flex items-center justify-between mb-4">
-                   <h4 className="text-lg font-semibold text-gray-800">
-                     🏘️ Green Valley Market
-                   </h4>
-                   <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">
-                     Active Market
-                   </span>
-                 </div>
-                 <StreetCompsWidget
-                   address="123 Green Valley Parkway"
-                   neighborhood="greenValley"
-                   className="h-full"
-                 />
-                 <div className="mt-4 pt-4 border-t border-gray-200">
-                   <div className="text-center">
-                     <a
-                       href="/search?neighborhood=green-valley"
-                       className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                     >
-                       View All Green Valley Properties →
-                     </a>
-                   </div>
-                 </div>
-               </div>
-               
-               {/* Anthem Analysis */}
-               <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                 <div className="flex items-center justify-between mb-4">
-                   <h4 className="text-lg font-semibold text-gray-800">
-                     🌄 Anthem Market
-                   </h4>
-                   <span className="text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
-                     Growing Area
-                   </span>
-                 </div>
-                 <StreetCompsWidget
-                   address="456 Anthem Hills Drive"
-                   neighborhood="anthem"
-                   className="h-full"
-                 />
-                 <div className="mt-4 pt-4 border-t border-gray-200">
-                   <div className="text-center">
-                     <a
-                       href="/search?neighborhood=anthem"
-                       className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
-                     >
-                       View All Anthem Properties →
-                     </a>
-                   </div>
-                 </div>
-               </div>
-             </div>
+              {/* Enhanced RealScout Listings with Market Analysis */}
+              <div className="bg-gray-50 p-8 rounded-lg mb-12">
+                <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
+                  🏠 Live Henderson Property Listings
+                </h3>
+                <p className="text-center text-gray-600 mb-6">
+                  Browse real-time listings from our MLS database with live
+                  market analysis. Click any property to view full details and
+                  contact us directly.
+                </p>
+
+                {/* Featured Listings - All Price Ranges */}
+                <div className="mb-8">
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+                    Featured Properties - All Price Ranges
+                  </h4>
+                  <realscout-office-listings
+                    agent-encoded-id="QWdlbnQtMjI1MDUw"
+                    sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+                    listing-status="For Sale"
+                    property-types="SFR,MF"
+                    price-min="400000"
+                    price-max="1000000"
+                    max-listings="12"
+                    show-filters="true"
+                  />
+                </div>
+
+                {/* Market Analysis Section */}
+                <div className="bg-white p-6 rounded-lg border border-gray-200">
+                  <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">
+                    📊 Live Market Analysis
+                  </h4>
+                  <p className="text-center text-gray-600 mb-4">
+                    Real-time market insights powered by MLS data
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div className="text-center p-3 bg-blue-50 rounded-lg">
+                      <div className="text-2xl font-bold text-blue-600">
+                        156
+                      </div>
+                      <div className="text-gray-600">Active Listings</div>
+                    </div>
+                    <div className="text-center p-3 bg-green-50 rounded-lg">
+                      <div className="text-2xl font-bold text-green-600">
+                        $485K
+                      </div>
+                      <div className="text-gray-600">Avg Price</div>
+                    </div>
+                    <div className="text-center p-3 bg-purple-50 rounded-lg">
+                      <div className="text-2xl font-bold text-purple-600">
+                        23
+                      </div>
+                      <div className="text-gray-600">Days on Market</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Engagement Call-to-Action */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-6 rounded-lg mt-8">
+                <div className="text-center">
+                  <h4 className="text-xl font-bold mb-3">
+                    🎯 Ready to Take Action?
+                  </h4>
+                  <p className="text-blue-100 mb-4">
+                    Save properties, get market alerts, and connect with our
+                    expert team
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button
+                      type="button"
+                      className="bg-white text-blue-600 px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-sm"
+                    >
+                      💾 Save Properties
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold text-sm"
+                    >
+                      🔔 Market Alerts
+                    </button>
+                    <a
+                      href="/contact"
+                      className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors font-semibold text-sm"
+                    >
+                      📞 Contact Agent
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Enhanced Street-Level Market Analysis */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-center mb-6 text-gray-800">
+                  📊 Street-Level Market Intelligence
+                </h3>
+                <p className="text-center text-gray-600 mb-8">
+                  AI-powered analysis of recent sales and market trends in your
+                  target neighborhoods
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Green Valley Analysis */}
+                <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-lg font-semibold text-gray-800">
+                      🏘️ Green Valley Market
+                    </h4>
+                    <span className="text-sm text-green-600 bg-green-100 px-2 py-1 rounded-full">
+                      Active Market
+                    </span>
+                  </div>
+                  <StreetCompsWidget
+                    address="123 Green Valley Parkway"
+                    neighborhood="greenValley"
+                    className="h-full"
+                  />
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div className="text-center">
+                      <a
+                        href="/search?neighborhood=green-valley"
+                        className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                      >
+                        View All Green Valley Properties →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Anthem Analysis */}
+                <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-lg font-semibold text-gray-800">
+                      🌄 Anthem Market
+                    </h4>
+                    <span className="text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
+                      Growing Area
+                    </span>
+                  </div>
+                  <StreetCompsWidget
+                    address="456 Anthem Hills Drive"
+                    neighborhood="anthem"
+                    className="h-full"
+                  />
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div className="text-center">
+                      <a
+                        href="/search?neighborhood=anthem"
+                        className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
+                      >
+                        View All Anthem Properties →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Market Trends */}
               <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-700 text-white p-8 rounded-lg">

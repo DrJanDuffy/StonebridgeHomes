@@ -103,7 +103,7 @@ export default function Header() {
               href="/hyperlocal-demo"
               className="text-gray-600 hover:text-gray-900"
             >
-              Hyperlocal Demo
+              Live Listings
             </a>
             <a
               href="/featured-agents"
@@ -194,6 +194,12 @@ function NavigationItems() {
         className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
       >
         Market Insights
+      </a>
+      <a
+        href="/hyperlocal-demo"
+        className="block py-3 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+      >
+        Live Listings
       </a>
       <a
         href="/faq"

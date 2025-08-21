@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next'
 import StreetCompsWidget from '@/components/hyperlocal/StreetCompsWidget'
+import MarketInsightsWidget from '@/components/market-insights/MarketInsightsWidget'
 import Script from 'next/script'
 
 export default function HyperlocalDemoPage() {
@@ -407,36 +408,41 @@ export default function HyperlocalDemoPage() {
                 </div>
               </div>
 
-              {/* Market Trends */}
-              <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-700 text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold text-center mb-6">
-                  📈 Market Trends & Insights
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">
-                      Current Market Conditions
-                    </h4>
-                    <ul className="space-y-2 text-blue-100">
-                      <li>• Inventory levels: 23% below average</li>
-                      <li>• Price appreciation: +8.5% year-over-year</li>
-                      <li>• Days on market: 23 (down from 45 last year)</li>
-                      <li>• Buyer demand: Strong in all price ranges</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold mb-4">
-                      Neighborhood Highlights
-                    </h4>
-                    <ul className="space-y-2 text-blue-100">
-                      <li>• Green Valley: Premium location, top schools</li>
-                      <li>• Anthem: Family-friendly, great amenities</li>
-                      <li>• Seven Hills: Luxury homes, golf course access</li>
-                      <li>• Whitney Ranch: Value, growing community</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                             {/* Live Market Insights */}
+               <div className="mt-12">
+                 <MarketInsightsWidget className="mb-8" />
+                 
+                 {/* Neighborhood Highlights */}
+                 <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-8 rounded-lg">
+                   <h3 className="text-2xl font-bold text-center mb-6">
+                     🏘️ Henderson Neighborhood Highlights
+                   </h3>
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div>
+                       <h4 className="text-lg font-semibold mb-4">
+                         Current Market Conditions
+                       </h4>
+                       <ul className="space-y-2 text-blue-100">
+                         <li>• Inventory levels: 23% below average</li>
+                         <li>• Price appreciation: +8.5% year-over-year</li>
+                         <li>• Days on market: 23 (down from 45 last year)</li>
+                         <li>• Buyer demand: Strong in all price ranges</li>
+                       </ul>
+                     </div>
+                     <div>
+                       <h4 className="text-lg font-semibold mb-4">
+                         Neighborhood Highlights
+                       </h4>
+                       <ul className="space-y-2 text-blue-100">
+                         <li>• Green Valley: Premium location, top schools</li>
+                         <li>• Anthem: Family-friendly, great amenities</li>
+                         <li>• Seven Hills: Luxury homes, golf course access</li>
+                         <li>• Whitney Ranch: Value, growing community</li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
             </div>
           </div>
         </section>

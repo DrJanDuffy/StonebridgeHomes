@@ -1,7 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { MarketData, MarketInsight } from '@/services/marketInsightsService'
+import type {
+  MarketData,
+  MarketInsight,
+} from '@/services/marketInsightsService'
 
 interface MarketInsightsWidgetProps {
   className?: string
@@ -9,10 +12,10 @@ interface MarketInsightsWidgetProps {
   showStats?: boolean
 }
 
-export default function MarketInsightsWidget({ 
-  className = '', 
-  showInsights = true, 
-  showStats = true 
+export default function MarketInsightsWidget({
+  className = '',
+  showInsights = true,
+  showStats = true,
 }: MarketInsightsWidgetProps) {
   const [marketData, setMarketData] = useState<MarketData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -57,7 +60,9 @@ export default function MarketInsightsWidget({
 
   if (error || !marketData) {
     return (
-      <div className={`bg-red-50 border border-red-200 rounded-lg p-4 ${className}`}>
+      <div
+        className={`bg-red-50 border border-red-200 rounded-lg p-4 ${className}`}
+      >
         <p className="text-red-600 text-sm">
           Unable to load market insights. Please try again later.
         </p>
@@ -81,20 +86,36 @@ export default function MarketInsightsWidget({
       {showStats && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="bg-blue-50 p-3 rounded-lg">
-            <div className="text-sm font-medium text-blue-800">🏢 Condo Market</div>
-            <div className="text-lg font-bold text-blue-900">{marketData.marketStats.condoInventory}</div>
+            <div className="text-sm font-medium text-blue-800">
+              🏢 Condo Market
+            </div>
+            <div className="text-lg font-bold text-blue-900">
+              {marketData.marketStats.condoInventory}
+            </div>
           </div>
           <div className="bg-green-50 p-3 rounded-lg">
-            <div className="text-sm font-medium text-green-800">💰 Price Trends</div>
-            <div className="text-lg font-bold text-green-900">{marketData.marketStats.priceChange}</div>
+            <div className="text-sm font-medium text-green-800">
+              💰 Price Trends
+            </div>
+            <div className="text-lg font-bold text-green-900">
+              {marketData.marketStats.priceChange}
+            </div>
           </div>
           <div className="bg-orange-50 p-3 rounded-lg">
-            <div className="text-sm font-medium text-orange-800">📋 Contract Status</div>
-            <div className="text-lg font-bold text-orange-900">{marketData.marketStats.contractFallThrough}</div>
+            <div className="text-sm font-medium text-orange-800">
+              📋 Contract Status
+            </div>
+            <div className="text-lg font-bold text-orange-900">
+              {marketData.marketStats.contractFallThrough}
+            </div>
           </div>
           <div className="bg-purple-50 p-3 rounded-lg">
-            <div className="text-sm font-medium text-purple-800">💡 Down Payment Reality</div>
-            <div className="text-lg font-bold text-purple-900">{marketData.marketStats.downPaymentMyth}</div>
+            <div className="text-sm font-medium text-purple-800">
+              💡 Down Payment Reality
+            </div>
+            <div className="text-lg font-bold text-purple-900">
+              {marketData.marketStats.downPaymentMyth}
+            </div>
           </div>
         </div>
       )}
@@ -115,9 +136,9 @@ export default function MarketInsightsWidget({
       <div className="mt-6 pt-4 border-t border-gray-200">
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>Data provided by Simplifying the Market</span>
-          <a 
-            href="https://www.simplifyingthemarket.com" 
-            target="_blank" 
+          <a
+            href="https://www.simplifyingthemarket.com"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800 transition-colors"
           >
@@ -132,8 +153,25 @@ export default function MarketInsightsWidget({
 function MarketInsightCard({ insight }: { insight: MarketInsight }) {
   return (
     <div className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors">
-      <div className="flex items-start justify-between">
-        <div className="flex-1">
+      <div className="flex items-start gap-4">
+        {/* Image */}
+        {insight.imageUrl && (
+          <div className="flex-shrink-0">
+            <img
+              src={insight.imageUrl}
+              alt={insight.title}
+              className="w-20 h-20 object-cover rounded-lg"
+              onError={(e) => {
+                // Hide image on error
+                const target = e.target as HTMLImageElement
+                target.style.display = 'none'
+              }}
+            />
+          </div>
+        )}
+        
+        {/* Content */}
+        <div className="flex-1 min-w-0">
           <h5 className="font-medium text-gray-800 mb-2 line-clamp-2">
             {insight.title}
           </h5>

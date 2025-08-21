@@ -169,7 +169,7 @@ function MarketInsightCard({ insight }: { insight: MarketInsight }) {
             />
           </div>
         )}
-        
+
         {/* Content */}
         <div className="flex-1 min-w-0">
           <h5 className="font-medium text-gray-800 mb-2 line-clamp-2">

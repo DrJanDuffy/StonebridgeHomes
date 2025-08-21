@@ -16,10 +16,13 @@ Disallow: /static/
 
 # Allow important pages
 Allow: /search
+Allow: /hyperlocal-demo
 Allow: /home-value
 Allow: /neighborhoods
 Allow: /contact
-Allow: /blog
+Allow: /featured-agents
+Allow: /about
+Allow: /faq
 
 # Specific rules for search engines
 User-agent: Googlebot

@@ -43,7 +43,8 @@ export async function GET() {
           category: 'Market Insights',
           content:
             'Condo inventory is at the second highest level in three years, giving buyers more options and less competition.',
-          imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center',
+          imageUrl:
+            'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center',
         },
       ],
       marketStats: {
@@ -61,14 +62,14 @@ export async function GET() {
 function parseRSSFeed(xmlText: string) {
   // Simple XML parsing for RSS feed
   const items = xmlText.match(/<item>([\s\S]*?)<\/item>/g) || []
-  
+
   return items.map((item, index) => {
     const title = extractTag(item, 'title')
     const description = extractTag(item, 'description')
     const link = extractTag(item, 'link')
     const pubDate = extractTag(item, 'pubDate')
     const category = extractTag(item, 'category') || 'Market Insights'
-    
+
     // Extract image from various RSS image fields
     const imageUrl = extractImageUrl(item, description)
 
@@ -85,38 +86,49 @@ function parseRSSFeed(xmlText: string) {
   })
 }
 
-function extractImageUrl(item: string, description: string): string | undefined {
+function extractImageUrl(
+  item: string,
+  description: string
+): string | undefined {
   // Try to find image in various RSS image fields
-  const mediaContentMatch = item.match(/<media:content[^>]+type="image\/[^"]+"[^>]+url="([^"]+)"[^>]*>/i)
+  const mediaContentMatch = item.match(
+    /<media:content[^>]+type="image\/[^"]+"[^>]+url="([^"]+)"[^>]*>/i
+  )
   if (mediaContentMatch) {
     return mediaContentMatch[1]
   }
-  
-  const mediaThumbnailMatch = item.match(/<media:thumbnail[^>]+url="([^"]+)"[^>]*>/i)
+
+  const mediaThumbnailMatch = item.match(
+    /<media:thumbnail[^>]+url="([^"]+)"[^>]*>/i
+  )
   if (mediaThumbnailMatch) {
     return mediaThumbnailMatch[1]
   }
-  
-  const enclosureMatch = item.match(/<enclosure[^>]+type="image\/[^"]+"[^>]+url="([^"]+)"[^>]*>/i)
+
+  const enclosureMatch = item.match(
+    /<enclosure[^>]+type="image\/[^"]+"[^>]+url="([^"]+)"[^>]*>/i
+  )
   if (enclosureMatch) {
     return enclosureMatch[1]
   }
-  
+
   // Try to extract image from description HTML
   const imgMatch = description.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i)
   if (imgMatch) {
     return imgMatch[1]
   }
-  
+
   // Try to find image in content:encoded if available
   const contentEncoded = extractTag(item, 'content:encoded')
   if (contentEncoded) {
-    const imgMatch = contentEncoded.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i)
+    const imgMatch = contentEncoded.match(
+      /<img[^>]+src=["']([^"']+)["'][^>]*>/i
+    )
     if (imgMatch) {
       return imgMatch[1]
     }
   }
-  
+
   return undefined
 }
 

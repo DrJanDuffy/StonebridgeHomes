@@ -89,7 +89,7 @@ class MarketInsightsService {
       const pubDate = item.querySelector('pubDate')?.textContent || ''
       const category =
         item.querySelector('category')?.textContent || 'Market Insights'
-      
+
       // Extract image from various RSS image fields
       const imageUrl = this.extractImageUrl(item, description)
 
@@ -108,12 +108,15 @@ class MarketInsightsService {
     return insights
   }
 
-  private extractImageUrl(item: Element, description: string): string | undefined {
+  private extractImageUrl(
+    item: Element,
+    description: string
+  ): string | undefined {
     // Try to find image in various RSS image fields
     const mediaContent = item.querySelector('media\\:content, content')
     const mediaThumbnail = item.querySelector('media\\:thumbnail, thumbnail')
     const enclosure = item.querySelector('enclosure')
-    
+
     // Check for media:content with image type
     if (mediaContent) {
       const type = mediaContent.getAttribute('type') || ''
@@ -122,13 +125,13 @@ class MarketInsightsService {
         if (url) return url
       }
     }
-    
+
     // Check for media:thumbnail
     if (mediaThumbnail) {
       const url = mediaThumbnail.getAttribute('url')
       if (url) return url
     }
-    
+
     // Check for enclosure with image type
     if (enclosure) {
       const type = enclosure.getAttribute('type') || ''
@@ -137,22 +140,24 @@ class MarketInsightsService {
         if (url) return url
       }
     }
-    
+
     // Try to extract image from description HTML
     const imgMatch = description.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i)
     if (imgMatch) {
       return imgMatch[1]
     }
-    
+
     // Try to find image in content:encoded if available
     const contentEncoded = item.querySelector('content\\:encoded, content')
     if (contentEncoded?.textContent) {
-      const imgMatch = contentEncoded.textContent.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i)
+      const imgMatch = contentEncoded.textContent.match(
+        /<img[^>]+src=["']([^"']+)["'][^>]*>/i
+      )
       if (imgMatch) {
         return imgMatch[1]
       }
     }
-    
+
     return undefined
   }
 
@@ -226,7 +231,8 @@ class MarketInsightsService {
           category: 'Market Insights',
           content:
             'Condo inventory is at the second highest level in three years, giving buyers more options and less competition.',
-          imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center',
+          imageUrl:
+            'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&crop=center',
         },
       ],
       marketStats: {

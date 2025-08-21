@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import StructuredData, { webPageData } from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title:
@@ -85,7 +86,43 @@ export const metadata: Metadata = {
 
 export default function NeighborhoodsPage() {
   return (
-    <main className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={webPageData({
+          name: 'Henderson Nevada Neighborhoods Guide',
+          description: 'Explore Henderson neighborhoods including Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch with expert guidance',
+          url: 'https://searchforhomesinhenderson.com/neighborhoods',
+          mainEntity: {
+            '@type': 'ItemList',
+            name: 'Henderson Neighborhoods',
+            description: 'Guide to Henderson, Nevada neighborhoods and communities',
+            itemListElement: [
+              {
+                '@type': 'Place',
+                name: 'Green Valley',
+                description: 'Luxury master-planned community with championship golf',
+              },
+              {
+                '@type': 'Place',
+                name: 'Anthem',
+                description: 'Hillside community with stunning views and amenities',
+              },
+              {
+                '@type': 'Place',
+                name: 'Stephanie Ranch',
+                description: 'Family-friendly with excellent schools',
+              },
+              {
+                '@type': 'Place',
+                name: 'Whitney Ranch',
+                description: 'Established community with mature landscaping',
+              },
+            ],
+          },
+        })}
+      />
+      <main className="min-h-screen">
       {/* Hero Section with H1 */}
       <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -397,6 +434,7 @@ export default function NeighborhoodsPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

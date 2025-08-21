@@ -1,5 +1,6 @@
 import { RealScoutWidget } from '@/components/RealScoutWidget'
 import type { Metadata } from 'next'
+import StructuredData, { webPageData } from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title:
@@ -86,7 +87,26 @@ export const metadata: Metadata = {
 
 export default function AdvancedSearchPage() {
   return (
-    <main className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={webPageData({
+          name: 'Advanced Property Search - Henderson, Nevada',
+          description: 'Find your perfect home in Henderson with our advanced search tools and expert guidance',
+          url: 'https://searchforhomesinhenderson.com/search',
+          mainEntity: {
+            '@type': 'Service',
+            name: 'Property Search',
+            description: 'Advanced real estate search tools for Henderson, Nevada properties',
+            provider: {
+              '@type': 'RealEstateAgent',
+              name: 'Dr. Jan Duffy',
+              jobTitle: 'REALTOR',
+            },
+          },
+        })}
+      />
+      <main className="min-h-screen">
       {/* Hero Section with H1 */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -280,6 +300,7 @@ export default function AdvancedSearchPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

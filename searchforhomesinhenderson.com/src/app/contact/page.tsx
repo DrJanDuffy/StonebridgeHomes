@@ -1,6 +1,7 @@
 'use client'
 
 import { useId } from 'react'
+import StructuredData, { webPageData, localBusinessData } from '@/components/StructuredData'
 
 export default function ContactPage() {
   const firstNameId = useId()
@@ -43,7 +44,25 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen">
+    <>
+      <StructuredData
+        type="LocalBusiness"
+        data={localBusinessData}
+      />
+      <StructuredData
+        type="WebPage"
+        data={webPageData({
+          name: 'Contact Henderson Real Estate Experts',
+          description: 'Get in touch with Dr. Jan Duffy for expert Henderson real estate guidance and personalized service',
+          url: 'https://searchforhomesinhenderson.com/contact',
+          mainEntity: {
+            '@type': 'ContactPage',
+            name: 'Contact Form',
+            description: 'Contact form for Henderson real estate inquiries',
+          },
+        })}
+      />
+      <main className="min-h-screen">
       {/* Hero Section with H1 */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -365,6 +384,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

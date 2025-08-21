@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import StructuredData, { webPageData } from '@/components/StructuredData'
 
 export default function HomeValuePage() {
   const widgetRef = useRef<HTMLDivElement>(null)
@@ -32,7 +33,26 @@ export default function HomeValuePage() {
   }, [])
 
   return (
-    <main className="min-h-screen">
+    <>
+      <StructuredData
+        type="WebPage"
+        data={webPageData({
+          name: 'Henderson Home Value Estimator',
+          description: 'Get instant home value estimates for Henderson, Nevada properties with our comprehensive valuation tool',
+          url: 'https://searchforhomesinhenderson.com/home-value',
+          mainEntity: {
+            '@type': 'Service',
+            name: 'Home Value Estimation',
+            description: 'Professional home value estimation for Henderson, Nevada properties',
+            provider: {
+              '@type': 'RealEstateAgent',
+              name: 'Dr. Jan Duffy',
+              jobTitle: 'REALTOR',
+            },
+          },
+        })}
+      />
+      <main className="min-h-screen">
       {/* Hero Section with H1 */}
       <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -304,6 +324,7 @@ export default function HomeValuePage() {
           </button>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

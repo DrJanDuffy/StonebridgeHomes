@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="98" fill="#e5e7eb" stroke="#d1d5db" stroke-width="2"/>
+  
+  <!-- Professional icon -->
+  <circle cx="100" cy="80" r="25" fill="#3b82f6"/>
+  <path d="M100 60 Q85 70 85 80 Q85 90 100 100 Q115 90 115 80 Q115 70 100 60" fill="#ffffff"/>
+  
+  <!-- Name text -->
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle" font-weight="bold">Dr. Jan Duffy</text>
+  <text x="100" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Henderson REALTOR</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="160" cy="40" r="8" fill="#10b981"/>
+  <circle cx="40" cy="160" r="6" fill="#8b5cf6"/>
+</svg>

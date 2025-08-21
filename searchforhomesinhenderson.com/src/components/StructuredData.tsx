@@ -25,7 +25,8 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
 export const realEstateAgentData = {
   name: 'Dr. Jan Duffy',
   jobTitle: 'REALTOR',
-  description: 'Expert Henderson, Nevada real estate agent specializing in residential properties',
+  description:
+    'Expert Henderson, Nevada real estate agent specializing in residential properties',
   url: 'https://searchforhomesinhenderson.com',
   telephone: '+1-702-500-1064',
   email: 'jan@hendersonhomes.com',

@@ -79,6 +79,27 @@ export default function FeaturedAgentsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
+                {/* Dr. Jan Duffy Photo */}
+                <div className="mb-8 text-center">
+                  <div className="relative inline-block">
+                    <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
+                      <img
+                        src="/dr-jan-duffy-profile.jpg"
+                        alt="Dr. Jan Duffy - Henderson REALTOR"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to a placeholder if image fails to load
+                          const target = e.target as HTMLImageElement
+                          target.src = "/dr-jan-duffy-placeholder.svg"
+                        }}
+                      />
+                    </div>
+                    <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-white text-lg">🏠</span>
+                    </div>
+                  </div>
+                </div>
+                
                 <h2 className="text-3xl font-bold mb-6 text-gray-800">
                   Meet Dr. Jan Duffy
                 </h2>

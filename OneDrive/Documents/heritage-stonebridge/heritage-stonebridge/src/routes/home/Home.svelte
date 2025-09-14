@@ -15,15 +15,25 @@
 </script>
 
 <SEO
-  title="Heritage at Stonebridge - Luxury Homes in Summerlin, Las Vegas"
-  description="Discover luxury homes in Heritage at Stonebridge, Summerlin's premier gated community. Find your dream home with Dr. Jan Duffy, your trusted real estate professional."
-  keywords={['Heritage Stonebridge', 'Summerlin homes', 'Las Vegas real estate', 'luxury homes', 'Dr. Jan Duffy', 'gated community']}
-  canonical="https://drjanduffy.github.io/StonebridgeHomes/"
+  title="Heritage at Stonebridge - Premier Summerlin Community | Las Vegas Real Estate"
+  description="Discover luxury living at Heritage at Stonebridge in Summerlin, Las Vegas. Custom homes, resort-style amenities, and A-rated schools. Your Dr. Jan Duffy, local expert."
+  canonical="https://heritagestonebridge.com"
+  keywords={['Heritage Stonebridge', 'Summerlin homes', 'Las Vegas real estate', 'luxury homes', 'Dr. Jan Duffy', 'gated community', 'custom homes', 'resort amenities', 'A-rated schools']}
   openGraph={{
-    title: "Heritage at Stonebridge - Premier Luxury Homes",
-    description: "Experience luxury living in Heritage at Stonebridge, Summerlin's most prestigious gated community.",
-    image: "/images/heritage-stonebridge-og.jpg",
-    url: "https://drjanduffy.github.io/StonebridgeHomes/"
+    type: 'website',
+    url: 'https://heritagestonebridge.com',
+    title: 'Heritage at Stonebridge - Premier Summerlin Community',
+    description: 'Luxury homes in exclusive Summerlin community with resort amenities',
+    image: 'https://heritagestonebridge.com/images/community-hero.jpg'
+  }}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Dr. Jan Duffy",
+    "url": "https://heritagestonebridge.com",
+    "areaServed": "Heritage at Stonebridge, Summerlin, Las Vegas",
+    "telephone": "702-222-1964",
+    "knowsAbout": "Luxury Real Estate, Summerlin Communities, Heritage at Stonebridge"
   }}
 />
 

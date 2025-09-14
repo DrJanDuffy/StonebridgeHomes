@@ -27,6 +27,7 @@
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
@@ -49,6 +50,7 @@
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
@@ -64,6 +66,13 @@
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+      ],
+      "tel:702-222-1964": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\"
+      ],
+      "mailto:jan.duffy@heritagestonebridge.com": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\"
       ],
       "/simple/": [
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
@@ -106,9 +115,6 @@
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\",
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
       ],
-      "tel:702-222-1964": [
-        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\"
-      ],
       "https://kit.svelte.dev/": [
         "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
       ],
@@ -132,6 +138,7 @@
       "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
       "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
       "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\",
       "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
       "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
       "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
@@ -180,6 +187,18 @@
       {
         "link": "/contact",
         "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\"
+      },
+      {
+        "link": "tel:702-222-1964",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\"
+      },
+      {
+        "link": "mailto:jan.duffy@heritagestonebridge.com",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\"
       },
       {
         "link": "/",
@@ -363,6 +382,28 @@
         "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\ | canonical: https://heritagestonebridge.com/compilehtml/",
         "priority": 100,
         "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\contact\\ | canonical: https://heritagestonebridge.com/contact",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "This meta description is longer than the recommended limit of 120. 159 (Get in touch with Dr. Jan Duffy, your trusted real estate professional for Heritage at Stonebridge. Call 702-222-1964 for luxury homes in Summerlin, Las Vegas.)",
+        "priority": 30,
+        "level": "warnings"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [702-222-1964](tel:702-222-1964) does not.",
+        "priority": 80,
+        "level": "warnings"
       },
       {
         "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",

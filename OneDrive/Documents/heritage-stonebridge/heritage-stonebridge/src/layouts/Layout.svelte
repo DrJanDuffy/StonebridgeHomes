@@ -6,16 +6,16 @@
 
 <style>
   @import '../../assets/css/tailwind.css';
-  
+
   :global(h1) {
     font-style: italic;
   }
-  
+
   :root {
     --balloon-color: #8B4513;
     --balloon-font-size: 14px;
   }
-  
+
   .footer {
     padding: 2rem 0;
     background: var(--heritage-dark);
@@ -26,11 +26,11 @@
     text-align: center;
     font-size: 14px;
   }
-  
+
   .footer a {
     color: #f4f7fb;
   }
-  
+
   :global(ul li),
   :global(ol li) {
     margin-bottom: 0.3rem;
@@ -55,7 +55,7 @@
     <div class="text-center">
       <p class="mb-4">🏠 Heritage at Stonebridge - Premier Luxury Living in Summerlin</p>
       <p class="text-sm text-gray-400">
-        Built with ❤ and <a href="https://elderguide.com/tech/elderjs/" class="footer-link">Elder.js</a> | 
+        Built with ❤ and <a href="https://elderguide.com/tech/elderjs/" class="footer-link">Elder.js</a> |
         <a href="/contact" class="footer-link">Contact Dr. Jan Duffy</a>
       </p>
     </div>

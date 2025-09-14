@@ -1,10 +1,10 @@
 <script>
   import SEO from '../../components/SEO.svelte';
-  
+
   export let data;
-  
+
   const { communityName, location, totalHomes, medianPrice, hero, community, featuredHomes, amenities, agent } = data;
-  
+
   function formatPrice(price) {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -14,7 +14,7 @@
   }
 </script>
 
-<SEO 
+<SEO
   title="Heritage at Stonebridge - Luxury Homes in Summerlin, Las Vegas"
   description="Discover luxury homes in Heritage at Stonebridge, Summerlin's premier gated community. Find your dream home with Dr. Jan Duffy, your trusted real estate professional."
   keywords={['Heritage Stonebridge', 'Summerlin homes', 'Las Vegas real estate', 'luxury homes', 'Dr. Jan Duffy', 'gated community']}

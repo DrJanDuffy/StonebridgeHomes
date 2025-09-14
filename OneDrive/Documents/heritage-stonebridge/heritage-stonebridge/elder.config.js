@@ -43,9 +43,9 @@ module.exports = {
       writeLocation: './seo-report.json',
     },
   },
-  shortcodes: { 
-    closePattern: '}}', 
-    openPattern: '{{' 
+  shortcodes: {
+    closePattern: '}}',
+    openPattern: '{{'
   },
   // SEO Configuration
   seo: {

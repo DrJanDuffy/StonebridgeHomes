@@ -12,7 +12,7 @@ module.exports = {
         image: "/images/agent/jan-duffy.jpg",
         specialties: [
           "Luxury Real Estate",
-          "Summerlin Communities", 
+          "Summerlin Communities",
           "Heritage at Stonebridge",
           "First-Time Buyers",
           "Relocation Services"
@@ -37,7 +37,7 @@ module.exports = {
           description: "Call or text for immediate assistance"
         },
         {
-          type: "Email", 
+          type: "Email",
           value: "jan.duffy@heritagestonebridge.com",
           icon: "✉️",
           description: "Send detailed inquiries and property requests"

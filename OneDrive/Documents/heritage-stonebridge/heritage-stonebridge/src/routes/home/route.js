@@ -1,6 +1,12 @@
 export default {
+  all: () => [{ slug: '/' }],
+  permalink: '/',
   data: ({ request }) => {
     return {
+      communityName: 'Heritage at Stonebridge',
+      location: 'Summerlin, Las Vegas',
+      totalHomes: 847,
+      medianPrice: 1250000,
       hero: {
         title: "Heritage at Stonebridge",
         subtitle: "Luxury Living in the Heart of Summerlin",
@@ -12,10 +18,10 @@ export default {
         location: "Summerlin, Las Vegas, NV",
         description: "A premier gated community offering luxury homes with stunning mountain and valley views.",
         stats: [
-          { label: "Total Homes", value: "287" },
+          { label: "Total Homes", value: "847" },
           { label: "Year Built", value: "2015-2020" },
           { label: "Home Types", value: "Single Family & Townhomes" },
-          { label: "Price Range", value: "$400K - $800K" }
+          { label: "Price Range", value: "$800K - $2.5M" }
         ]
       },
       featuredHomes: [
@@ -51,31 +57,16 @@ export default {
         }
       ],
       amenities: [
-        {
-          name: "Community Pool & Spa",
-          icon: "🏊‍♀️",
-          description: "Resort-style swimming facilities"
-        },
-        {
-          name: "Fitness Center",
-          icon: "💪",
-          description: "State-of-the-art equipment"
-        },
-        {
-          name: "Gated Security",
-          icon: "🔒",
-          description: "24/7 controlled access"
-        },
-        {
-          name: "Walking Trails",
-          icon: "🥾",
-          description: "Scenic community paths"
-        }
+        'Resort-style pool and spa',
+        'Championship golf course access',
+        'Fitness center and tennis courts',
+        'Gated community with 24/7 security',
+        'Walking trails and parks'
       ],
       agent: {
         name: "Dr. Jan Duffy",
         title: "Real Estate Professional",
-        phone: "(702) 555-0123",
+        phone: "702-222-1964",
         email: "jan.duffy@heritagestonebridge.com",
         image: "/images/agent/jan-duffy.jpg"
       }

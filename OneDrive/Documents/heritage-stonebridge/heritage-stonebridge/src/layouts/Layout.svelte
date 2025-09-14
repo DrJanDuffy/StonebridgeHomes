@@ -1,25 +1,24 @@
 <script>
   import style from '../../assets/style.css';
+  import tailwind from '../../assets/css/tailwind.css';
   export let templateHtml, settings;
 </script>
 
 <style>
+  @import '../../assets/css/tailwind.css';
+  
   :global(h1) {
     font-style: italic;
   }
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
+  
   :root {
-    --balloon-color: #06395a;
+    --balloon-color: #8B4513;
     --balloon-font-size: 14px;
   }
+  
   .footer {
     padding: 2rem 0;
-    background: #06395a;
+    background: var(--heritage-dark);
     padding-top: 2rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
       'Helvetica Neue', sans-serif;
@@ -27,9 +26,11 @@
     text-align: center;
     font-size: 14px;
   }
+  
   .footer a {
     color: #f4f7fb;
   }
+  
   :global(ul li),
   :global(ol li) {
     margin-bottom: 0.3rem;
@@ -46,7 +47,17 @@
   </script>
 </svelte:head>
 
-<div class="container">
+<div class="min-h-screen bg-heritage-light">
   {@html templateHtml}
 </div>
-<div class="footer">Built with ❤ and <a href="https://elderguide.com/tech/elderjs/">Elder.js</a></div>
+<div class="heritage-footer">
+  <div class="container-content">
+    <div class="text-center">
+      <p class="mb-4">🏠 Heritage at Stonebridge - Premier Luxury Living in Summerlin</p>
+      <p class="text-sm text-gray-400">
+        Built with ❤ and <a href="https://elderguide.com/tech/elderjs/" class="footer-link">Elder.js</a> | 
+        <a href="/contact" class="footer-link">Contact Dr. Jan Duffy</a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,40 +1,59 @@
 require('dotenv').config();
+
 module.exports = {
-  origin: 'https://example.com', // TODO: update this. The URL of your site's root, without a trailing slash
+  origin: 'https://drjanduffy.github.io/StonebridgeHomes',
   lang: 'en',
   srcDir: 'src',
   distDir: 'public',
   rootDir: process.cwd(),
-  build: {},
-  prefix: '', // If you want your site to be built within a sub folder within your `distDir` you can use this.
-  server: {},
+  build: {
+    minify: true,
+    inlineCSS: true,
+    inlineJS: true,
+  },
+  prefix: '',
+  server: {
+    prefix: '',
+    port: 3000,
+  },
   props: {
     hydration: 'hybrid',
-    compress: false,
+    compress: true,
   },
   debug: {
-    stacks: false, // output details of the stack consolidation process.
-    hooks: false, // outputs the details of each hook as they are run.
-    performance: false, // outputs a full performance report of how long it took to run each page.
-    build: false, // gives additional details about the build process.
+    stacks: false,
+    hooks: false,
+    performance: false,
+    build: false,
     automagic: false,
   },
   hooks: {
-    // disable: ['elderWriteHtmlFileToPublic'], // this is used to disable internal hooks. Uncomment this hook to disabled writing your files during build.
+    // disable: ['elderWriteHtmlFileToPublic'],
   },
   plugins: {
     '@elderjs/plugin-markdown': {
       routes: ['blog'],
     },
     '@elderjs/plugin-browser-reload': {
-      // this reloads your browser when nodemon restarts your server.
-      port: 8080,
-      reload: true, // if you are having issues with reloading not working, change to true.
+      port: 3000,
+      reload: true,
     },
     '@elderjs/plugin-seo-check': {
-      display: ['errors', 'warnings'], // If the errors are too verbose remove 'warnings'
-      //writeLocation: './report.json', // if you want to write a report of errors
+      display: ['errors', 'warnings'],
+      writeLocation: './seo-report.json',
     },
   },
-  shortcodes: { closePattern: '}}', openPattern: '{{' },
+  shortcodes: { 
+    closePattern: '}}', 
+    openPattern: '{{' 
+  },
+  // SEO Configuration
+  seo: {
+    siteName: 'Heritage at Stonebridge',
+    siteDescription: 'Premier luxury homes in Heritage at Stonebridge, Summerlin\'s most prestigious gated community. Find your dream home with Dr. Jan Duffy.',
+    defaultImage: '/images/heritage-stonebridge-og.jpg',
+    twitterHandle: '@DrJanDuffy',
+    author: 'Dr. Jan Duffy',
+  },
 };
+

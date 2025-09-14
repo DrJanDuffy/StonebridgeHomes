@@ -5,10 +5,10 @@
   export let canonical;
   export let openGraph = {};
   export let jsonLd = {};
-  
+
   // Generate keywords string
   const keywordsString = Array.isArray(keywords) ? keywords.join(', ') : keywords;
-  
+
   // Default Open Graph values
   const ogTitle = openGraph.title || title;
   const ogDescription = openGraph.description || description;
@@ -25,12 +25,12 @@
   {#if keywordsString}
     <meta name="keywords" content={keywordsString} />
   {/if}
-  
+
   <!-- Canonical URL -->
   {#if canonical}
     <link rel="canonical" href={canonical} />
   {/if}
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content={ogType} />
   <meta property="og:title" content={ogTitle} />
@@ -41,7 +41,7 @@
   {#if ogUrl}
     <meta property="og:url" content={ogUrl} />
   {/if}
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content={ogTitle} />
@@ -49,6 +49,6 @@
   {#if ogImage}
     <meta property="twitter:image" content={ogImage} />
   {/if}
-  
+
   <!-- Structured Data - handled by sitemap hook -->
 </svelte:head>

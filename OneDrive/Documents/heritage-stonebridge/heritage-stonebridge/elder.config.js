@@ -29,7 +29,6 @@ module.exports = {
   },
   hooks: {
     // disable: ['elderWriteHtmlFileToPublic'],
-    buildComplete: ['./src/hooks/sitemap.js'],
   },
   plugins: {
     '@elderjs/plugin-markdown': {

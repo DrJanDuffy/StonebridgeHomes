@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --heritage-primary: #8B4513;
+  --heritage-secondary: #DEB887;
+  --heritage-accent: #228B22;
+  --heritage-light: #F5F5DC;
+  --heritage-dark: #2C1810;
+}
+
+.heritage-card {
+  @apply bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden;
+}
+
+.heritage-button {
+  @apply bg-heritage-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-heritage-dark transition-colors duration-300;
+}
+
+.heritage-heading {
+  @apply text-3xl font-bold text-heritage-dark mb-8;
+}
+
+.container-content {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+.section-padding {
+  @apply py-16;
+}
+
+.grid-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.hero-section {
+  @apply bg-gradient-to-br from-heritage-light to-heritage-secondary py-20;
+}
+
+.heritage-footer {
+  @apply bg-heritage-dark text-white py-8;
+}
+
+.footer-link {
+  @apply text-heritage-secondary hover:text-heritage-light transition-colors duration-300;
+}

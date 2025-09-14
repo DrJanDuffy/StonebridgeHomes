@@ -1,0 +1,569 @@
+{
+  "success": false,
+  "meta": {
+    "whatLinksWhere": {
+      "/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+      ],
+      "https://elderguide.com/tech/elderjs/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+      ],
+      "/contact": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+      ],
+      "/simple/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://discord.gg/rxc2yh5Pxa": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/Elderjs/plugins/tree/master/packages/seo-check": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/Elderjs/plugins/tree/master/packages/images": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/Elderjs/plugins/tree/master/packages/critical-path-css": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/Elderjs/plugins/tree/master/packages/sitemap": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/Elderjs/plugins/tree/master/packages/references": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/kiuKisas/elderjs-plugin-i18n": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://github.com/Elderjs/elderjs/discussions/categories/plugin-ideas": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "https://developers.cloudflare.com/pages/how-to/elderjs": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      ],
+      "/middleware/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ],
+      "https://medium.com/@itsjzt/beginner-guide-to-markdown-229adce30074": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\"
+      ],
+      "/getting-started/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\",
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ],
+      "tel:702-222-1964": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\"
+      ],
+      "https://kit.svelte.dev/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ],
+      "https://elderguide.com/": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ],
+      "https://developers.google.com/search/docs/guides/javascript-seo-basics": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ],
+      "https://developers.google.com/web/updates/2019/02/rendering-on-the-web": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ],
+      "https://github.com/sveltejs/kit/issues/1390": [
+        "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      ]
+    }
+  },
+  "results": {
+    "orphanPages": [
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\",
+      "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+    ],
+    "brokenInternalLinks": [
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      },
+      {
+        "link": "/simple/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      },
+      {
+        "link": "/middleware/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\"
+      },
+      {
+        "link": "/getting-started/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\"
+      },
+      {
+        "link": "tel:702-222-1964",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      },
+      {
+        "link": "/middleware/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      },
+      {
+        "link": "/getting-started/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\"
+      },
+      {
+        "link": "/",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+      },
+      {
+        "link": "/contact",
+        "linker": "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\allrequests\\ | canonical: https://heritagestonebridge.com/allrequests/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\bootstrap\\ | canonical: https://heritagestonebridge.com/bootstrap/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\buildcomplete\\ | canonical: https://heritagestonebridge.com/buildcomplete/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\compilehtml\\ | canonical: https://heritagestonebridge.com/compilehtml/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\customizehooks\\ | canonical: https://heritagestonebridge.com/customizehooks/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\data\\ | canonical: https://heritagestonebridge.com/data/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\error\\ | canonical: https://heritagestonebridge.com/error/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\getting-started\\ | canonical: https://heritagestonebridge.com/getting-started/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\head\\ | canonical: https://heritagestonebridge.com/head/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\how-to-build-a-blog-with-elderjs\\ | canonical: https://heritagestonebridge.com/how-to-build-a-blog-with-elderjs/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\html\\ | canonical: https://heritagestonebridge.com/html/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\ | canonical: https://heritagestonebridge.com",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "This title tag is longer than the recommended limit of 70.",
+        "priority": 40,
+        "level": "warnings"
+      },
+      {
+        "message": "This meta description is longer than the recommended limit of 120. 167 (Discover luxury living at Heritage at Stonebridge in Summerlin, Las Vegas. Custom homes, resort-style amenities, and A-rated schools. Your Dr. Jan Duffy, local expert.)",
+        "priority": 30,
+        "level": "warnings"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Call Dr. Jan Duffy: 702-222-1964](tel:702-222-1964) does not.",
+        "priority": 80,
+        "level": "warnings"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\is-elderjs-right-for-you\\ | canonical: https://heritagestonebridge.com/is-elderjs-right-for-you/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\middleware\\ | canonical: https://heritagestonebridge.com/middleware/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\request\\ | canonical: https://heritagestonebridge.com/request/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\requestcomplete\\ | canonical: https://heritagestonebridge.com/requestcomplete/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\shortcodes\\ | canonical: https://heritagestonebridge.com/shortcodes/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\simple\\ | canonical: https://heritagestonebridge.com/simple/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ],
+    "C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\": [
+      {
+        "message": "Canonical should match absolute url and match the url that was crawled. host:heritagestonebridge.com | crawled: C:\\Users\\geneb\\OneDrive\\Documents\\heritage-stonebridge\\heritage-stonebridge\\public\\stacks\\ | canonical: https://heritagestonebridge.com/stacks/",
+        "priority": 100,
+        "level": "errors"
+      },
+      {
+        "message": "Internal links should include a trailing slash: [Contact Dr. Jan Duffy](/contact) does not.",
+        "priority": 80,
+        "level": "warnings"
+      }
+    ]
+  }
+}

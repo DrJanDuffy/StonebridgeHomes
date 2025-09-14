@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
-  origin: 'https://drjanduffy.github.io/StonebridgeHomes',
+  origin: 'https://heritagestonebridge.com',
   lang: 'en',
   srcDir: 'src',
   distDir: 'public',
@@ -29,6 +29,7 @@ module.exports = {
   },
   hooks: {
     // disable: ['elderWriteHtmlFileToPublic'],
+    buildComplete: ['./src/hooks/sitemap.js'],
   },
   plugins: {
     '@elderjs/plugin-markdown': {

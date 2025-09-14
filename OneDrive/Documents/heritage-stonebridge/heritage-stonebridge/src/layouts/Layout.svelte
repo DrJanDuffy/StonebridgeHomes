@@ -1,6 +1,5 @@
 <script>
   import style from '../../assets/style.css';
-  import tailwind from '../../assets/css/tailwind.css';
   export let templateHtml, settings;
 </script>
 

@@ -8,7 +8,8 @@
     "build": "node ./src/cleanPublic.js && npm run build:rollup && npm run build:html",
     "build:rollup": "rollup -c",
     "build:html": "node ./src/build.js",
-    "dev": "rollup  -c -w --no-watch.clearScreen",
+    "dev": "rollup -c -w --no-watch.clearScreen",
+    "dev:fast": "npm run esbuild",
     "serve": "node ./src/cleanPublic.js && npm run build:rollup && NODE_ENV=production node ./src/server.js",
     "esbuild": "node esbuild",
     "lint": "eslint --ext .js,.svelte src",
@@ -22,7 +23,16 @@
     "type-check": "echo \"No TypeScript configured\" && exit 0",
     "eslint": "eslint --ext .js .",
     "eslint:fix": "eslint --fix --ext .js .",
-    "prettier:svelte": "prettier --write --plugin-search-dir=. ./**/*.svelte"
+    "prettier:svelte": "prettier --write --plugin-search-dir=. ./**/*.svelte",
+    "seo:audit": "node scripts/seo-audit.js",
+    "seo:optimize": "node scripts/performance-optimizer.js",
+    "seo:all": "npm run seo:audit && npm run seo:optimize",
+    "analyze": "npm run build && npm run seo:all",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "optimize:images": "node scripts/optimize-images.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "performance": "node scripts/performance.js",
+    "optimize:all": "npm run optimize:images && npm run sitemap && npm run seo:all && npm run build"
   },
   "type": "commonjs",
   "engines": {

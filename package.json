@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build && qwik build",
+    "start": "node dist/server/entry.ssr.js",
     "build.preview": "vite build --mode preview",
     "build.ssr": "vite build --mode ssr",
     "vercel-build": "npm run build && npm run build.ssr",

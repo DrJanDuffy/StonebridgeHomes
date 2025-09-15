@@ -17,10 +17,5 @@
       "src": "/(.*)",
       "dest": "/dist/server/entry.ssr.js"
     }
-  ],
-  "functions": {
-    "dist/server/entry.ssr.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }

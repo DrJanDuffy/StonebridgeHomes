@@ -1,0 +1,158 @@
+name: 🚀 Build & Deploy Heritage Stonebridge
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '18'
+  CACHE_VERSION: v1
+
+jobs:
+  # 🔍 Quality Assurance
+  quality:
+    name: 🔍 Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: 📦 Install Dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: 🔍 ESLint Code Quality
+        run: npm run lint --if-present
+
+      - name: 🧪 Run Tests
+        run: npm test --if-present
+
+      - name: 🏗️ Build Project
+        run: npm run build
+
+      - name: 📊 Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-files
+          path: |
+            public/
+            dist/
+            .svelte-kit/
+          retention-days: 7
+
+  # 🌐 Deploy to GitHub Pages
+  deploy:
+    name: 🌐 Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: quality
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: 📦 Install Dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: 🏗️ Build for Production
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: 📁 Setup Pages
+        uses: actions/configure-pages@v4
+        with:
+          static_site_generator: elderjs
+
+      - name: 📤 Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # 📦 Package for Distribution
+  package:
+    name: 📦 Create Distribution Package
+    runs-on: ubuntu-latest
+    needs: quality
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: 📦 Install Dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: 🏗️ Build Project
+        run: npm run build
+
+      - name: 📦 Create Distribution Archive
+        run: |
+          tar -czf heritage-stonebridge-$(date +%Y%m%d-%H%M%S).tar.gz public/
+          zip -r heritage-stonebridge-$(date +%Y%m%d-%H%M%S).zip public/
+
+      - name: 📤 Upload Distribution Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: distribution-package
+          path: |
+            heritage-stonebridge-*.tar.gz
+            heritage-stonebridge-*.zip
+          retention-days: 30
+
+  # 🔔 Notify Deployment Status
+  notify:
+    name: 🔔 Deployment Notification
+    runs-on: ubuntu-latest
+    needs: [quality, deploy, package]
+    if: always()
+    
+    steps:
+      - name: ✅ Success Notification
+        if: needs.deploy.result == 'success'
+        run: |
+          echo "🎉 Heritage Stonebridge successfully deployed!"
+          echo "🌐 Site URL: https://drjanduffy.github.io/StonebridgeHomes/"
+          echo "📦 Distribution packages created and available for download"
+
+      - name: ❌ Failure Notification
+        if: needs.deploy.result == 'failure'
+        run: |
+          echo "❌ Deployment failed. Please check the logs."
+          exit 1

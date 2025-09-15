@@ -1,0 +1,53 @@
+{
+  "name": "stonebridge-homes-qwik",
+  "version": "1.0.0",
+  "description": "Heritage at Stonebridge - Premier luxury real estate website built with Qwik",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && qwik build",
+    "build.preview": "vite build --mode preview",
+    "build.ssr": "vite build --mode ssr",
+    "deploy": "npm run build && npm run build.ssr",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect=9229 ./node_modules/vite/bin/vite.js --mode ssr",
+    "dev.preview": "vite build --mode preview && vite preview --mode preview",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "vite preview --mode ssr",
+    "qwik": "qwik",
+    "start": "node dist/server/entry.ssr.js",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@builder.io/qwik": "^1.6.0",
+    "@builder.io/qwik-city": "^1.2.0"
+  },
+  "devDependencies": {
+    "@builder.io/qwik-city": "^1.2.0",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-qwik": "^1.6.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.3.0",
+    "vite": "^5.1.0",
+    "vitest": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "keywords": [
+    "real-estate",
+    "heritage-stonebridge",
+    "summerlin",
+    "las-vegas",
+    "luxury-homes",
+    "qwik",
+    "performance",
+    "seo"
+  ],
+  "author": "Dr. Jan Duffy",
+  "license": "MIT"
+}

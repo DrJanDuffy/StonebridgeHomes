@@ -25,7 +25,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@builder.io/qwik": "^1.6.0",
+    "@builder.io/qwik": "^1.16.1",
     "@builder.io/qwik-city": "^1.2.0"
   },
   "devDependencies": {

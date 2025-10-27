@@ -1,9 +1,30 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { StructuredData } from '../components/StructuredData';
 
 export default component$(() => {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    'name': 'Dr. Jan Duffy',
+    'jobTitle': 'Real Estate Agent',
+    'telephone': '(702) 222-1964',
+    'email': 'jan.duffy@heritagestonebridge.com',
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': 'Summerlin',
+      'addressRegion': 'NV',
+      'addressCountry': 'US',
+    },
+    'areaServed': {
+      '@type': 'City',
+      'name': 'Las Vegas',
+    },
+  };
+
   return (
     <div class="min-h-screen bg-heritage-light">
+      <StructuredData data={structuredData} />
       {/* Hero Section */}
       <section class="hero-section text-center">
         <div class="container-max">
@@ -122,16 +143,16 @@ export default component$(() => {
               <div class="text-lg text-gray-600">Total Homes</div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold text-heritage-primary mb-2">$1.25M</div>
-              <div class="text-lg text-gray-600">Median Price</div>
+              <div class="text-4xl font-bold text-heritage-primary mb-2">$1.25M+</div>
+              <div class="text-lg text-gray-600">Starting From</div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold text-heritage-primary mb-2">2015-2020</div>
+              <div class="text-4xl font-bold text-heritage-primary mb-2">2015-2023</div>
               <div class="text-lg text-gray-600">Year Built</div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold text-heritage-primary mb-2">A+</div>
-              <div class="text-lg text-gray-600">School Rating</div>
+              <div class="text-4xl font-bold text-heritage-primary mb-2">10/10</div>
+              <div class="text-lg text-gray-600">Overall Rating</div>
             </div>
           </div>
         </div>
@@ -150,6 +171,54 @@ export const head: DocumentHead = {
     {
       name: 'keywords',
       content: 'Heritage Stonebridge, Summerlin homes, Las Vegas real estate, luxury homes, Dr. Jan Duffy, gated community, custom homes, resort amenities, A-rated schools',
+    },
+    {
+      name: 'author',
+      content: 'Dr. Jan Duffy',
+    },
+    {
+      name: 'robots',
+      content: 'index, follow',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:title',
+      content: 'Heritage at Stonebridge - Premier Summerlin Community',
+    },
+    {
+      property: 'og:description',
+      content: 'Luxury homes in exclusive Summerlin community with resort amenities',
+    },
+    {
+      property: 'og:image',
+      content: 'https://stonebridge-homes.vercel.app/images/heritage-stonebridge-og.jpg',
+    },
+    {
+      property: 'og:url',
+      content: 'https://stonebridge-homes.vercel.app',
+    },
+    {
+      property: 'og:site_name',
+      content: 'Heritage at Stonebridge',
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      name: 'twitter:title',
+      content: 'Heritage at Stonebridge - Premier Summerlin Community',
+    },
+    {
+      name: 'twitter:description',
+      content: 'Luxury homes in exclusive Summerlin community with resort amenities',
+    },
+    {
+      name: 'twitter:image',
+      content: 'https://stonebridge-homes.vercel.app/images/heritage-stonebridge-og.jpg',
     },
   ],
 };

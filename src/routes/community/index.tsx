@@ -55,12 +55,14 @@ export default component$(() => {
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: '🏊‍♀️', title: 'Resort-style Pool and Spa', description: 'Luxurious pool area with spa facilities' },
-                { icon: '⛳', title: 'Championship Golf Course Access', description: 'Access to premier golf courses' },
-                { icon: '💪', title: 'Fitness Center and Tennis Courts', description: 'State-of-the-art fitness facilities' },
-                { icon: '🔒', title: 'Gated Community Security', description: '24/7 security and controlled access' },
-                { icon: '🚶‍♀️', title: 'Walking Trails and Parks', description: 'Scenic walking trails throughout' },
-                { icon: '🌳', title: 'Landscaped Common Areas', description: 'Beautifully maintained grounds' }
+                { icon: '🏊‍♀️', title: 'Resort-Style Pool & Spa', description: 'Luxurious pool area with spa, perfect for relaxation and entertaining' },
+                { icon: '⛳', title: 'Championship Golf Course', description: 'Access to world-class golf courses designed by renowned architects' },
+                { icon: '💪', title: 'Fitness Center', description: 'State-of-the-art fitness facilities with personal training available' },
+                { icon: '🎾', title: 'Tennis Courts', description: 'Professional tennis courts for residents and guests' },
+                { icon: '🔒', title: 'Gated Security', description: '24/7 security with controlled access for peace of mind' },
+                { icon: '🚶‍♀️', title: 'Walking Trails', description: 'Scenic walking trails throughout the community' },
+                { icon: '🌳', title: 'Parks & Recreation', description: 'Beautiful parks and recreational areas for families' },
+                { icon: '🏛️', title: 'Community Clubhouse', description: 'Elegant clubhouse for events and community gatherings' }
               ].map((amenity, index) => (
                 <div key={index} class="heritage-card p-6 text-center">
                   <div class="text-4xl mb-4">{amenity.icon}</div>

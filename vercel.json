@@ -3,22 +3,10 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "installCommand": "npm install",
-  "builds": [
+  "rewrites": [
     {
-      "src": "dist/server/entry.ssr.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/server/entry.ssr.js"
+      "source": "/(.*)",
+      "destination": "/dist/server/entry.ssr.js"
     }
   ]
 }

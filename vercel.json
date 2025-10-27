@@ -1,12 +1,5 @@
 {
-  "buildCommand": "npm run build && npm run build.ssr",
-  "outputDirectory": "dist",
-  "framework": "vite",
-  "installCommand": "npm install",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/dist/server/entry.ssr.js"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
+  "framework": "vite"
 }

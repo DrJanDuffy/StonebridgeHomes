@@ -7,16 +7,27 @@ export default function FAQPage() {
 
   return (
     <main className="min-h-screen py-8">
-      {/* Hero Section */}
+      {/* Hero Section - AEO Optimized with Direct Answer Summary */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Henderson Real Estate FAQ
+            Henderson Nevada Real Estate FAQ
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-            Get answers to the most common questions about buying, selling, and
-            investing in Henderson, Nevada real estate.
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6">
+            Expert answers to common questions about buying, selling, and investing in Henderson, Nevada real estate from Dr. Jan Duffy, licensed REALTOR with 15+ years local expertise.
           </p>
+          <div className="text-lg max-w-4xl mx-auto bg-blue-700/50 p-6 rounded-lg text-left">
+            <p className="mb-2"><strong>Quick Answers:</strong></p>
+            <ul className="space-y-1 list-disc list-inside">
+              <li>Henderson home prices: $400K-$1.2M+ (median ~$650K)</li>
+              <li>Best family neighborhoods: Stephanie Ranch, Whitney Ranch, Green Valley</li>
+              <li>Average time to sell: 30-45 days when priced correctly</li>
+              <li>Golf communities: Anthem Country Club, DragonRidge, Legacy Golf Club</li>
+            </ul>
+            <p className="mt-4 text-center">
+              <strong>Call (702) 500-1064 for personalized guidance</strong>
+            </p>
+          </div>
         </div>
       </section>
 

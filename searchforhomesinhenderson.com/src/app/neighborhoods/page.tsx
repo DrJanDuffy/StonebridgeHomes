@@ -75,13 +75,13 @@ export const metadata: Metadata = {
       'Comprehensive guide to Henderson, Nevada neighborhoods and communities',
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
-    'DC.date': '2024',
+    'DC.date': '2026',
     'DC.type': 'Guide',
     'DC.format': 'text/html',
     'DC.identifier': 'https://searchforhomesinhenderson.com/neighborhoods',
     'DC.language': 'en',
     'DC.coverage': 'Henderson, Nevada, United States',
-    'DC.rights': 'Copyright 2024 Dr. Jan Duffy Real Estate',
+    'DC.rights': 'Copyright 2026 Dr. Jan Duffy Real Estate',
   },
 }
 

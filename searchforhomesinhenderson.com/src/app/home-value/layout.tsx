@@ -73,13 +73,13 @@ export const metadata: Metadata = {
       'Free home value estimator for Henderson, Nevada properties',
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
-    'DC.date': '2024',
+    'DC.date': '2026',
     'DC.type': 'Service',
     'DC.format': 'text/html',
     'DC.identifier': 'https://searchforhomesinhenderson.com/home-value',
     'DC.language': 'en',
     'DC.coverage': 'Henderson, Nevada, United States',
-    'DC.rights': 'Copyright 2024 Dr. Jan Duffy Real Estate',
+    'DC.rights': 'Copyright 2026 Dr. Jan Duffy Real Estate',
   },
 }
 

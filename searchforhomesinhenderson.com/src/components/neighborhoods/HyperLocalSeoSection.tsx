@@ -24,27 +24,63 @@ export default function HyperLocalSeoSection({
   neighborhoodName,
   faq,
 }: HyperLocalSeoSectionProps) {
-  const faqSchema = {
+  // Updated for 2026: FAQPage schema retired May 2026
+  // Using WebPage with embedded Questions for AI citation optimization (GEO/AEO)
+  const webPageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
+    '@type': 'WebPage',
+    name: `${neighborhoodName} Real Estate FAQ - Henderson Homes`,
+    description: `Expert answers about ${neighborhoodName} real estate from local Henderson specialists`,
+    url: `https://searchforhomesinhenderson.com/neighborhoods/${neighborhoodName.toLowerCase().replace(/\s+/g, '-')}`,
+    dateModified: new Date().toISOString().split('T')[0],
+    datePublished: '2024-01-01',
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://searchforhomesinhenderson.com',
+      name: 'Henderson Homes - Dr. Jan Duffy'
+    },
+    about: {
+      '@type': 'Thing',
+      name: `${neighborhoodName} Henderson Real Estate`,
+      description: `Real estate information for ${neighborhoodName} neighborhood in Henderson, Nevada`
+    },
     mainEntity: faq.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
         text: item.answer,
+        dateCreated: '2024-01-01',
+        upvoteCount: 0
       },
     })),
+    author: {
+      '@type': 'Person',
+      name: 'Dr. Jan Duffy',
+      jobTitle: 'Licensed Real Estate Agent',
+      knowsAbout: ['Henderson Real Estate', 'Nevada Property Market', `${neighborhoodName} Homes`],
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Professional License',
+        name: 'Nevada Real Estate License'
+      }
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Dr. Jan Duffy Real Estate',
+      url: 'https://searchforhomesinhenderson.com'
+    }
   }
 
   return (
     <>
       <Script
-        id={`faq-schema-${neighborhoodName.toLowerCase().replace(/\s+/g, '-')}`}
+        id={`webpage-schema-${neighborhoodName.toLowerCase().replace(/\s+/g, '-')}`}
         type="application/ld+json"
         strategy="afterInteractive"
       >
-        {JSON.stringify(faqSchema)}
+        {JSON.stringify(webPageSchema)}
       </Script>
 
       <section className="py-14 bg-slate-900 text-white">

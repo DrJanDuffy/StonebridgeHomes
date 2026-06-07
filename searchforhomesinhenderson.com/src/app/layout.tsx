@@ -90,13 +90,13 @@ export const metadata: Metadata = {
       "Find your dream home in Henderson, Nevada with Dr. Jan Duffy, Henderson's #1 REALTOR",
     'DC.publisher': 'Dr. Jan Duffy Real Estate',
     'DC.contributor': 'Dr. Jan Duffy',
-    'DC.date': '2024',
+    'DC.date': '2026',
     'DC.type': 'Website',
     'DC.format': 'text/html',
     'DC.identifier': 'https://searchforhomesinhenderson.com',
     'DC.language': 'en',
     'DC.coverage': 'Henderson, Nevada, United States',
-    'DC.rights': 'Copyright 2024 Dr. Jan Duffy Real Estate',
+    'DC.rights': 'Copyright 2026 Dr. Jan Duffy Real Estate',
   },
 }
 
@@ -110,13 +110,37 @@ const realEstateSchema = {
   logo: 'https://searchforhomesinhenderson.com/logo.png',
   image: 'https://searchforhomesinhenderson.com/agent-photo.jpg',
   description:
-    'Premier real estate services in Henderson, Nevada specializing in Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch communities. Expert guidance from Dr. Jan Duffy.',
+    'Premier real estate services in Henderson, Nevada specializing in Green Valley, Anthem, Stephanie Ranch, and Whitney Ranch communities. Expert guidance from Dr. Jan Duffy with 15+ years local market expertise.',
+  dateModified: new Date().toISOString().split('T')[0],
   founder: {
     '@type': 'Person',
     name: 'Dr. Jan Duffy',
-    jobTitle: 'Real Estate Agent',
+    jobTitle: 'Licensed Real Estate Agent & Henderson Market Expert',
+    honorificPrefix: 'Dr.',
     telephone: '(702) 500-1064',
     email: 'info@hendersonhomes.com',
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Professional License',
+        name: 'Nevada Real Estate License',
+        issuedBy: {
+          '@type': 'Organization',
+          name: 'Nevada Real Estate Division'
+        }
+      }
+    ],
+    knowsAbout: [
+      'Henderson Nevada Real Estate',
+      'Green Valley Properties',
+      'Anthem Community',
+      'Stephanie Ranch Homes',
+      'Whitney Ranch Real Estate',
+      'Nevada Property Law',
+      'HOA Navigation',
+      'School District Strategy',
+      'Corporate Relocation'
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: '2470 Paseo Verde Parkway, Suite 135',
@@ -401,7 +425,9 @@ const localBusinessSchema = {
   logo: 'https://searchforhomesinhenderson.com/logo.png',
   image: 'https://searchforhomesinhenderson.com/office.jpg',
   description:
-    'Premier real estate services in Henderson, Nevada. Expert guidance from Dr. Jan Duffy.',
+    'Premier real estate services in Henderson, Nevada with 15+ years local expertise. Specializing in HOA navigation, school districts, and golf course communities. Expert guidance from Dr. Jan Duffy.',
+  dateModified: new Date().toISOString().split('T')[0],
+  foundingDate: '2010',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '2470 Paseo Verde Parkway, Suite 135',

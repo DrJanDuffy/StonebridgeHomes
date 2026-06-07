@@ -60,13 +60,13 @@ export const metadata: Metadata = {
       'Expert real estate services in Henderson, Nevada. Find your dream home with Dr. Jan Duffy.',
     'DC.publisher': 'Henderson Homes',
     'DC.contributor': 'Dr. Jan Duffy',
-    'DC.date': '2024',
+    'DC.date': '2026',
     'DC.type': 'Service',
     'DC.format': 'text/html',
     'DC.identifier': 'https://searchforhomesinhenderson.com',
     'DC.language': 'en',
     'DC.coverage': 'Henderson, Nevada, United States',
-    'DC.rights': 'Copyright 2024 Dr. Jan Duffy - Henderson Homes',
+    'DC.rights': 'Copyright 2026 Dr. Jan Duffy - Henderson Homes',
   },
 }
 

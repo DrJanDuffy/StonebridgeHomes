@@ -1,34 +1,26 @@
 import type { RequestHandler } from '@builder.io/qwik-city';
 
-export const onGet: RequestHandler = async ({ html }) => {
-  const robots = `User-agent: *
-Allow: /
+export const onGet: RequestHandler = async ({ text }) => {
+  const robots = `# robots.txt — Heritage at Stonebridge (Dr. Jan Duffy)
 
-# Disallow admin and API routes
+User-agent: *
+Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
-
-# Sitemap
-Sitemap: https://stonebridge-homes.vercel.app/sitemap.xml
-
-# Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Specific bot directives
+# --- Traditional search crawlers ---
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 1
 
-# Social media crawlers
+# --- Social preview crawlers ---
 User-agent: facebookexternalhit
 Allow: /
 
@@ -38,13 +30,66 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Block aggressive crawlers
+# --- AI answer-engine / citation crawlers (AEO + GEO) ---
+# These drive AI Overview, ChatGPT, Perplexity & Claude citations. Allow them.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# --- Block aggressive SEO scrapers ---
 User-agent: AhrefsBot
 Disallow: /
 
+User-agent: SemrushBot
+Disallow: /
+
 User-agent: MJ12bot
-Disallow: /`;
+Disallow: /
 
-  html(200, robots);
+# Sitemap
+Sitemap: https://heritagestonebridge.com/sitemap.xml
+`;
+
+  text(200, robots);
 };
-

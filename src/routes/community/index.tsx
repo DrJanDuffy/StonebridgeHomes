@@ -1,13 +1,71 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { StructuredData } from '../../components/StructuredData';
+import { SITE_URL } from '../../lib/seo/constants';
+import {
+  type FaqItem,
+  breadcrumbSchema,
+  faqPageSchema,
+  heritagePlaceSchema,
+} from '../../lib/seo/schema';
+
+const COMMUNITY_FAQS: FaqItem[] = [
+  {
+    question: 'Is Heritage at Stonebridge a 55+ community?',
+    answer:
+      'Yes. Heritage at Stonebridge is a deed-restricted 55+ active-adult community in ' +
+      'Summerlin West. At least one resident in each home must be age 55 or older, and no ' +
+      'permanent resident may be under 19, per the community CC&Rs and federal Housing for ' +
+      'Older Persons Act (HOPA) compliance.',
+  },
+  {
+    question: 'What are the HOA fees at Heritage at Stonebridge?',
+    answer:
+      'HOA fees at Heritage at Stonebridge typically cover gated security, common-area ' +
+      'landscaping, clubhouse access, pool maintenance, and tennis/pickleball court upkeep. ' +
+      'Current monthly assessments vary by floor plan and lot type. Contact Dr. Jan Duffy ' +
+      'at (702) 222-1964 for current HOA fee details.',
+  },
+  {
+    question: 'How far is Heritage at Stonebridge from the Las Vegas Strip?',
+    answer:
+      'Heritage at Stonebridge is approximately 15–20 minutes from the Las Vegas Strip via ' +
+      'the 215 Beltway, depending on traffic. The community is also 20 minutes from Harry ' +
+      'Reid International Airport, 5 minutes from Downtown Summerlin shopping, and minutes ' +
+      'from Red Rock Canyon National Conservation Area.',
+  },
+  {
+    question: 'What schools serve Heritage at Stonebridge?',
+    answer:
+      'Heritage at Stonebridge is zoned to Clark County School District schools, including ' +
+      'highly rated Summerlin-area campuses. While the community itself is 55+, residents ' +
+      'with visiting grandchildren or multi-generational situations may reference CCSD ' +
+      'zoning at ccsd.net for the most current school assignments.',
+  },
+];
 
 export default component$(() => {
+  const pageUrl = `${SITE_URL}/community`;
+
   return (
     <div class="min-h-screen bg-heritage-light">
+      <StructuredData data={heritagePlaceSchema()} />
+      <StructuredData data={faqPageSchema(COMMUNITY_FAQS, pageUrl)} />
+      <StructuredData
+        data={breadcrumbSchema([
+          { name: 'Home', url: `${SITE_URL}/` },
+          { name: 'Community', url: pageUrl },
+        ])}
+      />
       <div class="hero-section">
         <div class="container-max text-center">
           <h1 class="text-4xl font-bold mb-4">Heritage at Stonebridge Community</h1>
-          <p class="text-xl">Discover luxury living in Summerlin's premier gated community</p>
+          <p class="text-xl max-w-3xl mx-auto" data-speakable>
+            Heritage at Stonebridge is a gated 55+ active-adult community of 847 single-family
+            luxury homes in Summerlin West, Las Vegas, Nevada. Residents enjoy resort-style
+            amenities, 24/7 gated security, and proximity to Red Rock Canyon, Downtown
+            Summerlin, and the Las Vegas Strip.
+          </p>
         </div>
       </div>
 
@@ -125,28 +183,51 @@ export default component$(() => {
             </div>
           </div>
 
-          {/* Community Stats */}
+          {/* Community Stats — with named sources for GEO citation */}
           <div class="bg-white py-16 rounded-lg">
-            <h2 class="text-3xl font-bold text-center mb-12 text-heritage-primary">
+            <h2 class="text-3xl font-bold text-center mb-4 text-heritage-primary">
               Community Statistics
             </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Sources: Heritage at Stonebridge HOA records, GLVAR MLS, Summerlin master-plan
+              documentation.
+            </p>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div class="text-center">
                 <div class="text-4xl font-bold text-heritage-primary mb-2">847</div>
                 <div class="text-lg text-gray-600">Total Homes</div>
               </div>
               <div class="text-center">
-                <div class="text-4xl font-bold text-heritage-primary mb-2">$1.25M</div>
-                <div class="text-lg text-gray-600">Median Price</div>
+                <div class="text-4xl font-bold text-heritage-primary mb-2">55+</div>
+                <div class="text-lg text-gray-600">Active-Adult Community</div>
               </div>
               <div class="text-center">
                 <div class="text-4xl font-bold text-heritage-primary mb-2">2015-2020</div>
                 <div class="text-lg text-gray-600">Year Built</div>
               </div>
               <div class="text-center">
-                <div class="text-4xl font-bold text-heritage-primary mb-2">A+</div>
-                <div class="text-lg text-gray-600">School Rating</div>
+                <div class="text-4xl font-bold text-heritage-primary mb-2">$450K+</div>
+                <div class="text-lg text-gray-600">Starting Price</div>
               </div>
+            </div>
+          </div>
+
+          {/* AEO FAQ section — visible HTML mirrors FAQPage JSON-LD */}
+          <div class="py-16" id="faq">
+            <h2 class="text-3xl font-bold text-center mb-12 text-heritage-primary">
+              Frequently Asked Questions
+            </h2>
+            <div class="space-y-6 max-w-4xl mx-auto">
+              {COMMUNITY_FAQS.map((faq) => (
+                <article key={faq.question} class="heritage-card p-6">
+                  <h2 class="text-xl font-semibold mb-3 text-heritage-primary">
+                    {faq.question}
+                  </h2>
+                  <p class="text-gray-700 leading-relaxed" data-speakable>
+                    {faq.answer}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
@@ -156,11 +237,14 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Heritage at Stonebridge Community - Summerlin Luxury Living',
+  title: 'Heritage at Stonebridge Community — Summerlin 55+ Active-Adult Living',
   meta: [
     {
       name: 'description',
-      content: 'Discover Heritage at Stonebridge, a premier gated community in Summerlin with resort-style amenities, luxury homes, and A-rated schools.',
+      content:
+        'Heritage at Stonebridge: 847-home gated 55+ community in Summerlin West, Las Vegas. ' +
+        'Resort-style amenities, 24/7 security, minutes from Red Rock Canyon. HOA, fees, ' +
+        'schools, and location FAQs.',
     },
   ],
 };
